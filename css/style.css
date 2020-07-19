@@ -1,4 +1,4 @@
-.dropdown-menu .dropdown-item:hover {
+/* .dropdown-menu .dropdown-item:hover {
     color: white;
     background-color:blue;
 }
@@ -20,4 +20,28 @@
 }
 .dropdown-toggle::after {
     display: none !important;
+} */
+
+
+.color-item{
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 50%;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(153, 153, 153);
+    border-image: initial;
+}
+
+.color-item-back{
+    width: 20px;
+    height: 20px;
+    background: rgb(0, 0, 0);
+    border-radius: 50%;
 }
