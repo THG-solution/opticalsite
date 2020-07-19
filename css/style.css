@@ -1,8 +1,10 @@
-.dropdown-menu .dropdown-item:hover {
-    color: white;
-    background-color:blue;
+.dropdown-menu #dd-item {
+    color: grey;
 }
-.nav-item .nav-link:hover {
+.dropdown-menu #dd-item:hover {
+    color: black;
+}
+.nav-item #nv-link:hover {
     border-bottom: 2px black solid;
 }
 .carousel-item img {
@@ -18,6 +20,6 @@
     left: -100px;
     top: 60%;
 }
-.dropdown-toggle::after {
+#dd-toggle::after {
     display: none !important;
 }
