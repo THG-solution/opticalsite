@@ -1,0 +1,23 @@
+.dropdown-menu .dropdown-item:hover {
+    color: white;
+    background-color:blue;
+}
+.nav-item .nav-link:hover {
+    border-bottom: 2px black solid;
+}
+.carousel-item img {
+    width: 100%;
+    height: 450px;
+}
+
+.dropdown-menu #sign-in, .dropdown-menu #sign-up {
+    width: 200px;
+}
+#dropdown-user {
+    padding: 5px;
+    left: -100px;
+    top: 60%;
+}
+.dropdown-toggle::after {
+    display: none !important;
+}
