@@ -15,8 +15,8 @@
 
 <body>
   <div class="container col-12">
-    <?php include "head.php" ?>
-    <?php include "carousel.php" ?>
+    <?php include "includes/head.php" ?>
+    <?php include "includes/carousel.php" ?>
     <div class="col col-12 col-md-12 col-lg-10 offset-lg-1 d-inline-flex flex-wrap my-5">
       <div class="col-6 col-md-4 col-lg-3 col-xl-2 p-0 m-0">
         <div class="p-0">
@@ -60,6 +60,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-</body>
+
+
+      
+    <?php include "includes/product.php" ?>
+
+  </body>
 
 </html>
