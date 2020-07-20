@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light m-xl-0 mr-xl-5 ml-xl-5 p-xl-0 d-lg-inline-flex flex-wrap">
-    <img class="navbar-brand mr-xl-5"
+    <img class="navbar-brand mr-xl-5" 
       src="https://df5apg8r0m634.cloudfront.net/images/89b305e76ab988a2ac8e9c7d704df0cd.png" />
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -84,7 +84,7 @@
                 </div>
                 <div class="modal-body">
                     <form action="">
-                        <div class="form-row">
+                        <div class="form-group">
                             <div class="form-group col-sm-4">
                                 <label for="email" class="col-form-label sr-only"> Email </label>
                                 <input type="email" name="email" id="email" class="form-control" placeholder="Email">
