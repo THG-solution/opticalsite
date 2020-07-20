@@ -4,7 +4,10 @@
 .dropdown-menu #dd-item:hover {
     color: black;
 }
-.nav-item #nv-link:hover {
+#nv-link:hover {
+    border-bottom: 2px black solid;
+}
+.nav-anime {
     border-bottom: 2px black solid;
 }
 .carousel-item img {
