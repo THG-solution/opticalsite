@@ -67,7 +67,7 @@
     </ul>
     <div class="product-info d-flex align-items-center justify-content-between">
         <div class="d-flex align-items-center">
-            <img src="assests/images/icon_hot.png" class="icon-ht" alt="">
+             <img src="assests/images/icon_hot.png" class="icon-ht" alt="">
             <p>ST947</p>
         </div>
         <span class=""> 

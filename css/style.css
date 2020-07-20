@@ -1,5 +1,3 @@
-
-
 .color-item{
     width: 28px !important;
     height: 28px;
@@ -52,6 +50,7 @@
 .product-list-item{
     width: 27%;
 }
+
 
 
 .product-img{
@@ -261,4 +260,31 @@
 .pd-rating-body .fa-star{
     font-size: 24px;
     padding: 0px 4px;
+}
+
+
+.dropdown-menu #dd-item:hover {
+    color: black;
+}
+#nv-link:hover {
+    border-bottom: 2px black solid;
+}
+.nav-anime {
+    border-bottom: 2px black solid;
+}
+.carousel-item img {
+    width: 100%;
+    height: 450px;
+}
+
+.dropdown-menu #sign-in, .dropdown-menu #sign-up {
+    width: 200px;
+}
+#dropdown-user {
+    padding: 5px;
+    left: -100px;
+    top: 60%;
+}
+#dd-toggle::after {
+    display: none !important;
 }
