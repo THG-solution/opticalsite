@@ -7,6 +7,18 @@
     </button>
     <div class="collapse navbar-collapse" id="navbar">
         <ul class="navbar-nav mx-md-5 mr-auto ml-lg-5">
+        <li class="nav-item dropdown mr-lg-2">
+                <a class="nav-link dropdown-toggle" id="nv-link" id="dd-toggle" href="#" id="navbarDropdown" role="button"
+                    data-hover="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    DISCOVER
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" id="dd-item" href="#">Video Guides</a>
+                    <a class="dropdown-item" id="dd-item" href="#">What's PD</a>
+                    <a class="dropdown-item" id="dd-item" href="#">After Sale-Guarantee</a>
+                    <a class="dropdown-item" id="dd-item" href="#">About Us</a>
+                </div>
+            </li>
             <li class="nav-item dropdown mr-lg-2">
                 <a class="nav-link dropdown-toggle" id="nv-link" id="dd-toggle" href="#" role="button"
                     data-hover="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -39,43 +51,35 @@
                 <a class="nav-link" id="nv-link" href="#">KIDS</a>
             </li>
             <li class="nav-item mr-lg-2">
-                <a class="nav-link" id="nv-link" href="#">BOGO SALE</a>
+                <a class="nav-link" id="nv-link" href="#">CLEARANCE SALE</a>
             </li>
-            <li class="nav-item dropdown mr-lg-2">
-                <a class="nav-link dropdown-toggle" id="nv-link" id="dd-toggle" href="#" id="navbarDropdown" role="button"
-                    data-hover="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    DISCOVER
-                </a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" id="dd-item" href="#">Video Guides</a>
-                    <a class="dropdown-item" id="dd-item" href="#">What's PD</a>
-                    <a class="dropdown-item" id="dd-item" href="#">After Sale-Guarantee</a>
-                    <a class="dropdown-item" id="dd-item" href="#">About Us</a>
-                </div>
+            <li class="nav-item mr-lg-2">
+                <a class="nav-link" id="nv-link" href="../tryon.php">TRY ON</a>
             </li>
         </ul>
         </div>
         <div class="d-inline-flex">
-            <form class="form-group mt-3 d-md-block">
-                <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Search">
+            <form class="form-group mt-2 d-md-block">
+                <div class="input-group mb-0">
+                <input type="text" class="form-control" id="search-bar" placeholder="Search">
                 <div class="input-group-append">
-                    <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button>
+                    <button class="btn btn-light" id="search-btn" type="submit"><i class="fa fa-search"></i></button>
                 </div>
                 </div>
             </form>
-        <div class="dropdown mx-3 mt-4">
-            <div class="dropdown-toggle" id="nv-link" id="dd-toggle" data-toggle="dropdown" data-hover="dropdown">
-                <i class="fa fa-user-o"></i>
-            </div>
-            <div class="dropdown-menu" id="dropdown-user">
-                <button class="btn btn-primary d-block m-2" id="sign-in">Sign In</button>
-                <button class="btn btn-outline-primary m-2" id="sign-up">Create an Account</button>
+            <div class="dropdown mx-4 mt-3">
+                <a class="dropdown-toggle pb-2 px-2" id="nv-link" id="dd-toggle" data-toggle="dropdown" data-hover="dropdown">
+                    <i class="fa fa-user-o"></i>
+                </a>
+                <div class="dropdown-menu" id="dropdown-user">
+                    <button class="btn btn-primary d-block m-2" id="sign-in">Sign In</button>
+                    <button class="btn btn-outline-primary m-2" id="sign-up">Create an Account</button>
+                </div>
             </div>
         </div>
     </div>
     
-    <div class="modal fade" id="loginmodal" role="dialog">
+    <div class="modal fade " id="loginmodal" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
             <div class="modal-content">
                 <div class="modal-header">
@@ -85,16 +89,20 @@
                 <div class="modal-body">
                     <form action="">
                         <div class="form-group">
-                            <div class="form-group col-sm-4">
+                            <div class="form-group col-sm-12">
                                 <label for="email" class="col-form-label sr-only"> Email </label>
                                 <input type="email" name="email" id="email" class="form-control" placeholder="Email">
                             </div>
-                            <div class="form-group col-sm-4">
+                            <div class="form-group col-sm-12">
                                 <label for="pswd" class="col-form-label sr-only"> Password </label>
                                 <input type="password" name="pswd" id="pswd" class="form-control" placeholder="Password">
                             </div>
-                            <div class="col-sm-auto">
-                                <div class="form-check">
+                            <div class="col-sm-12 flex-row">
+                                <div class="form-check col-6">
+                                    <input type="checkbox" name="remember" id="remember" class="form-check-input">
+                                    <label for="remember" class="form-check-label"> Remember me</label>
+                                </div>
+                                <div class="form-check col-6">
                                     <input type="checkbox" name="remember" id="remember" class="form-check-input">
                                     <label for="remember" class="form-check-label"> Remember me</label>
                                 </div>

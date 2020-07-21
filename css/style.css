@@ -294,3 +294,16 @@
 #dd-toggle::after {
     display: none !important;
 }
+#search-btn {
+    border: 1px solid #ced4da;
+    border-width: 0 0 1px 0;
+}
+#search-bar {
+    border-bottom: 1px solid #ced4da;
+    border-width: 0 0 1px 0;
+    width: 50px !important;
+    transition: width .5s !important;
+}
+#search-bar:focus {
+    width: 150px !important;
+}
