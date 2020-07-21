@@ -8,20 +8,6 @@
     <div class="collapse navbar-collapse" id="navbar">
         <ul class="navbar-nav mx-md-5 mr-auto ml-lg-5">
             <li class="nav-item dropdown mr-lg-2">
-                <a class="nav-link dropdown-toggle" id="nv-link" id="dd-toggle" href="#" role="button" data-hover="dropdown"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    WOMEN
-                </a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" id="dd-item" href="#">Women's Eyeglasses</a>
-                    <a class="dropdown-item" id="dd-item" href="#">Women's Sunglasses</a>
-                    <a class="dropdown-item" id="dd-item" href="#">All Women's Glasses</a>
-                    <a class="dropdown-item" id="dd-item" href="#">New Arrivals</a>
-                    <a class="dropdown-item" id="dd-item" href="#">Quick Frame Finder</a>
-                    <a class="dropdown-item" id="dd-item" href="#">Shop By Face Shape</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown mr-lg-2">
                 <a class="nav-link dropdown-toggle" id="nv-link" id="dd-toggle" href="#" role="button"
                     data-hover="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     MEN
@@ -35,6 +21,20 @@
                     <a class="dropdown-item" id="dd-item" href="#">Shop By Face Shape</a>
                 </div>
             </li>
+            <li class="nav-item dropdown mr-lg-2">
+                <a class="nav-link dropdown-toggle" id="nv-link" id="dd-toggle" href="#" role="button" data-hover="dropdown"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    WOMEN
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" id="dd-item" href="#">Women's Eyeglasses</a>
+                    <a class="dropdown-item" id="dd-item" href="#">Women's Sunglasses</a>
+                    <a class="dropdown-item" id="dd-item" href="#">All Women's Glasses</a>
+                    <a class="dropdown-item" id="dd-item" href="#">New Arrivals</a>
+                    <a class="dropdown-item" id="dd-item" href="#">Quick Frame Finder</a>
+                    <a class="dropdown-item" id="dd-item" href="#">Shop By Face Shape</a>
+                </div>
+            </li>   
             <li class="nav-item mr-lg-2">
                 <a class="nav-link" id="nv-link" href="#">KIDS</a>
             </li>

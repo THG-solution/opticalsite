@@ -2,13 +2,13 @@
       <div id="mycarousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner" role="listbox">
           <div class="carousel-item active">
-            <img src="assests/images/download.jpg" alt="utthapizza" class="d-block img-fluid">
+            <img src="../assests/images/download.jpg" alt="utthapizza" class="d-block img-fluid">
           </div>
           <div class="carousel-item">
-            <img src="assests/images/download (2).jpg" alt="buffet" class="d-block img-fluid">
+            <img src="../assests/images/download (2).jpg" alt="buffet" class="d-block img-fluid">
           </div>
           <div class="carousel-item">
-            <img src="assests//images/download (1).jpg" alt="alberto" class="d-block img-fluid">
+            <img src="../assests//images/download (1).jpg" alt="alberto" class="d-block img-fluid">
           </div>
         </div>
         <ul class="carousel-indicators">

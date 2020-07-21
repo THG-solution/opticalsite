@@ -262,6 +262,13 @@
     padding: 0px 4px;
 }
 
+.dropdown-menu #dd-item {
+    color: grey;
+}
+.dropdown-menu.show {
+    display: inline-table !important;
+    
+}
 
 .dropdown-menu #dd-item:hover {
     color: black;
@@ -276,7 +283,6 @@
     width: 100%;
     height: 450px;
 }
-
 .dropdown-menu #sign-in, .dropdown-menu #sign-up {
     width: 200px;
 }
