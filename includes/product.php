@@ -1,9 +1,14 @@
-<?php include "includes/conn.php" ?>
+<?php include_once("database/db_controller.php") ?>
+<?php include_once("database/db_table.php") ?>
+    
 <?php 
-        $query = 'Select * from products';
-        $run = mysqli_query($conn, $query);
-        if($run == true){
-            while($result = mysqli_fetch_array($run)){
+      
+    $db = new DBController();
+    $product = new Table($db);
+    $resultSet = $product->getData('products');
+    
+           foreach ($resultSet as $result)
+           {
                 echo "
                 <div class='product-list-item'>
     <picture class='product-img'>
@@ -54,9 +59,7 @@
     </div>
 </div>    ";
             }
-        }
-        else
-            echo "Error";
+        
         ?>
 <div class="product-list-container">
 <div class="product-list-item">

@@ -61,12 +61,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <!-- <?php include "includes/product.php" ?> -->
-    <?php include "database/db_controller.php" ?>
-    <?php include "database/products.php" ?>
-    <?php
-    $db = new DBController();
-    $product = new Product($db);
-    print_r($product->getData());
-    ?>
+    <?php include "includes/product.php" ?>
+    
   </body>
 </html>
