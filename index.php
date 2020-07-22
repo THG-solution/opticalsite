@@ -60,6 +60,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <?php include "includes/product.php" ?>
+    <script src="js/ajax_calls.js"></script>
+    <a href="https://www.livechatinc.com/chat-with/10968672/">Chat with us</a>, powered by <a href="https://www.livechatinc.com/?welcome" target="_blank">LiveChat</a>
+    <div id="product-list-item">
+      <?php include "includes/product.php" ?>
+    </div>
   </body>
 </html>

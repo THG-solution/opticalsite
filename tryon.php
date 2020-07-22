@@ -62,3 +62,21 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </body>
 </html>
+$con_price = '';
+                if(false !== $response_json) {
+                    try {
+                        $response = json_decode($response_json);
+                        if('success' === $response->result) {
+                            $base_price = $result['p_prize']; // Your price in USD
+                            if (empty($_GET['to'])){
+                                $con_price = round(($base_price * $response->conversion_rates->USD), 2);
+                            }
+                            else {
+                                $val = $_GET['to'];
+                                $con_price = round(($base_price * $response->conversion_rates->$val), 2);}
+                        }
+                    }
+                    catch(Exception $e) {
+                        echo $e;
+                    }
+                }

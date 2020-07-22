@@ -1,5 +1,8 @@
-<?php include "includes/conn.php" ?>
+<?php include "conn.php" ?>
 <?php 
+$req_url = 'https://v6.exchangerate-api.com/v6/7b1169dd93ff5a2c2b27eeff/latest/USD';
+$response_json = file_get_contents($req_url);
+
         $query = 'Select * from products';
         $run = mysqli_query($conn, $query);
         if($run == true){
@@ -47,16 +50,18 @@
         </div>
         <div class='d-flex'>
             <p class='h-product-price mb-2'>
-                $ {$result['p_prize']}
+                $ {$con_price}
             </p>
 
         </div>
     </div>
-</div>    ";
+</div>   ";
             }
         }
         else
             echo "Error";
+
+        conn_close($conn)
         ?>
 <div class="product-list-container">
 <div class="product-list-item">

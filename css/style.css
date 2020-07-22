@@ -307,3 +307,21 @@
 #search-bar:focus {
     width: 150px !important;
 }
+#nv-pill .nav-link {
+    background-color: transparent;
+    color: black;
+    border-radius: 0px;
+}
+#nv-pill .nav-link.active{
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+}
+#dropdown-currency li {
+    cursor: pointer;
+}
+#dropdown-currency {
+    padding: 0px;
+}
+#dropdown-currency li:hover {
+    background-color: #26ABFF;
+}

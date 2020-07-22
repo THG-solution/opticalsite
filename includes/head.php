@@ -76,43 +76,92 @@
                     <button class="btn btn-outline-primary m-2" id="sign-up">Create an Account</button>
                 </div>
             </div>
+            <div class="dropdown mt-3">
+                <a class="dropdown-toggle pb-2 px-2" id="nv-link" id="dd-toggle" data-toggle="dropdown" data-hover="dropdown" title="EUR" >
+                </a>
+                <ul class="dropdown-menu" id="dropdown-currency">
+                    <li class="dropdown-item"  onClick="currency_conversion('EUR')" >EUR</li>
+                    <li class="dropdown-item"  onClick="currency_conversion('EUR')" >EUR</li>
+                    <li class="dropdown-item"  onClick="currency_conversion('EUR')" >EUR</li>
+                </ul>
+            </div>
         </div>
     </div>
     
     <div class="modal fade " id="loginmodal" role="dialog">
-        <div class="modal-dialog modal-lg" role="content">
+        <div class="modal-dialog modal-md" role="content">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Login</h4>
+                <ul class="nav nav-pills" id="nv-pill" role="tablist">
+                        <li class="nav-item">
+                        <a class="nav-link" data-toggle="pill" href="#login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" data-toggle="pill" href="#create">Create</a>
+                        </li>
+                    </ul>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <form action="">
-                        <div class="form-group">
-                            <div class="form-group col-sm-12">
-                                <label for="email" class="col-form-label sr-only"> Email </label>
-                                <input type="email" name="email" id="email" class="form-control" placeholder="Email">
-                            </div>
-                            <div class="form-group col-sm-12">
-                                <label for="pswd" class="col-form-label sr-only"> Password </label>
-                                <input type="password" name="pswd" id="pswd" class="form-control" placeholder="Password">
-                            </div>
-                            <div class="col-sm-12 flex-row">
-                                <div class="form-check col-6">
-                                    <input type="checkbox" name="remember" id="remember" class="form-check-input">
-                                    <label for="remember" class="form-check-label"> Remember me</label>
+                    <div class="tab-content">
+                        <div id="login" class="tab-pane fade in">
+                            <h3>Login</h3>
+                            <form action="">
+                                <div class="form-group">
+                                    <div class="form-group col-sm-12">
+                                        <label for="email" class="col-form-label sr-only"> Email </label>
+                                        <input type="email" name="email" id="email" class="form-control" placeholder="Email">
+                                    </div>
+                                    <div class="form-group col-sm-12">
+                                        <label for="pswd" class="col-form-label sr-only"> Password </label>
+                                        <input type="password" name="pswd" id="pswd" class="form-control" placeholder="Password">
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <div class="form-check-inline col-2">
+                                            <input type="checkbox" name="remember" id="remember" class="form-check-input">
+                                            <label for="remember" class="form-check-label"> Remember me</label>
+                                        </div>
+                                        <div class="col-6 flex-row">
+                                            <a href="#" class=""> Forget Password?</a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-check col-6">
-                                    <input type="checkbox" name="remember" id="remember" class="form-check-input">
-                                    <label for="remember" class="form-check-label"> Remember me</label>
+                                <div class="form-row">
+                                    <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal"> Cancel </button>
+                                    <button type="submit" class="btn btn-primary btn-sm ml-1"> Submit </button>
                                 </div>
-                            </div>
+                            </form>
                         </div>
-                        <div class="form-row">
-                            <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal"> Cancel </button>
-                            <button type="submit" class="btn btn-primary btn-sm ml-1"> Submit </button>
+                        <div id="create" class="tab-pane fade in">
+                            <h3>Create</h3>
+                            <form action="">
+                                <div class="form-group">
+                                    <div class="form-group col-sm-12">
+                                        <label for="email" class="col-form-label sr-only"> Email </label>
+                                        <input type="email" name="email" id="email" class="form-control" placeholder="Email">
+                                    </div>
+                                    <div class="form-group col-sm-12">
+                                        <label for="pswd" class="col-form-label sr-only"> Password </label>
+                                        <input type="password" name="pswd" id="pswd" class="form-control" placeholder="Password">
+                                    </div>
+                                    <div class="col-sm-12 flex-row">
+                                        <div class="form-check col-6">
+                                            <input type="checkbox" name="remember" id="remember" class="form-check-input">
+                                            <label for="remember" class="form-check-label"> Remember me</label>
+                                        </div>
+                                        <div class="form-check col-6">
+                                            <input type="checkbox" name="remember" id="remember" class="form-check-input">
+                                            <label for="remember" class="form-check-label"> Remember me</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal"> Cancel </button>
+                                    <button type="submit" class="btn btn-primary btn-sm ml-1"> Submit </button>
+                                </div>
+                            </form>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
