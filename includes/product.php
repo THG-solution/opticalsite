@@ -22,7 +22,7 @@
                         $base_price = $result['p_prize'];
                         if (empty($_GET['to'])){
                             // $ip = $_SERVER['REMOTE_ADDR'];
-                            $ip = '11.11.11.11';
+                            $ip = '39.40.27.157';
                             $details = json_decode(file_get_contents("https://api.ipdata.co/{$ip}?api-key=test"));
                             $v = $details->currency->code;
                             $con_price = round(($base_price * $response->conversion_rates->$v), 2);
