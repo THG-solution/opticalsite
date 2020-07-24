@@ -11,7 +11,8 @@
     $response_json = file_get_contents($req_url);
     $db = new DBController();
     $product = new Table($db);
-    $resultSet = $product->queryData("SELECT DISTINCT pd.product_id AS product_id, (SELECT c.image from product_colors c WHERE c.product_id=pd.product_id LIMIT 1) AS image, (SELECT  p.avg_star from products p where pd.product_id=p.product_id) AS avg_star,(SELECT  p.total_review from products p where pd.product_id=p.product_id) AS total_review, (SELECT  p.price from products p where pd.product_id=p.product_id) AS price  FROM products pd");
+    $resultSet = $product->queryData("SELECT DISTINCT pd.product_id AS product_id, (SELECT c.image from product_colors c WHERE c.product_id=pd.product_id LIMIT 1) AS image, (SELECT  p.avg_star from products p where pd.product_id=p.product_id) AS avg_star,(SELECT  p.total_review from products p where pd.product_id=p.product_id) AS total_review, (SELECT  p.price from products p where pd.product_id=p.product_id) AS price, pc.colour_name FROM products pd, product_colors pc where pc.product_id=pd.product_id 
+    and gender='" . $_GET['gender'] . "'");
            foreach ($resultSet as $result)
            {
             $con_price = '';
@@ -90,8 +91,7 @@
 
             </div>
         </div>
-    </div>
-   ";
+    </div>   ";
             }
         ?>
 </div>

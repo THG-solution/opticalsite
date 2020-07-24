@@ -1,10 +1,8 @@
 <img src="gl.png" alt="">
-
 <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto ">
-
       <li class="nav-item dropdown mx-2">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
@@ -99,7 +97,7 @@
           Gender
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <div class="dropdown-item"><input type="checkbox" href="#"> <span class="pl-2"> Unisex</span></input></div>
+          <div class="dropdown-item"><input type="checkbox" onclick="filter_product('unisex')"> <span class="pl-2"> Unisex</span></input></div>
           <div class="dropdown-item"><input type="checkbox" href="#"> <span class="pl-2"> Men</span></input></div>
           <div class="dropdown-item"><input type="checkbox" href="#"> <span class="pl-2"> Women</span></input></div>
           <div class="dropdown-item"><input type="checkbox" href="#"> <span class="pl-2"> Kids</span></input></div>
@@ -216,172 +214,3 @@
     </ul>
   </div>
 </nav>
-
-
-
-<p>lorem summary
-  orem summary
-  orem summary
-  orem summary
-  orem summary
-  orem summary
-  orem summary
-  orem summary
-  ore>
-
-  orem summary
-  <br>
-  <br>
-
-  orem summary
-  <br>
-  <br>
-
-  orem summary
-  <br>
-  <br>
-
-  orem summary
-  orem summary
-  orem summary
-  orem summary
-  <br>
-  <br>
-
-  orem summary
-  orem summary
-  orem summary
-  orem summary
-  <br>
-  <br>
-
-  orem summary
-  orem summary
-  orem summary
-  orem summary
-  <br>
-  <br>
-
-  orem summary
-  orem summary
-  orem summary
-  orem summary
-  orem summary
-  orem summary
-  orem summary
-  <br>
-  <br>
-
-  orem summary
-  orem summary
-  orem summary
-  orem summary
-  <br>
-  <br>
-
-  orem summary
-  orem summary
-  orem summary
-  orem summary
-  <br>
-  <br>
-
-  orem summary
-  orem summary
-  orem summary
-  orem summary
-  <br>
-  <br>
-
-  orem summary
-  orem summary
-  orem summary
-  orem summary
-  <br>
-  <br>
-
-  orem summary
-  orem summary
-  orem summary
-  orem summary
-  <br>
-  <br>
-
-  orem summary
-  orem summary
-  orem summary
-  orem summary
-  <br>
-  <br>
-
-  orem summary
-  orem summary
-  orem summary
-  orem summary
-  <br>
-  <br>
-
-  orem summary
-  orem summary
-  orem summary
-  orem summary
-  orem summary
-  orem summary
-  orem summary
-  <br>
-  <br>
-
-  orem summary
-  orem summary
-  orem summary
-  orem summary
-  <br>
-  <br>
-
-  orem summary
-  orem summary
-  orem summary
-  orem summary
-  <br>
-  <br>
-
-  orem summary
-  orem summary
-  orem summary
-  orem summary
-  <br>
-  <br>
-
-  orem summary
-  orem summary
-  orem summary
-  orem summary
-  <br>
-  <br>
-
-  orem summary
-  orem summary
-  orem summary
-  orem summary
-  <br>
-  <br>
-
-  orem summary
-  orem summary
-  orem summary
-  orem summary
-  <br>
-  <br>
-
-  orem summary
-  <br>
-  <br>
-
-
-  orem summary
-  <br>
-  <br>
-
-  orem summary
-
-</p>
