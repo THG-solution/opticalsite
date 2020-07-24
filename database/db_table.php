@@ -15,14 +15,20 @@ class Table
     public function getData($table)
     {
         $result = $this->db->conn->query("SELECT * FROM {$table}");
-        $resultArray = array();
-
-        while ($item = mysqli_fetch_array($result, MYSQLI_ASSOC))
+        print_r(mysqli_num_rows($result));        
+        if (mysqli_num_rows($result)>1)
         {
-            $resultArray[] = $item;
-        }
+            $resultArray = array();
 
-        return $resultArray;
+            while ($item = mysqli_fetch_array($result, MYSQLI_ASSOC))
+            {
+                $resultArray[] = $item;
+            }
+    
+            return $resultArray;
+        }
+        $result=mysqli_fetch_array($result, MYSQLI_ASSOC);
+        return $result;    
     }
 
     // fetching  products table data of specific product id 
@@ -45,14 +51,19 @@ class Table
     public function queryData($query)
     {
         $result = $this->db->conn->query($query);
-        $resultArray = array();
-
-        while ($item = mysqli_fetch_array($result, MYSQLI_ASSOC))
+        if (mysqli_num_rows($result)>1)
         {
-            $resultArray[] = $item;
-        }
+            $resultArray = array();
 
-        return $resultArray;
+            while ($item = mysqli_fetch_array($result, MYSQLI_ASSOC))
+            {
+                $resultArray[] = $item;
+            }
+    
+            return $resultArray;
+        }
+        $result=mysqli_fetch_array($result, MYSQLI_ASSOC);
+        return $result;
     }
 
 

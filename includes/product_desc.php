@@ -16,9 +16,10 @@ if (!file_exists("database/db_controller.php")) {
 else {
     include "database/db_controller.php";
     include "database/db_table.php";}
+    $id = $_GET['id'];
     $db = new DBController();
     $product = new Table($db);
-    $resultSet = $product->getProductData("SPL344");
+    $resultSet = $product->getProductData("{$id}");
 
      echo "{$resultSet['product_id']}";
      $db = null;
@@ -31,8 +32,10 @@ else {
 </style>
 
 <body>
+
     <div class="container col-12">
-        
+        <?php include "head.php" ?>
+                        
         <div class="container mt-5">
             <div class="row">
                 <div class="col-lg-8">
@@ -61,12 +64,11 @@ else {
                                 </div>
                             </div>
                         </div>
-                        <?php include "head.php" ?>
                         <?php
                         $db = new DBController();
                         $product = new Table($db);
-                        $result=$product->queryData("SELECT c.image, p.avg_star, p.total_review FROM products p, product_colors c WHERE c.product_id = p.product_id and p.product_id = 'SPL344'");
-                        print_r($result);
+                        $result=$product->queryData("SELECT c.image, p.avg_star, p.total_review FROM products p, product_colors c WHERE c.product_id = p.product_id and p.product_id = '{$id}' LIMIT 1");
+                        
                         echo "
                         <div class='pd-pic-div d-flex flex-row align-items-center justify-content-center w-100 col-lg-11'>
                             <picture class='d-flex  justify-content-center'>
@@ -179,7 +181,7 @@ else {
 //     include "database/db_table.php";}
     $db = new DBController();
     $product = new Table($db);
-    $resultSet = $product->getProductData("SPL344");
+    $resultSet = $product->getProductData("{$id}");
 // print_r($resultSet);
 
                 echo "
