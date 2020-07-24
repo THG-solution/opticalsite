@@ -15,27 +15,55 @@ class Table
     public function getData($table)
     {
         $result = $this->db->conn->query("SELECT * FROM {$table}");
-        $resultArray = array();
-
-        while ($item = mysqli_fetch_array($result, MYSQLI_ASSOC))
+        print_r(mysqli_num_rows($result));        
+        if (mysqli_num_rows($result)>1)
         {
-            $resultArray[] = $item;
-        }
+            $resultArray = array();
 
-        return $resultArray;
+            while ($item = mysqli_fetch_array($result, MYSQLI_ASSOC))
+            {
+                $resultArray[] = $item;
+            }
+    
+            return $resultArray;
+        }
+        $result=mysqli_fetch_array($result, MYSQLI_ASSOC);
+        return $result;    
+    }
+
+    // fetching  products table data of specific product id 
+    public function getProductData($id)
+    {
+        $result = $this->db->conn->query("SELECT * FROM products WHERE product_id = '$id'");
+        
+        $result=mysqli_fetch_array($result, MYSQLI_ASSOC);
+        // $resultArray = array();
+
+        // while ($item = mysqli_fetch_array($result, MYSQLI_ASSOC))
+        // {
+        //     $resultArray[] = $item;
+        // }
+
+        return $result;
     }
     
+    // function which execute any query passes to it
     public function queryData($query)
     {
         $result = $this->db->conn->query($query);
-        $resultArray = array();
-
-        while ($item = mysqli_fetch_array($result, MYSQLI_ASSOC))
+        if (mysqli_num_rows($result)>1)
         {
-            $resultArray[] = $item;
-        }
+            $resultArray = array();
 
-        return $resultArray;
+            while ($item = mysqli_fetch_array($result, MYSQLI_ASSOC))
+            {
+                $resultArray[] = $item;
+            }
+    
+            return $resultArray;
+        }
+        $result=mysqli_fetch_array($result, MYSQLI_ASSOC);
+        return $result;
     }
 
 

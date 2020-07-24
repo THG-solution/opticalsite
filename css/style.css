@@ -142,10 +142,39 @@
     border: 1px solid lightgray
 }
 
+.pd-product-banner{
+    height: 510px;
+    overflow: hidden;
+    position: relative;
+}
+
+.pd-product-control-item{
+    width: 55px;
+    height: 55px;
+    background: #fff;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    color: #999;
+    font-size: 12px;
+    border: 1px solid #e4e4e4;
+}
+
 .pd-img{
     width: 80%;
     height: 100%;
 }
+
 
 
 .pd-product-info p{
