@@ -24,6 +24,20 @@ class Table
 
         return $resultArray;
     }
+    
+    public function queryData($query)
+    {
+        $result = $this->db->conn->query($query);
+        $resultArray = array();
+
+        while ($item = mysqli_fetch_array($result, MYSQLI_ASSOC))
+        {
+            $resultArray[] = $item;
+        }
+
+        return $resultArray;
+    }
+
 
 }
 
