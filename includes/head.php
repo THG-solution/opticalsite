@@ -25,9 +25,9 @@
                     MEN
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" id="dd-item" href="#">Women's Eyeglasses</a>
-                    <a class="dropdown-item" id="dd-item" href="#">Women's Sunglasses</a>
-                    <a class="dropdown-item" id="dd-item" href="#">All Women's Glasses</a>
+                    <a class="dropdown-item" id="dd-item" href="mens_frame.php">Men's Eyeglasses</a>
+                    <a class="dropdown-item" id="dd-item" href="#">Men's Sunglasses</a>
+                    <a class="dropdown-item" id="dd-item" href="#">All Men's Glasses</a>
                     <a class="dropdown-item" id="dd-item" href="#">New Arrivals</a>
                     <a class="dropdown-item" id="dd-item" href="#">Quick Frame Finder</a>
                     <a class="dropdown-item" id="dd-item" href="#">Shop By Face Shape</a>
@@ -127,12 +127,12 @@
                                         <label for="pswd" class="col-form-label sr-only"> Password </label>
                                         <input type="password" name="pswd" id="pswd" class="form-control" placeholder="Password">
                                     </div>
-                                    <div class="form-group col-12">
-                                        <div class="form-check-inline col-4 mx-0 mr-4 pr-0 flex-column">
+                                    <div class="form-group col-12 d-flex flex-row justify-content-between">
+                                        <div class="form-check-inline col-4 ">
                                             <label for="remember" class="form-check-label"><input type="checkbox" name="remember" id="remember" class="form-check-input"> Remember me</label>
                                         </div>
-                                        <div class="form-check-inline col-4 mr-0 pl-1 offset-3">
-                                            <a href="#" class="col-form-label text-right"> Forget Password?</a>
+                                        <div class="form-check-inline col-4 mr-0 pr-0">
+                                            <a href="#" class="col-form-label"> Forget Password?</a>
                                         </div>
                                     </div>
                                 </div>
