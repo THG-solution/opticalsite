@@ -22,8 +22,14 @@ $(document).ready(function () {
         $('#currency').text($(this).text())
         $(this).addClass('active')
     });
-
-
+    // $("input[type='checkbox']").change(function() {
+    //     if (this.checked) {
+    //         alert($(this).attr('id'))
+    //     }
+    //     else {
+    //         alert($(this).val())
+    //     }
+    // })
     // $('#search-bar').focus(function() {
     //     $('#search-bar').css('width', '80%').fadeOut(2000), () => {
     //         $('#search-bar').css('display', 'block')
