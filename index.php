@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +15,7 @@
 </style>
 
 <body>
-  <div class="container col-12">
+  <div class="container col-12" id="container">
     <?php include "includes/head.php" ?>
     <?php include "includes/carousel.php" ?>
     <div class="col col-12 col-md-12 col-lg-10 offset-lg-1 d-inline-flex flex-wrap my-5">
@@ -61,7 +62,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="js/ajax_calls.js"></script>
-    <a href="https://www.livechatinc.com/chat-with/10968672/">Chat with us</a>, powered by <a href="https://www.livechatinc.com/?welcome" target="_blank">LiveChat</a>
+    <!-- <a href="https://www.livechatinc.com/chat-with/10968672/">Chat with us</a>, powered by <a href="https://www.livechatinc.com/?welcome" target="_blank">LiveChat</a> -->
     <div id="product-list-item">
       <?php include "includes/product.php" ?>
     </div>

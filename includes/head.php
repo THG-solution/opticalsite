@@ -77,12 +77,23 @@
                 </div>
             </div>
             <div class="dropdown mt-3">
-                <a class="dropdown-toggle pb-2 px-2" id="nv-link" id="dd-toggle" data-toggle="dropdown" data-hover="dropdown" title="EUR" >
+                <a class="dropdown-toggle pb-2 px-2" id="nv-link" id="dd-toggle" data-toggle="dropdown" data-hover="dropdown">
+                <span style="cursor: pointer" id="symbol"><?php 
+                // $ip = $_SERVER['REMOTE_ADDR'];
+                $ip = '11.11.11.11';
+                            $details = json_decode(file_get_contents("https://api.ipdata.co/{$ip}?api-key=test")); 
+                            echo $details->currency->symbol;?></span> 
+                <span style="cursor: pointer" id="currency" ><?php 
+                // $ip = $_SERVER['REMOTE_ADDR'];
+                $ip = '11.11.11.11';
+                            $details = json_decode(file_get_contents("https://api.ipdata.co/{$ip}?api-key=test")); 
+                            echo $details->currency->code;?></span>
                 </a>
                 <ul class="dropdown-menu" id="dropdown-currency">
-                    <li class="dropdown-item"  onClick="currency_conversion('EUR')" >EUR</li>
-                    <li class="dropdown-item"  onClick="currency_conversion('EUR')" >EUR</li>
-                    <li class="dropdown-item"  onClick="currency_conversion('EUR')" >EUR</li>
+                    <li class="dropdown-item" id="USD" onClick="currency_conversion('USD')" >$ USD</li>
+                    <li class="dropdown-item" id="EUR" onClick="currency_conversion('EUR')" >&euro; EUR</li>
+                    <li class="dropdown-item" id="PKR" onClick="currency_conversion('PKR')" >Rs PKR</li>
+                    <li class="dropdown-item" id="INR" onClick="currency_conversion('INR')" >&#x20B9; IND</li>
                 </ul>
             </div>
         </div>
@@ -117,12 +128,11 @@
                                         <input type="password" name="pswd" id="pswd" class="form-control" placeholder="Password">
                                     </div>
                                     <div class="form-group col-12">
-                                        <div class="form-check-inline col-2">
-                                            <input type="checkbox" name="remember" id="remember" class="form-check-input">
-                                            <label for="remember" class="form-check-label"> Remember me</label>
+                                        <div class="form-check-inline col-4 mx-0 mr-4 pr-0 flex-column">
+                                            <label for="remember" class="form-check-label"><input type="checkbox" name="remember" id="remember" class="form-check-input"> Remember me</label>
                                         </div>
-                                        <div class="col-6 flex-row">
-                                            <a href="#" class=""> Forget Password?</a>
+                                        <div class="form-check-inline col-4 mr-0 pl-1 offset-3">
+                                            <a href="#" class="col-form-label text-right"> Forget Password?</a>
                                         </div>
                                     </div>
                                 </div>

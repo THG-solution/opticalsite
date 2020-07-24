@@ -1,7 +1,7 @@
 $(document).ready(function () {
-    // $("p").hover(() => {
-    //     $(this).css("background-color", "yellow");
-    // });
+    $(window).on( "load", function() {
+        $('#'+$('#currency').text()).addClass('active')
+    });
     $('#sign-in').click(function () {
         $('#loginmodal').modal()
         $('#nv-pill .nav-item:last-child .nav-link').removeClass('active')
@@ -16,6 +16,14 @@ $(document).ready(function () {
         $('#nv-pill .nav-item:last-child .nav-link').addClass('active')
         $('.tab-content #create').addClass('active show')
     });
+    $('#dropdown-currency li').click(function (){
+        $('#dropdown-currency li').removeClass('active')
+        $('#symbol').text('')
+        $('#currency').text($(this).text())
+        $(this).addClass('active')
+    });
+
+
     // $('#search-bar').focus(function() {
     //     $('#search-bar').css('width', '80%').fadeOut(2000), () => {
     //         $('#search-bar').css('display', 'block')

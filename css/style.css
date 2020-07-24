@@ -322,6 +322,13 @@
 #dropdown-currency {
     padding: 0px;
 }
+#dropdown-currency li a {
+    text-decoration: none;
+    color: grey;
+}
+#dropdown-currency li a:hover {
+    color: black;
+}
 #dropdown-currency li:hover {
     background-color: #26ABFF;
 }
