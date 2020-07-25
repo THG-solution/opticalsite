@@ -97,10 +97,10 @@
           Gender
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <div class="dropdown-item"><input type="checkbox" onclick="filter_product('unisex')"> <span class="pl-2"> Unisex</span></input></div>
-          <div class="dropdown-item"><input type="checkbox" href="#"> <span class="pl-2"> Men</span></input></div>
-          <div class="dropdown-item"><input type="checkbox" href="#"> <span class="pl-2"> Women</span></input></div>
-          <div class="dropdown-item"><input type="checkbox" href="#"> <span class="pl-2"> Kids</span></input></div>
+          <div class="dropdown-item"><input type="checkbox" id="unisex" name="gender[]" onclick="filter_product('unisex')" value="unisex" > <span class="pl-2"> Unisex</span></input></div>
+          <div class="dropdown-item"><input type="checkbox" name="gender[]" href="#" value="men" > <span class="pl-2"> Men</span></input></div>
+          <div class="dropdown-item"><input type="checkbox" name="gender[]" href="#" value="women"> <span class="pl-2"> Women</span></input></div>
+          <div class="dropdown-item"><input type="checkbox" name="gender[]" href="#" value="kids" > <span class="pl-2"> Kids</span></input></div>
         </div>
       </li>
       <li class="nav-item dropdown mx-2">
