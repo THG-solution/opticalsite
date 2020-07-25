@@ -64,7 +64,7 @@
     </ul>
     <div class='product-info d-flex align-items-center justify-content-between'>
         <div class='d-flex align-items-center'>
-            <img src='../assests/images/trending.png' class='icon-ht' alt=''>
+            <img src='../assests/images/trending.png' class='icon-ht mb-2 mr-3' alt=''>
             <p>{$result['product_id']}</p>
         </div>
         <span class=''> 
