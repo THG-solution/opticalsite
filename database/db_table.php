@@ -15,7 +15,7 @@ class Table
     public function getData($table)
     {
         $result = $this->db->conn->query("SELECT * FROM {$table}");
-        print_r(mysqli_num_rows($result));        
+        
         if (mysqli_num_rows($result)>1)
         {
             $resultArray = array();

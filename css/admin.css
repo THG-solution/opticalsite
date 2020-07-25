@@ -60,7 +60,7 @@ a:focus {
 #sidebar {
   min-width: 250px;
   max-width: 250px;
-  background: #7386d5;
+  background: #08c4a5;
   color: #fff;
   transition: all 0.6s cubic-bezier(0.945, 0.02, 0.27, 0.665);
   transform-origin: bottom left;
@@ -73,7 +73,7 @@ a:focus {
 
 #sidebar .sidebar-header {
   padding: 20px;
-  background: #6d7fcc;
+  background: #08c4a5;
 }
 
 #sidebar ul.components {
@@ -92,14 +92,14 @@ a:focus {
   display: block;
 }
 #sidebar ul li a:hover {
-  color: #7386d5;
+  color: #08c4a5;
   background: #fff;
 }
 
 #sidebar ul li.active > a,
 a[aria-expanded="true"] {
   color: #fff;
-  background: #6d7fcc;
+  background: #0D74A8;
 }
 
 a[data-toggle="collapse"] {
@@ -129,14 +129,15 @@ ul.CTAs a {
 
 a.download {
   background: #fff;
-  color: #7386d5;
+  color: #08c4a5;
 }
 
 a.article,
 a.article:hover {
-  background: #6d7fcc !important;
+  background: #0D74A8 !important;
   color: #fff !important;
 }
+
 
 
 /* ---------------------------------------------------
@@ -204,117 +205,30 @@ a.article:hover {
   padding: 10px;
 }
 
-
-
-ol,
-ul,
-dl {
-  margin-top: 0;
-  margin-bottom: 1rem;
+td, th{
+  text-align: center;
 }
 
-ol ol,
-ul ul,
-ol ul,
-ul ol {
-  margin-bottom: 0;
+.table-icon{
+  width: 24px;
+  margin-left: 10px;
+  cursor: pointer;
 }
 
-p {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-table {
-  border-collapse: collapse;
-}
-
-th {
-  text-align: inherit;
-}
-
-
-.card {
+.img-add{
+  width: 45px;
+  cursor: pointer;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
-  background-color: #fff;
-  background-clip: border-box;
-  border: 1px solid #eeeeee;
-  border-radius: 0.25rem;
+  z-index:999;
+  /* left: 1000px; */
 }
 
-.card>hr {
-  margin-right: 0;
-  margin-left: 0;
-}
+/* ---------------------------------------------------
+    DASHBOARD CSS
+----------------------------------------------------- */
 
-.card>.list-group:first-child .list-group-item:first-child {
-  border-top-left-radius: 0.25rem;
-  border-top-right-radius: 0.25rem;
-}
-
-.card>.list-group:last-child .list-group-item:last-child {
-  border-bottom-right-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
-}
-
-.card-body {
-  flex: 1 1 auto;
-  padding: 1.25rem;
-}
-
-.card-title {
-  margin-bottom: 0.75rem;
-}
-
-.card-subtitle {
-  margin-top: -0.375rem;
-  margin-bottom: 0;
-}
-
-
-
-.card-header {
-  padding: 0.75rem 1.25rem;
-  margin-bottom: 0;
-  background-color: #fff;
-  border-bottom: 1px solid #eeeeee;
-}
-
-.card-header:first-child {
-  border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
-}
-
-.card-header+.list-group .list-group-item:first-child {
-  border-top: 0;
-}
-
-
-.table-responsive {
-  display: block;
-  width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-}
-
-.table-responsive>.table-bordered {
-  border: 0;
-}
-
-.table .thead-dark th {
-  color: #fafafa;
-  background-color: #212529;
-  border-color: #32383e;
-}
-
-.table .thead-light th {
-  color: #495057;
-  background-color: #e9ecef;
-  border-color: rgba(0, 0, 0, 0.06);
+.card-head{
+  font-size: 18px;
 }
 
 

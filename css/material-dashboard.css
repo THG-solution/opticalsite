@@ -9339,7 +9339,7 @@ button.bg-dark:focus {
 }
 
 .text-primary {
-  color: #2196f3 !important;
+  color: #0D74A8 !important;
 }
 
 a.text-primary:hover,
@@ -14440,7 +14440,7 @@ h2.title {
 }
 
 .text-primary {
-  color: #9c27b0 !important;
+  color: #0D74A8 !important;
 }
 
 .text-danger {
@@ -15150,12 +15150,12 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
     padding-right: 15px;
   }
 }
-
+/* 
 .wrapper {
   position: relative;
   top: 0;
   height: 100vh;
-}
+} */
 
 .off-canvas-sidebar .navbar-collapse .nav>li>a,
 .off-canvas-sidebar .navbar-collapse .nav>li>a:hover {
@@ -17088,7 +17088,7 @@ html[dir="rtl"] .form-check .form-check-sign .check:before {
   bottom: 15px;
   left: 15px;
   color: #fff;
-  font-size: 1.125rem;
+  font-size: 30px !important;
   text-shadow: 0 2px 5px rgba(33, 33, 33, 0.5);
 }
 
@@ -17123,7 +17123,7 @@ html[dir="rtl"] .form-check .form-check-sign .check:before {
 .card.bg-primary,
 .card.card-rotate.bg-primary .front,
 .card.card-rotate.bg-primary .back {
-  background: linear-gradient(60deg, #ab47bc, #8e24aa);
+  background: linear-gradient(120deg, #08c4a5, #1403ad);
 }
 
 .card .card-header-info .card-icon,
