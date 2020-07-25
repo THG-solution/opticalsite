@@ -8,69 +8,42 @@
           aria-haspopup="true" aria-expanded="false">
           Color
         </a>
-        <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <div class="color-dd-container">
+            <div class="dropdown-item d-flex flex-row col-4">
+              <div class="color-item">
+                <input class="color-item-back" type="checkbox" id="colour" value="black">
+                <!-- <div class="color-item-back"></div> -->
+              </div>
+              <span class="d-flex align-items-center pl-2"> Black </span>
+            </div>
 
-          <div class="color-dd-container col-12">
-            <!-- Individual Colors Dropdown -->
             <div class="dropdown-item d-flex flex-row col-4">
               <div class="color-item">
-                <div class="color-item-back"></div>
+              <input class="color-item-back" type="checkbox" id="colour" value="matt-grey">
               </div>
-              <span class="d-flex align-items-center pl-2"> Acetate </span>
+              <span class="d-flex align-items-center pl-2">Matt-Grey</span>
             </div>
-            <div class="dropdown-item d-flex flex-row col-4">
-              <div class="color-item">
-                <div class="color-item-back"></div>
-              </div>
-              <span class="d-flex align-items-center pl-2"> Acetate </span>
-            </div>
+
             <div class="dropdown-item d-flex flex-row col-4">
               <div class=" color-item">
                 <div class="color-item-back" style="background:  0% 0% / 100% 100% rgb(0, 128, 0);"></div>
               </div>
               <span class="d-flex align-items-center pl-2" > Green </span>
             </div>
+
             <div class="dropdown-item d-flex flex-row col-4">
               <div class="color-item">
-                <div class="color-item-back"></div>
+              <input class="color-item-back" type="checkbox" id="colour" value="matt-grey">
               </div>
-              <span class="d-flex align-items-center pl-2"> Acetate </span>
+              <span class="d-flex align-items-center pl-2"> Matt-Grey </span>
             </div>
+
             <div class="dropdown-item d-flex flex-row col-4">
-              <div class="color-item">
-                <div class="color-item-back"></div>
+              <div class=" color-item">
+                <div class="color-item-back" style="background:  0% 0% / 100% 100% rgb(0, 128, 0);"></div>
               </div>
-              <span class="d-flex align-items-center pl-2"> Acetate </span>
-            </div>
-            <div class="dropdown-item d-flex flex-row col-4">
-              <div class="color-item">
-                <div class="color-item-back"></div>
-              </div>
-              <span class="d-flex align-items-center pl-2"> Acetate </span>
-            </div>
-            <div class="dropdown-item d-flex flex-row col-4">
-              <div class="color-item">
-                <div class="color-item-back"></div>
-              </div>
-              <span class="d-flex align-items-center pl-2"> Acetate </span>
-            </div>
-            <div class="dropdown-item d-flex flex-row col-4">
-              <div class="color-item">
-                <div class="color-item-back"></div>
-              </div>
-              <span class="d-flex align-items-center"> Acetate </span>
-            </div>
-            <div class="dropdown-item d-flex flex-row col-4">
-              <div class="color-item">
-                <div class="color-item-back"></div>
-              </div>
-              <span class="d-flex align-items-center"> Acetate </span>
-            </div>
-            <div class="dropdown-item d-flex flex-row col-4">
-              <div class="color-item">
-                <div class="color-item-back"></div>
-              </div>
-              <span class="d-flex align-items-center"> Acetate </span>
+              <span class="d-flex align-items-center pl-2" > Green </span>
             </div>
 
           </div>
@@ -97,10 +70,10 @@
           Gender
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <div class="dropdown-item"><input type="checkbox" id="unisex" name="gender[]" onclick="filter_product('unisex')" value="unisex" > <span class="pl-2"> Unisex</span></input></div>
-          <div class="dropdown-item"><input type="checkbox" name="gender[]" href="#" value="men" > <span class="pl-2"> Men</span></input></div>
-          <div class="dropdown-item"><input type="checkbox" name="gender[]" href="#" value="women"> <span class="pl-2"> Women</span></input></div>
-          <div class="dropdown-item"><input type="checkbox" name="gender[]" href="#" value="kids" > <span class="pl-2"> Kids</span></input></div>
+          <div class="dropdown-item"><input type="checkbox" id="gender" value="unisex" > <span class="pl-2"> Unisex</span></input></div>
+          <div class="dropdown-item"><input type="checkbox" id="gender" href="#" value="men" > <span class="pl-2"> Men</span></input></div>
+          <div class="dropdown-item"><input type="checkbox" id="gender" href="#" value="women"> <span class="pl-2"> Women</span></input></div>
+          <div class="dropdown-item"><input type="checkbox" id="gender" href="#" value="kids" > <span class="pl-2"> Kids</span></input></div>
         </div>
       </li>
       <li class="nav-item dropdown mx-2">
@@ -109,33 +82,8 @@
           Material
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <div class="d-flex flex-row ">
-            <div class="p-2 ">
-              <div class="pl-4 font-weight-bold"> Plastic </div>
-              <div class="dropdown-item"><input type="checkbox" href="#"> <span class="pl-2"> Acetate</span></input>
-              </div>
-              <div class="dropdown-item"><input type="checkbox" href="#"><span class="pl-2">TR </span></input></div>
-              <div class="dropdown-item"><input type="checkbox" href="#"><span class="pl-2">Memory
-                  Plastic</span></input></div>
-              <div class="dropdown-item"><input type="checkbox" href="#"><span class="pl-2">Ultem</span></input></div>
-              <div class="dropdown-item"><input type="checkbox" href="#"><span class="pl-2">Silica Gel</span></input>
-              </div>
-            </div>
-            <div class="p-2">
-              <div class="pl-4 font-weight-bold">Metal</div>
-              <div class="dropdown-item"><input type="checkbox" href="#"><span class="pl-2">Metal</span></input></div>
-              <div class="dropdown-item"><input type="checkbox" href="#"><span class="pl-2">Memory Metal</span></input>
-              </div>
-              <div class="dropdown-item"><input type="checkbox" href="#"><span class="pl-2">Titanium</span></input>
-              </div>
-            </div>
-            <div class="p-2 ">
-              <div class="pl-4 font-weight-bold">Mixed Materials </div>
-              <div class="dropdown-item"><input type="checkbox" href="#"><span class="pl-2">Mixed
-                  Material</span></input></div>
-            </div>
-          </div>
-
+          <div class="dropdown-item"><input type="checkbox" id="material" value="plastic" href="#"> <span class="pl-2"> Plastic</span></input></div>
+          <div class="dropdown-item"><input type="checkbox" id="material" value="metal" href="#"> <span class="pl-2"> Metal</span></input></div>
         </div>
       </li>
       <li class="nav-item dropdown mx-2">
@@ -144,17 +92,9 @@
           Shape
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <div class="dropdown-item "><input type="checkbox" href="#"><span class="pl-2"> Rectangle</span></input></div>
-          <div class="dropdown-item "><input type="checkbox" href="#"><span class="pl-2"> Round</span></input></div>
-          <div class="dropdown-item "><input type="checkbox" href="#"><span class="pl-2"> Square</span></input></div>
-          <div class="dropdown-item "><input type="checkbox" href="#"><span class="pl-2"> Oval</span></input></div>
-          <div class="dropdown-item "><input type="checkbox" href="#"><span class="pl-2"> Aviator</span></input></div>
-          <div class="dropdown-item "><input type="checkbox" href="#"><span class="pl-2"> Polygon</span></input></div>
-          <div class="dropdown-item "><input type="checkbox" href="#"><span class="pl-2"> Horn-rimmed </span></input>
-          </div>
-          <div class="dropdown-item "><input type="checkbox" href="#"><span class="pl-2"> Cat eye</span></input></div>
-
-
+          <div class="dropdown-item "><input type="checkbox" id="shape" value="round" href="#"><span class="pl-2"> Round</span></input></div>
+          <div class="dropdown-item "><input type="checkbox" id="shape" value="square" href="#"><span class="pl-2"> Square</span></input></div>
+          <div class="dropdown-item "><input type="checkbox" id="shape" value="wayfarer" href="#"><span class="pl-2"> Wayfarer</span></input></div>
         </div>
       </li>
       <li class="nav-item dropdown mx-2">

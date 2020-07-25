@@ -22,17 +22,99 @@ $(document).ready(function () {
         $('#currency').text($(this).text())
         $(this).addClass('active')
     });
+    var productContainer = $('#product-list-item'), gender = [], gen = [], shape = [], shp = [], material = [], mtrl = [], colour = [], clr = []
     $("input[type='checkbox']").change(function() {
-        if (this.checked) {
-            alert($(this).attr('id'))
-            $.get('includes/filt_product.php?gender='+$(this).val(), (data, status) => {
-                alert("ds", data,status)
-            })
+        if ($(this).attr('id') === 'gender') 
+        {
+            gen = []
+            if (this.checked) {
+                gender.push($(this).val())
+                for (let elements of gender.values()) { 
+                    gen.push("'"+ elements + "'");
+                } 
+                $.get('includes/filt_product.php?gender='+gen+'&shape='+shp+'&material='+mtrl+'&colour='+clr, function(response) {
+                    productContainer.html(response)
+                })
+            }
+            else if (!this.checked) {
+                gender = gender.filter(el => el != $(this).val())
+                for (let elements of gender.values()) { 
+                    gen.push("'"+ elements + "'");
+                } 
+                $.get('includes/filt_product.php?gender='+gen+'&shape='+shp+'&material='+mtrl+'&colour='+clr, function(response) {
+                    productContainer.html(response)
+                })
+            }
         }
-        else {
-            alert($(this).val())
+        else if ($(this).attr('id') === 'shape')
+        {
+            shp = []
+            if (this.checked) {
+                shape.push($(this).val())
+                for (let elements of shape.values()) { 
+                    shp.push("'"+ elements + "'");
+                } 
+                $.get('includes/filt_product.php?gender='+gen+'&shape='+shp+'&material='+mtrl+'&colour='+clr, function(response) {
+                    productContainer.html(response)
+                })
+            }
+            else if (!this.checked) {
+                shape = shape.filter(el => el != $(this).val())
+                for (let elements of shape.values()) { 
+                    shp.push("'"+ elements + "'");
+                } 
+                $.get('includes/filt_product.php?gender='+gen+'&shape='+shp+'&material='+mtrl+'&colour='+clr, function(response) {
+                    productContainer.html(response)
+                })
+            }
         }
-    })
+        else if ($(this).attr('id') === 'material')
+        {
+            mtrl = []
+            if (this.checked) {
+                material.push($(this).val())
+                for (let elements of material.values()) { 
+                    mtrl.push("'"+ elements + "'");
+                } 
+                $.get('includes/filt_product.php?gender='+gen+'&shape='+shp+'&material='+mtrl+'&colour='+clr, function(response) {
+                    productContainer.html(response)
+                })
+            }
+            else if (!this.checked) {
+                material = material.filter(el => el != $(this).val())
+                for (let elements of material.values()) { 
+                    mtrl.push("'"+ elements + "'");
+                } 
+                $.get('includes/filt_product.php?gender='+gen+'&shape='+shp+'&material='+mtrl+'&colour='+clr, function(response) {
+                    productContainer.html(response)
+                })
+            }
+        }
+        else if ($(this).attr('id') === 'colour')
+        {
+            clr = []
+            if (this.checked) {
+                $(this).parent('.color-item').css('border-color', 'blue')
+                colour.push($(this).val())
+                for (let elements of colour.values()) { 
+                    clr.push("'"+ elements + "'");
+                } 
+                $.get('includes/filt_product.php?gender='+gen+'&shape='+shp+'&material='+mtrl+'&colour='+clr, function(response) {
+                    productContainer.html(response)
+                })
+            }
+            else if (!this.checked) {
+                $(this).parent('.color-item').css('border-color', 'grey')
+                colour = colour.filter(el => el != $(this).val())
+                for (let elements of colour.values()) { 
+                    clr.push("'"+ elements + "'");
+                } 
+                $.get('includes/filt_product.php?gender='+gen+'&shape='+shp+'&material='+mtrl+'&colour='+clr, function(response) {
+                    productContainer.html(response)
+                })
+            }
+        }
+    });
     // $('#search-bar').focus(function() {
     //     $('#search-bar').css('width', '80%').fadeOut(2000), () => {
     //         $('#search-bar').css('display', 'block')
