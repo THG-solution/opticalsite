@@ -3,8 +3,12 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header card-header-primary">
-                    <h4 class="card-title">Product Table</h4>
-                    <p class="card-category">Here is a subtitle for this table</p>
+                    <div class="d-flex flex-row align-items-center justify-content-between">
+                        <h3 class="card-title">Product Table</h3>
+                        <span> <img class="img-add" src="../assests/images/add.png" alt=""></span>
+                    </div>
+
+                    <!-- <p class="card-category">Here is a subtitle for this table</p> -->
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -14,121 +18,63 @@
                                     ID
                                 </th>
                                 <th>
-                                    Name
+                                    Brand
                                 </th>
                                 <th>
-                                    Country
+                                    Gender
                                 </th>
                                 <th>
-                                    City
+                                    Material
                                 </th>
                                 <th>
-                                    Salary
+                                    Total Reviews
+                                </th>
+                                <th>
+                                    Average Stars
+                                </th>
+                                <th>
+                                    Price
+                                </th>
+                                <th>
+                                    Options
                                 </th>
                             </thead>
+                            <?php
+                            $db = new DBController();
+                            $product = new Table($db);
+                            $resultSet = $product->getData("products");
+                            ?>
                             <tbody>
-                                <tr>
-                                    <td>
-                                        1
-                                    </td>
-                                    <td>
-                                        Dakota Rice
-                                    </td>
-                                    <td>
-                                        Niger
-                                    </td>
-                                    <td>
-                                        Oud-Turnhout
-                                    </td>
-                                    <td class="text-primary">
-                                        $36,738
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        2
-                                    </td>
-                                    <td>
-                                        Minerva Hooper
-                                    </td>
-                                    <td>
-                                        Curaçao
-                                    </td>
-                                    <td>
-                                        Sinaai-Waas
-                                    </td>
-                                    <td class="text-primary">
-                                        $23,789
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        3
-                                    </td>
-                                    <td>
-                                        Sage Rodriguez
-                                    </td>
-                                    <td>
-                                        Netherlands
-                                    </td>
-                                    <td>
-                                        Baileux
-                                    </td>
-                                    <td class="text-primary">
-                                        $56,142
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        4
-                                    </td>
-                                    <td>
-                                        Philip Chaney
-                                    </td>
-                                    <td>
-                                        Korea, South
-                                    </td>
-                                    <td>
-                                        Overland Park
-                                    </td>
-                                    <td class="text-primary">
-                                        $38,735
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        5
-                                    </td>
-                                    <td>
-                                        Doris Greene
-                                    </td>
-                                    <td>
-                                        Malawi
-                                    </td>
-                                    <td>
-                                        Feldkirchen in Kärnten
-                                    </td>
-                                    <td class="text-primary">
-                                        $63,542
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        6
-                                    </td>
-                                    <td>
-                                        Mason Porter
-                                    </td>
-                                    <td>
-                                        Chile
-                                    </td>
-                                    <td>
-                                        Gloucester
-                                    </td>
-                                    <td class="text-primary">
-                                        $78,615
-                                    </td>
-                                </tr>
+                                <?php
+                                foreach ($resultSet as $result) { ?>
+                                    <tr>
+                                        <td>
+                                            <?php echo "{$result['product_id']}" ?>
+                                        </td>
+                                        <td>
+                                            <?php echo "{$result['brand']}" ?>
+                                        </td>
+                                        <td>
+                                            <?php echo "{$result['gender']}" ?>
+                                        </td>
+                                        <td>
+                                            <?php echo "{$result['material']}" ?>
+                                        </td>
+                                        <td class="text-primary">
+                                            <?php echo "{$result['total_review']}" ?>
+                                        </td>
+                                        <td class="text-primary">
+                                            <?php echo "{$result['avg_star']}" ?>
+                                        </td>
+                                        <td>
+                                            <?php echo "$ {$result['price']}" ?>
+                                        </td>
+                                        <td>
+                                            <img class="table-icon" src="../assests/images/delete.png" alt="">
+                                            <img class="table-icon" src="../assests/images/edit.png" alt="">
+                                        </td>
+                                    </tr>
+                                <?php } ?>
                             </tbody>
                         </table>
                     </div>

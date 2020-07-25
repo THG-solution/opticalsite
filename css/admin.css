@@ -205,6 +205,24 @@ a.article:hover {
   padding: 10px;
 }
 
+td, th{
+  text-align: center;
+}
+
+.table-icon{
+  width: 24px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.img-add{
+  width: 45px;
+  cursor: pointer;
+  position: relative;
+  z-index:999;
+  /* left: 1000px; */
+}
+
 /* ---------------------------------------------------
     DASHBOARD CSS
 ----------------------------------------------------- */

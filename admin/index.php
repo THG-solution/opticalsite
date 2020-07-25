@@ -22,8 +22,16 @@
 </head>
 
 <body>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-          
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <?php
+    if (!file_exists("database/db_controller.php")) {
+        include "../database/db_controller.php";
+        include "../database/db_table.php";
+    } else {
+        include "database/db_controller.php";
+        include "database/db_table.php";
+    }
+    ?>
     <div class="wrapper">
 
         <!-- Sidebar Holder -->
@@ -32,14 +40,14 @@
         <!-- Page Content Holder -->
         <div id="content">
 
-        <?php include "../includes/admin_navbar.html" ?>
+            <?php include "../includes/admin_navbar.html" ?>
 
             <div class="content">
                 <!--  Page Content file -->
 
                 <?php
-                
-                if (isset($_GET['id'])){
+
+                if (isset($_GET['id'])) {
                     switch ($_GET['id']) {
                         case 'product':
                             include "../includes/admin_product.php";
@@ -47,14 +55,12 @@
                         default:
                             include "../includes/admin_dashboard.php";
                             break;
-                    }    
-                }
-                else{
+                    }
+                } else {
                     include "../includes/admin_dashboard.php";
-                            
                 }
                 ?>
-            
+
             </div>
 
             <!-- jQuery CDN - Slim version (=without AJAX) -->
