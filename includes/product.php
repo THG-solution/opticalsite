@@ -1,5 +1,5 @@
 
-<div class='product-list-container mx-5'>
+<div class='product-list-container mx-5 w-80'>
 <?php 
     if (!file_exists("database/db_controller.php")) {
         include "../database/db_controller.php";
@@ -42,8 +42,8 @@
                 }
             }
                 echo "
-                <div class='product-list-item'>
-    <picture class='product-img'>
+                <div class='product-list-item my-4'>
+    <picture class='product-img my-5'>
         <a href='/includes/product_desc.php?id={$result['product_id']}'>
         <img src='../assests/images/{$result['image']}' alt=''>  
         </a>
@@ -64,7 +64,7 @@
     </ul>
     <div class='product-info d-flex align-items-center justify-content-between'>
         <div class='d-flex align-items-center'>
-            <img src='../assests/images/icon_hot.png' class='icon-ht' alt=''>
+            <img src='../assests/images/trending.png' class='icon-ht' alt=''>
             <p>{$result['product_id']}</p>
         </div>
         <span class=''> 
@@ -74,14 +74,67 @@
     
         <div class='product-more-info d-flex align-items-center justify-content-between'>
             <div class='d-flex align-items-center'>
-                <div class='d-flex align-items-center mb-1 mr-2'>
-                    <span class='fa fa-star checked'></span>
-                    <span class='fa fa-star checked'></span>
-                    <span class='fa fa-star checked'></span>
+                <div class='d-flex align-items-center mb-1 mr-2'>";
+                $stars = $result['avg_star'];
+
+                switch ($stars) {
+                    case  (1):
+                    echo "
                     <span class='fa fa-star checked'></span>
                     <span class='fa fa-star empty'></span>
-                </div>
-                <p class='h-review-p mb-2'>{$result['total_review']} Reviews</p>
+                    <span class='fa fa-star empty'></span>
+                    <span class='fa fa-star empty'></span>
+                    <span class='fa fa-star empty'></span>
+                </div>";
+                    break;
+                    case  (2):
+                        echo "
+                        <span class='fa fa-star checked'></span>
+                        <span class='fa fa-star checked'></span>
+                        <span class='fa fa-star empty'></span>
+                        <span class='fa fa-star empty'></span>
+                        <span class='fa fa-star empty'></span>
+                    </div>";
+                    break;
+                    case  (3):
+                        echo "
+                        <span class='fa fa-star checked'></span>
+                        <span class='fa fa-star checked'></span>
+                        <span class='fa fa-star checked'></span>
+                        <span class='fa fa-star empty'></span>
+                        <span class='fa fa-star empty'></span>
+                    </div>";
+                    break;
+                    case  (4):
+                        echo "
+                        <span class='fa fa-star checked'></span>
+                        <span class='fa fa-star checked'></span>
+                        <span class='fa fa-star checked'></span>
+                        <span class='fa fa-star checked'></span>
+                        <span class='fa fa-star empty'></span>
+                    </div>";
+                    break;
+                    case  (5):
+                        echo "
+                        <span class='fa fa-star checked'></span>
+                        <span class='fa fa-star checked'></span>
+                        <span class='fa fa-star checked'></span>
+                        <span class='fa fa-star checked'></span>
+                        <span class='fa fa-star checked'></span>
+                    </div>";
+                    break;
+                            
+                    default:
+                    echo "<div class='d-flex align-items-center mb-1 mr-2'>
+                    <span class='fa fa-star empty'></span>
+                    <span class='fa fa-star empty'></span>
+                    <span class='fa fa-star empty'></span>
+                    <span class='fa fa-star empty'></span>
+                    <span class='fa fa-star empty'></span>
+                    </div>";
+            }
+            echo "
+            <p class='h-review-p mb-2'>{$result['total_review']} Reviews</p>
             </div>
             <div class='d-flex'>
             <p class='h-product-price mb-2'>

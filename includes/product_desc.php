@@ -75,31 +75,90 @@ else {
                                 <img class='pd-img' src='../assests/images/{$result['image']}' alt=''>
                             </picture>
                         </div>
-                        <div>
-                            <div class='pd-product-list-title'>
-                                <h2>Customer Reviews ( <span id='pd-reviewNo'> {$result['total_review']} </span> )</h2>
+                    </div>
+                    
+                        <div class='d-flex flex-column  w-100 col-lg-11'>
+                            <div class='row'>
+                                <div class='pd-product-list-title d-flex ml-5 col-lg-12 pl-0'>
+                                    <h2>Customer Reviews ( <span id='pd-reviewNo'> {$result['total_review']} </span> )</h2>
+                                </div>
                             </div>
-                            <div class='pd-rating-body pt-5 pb-5 d-flex justify-content-center'>
-                                <div class='d-flex flex-column'>
-                                    <p>
-                                        Average Rating
-                                    </p>
-                                    <div class='d-flex align-items-center'>
-                                        <div class='d-flex align-items-center mb-1 mr-2'>
-                                            <span class='fa fa-star checked'></span>
-                                            <span class='fa fa-star checked'></span>
-                                            <span class='fa fa-star checked'></span>
-                                            <span class='fa fa-star checked'></span>
-                                            <span class='fa fa-star empty'></span>
+                            <div class='row'>
+                                <div class='pd-rating-body  ml-5 pt-5 pb-5 w-100'>
+                                    <div class='d-flex flex-column pl-5'>
+                                        <p>
+                                            Average Rating ({$result['avg_star']})
+                                        </p>
+                                        <div class='d-flex align-items-center'>
+                                            <div class='d-flex align-items-center mb-1 mr-2'>
+                                            ";
+                                                
+                                                $stars = $result['avg_star'];
+
+                                                switch ($stars) {
+                                                    case  (1):
+                                                    echo "
+                                                    <span class='fa fa-star checked'></span>
+                                                    <span class='fa fa-star empty'></span>
+                                                    <span class='fa fa-star empty'></span>
+                                                    <span class='fa fa-star empty'></span>
+                                                    <span class='fa fa-star empty'></span>
+                                                </div>";
+                                                    break;
+                                                    case  (2):
+                                                        echo "
+                                                        <span class='fa fa-star checked'></span>
+                                                        <span class='fa fa-star checked'></span>
+                                                        <span class='fa fa-star empty'></span>
+                                                        <span class='fa fa-star empty'></span>
+                                                        <span class='fa fa-star empty'></span>
+                                                    </div>";
+                                                    break;
+                                                    case  (3):
+                                                        echo "
+                                                        <span class='fa fa-star checked'></span>
+                                                        <span class='fa fa-star checked'></span>
+                                                        <span class='fa fa-star checked'></span>
+                                                        <span class='fa fa-star empty'></span>
+                                                        <span class='fa fa-star empty'></span>
+                                                    </div>";
+                                                    break;
+                                                    case  (4):
+                                                        echo "
+                                                        <span class='fa fa-star checked'></span>
+                                                        <span class='fa fa-star checked'></span>
+                                                        <span class='fa fa-star checked'></span>
+                                                        <span class='fa fa-star checked'></span>
+                                                        <span class='fa fa-star empty'></span>
+                                                    </div>";
+                                                    break;
+                                                    case  (5):
+                                                        echo "
+                                                        <span class='fa fa-star checked'></span>
+                                                        <span class='fa fa-star checked'></span>
+                                                        <span class='fa fa-star checked'></span>
+                                                        <span class='fa fa-star checked'></span>
+                                                        <span class='fa fa-star checked'></span>
+                                                    </div>";
+                                                    break;
+                                                            
+                                                    default:
+                                                    echo "<div class='d-flex align-items-center mb-1 mr-2'>
+                                                    <span class='fa fa-star empty'></span>
+                                                    <span class='fa fa-star empty'></span>
+                                                    <span class='fa fa-star empty'></span>
+                                                    <span class='fa fa-star empty'></span>
+                                                    <span class='fa fa-star empty'></span>
+                                                    </div>";
+                                            }
+                                            
+                                        echo "<p class='h-review-p mb-2'>{$result['total_review']} Reviews</p>
+                                             </div>
                                         </div>
-                                        <p class='h-review-p mb-2'>{$result['total_review']} Reviews</p>
                                     </div>
                                 </div>
-
                             </div>
-
-                        </div>
-                    </div>"
+                    "
                     ?>
                     <div class='mt-5'>
                         <ul class='nav nav-tabs' id='myTab' role='tablist'>
@@ -188,7 +247,7 @@ else {
                 <div class='col-lg-4'>
                     <div class='pd-product-info d-flex align-items-center justify-content-between'>
                         <div class='d-flex align-items-center'>
-                            <img src='../assests/images/icon_hot.png' class='icon-ht' alt=''>
+                            <img src='../assests/images/trending.png' class='icon-ht' alt=''>
                             <p>{$resultSet['product_id']}</p>
                         </div>
                         <span class=''>
@@ -237,11 +296,7 @@ else {
                         <span>Specifications</span>
                     </div>
                     <div class='pd-spec-details'>
-                        <span class='py-5'>Features: TR; Lightweight; Oversized. <br>
-                            Retro horn-rimmed style of this frame is brought right up to date by the unique coloring and lightweight TR construction.
-                            The flexible material makes this frame unbreakable. This stylish oversized frame maintains comfort and bold character.
-                            The cone-shaped hinge feature also makes it stand out
-                        </span>
+                        <span class='py-5'></span>
                         <ul class='py-4'>
                             <li class='pb-2'> Brand: {$resultSet['brand']}</li>
                             <li class='pb-2'> Total Width: {$resultSet['temple_size']} mm</li>
