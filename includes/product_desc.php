@@ -49,12 +49,12 @@ else {
                                 </div>
                                 <div class="pd-product-control-item">
                                     <picture class="imgBox">
-                                        <img src="../assests/images/800-black-1.jpg" class="w-100" alt="">
+                                        <img src="../assests/images/562N-black-1.jpg" class="w-100" alt="">
                                     </picture>
                                 </div>
                                 <div class="pd-product-control-item">
                                     <picture class="imgBox">
-                                        <img src="../assests/images/800-black-1.jpg" class="w-100" alt="">
+                                        <img src="../assests/images/683-black-1.jpg" class="w-100" alt="">
                                     </picture>
                                 </div>
                                 <div class="pd-product-control-item">
@@ -72,7 +72,7 @@ else {
                         echo "
                         <div class='pd-pic-div d-flex flex-row align-items-center justify-content-center w-100 col-lg-11'>
                             <picture class='d-flex  justify-content-center'>
-                                <img class='pd-img' src='../assests/images/{$result['image']}' alt=''>
+                                <img class='pd-img' id='main-image' src='../assests/images/{$result['image']}' alt=''>
                             </picture>
                         </div>
                     </div>

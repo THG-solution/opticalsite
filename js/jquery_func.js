@@ -24,7 +24,7 @@ $(document).ready(function () {
     });
     var productContainer = $('#product-list-item'), gender = [], gen = [], shape = [], shp = [], material = [], mtrl = [], colour = [], clr = []
     $("input[type='checkbox']").change(function() {
-        if ($(this).attr('id') === 'gender') 
+        if ($(this).attr('id') === 'gender')
         {
             gen = []
             if (this.checked) {
@@ -115,18 +115,23 @@ $(document).ready(function () {
             }
         }
     });
+    $('img').click(function() {
+        $('#main-image').attr('src', $(this).attr('src'))
+    })
     // $('#search-bar').focus(function() {
     //     $('#search-bar').css('width', '80%').fadeOut(2000), () => {
     //         $('#search-bar').css('display', 'block')
     //     };
     // });
-    // $("a").mouseenter(function() {
-    //     $(this).siblings().css('display', 'block')
-    // });
+    $("a").hover(function() {
+        if ($(this).hasClass('dropdown-toggle'))
+            $(this).dropdown('toggle');
+    });
+    $('div').hover(function() {
+        if ($(this).hasClass('dropdown-menu'))
+            $(this).siblings('a').dropdown('toggle');
+    })
     // $("a").mouseleave(function() {
-    //     $(this).siblings().css('display', 'none')
+    //     $(this).dropdown('toggle');
     // });
-    // $("div").hover(function () {
-    //     $(this).siblings().css('border-bottom', '2px black solid')
-    // })
 });

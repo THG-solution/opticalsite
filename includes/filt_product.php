@@ -28,18 +28,18 @@
                         $base_price = $result['price'];
                         if (empty($_GET['to'])){
                             // $ip = $_SERVER['REMOTE_ADDR'];
-                            $ip = '39.40.27.157';
-                            $details = json_decode(file_get_contents("https://api.ipdata.co/{$ip}?api-key=test"));
-                            $v = $details->currency->code;
-                            $con_price = round(($base_price * $response->conversion_rates->$v), 2);
-                            $GLOBALS['symbol'] = '$';
+                        //     $ip = '39.40.27.157';
+                        //     $details = json_decode(file_get_contents("https://api.ipdata.co/{$ip}?api-key=test"));
+                        //     $v = $details->currency->code;
+                            $con_price = round(($base_price * $response->conversion_rates->USD), 2);
+                        //     $GLOBALS['symbol'] = '$';
                         }
                         else {
                             $val = $_GET['to'];
                             if ($val == 'USD') $GLOBALS['symbol'] = '$';
                             else if ($val == 'EUR') $GLOBALS['symbol'] = '&euro;';
                             else if ($val == 'PKR') $GLOBALS['symbol'] = 'Rs';
-                            $con_price = round(($base_price * $response->conversion_rates->$val), 2);}
+                            $con_price = round(($base_price * $response->conversion_rates->USD), 2);}
                     }
                 }
                 catch(Exception $e) {

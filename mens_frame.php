@@ -18,7 +18,7 @@
         </div>
         <?php include "includes/filter_bar.php" ?>
         <div id="product-list-item">
-      <?php include "includes/product.php" ?>
+      <?php include "includes/filt_product.php" ?>
     </div>
     </div>
     <script src="js/jquery-3.4.1.js"></script>

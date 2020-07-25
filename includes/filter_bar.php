@@ -1,8 +1,6 @@
-<img src="gl.png" alt="">
-<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-
+<nav class="navbar sticky-top navbar-expand-lg navbar-light" id="filter_nav">
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto ">
+    <ul class="navbar-nav mr-auto ml-5 ">
       <li class="nav-item dropdown mx-2">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
@@ -127,7 +125,7 @@
         </div>
       </li>
     </ul>
-    <ul class="navbar-nav">
+    <ul class="navbar-nav mr-5">
       <li class="nav-item dropdown mx-2">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
@@ -144,11 +142,6 @@
           </div>
           <div class="dropdown-item "><input type="checkbox" href="#"><span class="pl-2"> Price: low to high</span></input>
           </div>
-        </div>
-      </li>
-      <li class="nav-item dropdown mx-2">
-        <div class="nav-link btn btn-outline-primary rounded-circle">
-          Try On
         </div>
       </li>
     </ul>

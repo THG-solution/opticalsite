@@ -78,16 +78,18 @@
             </div>
             <div class="dropdown mt-3">
                 <a class="dropdown-toggle pb-2 px-2" id="nv-link" id="dd-toggle" data-toggle="dropdown" data-hover="dropdown">
-                <span style="cursor: pointer" id="symbol"><?php 
+                <span style="cursor: pointer" id="symbol"><?php echo '$';
                 // $ip = $_SERVER['REMOTE_ADDR'];
-                $ip = '39.40.27.157';
-                            $details = json_decode(file_get_contents("https://api.ipdata.co/{$ip}?api-key=test")); 
-                            echo $details->currency->symbol;?></span> 
-                <span style="cursor: pointer" id="currency" ><?php 
+                // $ip = '39.40.27.157';
+                //             $details = json_decode(file_get_contents("https://api.ipdata.co/{$ip}?api-key=test")); 
+                //             echo $details->currency->symbol;?>
+                </span> 
+                <span style="cursor: pointer" id="currency" ><?php echo 'USD';
                 // $ip = $_SERVER['REMOTE_ADDR'];
-                $ip = '39.40.27.157';
-                            $details = json_decode(file_get_contents("https://api.ipdata.co/{$ip}?api-key=test")); 
-                            echo $details->currency->code;?></span>
+                // $ip = '39.40.27.157';
+                //             $details = json_decode(file_get_contents("https://api.ipdata.co/{$ip}?api-key=test")); 
+                //             echo $details->currency->code;?>
+                            </span>
                 </a>
                 <ul class="dropdown-menu" id="dropdown-currency">
                     <li class="dropdown-item" id="USD" onClick="currency_conversion('USD')" >$ USD</li>
