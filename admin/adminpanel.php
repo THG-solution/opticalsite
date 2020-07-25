@@ -11,8 +11,10 @@
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
+    <!-- <link rel="stylesheet" href="../css/admin.css"> -->
+    <link href="../css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
     <link rel="stylesheet" href="../css/admin.css">
-
+   
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
@@ -93,255 +95,283 @@
                     </div>
                 </div>
             </nav>
-            
-            <h1>Admin Panel</h1>
-            <table class="product-table cmn-tables-css">
-                    <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Images</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Category</th>
-                        <th>Brand</th>
-                        <th>Action</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>Samsung Galaxy S8</td>
-                        <td></td>
-                        <td>900</td>
-                        <td>10</td>
-                        <td>Mobiles</td>
-                        <td>Samsung</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Samsung Galaxy S8</td>
-                        <td></td>
-                        <td>900</td>
-                        <td>10</td>
-                        <td>Mobiles</td>
-                        <td>Samsung</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Samsung Galaxy S8</td>
-                        <td></td>
-                        <td>900</td>
-                        <td>10</td>
-                        <td>Mobiles</td>
-                        <td>Samsung</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Samsung Galaxy S8</td>
-                        <td></td>
-                        <td>900</td>
-                        <td>10</td>
-                        <td>Mobiles</td>
-                        <td>Samsung</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Samsung Galaxy S8</td>
-                        <td></td>
-                        <td>900</td>
-                        <td>10</td>
-                        <td>Mobiles</td>
-                        <td>Samsung</td>
-                        <td></td>
-                    </tr>
-                    </tbody>
-                </table>
-                <br>
-                <h1>Admin List</h1>
-                <table class="admin-table cmn-tables-css">
-                    <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>email</th>
-                        <th>password</th>
-                        <th>Action</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>Hasnain</td>
-                        <td>hasnainshoaib45@gmail.com</td>
-                        <td>223123</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Hasnain</td>
-                        <td>hasnainshoaib45@gmail.com</td>
-                        <td>223123</td>
-                        <td></td>
-                     </tr>
-                    <tr>
-                        <td>Hasnain</td>
-                        <td>hasnainshoaib45@gmail.com</td>
-                        <td>223123</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Hasnain</td>
-                        <td>hasnainshoaib45@gmail.com</td>
-                        <td>223123</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Hasnain</td>
-                        <td>hasnainshoaib45@gmail.com</td>
-                        <td>223123</td>
-                        <td></td>
-                    </tr>
-                    </tbody>
-                </table>
-                <br>
-                <h1>Customer List</h1>
-                <table class="customer-table cmn-tables-css">
-                    <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Mobile</th>
-                        <th>Address</th>
-                        <th>Action</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>Musaab</td>
-                        <td>musaab.98@gmail.com</td>
-                        <td>031341323</td>
-                        <td>Dastagir</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Musaab</td>
-                        <td>musaab.98@gmail.com</td>
-                        <td>031341323</td>
-                        <td>Dastagir</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Musaab</td>
-                        <td>musaab.98@gmail.com</td>
-                        <td>031341323</td>
-                        <td>Dastagir</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Musaab</td>
-                        <td>musaab.98@gmail.com</td>
-                        <td>031341323</td>
-                        <td>Dastagir</td>
-                        <td></td>
-                    </tr>
-                    </tbody>
-                </table>
-                <br>
-                <h1>Order List</h1>
-                <table class="order-table cmn-tables-css">
-                    <thead>
-                    <tr>
-                        <th>Order</th>
-                        <th>Product ID</th>
-                        <th>Product Name</th>
-                        <th>Quantity</th>
-                        <th>Trx id</th>
-                        <th>Payment Status</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>Samsung Galaxy S8</td>
-                        <td>1</td>
-                        <td>398v271x897m290a7</td>
-                        <td>Complete</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>Samsung Galaxy S8</td>
-                        <td>1</td>
-                        <td>398v271x897m290a7</td>
-                        <td>Complete</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>Samsung Galaxy S8</td>
-                        <td>1</td>
-                        <td>398v271x897m290a7</td>
-                        <td>Complete</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>Samsung Galaxy S8</td>
-                        <td>1</td>
-                        <td>398v271x897m290a7</td>
-                        <td>Complete</td>
-                    </tr>
-                    </tbody>
-                </table>
-                <br>
-                <h1>Brand List</h1>
-                <table class="brand-table cmn-tables-css">
-                    <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Action</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>HP</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>HP</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>HP</td>
-                        <td></td>
-                    </tr>
-                    </tbody>
-                </table>
-                <br>
-                <h1>Category List</h1>
-                <table class="category-table cmn-tables-css">
-                    <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Action</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>Notebook</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Notebook</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Notebook</td>
-                        <td></td>
-                    </tr>
-                    </tbody>
-                </table>
-            
+            <div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">Simple Table</h4>
+                        <p class="card-category">Here is a subtitle for this table</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class="text-primary">
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        Name
+                                    </th>
+                                    <th>
+                                        Country
+                                    </th>
+                                    <th>
+                                        City
+                                    </th>
+                                    <th>
+                                        Salary
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            1
+                                        </td>
+                                        <td>
+                                            Dakota Rice
+                                        </td>
+                                        <td>
+                                            Niger
+                                        </td>
+                                        <td>
+                                            Oud-Turnhout
+                                        </td>
+                                        <td class="text-primary">
+                                            $36,738
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            2
+                                        </td>
+                                        <td>
+                                            Minerva Hooper
+                                        </td>
+                                        <td>
+                                            Curaçao
+                                        </td>
+                                        <td>
+                                            Sinaai-Waas
+                                        </td>
+                                        <td class="text-primary">
+                                            $23,789
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Sage Rodriguez
+                                        </td>
+                                        <td>
+                                            Netherlands
+                                        </td>
+                                        <td>
+                                            Baileux
+                                        </td>
+                                        <td class="text-primary">
+                                            $56,142
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            4
+                                        </td>
+                                        <td>
+                                            Philip Chaney
+                                        </td>
+                                        <td>
+                                            Korea, South
+                                        </td>
+                                        <td>
+                                            Overland Park
+                                        </td>
+                                        <td class="text-primary">
+                                            $38,735
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            5
+                                        </td>
+                                        <td>
+                                            Doris Greene
+                                        </td>
+                                        <td>
+                                            Malawi
+                                        </td>
+                                        <td>
+                                            Feldkirchen in Kärnten
+                                        </td>
+                                        <td class="text-primary">
+                                            $63,542
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            6
+                                        </td>
+                                        <td>
+                                            Mason Porter
+                                        </td>
+                                        <td>
+                                            Chile
+                                        </td>
+                                        <td>
+                                            Gloucester
+                                        </td>
+                                        <td class="text-primary">
+                                            $78,615
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="card card-plain">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title mt-0">Table on Plain Background</h4>
+                        <p class="card-category">Here is a subtitle for this table</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead class="">
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        Name
+                                    </th>
+                                    <th>
+                                        Country
+                                    </th>
+                                    <th>
+                                        City
+                                    </th>
+                                    <th>
+                                        Salary
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            1
+                                        </td>
+                                        <td>
+                                            Dakota Rice
+                                        </td>
+                                        <td>
+                                            Niger
+                                        </td>
+                                        <td>
+                                            Oud-Turnhout
+                                        </td>
+                                        <td>
+                                            $36,738
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            2
+                                        </td>
+                                        <td>
+                                            Minerva Hooper
+                                        </td>
+                                        <td>
+                                            Curaçao
+                                        </td>
+                                        <td>
+                                            Sinaai-Waas
+                                        </td>
+                                        <td>
+                                            $23,789
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Sage Rodriguez
+                                        </td>
+                                        <td>
+                                            Netherlands
+                                        </td>
+                                        <td>
+                                            Baileux
+                                        </td>
+                                        <td>
+                                            $56,142
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            4
+                                        </td>
+                                        <td>
+                                            Philip Chaney
+                                        </td>
+                                        <td>
+                                            Korea, South
+                                        </td>
+                                        <td>
+                                            Overland Park
+                                        </td>
+                                        <td>
+                                            $38,735
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            5
+                                        </td>
+                                        <td>
+                                            Doris Greene
+                                        </td>
+                                        <td>
+                                            Malawi
+                                        </td>
+                                        <td>
+                                            Feldkirchen in Kärnten
+                                        </td>
+                                        <td>
+                                            $63,542
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            6
+                                        </td>
+                                        <td>
+                                            Mason Porter
+                                        </td>
+                                        <td>
+                                            Chile
+                                        </td>
+                                        <td>
+                                            Gloucester
+                                        </td>
+                                        <td>
+                                            $78,615
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
+</div>
+      
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <!-- Popper.JS -->
