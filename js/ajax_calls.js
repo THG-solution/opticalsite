@@ -10,7 +10,7 @@ currency_conversion = (conTo) => {
 }
 
 filter_product = (val) => {
-    alert(val)
+    // alert(val)
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {

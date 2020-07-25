@@ -47,6 +47,18 @@ class Table
         return $result;
     }
     
+    public function getProducts($query) {
+        $result = $this->db->conn->query($query);        
+            $resultArray = array();
+            while ($item = mysqli_fetch_array($result, MYSQLI_ASSOC))
+            {
+                $resultArray[] = $item;
+            }
+            return $resultArray;
+        $result=mysqli_fetch_array($result, MYSQLI_ASSOC);
+        return $result;
+    }
+
     // function which execute any query passes to it
     public function queryData($query)
     {
@@ -59,7 +71,6 @@ class Table
             {
                 $resultArray[] = $item;
             }
-    
             return $resultArray;
         }
         $result=mysqli_fetch_array($result, MYSQLI_ASSOC);
