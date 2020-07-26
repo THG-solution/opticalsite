@@ -7,8 +7,14 @@
     else {
         include "database/db_controller.php";
         include "database/db_table.php";}
-    $req_url = 'https://v6.exchangerate-api.com/v6/7b1169dd93ff5a2c2b27eeff/latest/USD';
-    $response_json = file_get_contents($req_url);
+    $con = true;
+    try {
+        $req_url = 'https://v6.exchangerate-api.com/v6/7b1169dd93ff5a2c2b27eeff/latest/USD';
+        $response_json = file_get_contents($req_url);
+    }
+    catch (Exception $e) {
+        $con = false;
+    }
     $db = new DBController();
     $product = new Table($db);
     $resultSet = $product->queryData("SELECT DISTINCT pd.product_id AS product_id, (SELECT c.image from product_colors c WHERE c.product_id=pd.product_id LIMIT 1) AS image, (SELECT  p.avg_star from products p where pd.product_id=p.product_id) AS avg_star,(SELECT  p.total_review from products p where pd.product_id=p.product_id) AS total_review, (SELECT  p.price from products p where pd.product_id=p.product_id) AS price  FROM products pd");
@@ -26,8 +32,9 @@
                             // $ip = '39.40.27.157';
                             // $details = json_decode(file_get_contents("https://api.ipdata.co/{$ip}?api-key=test"));
                             // $v = $details->currency->code;
-                            $con_price = round(($base_price * $response->conversion_rates->USD), 2);
-                            // $GLOBALS['symbol'] = '$';
+                            if ($con) $con_price = round(($base_price * $response->conversion_rates->$val), 2);
+                            else $con_price = $result['price'];
+                            $symbol = '$';
                         }
                         else {
                             $val = $_GET['to'];
@@ -35,7 +42,9 @@
                             else if ($val == 'EUR') $GLOBALS['symbol'] = '&euro;';
                             else if ($val == 'PKR') $GLOBALS['symbol'] = 'Rs';
                             else if ($val == 'INR') $GLOBALS['symbol'] = '&#x20B9;';
-                            $con_price = round(($base_price * $response->conversion_rates->$val), 2);}
+                            if ($con) $con_price = round(($base_price * $response->conversion_rates->$val), 2);
+                            else $con_price = $result['price'];
+                        }
                     }
                 }
                 catch(Exception $e) {

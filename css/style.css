@@ -307,14 +307,13 @@
 }
 #nv-link:hover  {
     border-bottom: 2px black solid !important;
-    border-width: 0 0 2px 0 !important;
 }
-/* .nav-anime {
-    border-bottom: 2px black solid;
-} */
 .carousel-item img {
     width: 100%;
     height: 450px;
+}
+.dropdown-menu {
+    top: 40px !important;
 }
 .dropdown-menu #sign-in, .dropdown-menu #sign-up {
     width: 200px;
@@ -323,6 +322,12 @@
     padding: 5px;
     left: -100px;
     top: 60%;
+}
+#dropdown-user, #dropdown-currency {
+    top: 30px !important;
+}
+#dd-toggle {
+    cursor: pointer;
 }
 #dd-toggle::after {
     display: none !important;
@@ -367,4 +372,7 @@
 }
 #filter_nav {
     background-color: #eef !important;
+}
+.dropdown-toggle:hover  {
+    border-bottom: 2px solid black !important ;
 }

@@ -20,28 +20,28 @@
                 </div>
             </li>
             <li class="nav-item dropdown mr-lg-2">
-                <a class="nav-link dropdown-toggle" id="nv-link" id="dd-toggle" href="#" role="button"
-                    data-hover="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <a class="nav-link dropdown-toggle" id="nv-link" id="dd-toggle" href="#"
+                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     MEN
                 </a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" id="dd-item" href="mens_frame.php">Men's Eyeglasses</a>
-                    <a class="dropdown-item" id="dd-item" href="#">Men's Sunglasses</a>
-                    <a class="dropdown-item" id="dd-item" href="#">All Men's Glasses</a>
+                    <a class="dropdown-item" id="dd-item" href="mens_sunglass.php">Men's Sunglasses</a>
+                    <a class="dropdown-item" id="dd-item" href="mens_allglass.php">All Men's Glasses</a>
                     <a class="dropdown-item" id="dd-item" href="#">New Arrivals</a>
                     <a class="dropdown-item" id="dd-item" href="#">Quick Frame Finder</a>
                     <a class="dropdown-item" id="dd-item" href="#">Shop By Face Shape</a>
                 </div>
             </li>
             <li class="nav-item dropdown mr-lg-2">
-                <a class="nav-link dropdown-toggle" id="nv-link" id="dd-toggle" href="#" role="button" data-hover="dropdown"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" id="nv-link" id="dd-toggle" href="#" 
+                    data-toggle="dropdown" >
                     WOMEN
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" id="dd-item" href="#">Women's Eyeglasses</a>
-                    <a class="dropdown-item" id="dd-item" href="#">Women's Sunglasses</a>
-                    <a class="dropdown-item" id="dd-item" href="#">All Women's Glasses</a>
+                    <a class="dropdown-item" id="dd-item" href="womens_frame.php">Women's Eyeglasses</a>
+                    <a class="dropdown-item" id="dd-item" href="womens_sunglass.php">Women's Sunglasses</a>
+                    <a class="dropdown-item" id="dd-item" href="womens_allglass.php">All Women's Glasses</a>
                     <a class="dropdown-item" id="dd-item" href="#">New Arrivals</a>
                     <a class="dropdown-item" id="dd-item" href="#">Quick Frame Finder</a>
                     <a class="dropdown-item" id="dd-item" href="#">Shop By Face Shape</a>
@@ -92,10 +92,10 @@
                             </span>
                 </a>
                 <ul class="dropdown-menu" id="dropdown-currency">
-                    <li class="dropdown-item" id="USD" onClick="currency_conversion('USD')" >$ USD</li>
-                    <li class="dropdown-item" id="EUR" onClick="currency_conversion('EUR')" >&euro; EUR</li>
-                    <li class="dropdown-item" id="PKR" onClick="currency_conversion('PKR')" >Rs PKR</li>
-                    <li class="dropdown-item" id="INR" onClick="currency_conversion('INR')" >&#x20B9; IND</li>
+                    <li class="dropdown-item currency_val" id="USD" >$ USD</li>
+                    <li class="dropdown-item currency_val" id="EUR" >&euro; EUR</li>
+                    <li class="dropdown-item currency_val" id="PKR" >Rs PKR</li>
+                    <li class="dropdown-item currency_val" id="INR" >&#x20B9; IND</li>
                 </ul>
             </div>
         </div>
