@@ -14,7 +14,8 @@
     <!-- <link rel="stylesheet" href="../css/admin.css"> -->
     <link href="../css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
     <link rel="stylesheet" href="../css/admin.css">
-
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> -->
+  
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
@@ -23,6 +24,10 @@
 
 <body>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    
     <?php
     if (!file_exists("database/db_controller.php")) {
         include "../database/db_controller.php";
@@ -47,16 +52,31 @@
 
                 <?php
 
+                // Checking if id is set or not, if it is set then display that specific id page
                 if (isset($_GET['id'])) {
                     switch ($_GET['id']) {
                         case 'product':
                             include "../includes/admin_product.php";
                             break;
+                        case 'order':
+                            include "../includes/admin_order.php";
+                            break;
+                        case 'category':
+                            include "../includes/admin_category.php";
+                            break;
+                        case 'admin':
+                            include "../includes/admin_admin.php";
+                            break;
+                        case 'customer':
+                            include "../includes/admin_customer.php";
+                            break;        
                         default:
                             include "../includes/admin_dashboard.php";
                             break;
                     }
-                } else {
+                }
+                // Otherwise display the dashboard page
+                else {
                     include "../includes/admin_dashboard.php";
                 }
                 ?>
