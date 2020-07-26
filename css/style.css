@@ -19,13 +19,17 @@
     height: 20px;
     background: rgb(0, 0, 0);
     border-radius: 50%;
+    border: 1px solid #ddd;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
 }
 
 .color-dd-container{
     display: flex;
     flex-wrap: wrap;
     -webkit-box-pack: justify;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 435px;
     padding-top: 20px;
 
@@ -40,14 +44,15 @@
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
+    -webkit-justify-content: flex-start;
     -ms-flex-pack: justify;
-    justify-content: space-between;
+    justify-content: flex-start;
     
 }
 
 .product-list-item{
     width: 27%;
+    margin-right: 6%;
 }
 
 
@@ -57,14 +62,13 @@
     position: relative;
     min-height: 130px;
     transition: all 0.3s ease 0s;
-    min-height: 130px;
-    width:320px;
+    width: 100%;
     height: 170px;
 }
 
 .product-img img{
     /* width: 27%; */
-    width:320px;
+    width: 100%;
     height: 170px;
 }
 
@@ -290,7 +294,7 @@
     padding: 0px 4px;
 }
 
-.dropdown-menu #dd-item {
+.dropdown-menu #dd-item, #nv-link {
     color: grey;
 }
 .dropdown-menu.show {
@@ -301,15 +305,15 @@
 .dropdown-menu #dd-item:hover {
     color: black;
 }
-#nv-link:hover {
-    border-bottom: 2px black solid;
-}
-.nav-anime {
-    border-bottom: 2px black solid;
+#nv-link:hover  {
+    border-bottom: 2px black solid !important;
 }
 .carousel-item img {
     width: 100%;
     height: 450px;
+}
+.dropdown-menu {
+    top: 40px !important;
 }
 .dropdown-menu #sign-in, .dropdown-menu #sign-up {
     width: 200px;
@@ -318,6 +322,12 @@
     padding: 5px;
     left: -100px;
     top: 60%;
+}
+#dropdown-user, #dropdown-currency {
+    top: 30px !important;
+}
+#dd-toggle {
+    cursor: pointer;
 }
 #dd-toggle::after {
     display: none !important;
@@ -359,4 +369,10 @@
 }
 #dropdown-currency li:hover {
     background-color: #26ABFF;
+}
+#filter_nav {
+    background-color: #eef !important;
+}
+.dropdown-toggle:hover  {
+    border-bottom: 2px solid black !important ;
 }

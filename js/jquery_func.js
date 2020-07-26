@@ -1,7 +1,25 @@
+var productContainer = $('#product-list-item'), loc = '', pgdata = '', gender = [], gen = [], shape = [], shp = [], material = [], mtrl = [], colour = [], clr = []
+var productContainerIndex = $('#product-list-item-index')
+let uri = $(location).attr("href")
+$(window).on( "load", function() {
+    $('#'+$('#currency').text()).addClass('active')
+    if (uri.includes('mens_frame'))
+        pgdata = 'meneye'
+    else if (uri.includes('mens_sunglass'))
+        pgdata = 'mensunglass'
+    else if (uri.includes('mens_allglass'))
+        pgdata = 'menall'
+    if (uri.includes('womens_frame'))
+        pgdata = 'womeneye'
+    else if (uri.includes('womens_sunglass'))
+        pgdata = 'womensunglass'
+    else if (uri.includes('womens_allglass'))
+        pgdata = 'womenall'
+    $.get('includes/filt_product.php?to='+loc+'&pgdata='+pgdata+'&gender='+gen+'&shape='+shp+'&material='+mtrl+'&colour='+clr, function(response) {
+        productContainer.html(response)
+    })
+});
 $(document).ready(function () {
-    $(window).on( "load", function() {
-        $('#'+$('#currency').text()).addClass('active')
-    });
     $('#sign-in').click(function () {
         $('#loginmodal').modal()
         $('#nv-pill .nav-item:last-child .nav-link').removeClass('active')
@@ -23,28 +41,130 @@ $(document).ready(function () {
         $(this).addClass('active')
     });
     $("input[type='checkbox']").change(function() {
-        if (this.checked) {
-            alert($(this).attr('id'))
-            $.get('includes/filt_product.php?gender='+$(this).val(), (data, status) => {
-                alert("ds", data,status)
-            })
+        if ($(this).attr('id') === 'gender')
+        {
+            gen = []
+            if (this.checked) {
+                gender.push($(this).val())
+                for (let elements of gender.values()) { 
+                    gen.push("'"+ elements + "'");
+                } 
+                $.get('includes/filt_product.php?to='+loc+'&pgdata='+pgdata+'&gender='+gen+'&shape='+shp+'&material='+mtrl+'&colour='+clr, function(response) {
+                    productContainer.html(response)
+                })
+            }
+            else if (!this.checked) {
+                gender = gender.filter(el => el != $(this).val())
+                for (let elements of gender.values()) { 
+                    gen.push("'"+ elements + "'");
+                } 
+                $.get('includes/filt_product.php?to='+loc+'&pgdata='+pgdata+'&gender='+gen+'&shape='+shp+'&material='+mtrl+'&colour='+clr, function(response) {
+                    productContainer.html(response)
+                })
+            }
         }
-        else {
-            alert($(this).val())
+        else if ($(this).attr('id') === 'shape')
+        {
+            shp = []
+            if (this.checked) {
+                shape.push($(this).val())
+                for (let elements of shape.values()) { 
+                    shp.push("'"+ elements + "'");
+                } 
+                $.get('includes/filt_product.php?to='+loc+'&pgdata='+pgdata+'&gender='+gen+'&shape='+shp+'&material='+mtrl+'&colour='+clr, function(response) {
+                    productContainer.html(response)
+                })
+            }
+            else if (!this.checked) {
+                shape = shape.filter(el => el != $(this).val())
+                for (let elements of shape.values()) { 
+                    shp.push("'"+ elements + "'");
+                } 
+                $.get('includes/filt_product.php?to='+loc+'&pgdata='+pgdata+'&gender='+gen+'&shape='+shp+'&material='+mtrl+'&colour='+clr, function(response) {
+                    productContainer.html(response)
+                })
+            }
         }
+        else if ($(this).attr('id') === 'material')
+        {
+            mtrl = []
+            if (this.checked) {
+                material.push($(this).val())
+                for (let elements of material.values()) { 
+                    mtrl.push("'"+ elements + "'");
+                } 
+                $.get('includes/filt_product.php?to='+loc+'&pgdata='+pgdata+'&gender='+gen+'&shape='+shp+'&material='+mtrl+'&colour='+clr, function(response) {
+                    productContainer.html(response)
+                })
+            }
+            else if (!this.checked) {
+                material = material.filter(el => el != $(this).val())
+                for (let elements of material.values()) { 
+                    mtrl.push("'"+ elements + "'");
+                } 
+                $.get('includes/filt_product.php?to='+loc+'&pgdata='+pgdata+'&gender='+gen+'&shape='+shp+'&material='+mtrl+'&colour='+clr, function(response) {
+                    productContainer.html(response)
+                })
+            }
+        }
+        else if ($(this).attr('id') === 'colour')
+        {
+            clr = []
+            if (this.checked) {
+                $(this).parent('.color-item').css('border-color', 'blue')
+                colour.push($(this).val())
+                for (let elements of colour.values()) { 
+                    clr.push("'"+ elements + "'");
+                } 
+                $.get('includes/filt_product.php?to='+loc+'&pgdata='+pgdata+'&gender='+gen+'&shape='+shp+'&material='+mtrl+'&colour='+clr, function(response) {
+                    productContainer.html(response)
+                })
+            }
+            else if (!this.checked) {
+                $(this).parent('.color-item').css('border-color', 'grey')
+                colour = colour.filter(el => el != $(this).val())
+                for (let elements of colour.values()) { 
+                    clr.push("'"+ elements + "'");
+                } 
+                $.get('includes/filt_product.php?to='+loc+'&pgdata='+pgdata+'&gender='+gen+'&shape='+shp+'&material='+mtrl+'&colour='+clr, function(response) {
+                    productContainer.html(response)
+                })
+            }
+        }
+    });
+    $('li').click(function() {
+        loc = $(this).attr('id')
+        if ($(this).hasClass('currency_val'))
+            if (uri.includes('index'))
+                $.get('includes/product.php?to='+loc+'&pgdata='+pgdata+'&gender='+gen+'&shape='+shp+'&material='+mtrl+'&colour='+clr, function(response) {
+                    productContainer.html(response)
+                })
+            else 
+                $.get('includes/filt_product.php?to='+loc+'&pgdata='+pgdata+'&gender='+gen+'&shape='+shp+'&material='+mtrl+'&colour='+clr, function(response) {
+                    productContainer.html(response)
+                })
+    })
+    $('img').click(function() {
+        $('#main-image').attr('src', $(this).attr('src'))
     })
     // $('#search-bar').focus(function() {
     //     $('#search-bar').css('width', '80%').fadeOut(2000), () => {
     //         $('#search-bar').css('display', 'block')
     //     };
     // });
-    // $("a").mouseenter(function() {
-    //     $(this).siblings().css('display', 'block')
-    // });
+    $("a").hover(function() {
+        if ($(this).hasClass('dropdown-toggle'))
+            $(this).dropdown('toggle');
+            $(this).css('color', 'black');
+            $(this).mouseleave(function() {
+                $(this).css('color', 'grey');
+            })
+    });
+    $('div, ul').hover(function() {
+        if ($(this).hasClass('dropdown-menu'))
+            $(this).siblings('a').dropdown('toggle');
+    })
     // $("a").mouseleave(function() {
-    //     $(this).siblings().css('display', 'none')
+    //     $(this).dropdown('toggle');
     // });
-    // $("div").hover(function () {
-    //     $(this).siblings().css('border-bottom', '2px black solid')
-    // })
 });

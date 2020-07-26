@@ -1,4 +1,3 @@
-
 <div class='product-list-container mx-5'>
 <?php 
     if (!file_exists("database/db_controller.php")) {
@@ -7,16 +6,38 @@
     else {
         include "database/db_controller.php";
         include "database/db_table.php";}
-    $req_url = 'https://v6.exchangerate-api.com/v6/7b1169dd93ff5a2c2b27eeff/latest/USD';
-    $response_json = file_get_contents($req_url);
+    $con = true;
+    try {
+        $req_url = 'https://v6.exchangerate-api.com/v6/7b1169dd93ff5a2c2b27eeff/latest/USD';
+        $response_json = file_get_contents($req_url);
+    }
+    catch (Exception $e) {
+        $con = false;
+    }
     $db = new DBController();
     $product = new Table($db);
-    $resultSet = $product->getProducts("SELECT DISTINCT pd.product_id AS product_id, (SELECT c.image from product_colors c WHERE c.product_id=pd.product_id LIMIT 1) AS image, (SELECT  p.avg_star from products p where pd.product_id=p.product_id) AS avg_star,(SELECT  p.total_review from products p where pd.product_id=p.product_id) AS total_review, (SELECT  p.price from products p where pd.product_id=p.product_id) AS price, pc.colour_name FROM products pd, product_colors pc where pc.product_id=pd.product_id 
-    and gender='" . $_GET['gender'] . "'");
+    $pgdata = ''; $gender = ''; $shape = ''; $material = ''; $colour = '';
+    if (!empty($_GET['pgdata']) && $_GET['pgdata'] == 'meneye' ) $pgdata = " and gender IN ('men','unisex') and category = 'frames' ";
+    if (!empty($_GET['pgdata']) && $_GET['pgdata'] == 'mensunglass' ) $pgdata = " and gender IN ('men','unisex') and category = 'sunglasses' ";
+    if (!empty($_GET['pgdata']) && $_GET['pgdata'] == 'menall' ) $pgdata = " and gender IN ('men','unisex')";
+    
+    if (!empty($_GET['pgdata']) && $_GET['pgdata'] == 'womeneye' ) $pgdata = " and gender IN ('women','unisex') and category = 'frames' ";
+    if (!empty($_GET['pgdata']) && $_GET['pgdata'] == 'womensunglass' ) $pgdata = " and gender IN ('women','unisex') and category = 'sunglasses' ";
+    if (!empty($_GET['pgdata']) && $_GET['pgdata'] == 'womenall' ) $pgdata = " and gender IN ('women','unisex')";
+    
+    if (!empty($_GET['gender'])) $gender = " and gender IN ({$_GET['gender']}) ";
+    if (!empty($_GET['gender']) && $_GET['gender'] == "'men'") $gender = " and gender IN ('unisex','men') ";
+    if (!empty($_GET['gender']) && $_GET['gender'] == "'women'") $gender = " and gender IN ('unisex','women') ";
+    if (!empty($_GET['gender']) && ($_GET['gender'] == "'men','women'" || $_GET['gender'] == "'women','men'")) $gender = " and gender IN ('unisex','men','women') ";
+    if (!empty($_GET['shape'])) $shape = " and frame_shape IN ({$_GET['shape']}) ";
+    if (!empty($_GET['material'])) $material = " and material IN ({$_GET['material']}) ";
+    if (!empty($_GET['colour'])) $colour = " and colour_name IN ({$_GET['colour']}) ";
+        $resultSet = $product->getProducts("SELECT DISTINCT pd.product_id AS product_id, (SELECT c.image from product_colors c WHERE c.product_id=pd.product_id LIMIT 1) AS image, (SELECT  p.avg_star from products p where pd.product_id=p.product_id) AS avg_star,(SELECT  p.total_review from products p where pd.product_id=p.product_id) AS total_review, (SELECT  p.price from products p where pd.product_id=p.product_id) AS price FROM products pd, product_colors pc where pc.product_id=pd.product_id 
+        {$pgdata}{$gender}{$shape}{$material}{$colour}");
            foreach ($resultSet as $result)
            {
             $con_price = '';
-            $GLOBALS['symbol'] = '';
+            $symbol = '';
             if(false !== $response_json) {
                 try {
                     $response = json_decode($response_json);
@@ -24,18 +45,22 @@
                         $base_price = $result['price'];
                         if (empty($_GET['to'])){
                             // $ip = $_SERVER['REMOTE_ADDR'];
-                            $ip = '39.40.27.157';
-                            $details = json_decode(file_get_contents("https://api.ipdata.co/{$ip}?api-key=test"));
-                            $v = $details->currency->code;
-                            $con_price = round(($base_price * $response->conversion_rates->$v), 2);
-                            $GLOBALS['symbol'] = '$';
+                            // $ip = '39.40.27.157';
+                            // $details = json_decode(file_get_contents("https://api.ipdata.co/{$ip}?api-key=test"));
+                            // $v = $details->currency->code;
+                            if ($con) $con_price = round(($base_price * $response->conversion_rates->$val), 2);
+                            else $con_price = $result['price'];
+                            $symbol = '$';
                         }
                         else {
                             $val = $_GET['to'];
-                            if ($val == 'USD') $GLOBALS['symbol'] = '$';
-                            else if ($val == 'EUR') $GLOBALS['symbol'] = '&euro;';
-                            else if ($val == 'PKR') $GLOBALS['symbol'] = 'Rs';
-                            $con_price = round(($base_price * $response->conversion_rates->$val), 2);}
+                            if ($val == 'USD') $symbol = '$';
+                            else if ($val == 'EUR') $symbol = '&euro;';
+                            else if ($val == 'PKR') $symbol = 'Rs';
+                            else if ($val == 'INR') $symbol = '&#x20B9;';
+                            if ($con) $con_price = round(($base_price * $response->conversion_rates->$val), 2);
+                            else $con_price = $result['price'];
+                        }
                     }
                 }
                 catch(Exception $e) {
@@ -65,7 +90,7 @@
     </ul>
     <div class='product-info d-flex align-items-center justify-content-between'>
         <div class='d-flex align-items-center'>
-            <img src='../assests/images/icon_hot.png' class='icon-ht' alt=''>
+            <img src='../assests/images/trending.png' class='icon-ht' alt=''>
             <p>{$result['product_id']}</p>
         </div>
         <span class=''> 

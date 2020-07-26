@@ -13,7 +13,7 @@
         <?php include "includes/head.php" ?>
         <div class="row col-12">
             <!-- <div class="col-8 offset-2"> -->
-                <img class="col-10 offset-1" src="assests/images/men_eyeframe.png" alt="">
+                <img class="col-10 offset-1" src="assests/images/women_eyeframe.png" alt="">
             <!-- </div> -->
         </div>
         <?php include "includes/filter_bar.php" ?>
