@@ -167,4 +167,16 @@ $(document).ready(function () {
     // $("a").mouseleave(function() {
     //     $(this).dropdown('toggle');
     // });
+    $('.ls-type-box').on('click', function() {
+        if($(this).hasClass("ls-type-box-focus"))
+        {
+            $(this).removeClass("ls-type-box-focus ");
+        }
+        else
+        {
+            $(".ls-type-box").removeClass("ls-type-box-focus ");
+            $(this).addClass("ls-type-box-focus");
+
+        }
+    });
 });

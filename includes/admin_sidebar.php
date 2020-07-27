@@ -13,7 +13,7 @@
         <li id="admin"  class="m-3">
             <a href="/admin/index.php?id=admin">Admin</a>
         </li>
-        <li id="category" class="m-3">
+        <!-- <li id="category" class="m-3">
             <a href="#categorySubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Category</a>
             <ul class="collapse list-unstyled" id="categorySubmenu">
                 <li>
@@ -26,15 +26,19 @@
                     <a href="#">Category 3</a>
                 </li>
             </ul>
-        </li>
+        </li> -->
+
         <li id="order" class="m-3">
             <a href="/admin/index.php?id=order">Order</a>
+        </li>
+        <li id="customer" class="m-3">
+            <a href="/admin/index.php?id=customer">Customer</a>
         </li>
         <li id="product" class="m-3">
             <a href="/admin/index.php?id=product">Product</a>
         </li>
-        <li id="brand" class="m-3">
-            <a href="/admin/index.php?id=brand">Brand</a>
+        <li id="category" class="m-3">
+            <a href="/admin/index.php?id=category">Category</a>
         </li>
     </ul>
     

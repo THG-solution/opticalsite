@@ -376,3 +376,182 @@
 .dropdown-toggle:hover  {
     border-bottom: 2px solid black !important ;
 }
+
+.pc-lensCtr-container{
+    color: rgb(38, 171, 255);
+    cursor: pointer;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+    margin: 20px 0px 40px;
+}
+
+.pc-lens-ctr-item-contaner{
+    display: flex;
+}
+
+.pc-lens-ctr-item-contaner > div{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-shrink: 0;
+    height: 20px;
+    font-size: 14px;
+    color: rgb(153, 153, 153);
+    padding: 0px 10px;
+    background: rgb(255, 255, 255);
+}
+
+.pc-lens-ctr-line{
+    display: block;
+    width: 100px;
+    height: 1px;
+    background: rgb(153, 153, 153);
+}
+
+.pc-lens-bar-container{
+    position: relative;
+    padding: 28px 20px 12px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(214, 214, 214);
+    border-image: initial;
+    background: rgb(255, 255, 255);
+}
+
+.pc-lens-bar-title-line{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.pc-lens-bar-title{
+    font-size: 20px;
+    color: rgb(51, 51, 51);
+    font-weight: 400;
+    margin-bottom: 0px;
+}
+
+.pc-lens-bar-price-item{
+    font-size: 13px;
+    line-height: 13px;
+    color: rgb(51, 51, 51);
+    margin-bottom: 1em;
+}
+
+.pc-lens-bar-price{
+    font-size: 18px;
+    line-height: 18px;
+    margin-bottom: 1em;
+    padding: 10px 0px 3px;
+}
+
+.pc-lens-bar-total{
+    font-weight: 700;
+}
+
+.pc-lens-bar-add-cart{
+    width: 100%;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding: 12.5px 0px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    background: rgb(38, 171, 255);
+    border-radius: 4px;
+}
+.pc-lens-change-frame{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.pc-lens-change-frame > a{
+    color: gray;
+}
+
+.pc-lens-bar-back-pre{
+    width: 100%;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 60px;
+    color: rgb(153, 153, 153);
+    font-size: 16px;
+    margin: 15px 0px;
+}
+
+.pres-lens-foot{
+    font-size: 14px;
+}
+
+.ls-type-box{
+    margin-left: 20px;
+    /* padding: 16px; */
+    height: 260px;
+}
+
+.ls-type-box:hover{
+    border: 2px solid #01a280  ;
+    cursor: pointer;
+}
+
+.ls-type-box-focus{
+    border: 3px solid #01a280  !important;
+    cursor: pointer;
+}
+
+.ls-type-box-focus .ls-select{
+    background-color:#01a280;
+}
+
+.ls-select{
+    background: #ccc;
+    /* position: absolute; */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-size: 1.2em;
+    text-align: center;
+    padding: 2px 0;
+}
+/* 
+.ls-select-focus{
+    background-color: #01a280;
+} */
+.ls-border{
+    border: 1px solid grey ;
+}
+
+.lens-prescription{
+    display: none;
+}
+
+.pc-lens-bar-item-btn{
+    cursor: pointer;
+}
+
+.ls-title{
+    margin: 10px 16px;
+    text-align: center;
+    font-size: 1.4em;
+    color: #333;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.ls-subtitle{
+    margin: 10px 16px;
+    font-size: .95em;
+    line-height: 1.2;
+    font-weight: normal;
+    text-align: center;
+    padding: 3px 0 0;
+}
