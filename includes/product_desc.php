@@ -38,6 +38,7 @@
         <?php include "head.php" ?>
         <div class="container mt-5">
             <div class="row">
+                
                 <div class="col-lg-8">
                     <div class="row">
                         <div class="pd-product-banner col-lg-1 px-0">
@@ -327,22 +328,10 @@
                         </div>
                     </div>
                 </div>
-
-
-
                 <?php
-
-                // if (!file_exists("database/db_controller.php")) {
-                //     include "../database/db_controller.php";
-                //     include "../database/db_table.php"; }
-                // else {
-                //     include "database/db_controller.php";
-                //     include "database/db_table.php";}
                 $db = new DBController();
                 $product = new Table($db);
                 $resultSet = $product->getProductData("{$id}");
-                // print_r($resultSet);
-
                 ?>
                 <div class='col-lg-4'>
                     <div class='pd-product-info d-flex align-items-center justify-content-between'>
