@@ -148,9 +148,13 @@
                             <h3>Create</h3>
                             <form action="">
                                 <div class="form-group">
+                                    <div class="form-group form-inline col-sm-12 justify-content-between">
+                                        <input type="text" name="firstname" id="firstname" class="form-control col-5" placeholder="First name">
+                                        <input type="text" name="lastname" id="lastname" class="form-control col-5" placeholder="Last name">
+                                    </div>
                                     <div class="form-group col-sm-12">
-                                        <label for="email" class="col-form-label sr-only"> Email </label>
-                                        <input type="email" name="email" id="email" class="form-control" placeholder="Email">
+                                        <!-- <label for="pswd" class="col-form-label sr-only"> Password </label> -->
+                                        <input type="email" name="email" id="email" class="form-control" placeholder="you@example.com">
                                     </div>
                                     <div class="form-group col-sm-12">
                                         <label for="pswd" class="col-form-label sr-only"> Password </label>
