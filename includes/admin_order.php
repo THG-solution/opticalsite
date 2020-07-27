@@ -40,7 +40,9 @@
                             $db = new DBController();
                             $product = new Table($db);
                             $resultSet = $product->getData("orders");
-
+                            if(!is_array($resultSet))
+                            $resultSet = array();
+                        
                             ?>
                             <tbody>
                                <?php
@@ -106,7 +108,7 @@
                                 }
                                 else
                                 {
-                                    echo "<p>No Data To Show</p>";
+                                    echo "</tbody></table><p>No Data To Show</p>";
                                 } ?>
                                                                 
                             </tbody>
