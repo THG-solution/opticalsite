@@ -565,6 +565,10 @@
     display: block;
 }
 
+.act{ 
+    display: flex !important;
+}
+
 .ls-image{
     position: relative;
     margin: 0 auto;
@@ -617,4 +621,92 @@
     margin: .25em 0;
     font-size: .9em;
     line-height: 1.5em;
+}
+
+.table-minimal-small td {
+    padding: 4px;
+    vertical-align: middle;
+    /* background-color: #fff; */
+    text-align: left;
+    font-size: 13px;
+}
+.table-minimal-small {
+    margin: 15px 0;
+    width: 100%;
+}
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+.stacktable {
+    /* border-collapse: collapse; */
+}
+.table-minimal-small th {
+    padding: 4px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+.table-minimal-small td {
+    padding: 4px;
+    vertical-align: middle;
+    /* background-color: #fff; */
+    text-align: left;
+    font-size: 13px;
+    
+}
+/* .width-10 {
+    width: 10% !important;
+} */
+.weight-bold {
+    font-weight: 700 !important;
+}
+.align-right {
+    text-align: right !important;
+}
+.form-container .select {
+    background: #fff;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    /* width: 300px; */
+}
+.width-100 {
+    width: 100% !important;
+}
+
+.width-150{
+    width:150px;
+}
+
+.form-container .select > select {
+    background: #fff;
+    margin: 0;
+    border: 0;
+    width: 140px;
+    min-width: 85px;
+    height: 34px;
+    padding: 5px 8px;
+    color: #666;
+    position: relative;
+    text-shadow: 0 1px white;
+    /* -webkit-appearance: none; */
+    /* -moz-appearance: none; */
+    text-indent: .01px;
+    text-overflow: clip;
+    vertical-align: top;
+    cursor: pointer;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
 }

@@ -376,7 +376,7 @@
                     <div class='pd-select-btn-container'>
                         <div class='d-flex align-items-center justify-content-between' style='height:52px;'>
                             <div class='pd-select-btn'>
-                                Select Lenses
+                                <a href="../prescription.php" class="text-white" > Select Lenses</a>
                             </div>
                         </div>
                     </div>

@@ -1,8 +1,8 @@
 var productContainer = $('#product-list-item'), loc = '', pgdata = '', gender = [], gen = [], shape = [], shp = [], material = [], mtrl = [], colour = [], clr = []
 var productContainerIndex = $('#product-list-item-index')
 let uri = $(location).attr("href")
-$(window).on( "load", function() {
-    $('#'+$('#currency').text()).addClass('active')
+$(window).on("load", function () {
+    $('#' + $('#currency').text()).addClass('active')
     if (uri.includes('mens_frame'))
         pgdata = 'meneye'
     else if (uri.includes('mens_sunglass'))
@@ -15,7 +15,7 @@ $(window).on( "load", function() {
         pgdata = 'womensunglass'
     else if (uri.includes('womens_allglass'))
         pgdata = 'womenall'
-    $.get('includes/filt_product.php?to='+loc+'&pgdata='+pgdata+'&gender='+gen+'&shape='+shp+'&material='+mtrl+'&colour='+clr, function(response) {
+    $.get('includes/filt_product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr, function (response) {
         productContainer.html(response)
     })
 });
@@ -34,117 +34,113 @@ $(document).ready(function () {
         $('#nv-pill .nav-item:last-child .nav-link').addClass('active')
         $('.tab-content #create').addClass('active show')
     });
-    $('#dropdown-currency li').click(function (){
+    $('#dropdown-currency li').click(function () {
         $('#dropdown-currency li').removeClass('active')
         $('#symbol').text('')
         $('#currency').text($(this).text())
         $(this).addClass('active')
     });
-    $("input[type='checkbox']").change(function() {
-        if ($(this).attr('id') === 'gender')
-        {
+    $("input[type='checkbox']").change(function () {
+        if ($(this).attr('id') === 'gender') {
             gen = []
             if (this.checked) {
                 gender.push($(this).val())
-                for (let elements of gender.values()) { 
-                    gen.push("'"+ elements + "'");
-                } 
-                $.get('includes/filt_product.php?to='+loc+'&pgdata='+pgdata+'&gender='+gen+'&shape='+shp+'&material='+mtrl+'&colour='+clr, function(response) {
+                for (let elements of gender.values()) {
+                    gen.push("'" + elements + "'");
+                }
+                $.get('includes/filt_product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr, function (response) {
                     productContainer.html(response)
                 })
             }
             else if (!this.checked) {
                 gender = gender.filter(el => el != $(this).val())
-                for (let elements of gender.values()) { 
-                    gen.push("'"+ elements + "'");
-                } 
-                $.get('includes/filt_product.php?to='+loc+'&pgdata='+pgdata+'&gender='+gen+'&shape='+shp+'&material='+mtrl+'&colour='+clr, function(response) {
+                for (let elements of gender.values()) {
+                    gen.push("'" + elements + "'");
+                }
+                $.get('includes/filt_product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr, function (response) {
                     productContainer.html(response)
                 })
             }
         }
-        else if ($(this).attr('id') === 'shape')
-        {
+        else if ($(this).attr('id') === 'shape') {
             shp = []
             if (this.checked) {
                 shape.push($(this).val())
-                for (let elements of shape.values()) { 
-                    shp.push("'"+ elements + "'");
-                } 
-                $.get('includes/filt_product.php?to='+loc+'&pgdata='+pgdata+'&gender='+gen+'&shape='+shp+'&material='+mtrl+'&colour='+clr, function(response) {
+                for (let elements of shape.values()) {
+                    shp.push("'" + elements + "'");
+                }
+                $.get('includes/filt_product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr, function (response) {
                     productContainer.html(response)
                 })
             }
             else if (!this.checked) {
                 shape = shape.filter(el => el != $(this).val())
-                for (let elements of shape.values()) { 
-                    shp.push("'"+ elements + "'");
-                } 
-                $.get('includes/filt_product.php?to='+loc+'&pgdata='+pgdata+'&gender='+gen+'&shape='+shp+'&material='+mtrl+'&colour='+clr, function(response) {
+                for (let elements of shape.values()) {
+                    shp.push("'" + elements + "'");
+                }
+                $.get('includes/filt_product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr, function (response) {
                     productContainer.html(response)
                 })
             }
         }
-        else if ($(this).attr('id') === 'material')
-        {
+        else if ($(this).attr('id') === 'material') {
             mtrl = []
             if (this.checked) {
                 material.push($(this).val())
-                for (let elements of material.values()) { 
-                    mtrl.push("'"+ elements + "'");
-                } 
-                $.get('includes/filt_product.php?to='+loc+'&pgdata='+pgdata+'&gender='+gen+'&shape='+shp+'&material='+mtrl+'&colour='+clr, function(response) {
+                for (let elements of material.values()) {
+                    mtrl.push("'" + elements + "'");
+                }
+                $.get('includes/filt_product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr, function (response) {
                     productContainer.html(response)
                 })
             }
             else if (!this.checked) {
                 material = material.filter(el => el != $(this).val())
-                for (let elements of material.values()) { 
-                    mtrl.push("'"+ elements + "'");
-                } 
-                $.get('includes/filt_product.php?to='+loc+'&pgdata='+pgdata+'&gender='+gen+'&shape='+shp+'&material='+mtrl+'&colour='+clr, function(response) {
+                for (let elements of material.values()) {
+                    mtrl.push("'" + elements + "'");
+                }
+                $.get('includes/filt_product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr, function (response) {
                     productContainer.html(response)
                 })
             }
         }
-        else if ($(this).attr('id') === 'colour')
-        {
+        else if ($(this).attr('id') === 'colour') {
             clr = []
             if (this.checked) {
                 $(this).parent('.color-item').css('border-color', 'blue')
                 colour.push($(this).val())
-                for (let elements of colour.values()) { 
-                    clr.push("'"+ elements + "'");
-                } 
-                $.get('includes/filt_product.php?to='+loc+'&pgdata='+pgdata+'&gender='+gen+'&shape='+shp+'&material='+mtrl+'&colour='+clr, function(response) {
+                for (let elements of colour.values()) {
+                    clr.push("'" + elements + "'");
+                }
+                $.get('includes/filt_product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr, function (response) {
                     productContainer.html(response)
                 })
             }
             else if (!this.checked) {
                 $(this).parent('.color-item').css('border-color', 'grey')
                 colour = colour.filter(el => el != $(this).val())
-                for (let elements of colour.values()) { 
-                    clr.push("'"+ elements + "'");
-                } 
-                $.get('includes/filt_product.php?to='+loc+'&pgdata='+pgdata+'&gender='+gen+'&shape='+shp+'&material='+mtrl+'&colour='+clr, function(response) {
+                for (let elements of colour.values()) {
+                    clr.push("'" + elements + "'");
+                }
+                $.get('includes/filt_product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr, function (response) {
                     productContainer.html(response)
                 })
             }
         }
     });
-    $('li').click(function() {
+    $('li').click(function () {
         loc = $(this).attr('id')
         if ($(this).hasClass('currency_val'))
             if (uri.includes('index'))
-                $.get('includes/product.php?to='+loc+'&pgdata='+pgdata+'&gender='+gen+'&shape='+shp+'&material='+mtrl+'&colour='+clr, function(response) {
+                $.get('includes/product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr, function (response) {
                     productContainer.html(response)
                 })
-            else 
-                $.get('includes/filt_product.php?to='+loc+'&pgdata='+pgdata+'&gender='+gen+'&shape='+shp+'&material='+mtrl+'&colour='+clr, function(response) {
+            else
+                $.get('includes/filt_product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr, function (response) {
                     productContainer.html(response)
                 })
     })
-    $('img').click(function() {
+    $('img').click(function () {
         $('#main-image').attr('src', $(this).attr('src'))
     })
     // $('#search-bar').focus(function() {
@@ -152,56 +148,78 @@ $(document).ready(function () {
     //         $('#search-bar').css('display', 'block')
     //     };
     // });
-    $("a").hover(function() {
+    $("a").hover(function () {
         if ($(this).hasClass('dropdown-toggle'))
             $(this).dropdown('toggle');
-            $(this).css('color', 'black');
-            $(this).mouseleave(function() {
-                $(this).css('color', 'grey');
-            })
+        $(this).css('color', 'black');
+        $(this).mouseleave(function () {
+            $(this).css('color', 'grey');
+        })
     });
-    $('div, ul').hover(function() {
+    $('div, ul').hover(function () {
         if ($(this).hasClass('dropdown-menu'))
             $(this).siblings('a').dropdown('toggle');
     })
     // $("a").mouseleave(function() {
     //     $(this).dropdown('toggle');
     // });
-    $('.ls-type-box').on('click', function() {
-        if($(this).hasClass("ls-type-box-focus"))
-        {
+    $('.ls-type-box').on('click', function () {
+        if ($(this).hasClass("ls-type-box-focus")) {
             $(this).removeClass("ls-type-box-focus ");
         }
-        else
-        {
+        else {
             $(".ls-type-box").removeClass("ls-type-box-focus ");
             $(this).addClass("ls-type-box-focus");
 
         }
     });
 
-// *--------------------------------- NAVIGATING THORUGH MULTIPLES DIV ---------------------------------* 
-    var First = 1;    
-    $('#child'+First).addClass('current');
+    // *--------------------------------- NAVIGATING THORUGH MULTIPLES DIV ---------------------------------* 
+    var First = 1;
+    $('#child' + First).addClass('current');
     // on next click, add +1 to First, Second and Third
-    $('#next').click(function(){
-        if( !$('#child'+First).is(':last-child') ) {
+    $('#next').click(function () {
+        if (!$('#child' + First).is(':last-child')) {
             $("#group div").removeClass('current');
             First++;
-            $('#child'+First).addClass('current');
+            $('#child' + First).addClass('current');
         }
+        $("#choose_pd").removeClass('d-flex');
+        $(".ls-type-box").removeClass("ls-type-box-focus ");
     });
-    $('#back').click(function(){
-        
-        if( !$('#child'+First).is(':first-child') ) {
+    $('#back').click(function () {
+
+        if (!$('#child' + First).is(':first-child')) {
             $("#group div").removeClass('current');
             First--;
-            $('#child'+First).addClass('current');
+            $('#child' + First).addClass('current');
         }
+        $("#choose_pd").removeClass('d-flex');
+        $(".ls-type-box").removeClass("ls-type-box-focus ");
     });
-// *--------------------------------- END OF NAVIGATING THORUGH MULTIPLES DIV ---------------------------------* 
+    // *--------------------------------- END OF NAVIGATING THORUGH MULTIPLES DIV ---------------------------------* 
 
-    $(".img-add").on("click", function (){
-        $('#add-form').addClass('current');
-    })
+    $("#noPD").on('click', function () {
+        $('#pd-r').removeClass('d-flex');
+        $('#pd-l').removeClass('d-flex');
+    });
+    $("#onePD").on('click', function () {
+        $('#pd-r').addClass('d-flex');
+        $('#pd-l').removeClass('d-flex');
+    });
+    $("#twoPDs").on('click', function () {
+        $('#pd-r').addClass('d-flex');
+        $('#pd-l').addClass('d-flex');
+    });
+
+
+
+    $('#ls-type-box-yes').on('click', function (){
+
+        $("#choose_pd").addClass('d-flex');
+    });
+    $('#ls-type-box-already, #ls-type-box-later').on('click', function (){
+        $("#choose_pd").removeClass('d-flex');
+    });
+    
 });

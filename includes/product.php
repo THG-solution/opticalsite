@@ -95,7 +95,7 @@
                     <span class='fa fa-star empty'></span>
                     <span class='fa fa-star empty'></span>
                     <span class='fa fa-star empty'></span>
-                </div>";
+                    </div>";
                     break;
                     case  (2):
                         echo "
