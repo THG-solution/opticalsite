@@ -6,18 +6,14 @@ $password = $_POST['pswd'];
 
 $db = new DBController();
 $customer = new Table($db);
-$result = $customer->login($email, $password);
+$result = $customer->loginAdmin($email, $password);
 if ($result) {
     session_start();
-    if (!empty($_POST['remember']) && $_POST['remember'] == 'on'){
-        $_COOKIE['email'] = $email;
-        $_COOKIE['password'] = $password;
-    }
     $_SESSION["isLogin"] = "OK";
     $_SESSION['username'] = $result['firstname'];
-    header("Location: ../index.php");
+    header("Location: ../admin/index.php");
 }
 else if ($result == false) {
-    echo header("Location: ../index.php?q=err");;
+    header("Location: ../admin/login.php?q=err");
 }
 ?>

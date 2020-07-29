@@ -18,7 +18,8 @@
     <div id="content">
         <div id="inner">
             <h3>Login Now</h3>
-            <form action="" method="POST" class="needs-validation" novalidate>
+            <p style="color: red; text-align: center" ><?php if(!empty($_GET['q']) && $_GET['q'] == 'err' ) echo "Username or Password incorrect"; else echo "";  ?></p>
+            <form action="../includes/check_admin.php" method="POST" class="needs-validation" novalidate>
                 <div id="input">
                     <i class="fas fa-user"></i>
                     <input type="email" name="email" id="email" class="form-control" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{3,}$">

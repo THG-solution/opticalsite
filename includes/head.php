@@ -123,6 +123,7 @@
                     <div class="tab-content">
                         <div id="login" class="tab-pane fade in">
                             <h3>Login</h3>
+                            <p style="color: red; text-align: center" ><?php if(!empty($_GET['q']) && $_GET['q'] == 'err' ) echo "Username or Password incorrect"; else echo "";  ?></p>
                             <form action="../includes/check_customer.php" method="POST" class="needs-validation" novalidate>
                                 <div class="form-group">
                                     <div class="form-group col-sm-12">
@@ -139,7 +140,7 @@
                                     </div>
                                     <div class="form-group col-12 d-flex flex-row justify-content-between">
                                         <div class="form-check-inline col-4 ">
-                                            <label for="remember" class="form-check-label"><input type="checkbox" name="remember" id="remember" class="form-check-input"> Remember me</label>
+                                            <label for="remember" class="form-check-label"><input type="checkbox" name="remember" id="remember" value="remember" class="form-check-input"> Remember me</label>
                                         </div>
                                         <div class="form-check-inline col-4 mr-0 pr-0">
                                             <a href="#" class="col-form-label"> Forget Password?</a>
