@@ -107,11 +107,11 @@
                         $(".img-close").removeClass('d-block');
                         $('.img-add').addClass('d-block');
                     });
-                    $('.edit-icon').on('click', function(){
-                        var imageId =  $(this).attr('alt');
-                        alert(imageId);
+                    // $('.edit-icon').on('click', function(){
+                    //     var imageId =  $(this).attr('alt');
+                    //     alert(imageId);
                     
-                    })
+                    // })
                     
                 });
             </script>
