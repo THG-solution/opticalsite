@@ -495,7 +495,9 @@
 .ls-type-box{
     margin-left: 20px;
     /* padding: 16px; */
-    height: 260px;
+    height: auto;
+    min-height: 260px;
+    width: 100%;
 }
 
 .ls-type-box:hover{
@@ -638,4 +640,65 @@
 #btn:hover {
     background: black;
     color: white;
+}
+
+#group > div{
+    display: none;
+}
+#group div.current{
+    display: block;
+}
+
+.ls-image{
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 120px;
+    height: 90px;
+    overflow: hidden;
+}
+
+.img-15{
+    background: transparent no-repeat center top;
+    background-size: 100% auto;
+}
+
+.ls-promo-price{
+    background: #f8f8f8;
+    line-height: 1.2em;
+    height: 3em;
+
+    padding: 3px 0;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+
+.decoration-strike{
+    text-decoration: line-through !important;
+}
+.color-gray {
+    color: #888 !important;
+}
+.weight-normal {
+    font-weight: 400 !important;
+}
+.weight-bold {
+    font-weight: 700 !important;
+}
+.display-inline-block {
+    display: inline-block !important;
+}
+
+.ls-compare{
+    font-size: 12px;
+    font-style: italic;
+    color: #666;
+}
+
+.ls-ul-select{
+    padding-left: .75em;
+    margin: .25em 0;
+    font-size: .9em;
+    line-height: 1.5em;
 }

@@ -179,4 +179,26 @@ $(document).ready(function () {
 
         }
     });
+
+// *--------------------------------- NAVIGATING THORUGH MULTIPLES DIV ---------------------------------* 
+    var First = 1;    
+    $('#child'+First).addClass('current');
+    // on next click, add +1 to First, Second and Third
+    $('#next').click(function(){
+        if( !$('#child'+First).is(':last-child') ) {
+            $("#group div").removeClass('current');
+            First++;
+            $('#child'+First).addClass('current');
+        }
+    });
+    $('#back').click(function(){
+        
+        if( !$('#child'+First).is(':first-child') ) {
+            $("#group div").removeClass('current');
+            First--;
+            $('#child'+First).addClass('current');
+        }
+    });
+// *--------------------------------- END OF NAVIGATING THORUGH MULTIPLES DIV ---------------------------------* 
+
 });

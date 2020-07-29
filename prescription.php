@@ -39,17 +39,18 @@
                     </div>
                     <div class="jsx-1172698186 top-ctr-container">
                         <div style="padding-right:48px" class="jsx-578059889 pc-lens-bar-back-pre">
-                            <div class="jsx-578059889 pc-lens-bar-item-btn active">&lt; Back</div>
-                            <div class="jsx-578059889 pc-lens-bar-item-btn">Next &gt;</div>
+                            <div id="back" class="jsx-578059889 pc-lens-bar-item-btn active">&lt; Back</div>
+                            <div id="next" class="jsx-578059889 pc-lens-bar-item-btn">Next &gt;</div>
                         </div>
                     </div>
                 </div>
-                <div>
-                    <center>
-                        <h2>Choose your lens type</h2>
-                    </center>
-                    <!-- <div class="d-flex"> -->
-                        <div class="lens-type d-flex">
+                <div id="group" class="presc-switch">
+                    <div id="child1" class="lens-type">
+                        <center>
+                            <h2>Choose your lens type</h2>
+                        </center>
+                        <!-- <div class="d-flex"> -->
+                        <div class="d-flex">
                             <div id="ls-type-box" class="d-flex flex-column justify-content-between ls-type-box ls-border">
                                 <div>
                                     <div class="ls-title">
@@ -103,49 +104,347 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div id="child2" class="lens-prescription ">
+                        <center>
+                            <h2>Do You Have Your Prescription Available?</h2>
+                        </center>
+                        <div class="d-flex">
+                            <div id="ls-type-box" class="d-flex flex-column justify-content-between ls-type-box ls-border">
+                                <div>
+                                    <div class="ls-title">
+                                        I'll send it later
+                                    </div>
+                                    <div class="ls-subtitle">
+                                        Don't worry, we'll get your prescription after the order placed.
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-center  ls-select">
+                                    SELECT
+                                </div>
+                            </div>
+                            <div id="ls-type-box" class="d-flex flex-column justify-content-between ls-type-box ls-border">
+                                <div>
+                                    <div class="ls-title">
+                                        You already have it
+                                    </div>
+                                    <div class="ls-subtitle">
+                                        If yor're a returning customer, we will check your previous order(s) for your prescription.
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-center  ls-select">
+                                    SELECT
+                                </div>
+                            </div>
+                            <div id="ls-type-box" class="d-flex flex-column justify-content-between ls-type-box ls-border">
+                                <div>
+                                    <div class="ls-title">
+                                        Yes
+                                    </div>
+                                    <div class="ls-subtitle">
+                                        I would like to enter it now.
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-center  ls-select">
+                                    SELECT
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="child3" class="lens-prescription ">
+                        <center>
+                            <h2>Select Your Lens</h2>
+                        </center>
+                        <div class="d-flex">
+                            <div id="ls-type-box" class="d-flex flex-column justify-content-between ls-type-box ls-border">
 
-                        <div class="lens-prescription">
-                            <div id="ls-type-box" class="d-flex flex-column justify-content-between ls-type-box ls-border">
                                 <div>
                                     <div class="ls-title">
-                                        Single Vision
+                                        Plastic CR-39
                                     </div>
                                     <div class="ls-subtitle">
-                                        A general use lens for seeing things close up or far away
                                     </div>
                                 </div>
+                                <!-- IMAGE START ++ -->
+                                <div class='d-flex justify-content-center'>
+                                    <img src="assests/images/plastic.jpg" class="ls-image img-15" alt="">
+                                </div>
+                                <!-- IMAGE END xx -->
+
+                                <!-- VISION INFO START ++ -->
+
+                                <div class="ls-promo-price">
+                                    <div class="ls-starting weight-normal decoration-strike color-gray">Retail Price: $69.00</div>
+                                    <div class="display-inline-block weight-bold">With promo:</div>
+                                    <div class="price-with-promo color-green weight-bold display-inline-block"></div>
+                                </div>
+                                <div class="ls-compare justify-content-center pb-5 pt-2 px-3">
+                                    Compare to other retailer's price:
+
+                                    "$170
+                                </div>
+
+                                <!-- VISION INFO END xx -->
+
                                 <div class="d-flex justify-content-center  ls-select">
                                     SELECT
                                 </div>
                             </div>
                             <div id="ls-type-box" class="d-flex flex-column justify-content-between ls-type-box ls-border">
+
                                 <div>
                                     <div class="ls-title">
-                                        Single Vision
+                                        Polycarbonte
                                     </div>
                                     <div class="ls-subtitle">
-                                        A general use lens for seeing things close up or far away
+                                    High-Impact Resistant
                                     </div>
                                 </div>
+                                <!-- IMAGE START ++ -->
+                                <div class='d-flex justify-content-center'>
+                                    <img src="assests/images/polycarbonate.jpg" class="ls-image img-15" alt="">
+                                </div>
+                                <!-- IMAGE END xx -->
+
+                                <!-- VISION INFO START ++ -->
+
+                                <div class="ls-promo-price">
+                                    <div class="ls-starting weight-normal decoration-strike color-gray">Retail Price: $115.00</div>
+                                    <div class="display-inline-block weight-bold">With promo:</div>
+                                    <div class="price-with-promo color-green weight-bold display-inline-block"></div>
+                                </div>
+                                <div class="ls-compare justify-content-center pb-5 pt-2 px-3">
+                                    Compare to other retailer's price:
+
+                                    $210
+                                </div>
+
+                                <!-- VISION INFO END xx -->
+
                                 <div class="d-flex justify-content-center  ls-select">
                                     SELECT
                                 </div>
                             </div>
                             <div id="ls-type-box" class="d-flex flex-column justify-content-between ls-type-box ls-border">
+
                                 <div>
                                     <div class="ls-title">
-                                        Single Vision
+                                        Thinner
                                     </div>
                                     <div class="ls-subtitle">
-                                        A general use lens for seeing things close up or far away
+                                    For Strong Prescriptions
                                     </div>
                                 </div>
+                                <!-- IMAGE START ++ -->
+                                <div class='d-flex justify-content-center'>
+                                    <img src="assests/images/ThinnerHiIndex167.jpg" class="ls-image img-15" alt="">
+                                </div>
+                                <!-- IMAGE END xx -->
+
+                                <!-- VISION INFO START ++ -->
+
+                                <div class="ls-promo-price">
+                                    <div class="ls-starting weight-normal decoration-strike color-gray">Retail Price: $159.00</div>
+                                    <div class="display-inline-block weight-bold">With promo:</div>
+                                    <div class="price-with-promo color-green weight-bold display-inline-block"></div>
+                                </div>
+                                <div class="ls-compare justify-content-center pb-5 pt-2 px-3">
+                                    Compare to other retailer's price:
+
+                                    $290
+                                </div>
+
+                                <!-- VISION INFO END xx -->
+
+                                <div class="d-flex justify-content-center  ls-select">
+                                    SELECT
+                                </div>
+                            </div>
+                            <div id="ls-type-box" class="d-flex flex-column justify-content-between ls-type-box ls-border">
+
+                                <div>
+                                    <div class="ls-title">
+                                        Thinnest
+                                    </div>
+                                    <div class="ls-subtitle">
+                                    For Extra Storng Prescriptions
+                                    </div>
+                                </div>
+                                <!-- IMAGE START ++ -->
+                                <div class='d-flex justify-content-center'>
+                                    <img src="assests/images/ThinnestHiIndex174.jpg" class="ls-image img-15" alt="">
+                                </div>
+                                <!-- IMAGE END xx -->
+
+                                <!-- VISION INFO START ++ -->
+
+                                <div class="ls-promo-price">
+                                    <div class="ls-starting weight-normal decoration-strike color-gray">Retail Price: $199.00</div>
+                                    <div class="display-inline-block weight-bold">With promo:</div>
+                                    <div class="price-with-promo color-green weight-bold display-inline-block"></div>
+                                </div>
+                                <div class="ls-compare justify-content-center pb-5 pt-2 px-3">
+                                    Compare to other retailer's price:
+
+                                    "$310
+                                </div>
+
+                                <!-- VISION INFO END xx -->
+
                                 <div class="d-flex justify-content-center  ls-select">
                                     SELECT
                                 </div>
                             </div>
                         </div>
-                    <!-- </div> -->
+                    </div><div id="child4" class="lens-prescription ">
+                        <center>
+                            <h2>Choose Options</h2>
+                        </center>
+                        <div class="d-flex">
+                            
+                            <div id="ls-type-box" class="d-flex flex-column justify-content-between ls-type-box ls-border">
+
+                                <div>
+                                    <div class="ls-title">
+                                        Basic
+                                    </div>
+                                </div>
+
+                                <!-- VISION INFO START ++ -->
+
+                                <div class="ls-promo-price">
+                                    <!-- <div class="ls-starting weight-normal decoration-strike color-gray">Retail Price: $115.00</div> -->
+                                    <div class="display-inline-block weight-bold px-3">Included No Additional Charges</div>
+                                    <!-- <div class="price-with-promo color-green weight-bold display-inline-block"></div> -->
+                                </div>
+                                <div class="ls-compare justify-content-center pb-1 pt-2 px-3">
+                                    Compare to other retailer's price:
+
+                                    $210
+                                </div>
+
+                                <!-- VISION INFO END xx -->
+
+                                <div class="px-4 pb-4">                                
+                                    <div class="ls-ul-select">
+                                        <i class="fa fa-check"></i>
+                                        UV Protection
+                                    </div>
+
+                                    <div class="ls-ul-select">
+                                        <i class="fa fa-check"></i>
+                                        Edge Polish
+                                    </div>
+
+                                    <div class="ls-ul-select">
+                                        <i class="fa fa-check"></i>
+                                        Scrathc-resistant Coating
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-center  ls-select">
+                                    SELECT
+                                </div>
+                            </div>
+                            <div id="ls-type-box" class="d-flex flex-column justify-content-between ls-type-box ls-border">
+
+                                <div>
+                                    <div class="ls-title">
+                                        Standard
+                                    </div>
+                                </div>
+                                
+                                <!-- VISION INFO START ++ -->
+                                <div class="ls-promo-price">
+                                    <div class="ls-starting weight-normal decoration-strike color-gray px-3">Retail Price: $99.00</div>
+                                    <div class="display-inline-block weight-bold pl-3">With promo:</div>
+                                    <div class="price-with-promo text-success weight-bold display-inline-block pr-3"> $ 49.00</div>
+                                </div>
+                                <div class="ls-compare justify-content-center pb-1 pt-2 px-3">
+                                    Compare to other retailer's price:
+
+                                    $290
+                                </div>
+                                <!-- VISION INFO END xx -->
+
+                                <div class="px-4 pb-4">                                
+                                    <div class="ls-ul-select">
+                                        <i class="fa fa-check"></i>
+                                        UV Protection
+                                    </div>
+
+                                    <div class="ls-ul-select">
+                                        <i class="fa fa-check"></i>
+                                        Edge Polish
+                                    </div>
+
+                                    <div class="ls-ul-select">
+                                        <i class="fa fa-check"></i>
+                                        Scrathc-resistant Coating
+                                    </div>
+                                    <div class="ls-ul-select">
+                                        <i class="fa fa-plus"></i>
+                                        Premium Anti Reflective
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-center  ls-select">
+                                    SELECT
+                                </div>
+                            </div>
+                            <div id="ls-type-box" class="d-flex flex-column justify-content-between ls-type-box ls-border">
+
+                                <div>
+                                    <div class="ls-title">
+                                        Premium
+                                    </div>
+                                   
+                                </div>
+                                
+                                <!-- VISION INFO START ++ -->                        
+                                <div class="ls-promo-price">
+                                    <div class="ls-starting weight-normal decoration-strike color-gray px-3">Retail Price: $129.00</div>
+                                    <div class="display-inline-block weight-bold pl-3">With promo:</div>
+                                    <div class="price-with-promo text-success weight-bold display-inline-block pr-3"> $ 64.50</div>
+                                </div>
+                                <div class="ls-compare justify-content-center pb-1 pt-2 px-3">
+                                    Compare to other retailer's price:
+
+                                    "$310
+                                </div>
+                                <!-- VISION INFO END xx -->
+                  
+                                <div class="px-4 pb-4">                                
+                                    <div class="ls-ul-select">
+                                        <i class="fa fa-check"></i>
+                                        UV Protection
+                                    </div>
+
+                                    <div class="ls-ul-select">
+                                        <i class="fa fa-check"></i>
+                                        Edge Polish
+                                    </div>
+
+                                    <div class="ls-ul-select">
+                                        <i class="fa fa-check"></i>
+                                        Scrathc-resistant Coating
+                                    </div>
+                                    <div class="ls-ul-select">
+                                        <i class="fa fa-check"></i>
+                                        Premium Anti Reflective
+                                    </div>
+                                    <div class="ls-ul-select">
+                                        <i class="fa fa-plus"></i>
+                                        Digital light Protection 
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-center  ls-select">
+                                    SELECT
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
