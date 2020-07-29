@@ -138,6 +138,23 @@ a.article:hover {
   color: #fff !important;
 }
 
+option:hover{
+  background-color: #0b75c9;
+}
+
+.current{ 
+  display: flex !important;
+  justify-content: center !important;
+}
+
+#add-form{
+/*  
+  -webkit-transition: height .35s ease-in-out;
+  transition: height .35s ease-in-out; */ 
+  width: 98%;
+
+}
+
 
 
 /* ---------------------------------------------------
@@ -209,13 +226,14 @@ td, th{
   text-align: center;
 }
 
+
 .table-icon{
   width: 24px;
   margin-left: 10px;
   cursor: pointer;
 }
 
-.img-add{
+.img-add, .img-close{
   width: 45px;
   cursor: pointer;
   position: relative;

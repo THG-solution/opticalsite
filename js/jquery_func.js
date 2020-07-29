@@ -201,4 +201,7 @@ $(document).ready(function () {
     });
 // *--------------------------------- END OF NAVIGATING THORUGH MULTIPLES DIV ---------------------------------* 
 
+    $(".img-add").on("click", function (){
+        $('#add-form').addClass('current');
+    })
 });

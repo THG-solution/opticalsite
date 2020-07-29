@@ -15,13 +15,7 @@
                         <table class="table">
                             <thead class="text-primary">
                                 <th>
-                                    Customer ID
-                                </th>
-                                <th>
-                                   Customer Name
-                                </th>
-                                <th>
-                                    Customer Email
+                                    Category
                                 </th>
                                 <th>
                                     Options
@@ -30,27 +24,22 @@
                             <?php
                             $db = new DBController();
                             $product = new Table($db);
-                            $resultSet = $product->getData("customer");
+                            $resultSet = $product->queryData("SELECT DISTINCT category FROM `products`");
                             if(!is_array($resultSet))
                                 $resultSet = array();
                             
                             ?>
                             <tbody>
                                <?php
-                                if(count($resultSet)==4)
+                                if(count($resultSet)==1)
                                 {
                                     $result = $resultSet;
                                     ?>
                                   <tr>
                                         <td>
-                                            <?php echo "{$result['customer_id']}" ?>
+                                            <?php echo "{$result['category']}" ?>
                                         </td>
-                                        <td>
-                                            <?php echo "{$result['name']}" ?>
-                                        </td>
-                                        <td>
-                                            <?php echo "{$result['email']}" ?>
-                                        </td>
+                                        
                                         <td>
                                             <img class="table-icon" src="../assests/images/delete.png" alt="">
                                             <img class="table-icon" src="../assests/images/edit.png" alt="">
@@ -58,19 +47,13 @@
                                     </tr>
                                 <?php
                                  }
-                                elseif (count($resultSet)>4)
+                                elseif (count($resultSet)>1)
                                 {
                                     foreach ($resultSet as $result) 
                                     { ?>
                                         <tr>
                                             <td>
-                                                <?php echo "{$result['customer_id']}" ?>
-                                            </td>
-                                            <td>
-                                                <?php echo "{$result['name']}" ?>
-                                            </td>
-                                            <td>
-                                                <?php echo "{$result['email']}" ?>
+                                                <?php echo "{$result['category']}" ?>
                                             </td>
                                             <td>
                                                 <img class="table-icon" src="../assests/images/delete.png" alt="">
