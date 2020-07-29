@@ -1,59 +1,131 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
-            <div class="card">
+            <div class="card mb-5">
                 <div class="card-header card-header-primary">
                     <div class="d-flex flex-row align-items-center justify-content-between">
                         <h3 class="card-title">Product Table</h3>
 
                         <span>
-                            <img class="img-add" src="../assests/images/add.png" data-toggle="modal" data-target="#addModal" alt="">
+                            <img class="img-add d-none d-block" src="../assests/images/add.png" alt="">
+                            <img class="img-close d-none" src="../assests/images/close.png" alt="">
+
                         </span>
-
-                        <!-- The Modal -->
-                        <div class="modal fade" id="addModal">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <!-- Modal Header -->
-                                    <div class="modal-header bg-danger">
-                                        <h4 class="modal-title">Sign In</h4>
-                                        <button type="button" class="close" data-dismiss="modal">
-                                            &times;
-                                        </button>
-                                    </div>
-
-                                    <!-- Sign In Modal body -->
-                                    <div class="modal-body">
-                                        <h2>Member Login</h2>
-                                        <form action="" method="POST">
-                                            <div class="form-group">
-                                                <label for="">Username :</label>
-                                                <input class="" type="text" name="username" placeholder="Username">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="">password :</label>
-                                                <input class="" type="password" name="password" placeholder="Password">
-                                            </div>
-                                            <div class="form-group">
-                                                <input class="btn btn-outline-success signin-btn" type="submit" value="Sign in">
-                                            </div>
-                                        </form>
-                                    </div>
-
-                                    <!-- Modal footer -->
-                                    <div class="modal-footer">
-                                        <p> <a href="" class="text-dark"> Forget your password?</a></p>
-                                        <button type="button" class="btn btn-outline-danger" data-dismiss="modal">
-                                            Close
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
 
                     <!-- <p class="card-category">Here is a subtitle for this table</p> -->
+                </div>
+                <div id="add-form" class="row d-none ml-2">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title d-flex justify-content-center">Add Product Form</h4>
+                                <form class="cmxform" id="signupForm" method="get" action="#">
+                                    <fieldset>
+                                        <div class="form-group">
+                                            <label for="firstname">Product Id</label>
+                                            <input id="firstname" class="form-control" name="firstname" type="text" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="lastname">Brand</label>
+                                            <select name="brand" id="brand" class="form-control">
+                                                <option value="" selected disabled><i class="fa fa-angle-down"></i></option>
+                                                <option value="Ford">Ford</option>
+                                                <option value="Police">Police</option>
+
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="lastname">Category</label>
+                                            <select name="brand" id="brand" class="form-control">
+                                                <option value="" selected disabled><i class="fa fa-angle-down"></i></option>
+                                                <option value="Ford">Ford</option>
+                                                <option value="Police">Police</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="d-flex align-items-center">Gender: </label>
+                                            <div class="col-sm-2 d-flex align-items-center">
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" class="" name="membershipRadios" id="membershipRadios1" value="" checked /> Unisex</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-2 d-flex align-items-center">
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" class="" name="membershipRadios" id="membershipRadios2" value="option2" /> Men </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-2 d-flex align-items-center">
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" class="" name="membershipRadios" id="membershipRadios2" value="option2" /> Women </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="lastname">Material</label>
+                                            <select name="brand" id="brand" class="form-control">
+                                                <option value="" selected disabled><i class="fa fa-angle-down"></i></option>
+                                                <option value="Ford">Ford</option>
+                                                <option value="Police">Police</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="lastname">Frame Type</label>
+                                            <select name="brand" id="brand" class="form-control">
+                                                <option value="" selected disabled><i class="fa fa-angle-down"></i></option>
+                                                <option value="Ford">Ford</option>
+                                                <option value="Police">Police</option>
+
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="lastname">Frame Shape</label>
+                                            <select name="brand" id="brand" class="form-control">
+                                                <option value="" selected disabled><i class="fa fa-angle-down"></i></option>
+                                                <option value="Ford">Ford</option>
+                                                <option value="Police">Police</option>
+
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Lens Size</label>
+                                            <input id="email" class="form-control" name="email" type="email" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Bridge Size</label>
+                                            <input id="email" class="form-control" name="email" type="email" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Temple Size</label>
+                                            <input id="email" class="form-control" name="email" type="email" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Colors: </label>
+                                            <input id="email" class="form-control" name="email" type="email" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Image upload</label>
+                                            <input type="file" name="img[]" class="file-upload-default" />
+                                            <div class="input-group col-xs-12">
+                                                <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image" />
+                                                <span class="input-group-append">
+                                                    <button class="file-upload-browse btn btn-gradient-primary" type="button"> Upload </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Price</label>
+                                            <input id="email" class="form-control" name="email" type="email" />
+                                        </div>
+                                        <input class="btn btn-primary" type="submit" value="Submit" />
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -72,10 +144,13 @@
                                     Material
                                 </th>
                                 <th>
-                                    Total Reviews
+                                    Category
                                 </th>
                                 <th>
-                                    Average Stars
+                                    Frame Type 
+                                </th>
+                                <th>
+                                    Frame Shape 
                                 </th>
                                 <th>
                                     Price
@@ -105,21 +180,106 @@
                                         <td>
                                             <?php echo "{$result['material']}" ?>
                                         </td>
-                                        <td class="text-primary">
-                                            <?php echo "{$result['total_review']}" ?>
+                                        <td>
+                                            <?php echo "{$result['category']}" ?>
                                         </td>
-                                        <td class="text-primary">
-                                            <?php echo "{$result['avg_star']}" ?>
+                                        <td>
+                                            <?php echo "{$result['frame_type']}" ?>
+                                        </td>
+                                        <td>
+                                            <?php echo "{$result['frame_shape']}" ?>
                                         </td>
                                         <td>
                                             <?php echo "$ {$result['price']}" ?>
+                                        </td>
+                                        <td>
+                                            <img id="" class="delete-icon table-icon" src="../assests/images/delete.png" alt="">
+                                            <img id="" class="edit-icon table-icon" src="../assests/images/edit.png" alt=<?php echo "{$result['product_id']}" ?>>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="card mt-5">
+                <div class="card-header card-header-primary ">
+                    <div class="d-flex flex-row align-items-center justify-content-between">
+                        <h3 class="card-title">Product Rating Table</h3>
+                        <!-- <span> <img class="img-add" src="../assests/images/add.png" alt=""></span> -->
+                    </div>
+
+                    <!-- <p class="card-category">Here is a subtitle for this table</p> -->
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class="text-primary">
+                                <th>
+                                    Product ID
+                                </th>
+                                <th>
+                                    Total Reviews
+                                </th>
+                                <th>
+                                    Average Rating
+                                </th>
+                                <th>
+                                    Options
+                                </th>
+                            </thead>
+                            <?php
+                            $db = new DBController();
+                            $product = new Table($db);
+                            $resultSet = $product->getData("products");
+                            if (!is_array($resultSet))
+                                $resultSet = array();
+
+                            ?>
+                            <tbody>
+                                <?php
+                                if (count($resultSet) == 4) {
+                                    $result = $resultSet;
+                                ?>
+                                    <tr>
+                                        <td>
+                                            <?php echo "{$result['product_id']}" ?>
+                                        </td>
+                                        <td>
+                                            <?php echo "{$result['total_review']}" ?>
+                                        </td>
+                                        <td>
+                                            <?php echo "{$result['avg_star']}" ?>
                                         </td>
                                         <td>
                                             <img class="table-icon" src="../assests/images/delete.png" alt="">
                                             <img class="table-icon" src="../assests/images/edit.png" alt="">
                                         </td>
                                     </tr>
-                                <?php } ?>
+                                    <?php
+                                } elseif (count($resultSet) > 4) {
+                                    foreach ($resultSet as $result) { ?>
+                                        <tr>
+                                            <td>
+                                                <?php echo "{$result['product_id']}" ?>
+                                            </td>
+                                            <td>
+                                                <?php echo "{$result['total_review']}" ?>
+                                            </td>
+                                            <td>
+                                                <?php echo "{$result['avg_star']}" ?>
+                                            </td>
+                                            <td>
+                                                <img class="table-icon" src="../assests/images/delete.png" alt="">
+                                                <img class="table-icon" src="../assests/images/edit.png" alt="">
+                                            </td>
+                                        </tr>
+                                <?php }
+                                } else {
+                                    echo " </tbody></table> <p>No Data To Show</p> ";
+                                } ?>
+
                             </tbody>
                         </table>
                     </div>

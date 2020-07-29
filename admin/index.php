@@ -15,7 +15,7 @@
     <link href="../css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
     <link rel="stylesheet" href="../css/admin.css">
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> -->
-  
+
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
@@ -27,7 +27,7 @@
     <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
-    
+
     <?php
     if (!file_exists("database/db_controller.php")) {
         include "../database/db_controller.php";
@@ -69,7 +69,7 @@
                             break;
                         case 'customer':
                             include "../includes/admin_customer.php";
-                            break;        
+                            break;
                         default:
                             include "../includes/admin_dashboard.php";
                             break;
@@ -96,6 +96,23 @@
                         $('#sidebar').toggleClass('active');
                         $(this).toggleClass('active');
                     });
+
+                    $(".img-add").on("click", function() {
+                        $('#add-form').addClass('current');
+                        $(".img-close").addClass('d-block');
+                        $('.img-add').removeClass('d-block');
+                    });
+                    $(".img-close").on("click", function() {
+                        $('#add-form').removeClass('current');
+                        $(".img-close").removeClass('d-block');
+                        $('.img-add').addClass('d-block');
+                    });
+                    $('.edit-icon').on('click', function(){
+                        var imageId =  $(this).attr('alt');
+                        alert(imageId);
+                    
+                    })
+                    
                 });
             </script>
 </body>
