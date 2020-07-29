@@ -77,7 +77,35 @@ class Table
         return $result;
     }
 
+    public function insertCustomer($query)
+    {
+        $result = $this->db->conn->query($query);
+        return $result;
+    }
 
+    public function login($email, $password)
+    {
+        $result = $this->db->conn->query("SELECT * FROM customer WHERE email='$email' AND `password`='$password'");
+        if (mysqli_num_rows($result) == 1){
+            $resultSet=mysqli_fetch_array($result, MYSQLI_ASSOC);
+            return $resultSet;
+        }
+        else {
+            return false;
+        }
+    }
+
+    public function loginAdmin($email, $password)
+    {
+        $result = $this->db->conn->query("SELECT * FROM admin WHERE email='$email' AND `password`='$password'");
+        if (mysqli_num_rows($result) == 1){
+            $resultSet=mysqli_fetch_array($result, MYSQLI_ASSOC);
+            return $resultSet;
+        }
+        else {
+            return false;
+        }
+    }
 }
 
 ?>

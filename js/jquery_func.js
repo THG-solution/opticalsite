@@ -1,8 +1,16 @@
 var productContainer = $('#product-list-item'), loc = '', pgdata = '', gender = [], gen = [], shape = [], shp = [], material = [], mtrl = [], colour = [], clr = []
 var productContainerIndex = $('#product-list-item-index')
 let uri = $(location).attr("href")
-$(window).on("load", function () {
-    $('#' + $('#currency').text()).addClass('active')
+$(window).on( "load", function() {
+    if(uri.includes('?q=err'))
+    {
+        $('#loginmodal').modal()
+        $('#nv-pill .nav-item:last-child .nav-link').removeClass('active')
+        $('.tab-content #create').removeClass('active show')
+        $('#nv-pill .nav-item:first-child .nav-link').addClass('active')
+        $('.tab-content #login').addClass('active show')
+    }
+    $('#'+$('#currency').text()).addClass('active')
     if (uri.includes('mens_frame'))
         pgdata = 'meneye'
     else if (uri.includes('mens_sunglass'))

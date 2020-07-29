@@ -32,7 +32,7 @@
                             // $ip = '39.40.27.157';
                             // $details = json_decode(file_get_contents("https://api.ipdata.co/{$ip}?api-key=test"));
                             // $v = $details->currency->code;
-                            if ($con) $con_price = round(($base_price * $response->conversion_rates->$val), 2);
+                            if ($con) $con_price = round(($base_price * $response->conversion_rates->USD), 2);
                             else $con_price = $result['price'];
                             $symbol = '$';
                         }

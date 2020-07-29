@@ -98,6 +98,10 @@
                     <li class="dropdown-item currency_val" id="INR" >&#x20B9; IND</li>
                 </ul>
             </div>
+            <div>
+                <p><?php if(empty($_SESSION['username'])) {} else echo $_SESSION['username'];
+                ?></p>
+            </div>
         </div>
     </div>
     
@@ -119,19 +123,24 @@
                     <div class="tab-content">
                         <div id="login" class="tab-pane fade in">
                             <h3>Login</h3>
-                            <form action="">
+                            <p style="color: red; text-align: center" ><?php if(!empty($_GET['q']) && $_GET['q'] == 'err' ) echo "Username or Password incorrect"; else echo "";  ?></p>
+                            <form action="../includes/check_customer.php" method="POST" class="needs-validation" novalidate>
                                 <div class="form-group">
                                     <div class="form-group col-sm-12">
                                         <label for="email" class="col-form-label sr-only"> Email </label>
-                                        <input type="email" name="email" id="email" class="form-control" placeholder="Email">
+                                        <input type="email" name="email" id="email" class="form-control" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{3,}$">
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Email must be correct.</div>
                                     </div>
                                     <div class="form-group col-sm-12">
                                         <label for="pswd" class="col-form-label sr-only"> Password </label>
-                                        <input type="password" name="pswd" id="pswd" class="form-control" placeholder="Password">
+                                        <input type="password" name="pswd" id="pswd" class="form-control" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters.</div>
                                     </div>
                                     <div class="form-group col-12 d-flex flex-row justify-content-between">
                                         <div class="form-check-inline col-4 ">
-                                            <label for="remember" class="form-check-label"><input type="checkbox" name="remember" id="remember" class="form-check-input"> Remember me</label>
+                                            <label for="remember" class="form-check-label"><input type="checkbox" name="remember" id="remember" value="remember" class="form-check-input"> Remember me</label>
                                         </div>
                                         <div class="form-check-inline col-4 mr-0 pr-0">
                                             <a href="#" class="col-form-label"> Forget Password?</a>
@@ -146,25 +155,37 @@
                         </div>
                         <div id="create" class="tab-pane fade in">
                             <h3>Create</h3>
-                            <form action="">
+                            <form action="includes/add_customer.php" method="POST" class="needs-validation" novalidate>
                                 <div class="form-group">
+                                    <div class="form-group form-inline col-sm-12 justify-content-sm-start">
+                                        <div class="col-4 mr-5 pl-0">
+                                            <input type="text" name="firstname" id="firstname" class="form-control" placeholder="First name" required pattern="[a-zA-Z]{3,}">
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Email must be correct.</div>
+                                        </div>
+                                        <div class="col-4 pl-0 ml-4">
+                                            <input type="text" name="lastname" id="lastname" class="form-control" placeholder="Last name" required pattern="[a-zA-Z]{3,}">
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Email must be correct.</div>
+                                        </div>
+                                    </div>
                                     <div class="form-group col-sm-12">
-                                        <label for="email" class="col-form-label sr-only"> Email </label>
-                                        <input type="email" name="email" id="email" class="form-control" placeholder="Email">
+                                        <!-- <label for="pswd" class="col-form-label sr-only"> Password </label> -->
+                                        <input type="email" name="signemail" id="email" class="form-control" placeholder="you@example.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{3,}$" >
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Email must be correct.</div>
                                     </div>
                                     <div class="form-group col-sm-12">
                                         <label for="pswd" class="col-form-label sr-only"> Password </label>
-                                        <input type="password" name="pswd" id="pswd" class="form-control" placeholder="Password">
+                                        <input type="password" name="signpswd" id="pswd" class="form-control" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters.</div>
                                     </div>
-                                    <div class="col-sm-12 flex-row">
-                                        <div class="form-check col-6">
-                                            <input type="checkbox" name="remember" id="remember" class="form-check-input">
-                                            <label for="remember" class="form-check-label"> Remember me</label>
-                                        </div>
-                                        <div class="form-check col-6">
-                                            <input type="checkbox" name="remember" id="remember" class="form-check-input">
-                                            <label for="remember" class="form-check-label"> Remember me</label>
-                                        </div>
+                                    <div class="form-group col-sm-12">
+                                        <label for="pswd" class="col-form-label sr-only"> Confirm Password </label>
+                                        <input type="password" name="cnfrmpswd" id="pswd" class="form-control" placeholder="Confirm Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters.</div>
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -179,3 +200,23 @@
         </div>
     </div>
 </nav>
+<script>
+// Disable form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Get the forms we want to add validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>

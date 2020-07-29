@@ -20,15 +20,15 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title d-flex justify-content-center">Add Product Form</h4>
-                                <form class="cmxform" id="signupForm" method="get" action="#">
-                                    <fieldset>
+                                <form class="cmxform" id="signupForm" method="GET" action="#" class="needs-validation" novalidate >
+                                    <!-- <fieldset> -->
                                         <div class="form-group">
                                             <label for="firstname">Product Id</label>
-                                            <input id="firstname" class="form-control" name="firstname" type="text" />
+                                            <input id="firstname" class="form-control" name="firstname" type="text" required patter="[a-zA-Z]{3,}" />
                                         </div>
                                         <div class="form-group">
                                             <label for="lastname">Brand</label>
-                                            <select name="brand" id="brand" class="form-control">
+                                            <select name="brand" id="brand" class="form-control" required >
                                                 <option value="" selected disabled><i class="fa fa-angle-down"></i></option>
                                                 <option value="Ford">Ford</option>
                                                 <option value="Police">Police</option>
@@ -39,8 +39,8 @@
                                             <label for="lastname">Category</label>
                                             <select name="brand" id="brand" class="form-control">
                                                 <option value="" selected disabled><i class="fa fa-angle-down"></i></option>
-                                                <option value="Ford">Ford</option>
-                                                <option value="Police">Police</option>
+                                                <option value="frames">Frames</option>
+                                                <option value="sunglasses">Sunglasses</option>
                                             </select>
                                         </div>
                                         <div class="form-group row">
@@ -68,16 +68,17 @@
                                             <label for="lastname">Material</label>
                                             <select name="brand" id="brand" class="form-control">
                                                 <option value="" selected disabled><i class="fa fa-angle-down"></i></option>
-                                                <option value="Ford">Ford</option>
-                                                <option value="Police">Police</option>
+                                                <option value="metal">Metal</option>
+                                                <option value="plastic">Plastic</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label for="lastname">Frame Type</label>
                                             <select name="brand" id="brand" class="form-control">
                                                 <option value="" selected disabled><i class="fa fa-angle-down"></i></option>
-                                                <option value="Ford">Ford</option>
-                                                <option value="Police">Police</option>
+                                                <option value="frame">Frame</option>
+                                                <option value="full-rim">Full-rim</option>
+                                                <option value="half-rim">Half-rim</option>
 
                                             </select>
                                         </div>
@@ -85,8 +86,9 @@
                                             <label for="lastname">Frame Shape</label>
                                             <select name="brand" id="brand" class="form-control">
                                                 <option value="" selected disabled><i class="fa fa-angle-down"></i></option>
-                                                <option value="Ford">Ford</option>
-                                                <option value="Police">Police</option>
+                                                <option value="square">Square</option>
+                                                <option value="round">Round</option>
+                                                <option value="wayfarer">Wayfarer</option>
 
                                             </select>
                                         </div>
@@ -110,7 +112,7 @@
                                             <label>Image upload</label>
                                             <input type="file" name="img[]" class="file-upload-default" />
                                             <div class="input-group col-xs-12">
-                                                <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image" />
+                                                <input type="file" class="form-control file-upload-info" placeholder="Upload Image" />
                                                 <span class="input-group-append">
                                                     <button class="file-upload-browse btn btn-gradient-primary" type="button"> Upload </button>
                                                 </span>
@@ -121,7 +123,7 @@
                                             <input id="email" class="form-control" name="email" type="email" />
                                         </div>
                                         <input class="btn btn-primary" type="submit" value="Submit" />
-                                    </fieldset>
+                                    <!-- </fieldset> -->
                                 </form>
                             </div>
                         </div>
@@ -289,3 +291,23 @@
 
     </div>
 </div>
+<script>
+// Disable form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Get the forms we want to add validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
