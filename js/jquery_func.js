@@ -205,13 +205,19 @@ $(document).ready(function () {
             case "ls-type-box-later":
                 presc = 'later';
                 // alert(presc);
-                // Query to store the lens_type value in database
+                // Query to store the presc value in database
 
                 break;
 
             case "ls-type-box-already":
                 presc = 'already'
+                p_r=null;
+                p_l=null;
+                pd_r=null;
+                pd_l=null;
                 // Query to retrive the prescription of the specific customer
+
+                // Code to store retrive prescription in the prescription variables
 
                 break;
 
@@ -234,6 +240,7 @@ $(document).ready(function () {
                 // Query to Store the prescription data in the database
 
                 break;
+                
             case "Plastic CR-39":
             case "Polycarbonte":
             case "Thinner":

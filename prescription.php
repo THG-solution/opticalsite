@@ -13,7 +13,18 @@
 
 <body>
 
-    <?php include "includes/head.php" ?>
+    <?php 
+    $id = null;
+    $id = $_GET['id'];
+    if($id==null)
+    {   
+        header('Location: index.php');
+    }
+    $db = new DBController();
+    $product = new Table($db);
+    $resultSet = $product->getProductData("$id");
+    
+    include "includes/head.php" ?>
 
     <?php
     if (!file_exists("database/db_controller.php")) {
@@ -22,7 +33,10 @@
     } else {
         include "database/db_controller.php";
         include "database/db_table.php";
-    } ?>
+    } 
+
+    
+    ?>
 
     <div class="container px-0 mt-5">
         <div class="row">
@@ -799,13 +813,7 @@
                     </div>
                 </div>
             </div>
-            <?php
-            
-            $id = $_GET['id'];
-            $db = new DBController();
-            $product = new Table($db);
-            $resultSet = $product->getProductData("{$_GET['id']}");
-            ?>
+
             <div class="col-lg-3">
                 <div class="jsx-761701937 pc-lens-bar-container">
                     <div class="jsx-761701937 pc-lens-bar-title-line"><a class="jsx-761701937 pc-lens-bar-title-container" href="/eyeglasses-p-6415.html?color=15758">
@@ -823,10 +831,11 @@
                     <picture class="jsx-2643774471 imgBox ">
                         <img src=<?php echo "assests/images/{$result['image']}" ?> class="w-100" alt="">
                     </picture>
-                    <div class="jsx-761701937 pc-lens-change-frame"><a class="jsx-761701937" href=<?php echo "includes/product_desc.php?id={$_GET['id']}" ?>>&lt; Change Frame</a></div>
-                    <p class="jsx-761701937 pc-lens-bar-price-item">Frame Price: <b class="jsx-761701937">$ <?php echo "{$resultSet['price']}"; ?></b></p>
-                    <p class="jsx-761701937 pc-lens-bar-price-item pc-lens-price-detail-container">Lens Price: <b id="lens-price" class="">$0.00 </b></p>
-                    <p class="jsx-761701937 pc-lens-bar-price"><span class="jsx-761701937">Total: </span><span class="jsx-761701937 pc-lens-bar-total">$<?php echo "{$resultSet['price']}"; ?> </span></p><button class="jsx-761701937 pc-lens-bar-add-cart text-center lens-bar-add-cart-disable">ADD TO CART</button>
+                    <div class="pc-lens-change-frame"><a class="jsx-761701937" href=<?php echo "includes/product_desc.php?id={$_GET['id']}" ?>>&lt; Change Frame</a></div>
+                    <p class=" pc-lens-bar-price-item">Frame Price: <b class="jsx-761701937">$ <?php echo "{$resultSet['price']}"; ?></b></p>
+                    <p class=" pc-lens-bar-price-item pc-lens-price-detail-container">Lens Price: <b id="lens-price" class="">$0.00 </b></p>
+                    <p class=" pc-lens-bar-price"><span class="jsx-761701937">Total: </span><span class="jsx-761701937 pc-lens-bar-total">$<?php echo "{$resultSet['price']}"; ?> </span></p>
+                    <button class="pc-lens-bar-add-cart text-center lens-bar-add-cart-disable">ADD TO CART</button>
                     <div class="pres-lens-foot">
                         <p style="margin-bottom:0">Free Standard Shipping:</p>
                         <!-- <p style="margin-bottom:0"><b>Total Price ≥
