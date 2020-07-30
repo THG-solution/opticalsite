@@ -15,6 +15,15 @@
 
     <?php include "includes/head.php" ?>
 
+    <?php
+    if (!file_exists("database/db_controller.php")) {
+        include "../database/db_controller.php";
+        include "../database/db_table.php";
+    } else {
+        include "database/db_controller.php";
+        include "database/db_table.php";
+    } ?>
+
     <div class="container px-0 mt-5">
         <div class="row">
             <div class="col-lg-9">
@@ -482,7 +491,7 @@
                                         <td id="right" class="width-10 weight-bold align-right">Right (OD):</td>
                                         <td>
                                             <div class="lbl-ui select width-100">
-                                                <select name="sphereR" id="sphereR" class="presc-select"> 
+                                                <select name="sphereR" id="sphereR" class="presc-select">
                                                     <?php
                                                     $a = 15.00;
                                                     while ($a > 0.00) {
@@ -577,7 +586,7 @@
                                         <td id="">
                                             <div class="lbl-ui select width-100">
                                                 <select name="addR" id="addR" class="presc-select">
-                                                    <option  value="add">Add</option>
+                                                    <option value="add">Add</option>
                                                     <option selected="selected" value="none">None</option>
                                                     <?php
                                                     $a = 0.75;
@@ -690,7 +699,7 @@
                                         <td id="">
                                             <div class="lbl-ui select width-100">
                                                 <select name="addL" id="addL" class="presc-select">
-                                                    <option  value="add">Add</option>
+                                                    <option value="add">Add</option>
                                                     <option selected="selected" value="none">None</option>
                                                     <?php
                                                     $a = 0.75;
@@ -790,27 +799,39 @@
                     </div>
                 </div>
             </div>
-
+            <?php
+            
+            $id = $_GET['id'];
+            $db = new DBController();
+            $product = new Table($db);
+            $resultSet = $product->getProductData("{$_GET['id']}");
+            ?>
             <div class="col-lg-3">
                 <div class="jsx-761701937 pc-lens-bar-container">
                     <div class="jsx-761701937 pc-lens-bar-title-line"><a class="jsx-761701937 pc-lens-bar-title-container" href="/eyeglasses-p-6415.html?color=15758">
-                            <h3 class="jsx-761701937 pc-lens-bar-title">#S0169(C12)</h3>
+                            <h3 class="jsx-761701937 pc-lens-bar-title">#<?php echo "{$resultSet['product_id']}"; ?></h3>
                         </a>
                         <div style="width:100%" class="jsx-1467848752 pc-extend-button undefined"><span class="icon iconfont icon-empty-heart " style="font-size:20px;margin-left:15px;font-weight:800;color:#333"></span></div>
                     </div>
+                    <?php
+                    $db = new DBController();
+                    $product = new Table($db);
+                    $result = $product->queryData("SELECT c.image, p.avg_star, p.total_review FROM products p, product_colors c WHERE c.product_id = p.product_id and p.product_id = '{$id}' LIMIT 1");
+                    $db = null;
+
+                    ?>
                     <picture class="jsx-2643774471 imgBox ">
-                        <img src="assests/images/562N-black-1.jpg" class="w-100" alt="">
+                        <img src=<?php echo "assests/images/{$result['image']}" ?> class="w-100" alt="">
                     </picture>
-                    <div class="jsx-761701937 pc-lens-change-frame"><a class="jsx-761701937" href="/eyeglasses-p-6415.html?color=15758">&lt; Change Frame</a></div>
-                    <p class="jsx-761701937 pc-lens-bar-price-item">Frame Price: <b class="jsx-761701937">$23.99 </b></p>
-                    <p class="jsx-761701937 pc-lens-bar-price-item pc-lens-price-detail-container">Lens Price: <b class="jsx-761701937">$0.00 </b></p>
-                    <p class="jsx-761701937 pc-lens-bar-price"><span class="jsx-761701937">Total: </span><span class="jsx-761701937 pc-lens-bar-total">$23.99 </span></p><button class="jsx-761701937 pc-lens-bar-add-cart text-center lens-bar-add-cart-disable">ADD TO CART</button>
+                    <div class="jsx-761701937 pc-lens-change-frame"><a class="jsx-761701937" href=<?php echo "includes/product_desc.php?id={$_GET['id']}" ?>>&lt; Change Frame</a></div>
+                    <p class="jsx-761701937 pc-lens-bar-price-item">Frame Price: <b class="jsx-761701937">$ <?php echo "{$resultSet['price']}"; ?></b></p>
+                    <p class="jsx-761701937 pc-lens-bar-price-item pc-lens-price-detail-container">Lens Price: <b id="lens-price" class="">$0.00 </b></p>
+                    <p class="jsx-761701937 pc-lens-bar-price"><span class="jsx-761701937">Total: </span><span class="jsx-761701937 pc-lens-bar-total">$<?php echo "{$resultSet['price']}"; ?> </span></p><button class="jsx-761701937 pc-lens-bar-add-cart text-center lens-bar-add-cart-disable">ADD TO CART</button>
                     <div class="pres-lens-foot">
                         <p style="margin-bottom:0">Free Standard Shipping:</p>
-                        <p style="margin-bottom:0"><b>Total Price
-                                <!-- -->≥
-                                <!-- -->$69.00
-                                <!-- --> (US only)</b></p>
+                        <!-- <p style="margin-bottom:0"><b>Total Price ≥
+                                $69.00
+                                (US only)</b></p> -->
                     </div>
                 </div>
                 <!-- <div style="color:#333" class="jsx-3236201328 help-tips">
