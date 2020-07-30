@@ -172,7 +172,10 @@
                         $db = new DBController();
                         $product = new Table($db);
                         $resultSet = $product->queryData("SELECT * FROM product_review where product_id = '$id'");
-
+                        if (!is_array($resultSet))
+                        {
+                            $resultSet = array();
+                        }
                         ?>
                         <div class="tab-content mt-4" id="myTabContent">
                             <div class="tab-pane fade show active" id="all-reviews" role="tabpanel" aria-labelledby="home-tab">
@@ -251,8 +254,7 @@
                                     </div>
                             </div>
                             <?php
-                                } else {
-                                    if (!empty($resultSet))
+                                } elseif (count($resultSet)>4){
                                     foreach ($resultSet as $result) {  ?>
                                 <div class="row my-3">
                                     <div class="col-lg-3">
@@ -325,7 +327,10 @@
                                     </div>
                                 </div>
                         <?php }
-                                } ?>
+                                } else{
+                                    echo "No Reviews </div>";
+                                }
+                                 ?>
                         </div>
                     </div>
                 </div>
@@ -377,7 +382,7 @@
                     <div class='pd-select-btn-container'>
                         <div class='d-flex align-items-center justify-content-between' style='height:52px;'>
                             <div class='pd-select-btn'>
-                                Select Lenses
+                                <a href= <?php echo "../prescription.php?id={$_GET['id']}"; ?> class="text-white"> Select Lenses</a>
                             </div>
                         </div>
                     </div>

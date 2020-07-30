@@ -13,7 +13,30 @@
 
 <body>
 
-    <?php include "includes/head.php" ?>
+    <?php 
+    $id = null;
+    $id = $_GET['id'];
+    if($id==null)
+    {   
+        header('Location: index.php');
+    }
+    $db = new DBController();
+    $product = new Table($db);
+    $resultSet = $product->getProductData("$id");
+    
+    include "includes/head.php" ?>
+
+    <?php
+    if (!file_exists("database/db_controller.php")) {
+        include "../database/db_controller.php";
+        include "../database/db_table.php";
+    } else {
+        include "database/db_controller.php";
+        include "database/db_table.php";
+    } 
+
+    
+    ?>
 
     <div class="container px-0 mt-5">
         <div class="row">
@@ -51,7 +74,7 @@
                         </center>
                         <!-- <div class="d-flex"> -->
                         <div class="d-flex">
-                            <div id="ls-type-box" class="d-flex flex-column justify-content-between ls-type-box ls-border">
+                            <div id="Single Vision" class="d-flex flex-column justify-content-between ls-type-box ls-border ls-type-box-focus">
                                 <div>
                                     <div class="ls-title">
                                         Single Vision
@@ -64,39 +87,52 @@
                                     SELECT
                                 </div>
                             </div>
-                            <div id="ls-type-box" class="d-flex flex-column justify-content-between ls-type-box ls-border">
+                            <div id="Progressive No Line" class="d-flex flex-column justify-content-between ls-type-box ls-border">
                                 <div>
                                     <div class="ls-title">
-                                        Single Vision
+                                        Progressive No Line
                                     </div>
                                     <div class="ls-subtitle">
-                                        A general use lens for seeing things close up or far away
+                                        Smooth, continuous vision at every distance
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-center  ls-select">
                                     SELECT
                                 </div>
                             </div>
-                            <div id="ls-type-box" class="d-flex flex-column justify-content-between ls-type-box ls-border">
+                            <div id="Bifocals" class="d-flex flex-column justify-content-between ls-type-box ls-border">
                                 <div>
                                     <div class="ls-title">
-                                        Single Vision
+                                        Bifocals
                                     </div>
                                     <div class="ls-subtitle">
-                                        A general use lens for seeing things close up or far away
+                                        Lens for near and far viewing with visible line.
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-center  ls-select">
                                     SELECT
                                 </div>
                             </div>
-                            <div id="ls-type-box" class="d-flex flex-column justify-content-between ls-type-box ls-border">
+                            <div id="Readers" class="d-flex flex-column justify-content-between ls-type-box ls-border">
                                 <div>
                                     <div class="ls-title">
-                                        Single Vision
+                                        Readers
                                     </div>
                                     <div class="ls-subtitle">
-                                        A general use lens for seeing things close up or far away
+                                        Lens for reading. No prscription needed.
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-center  ls-select">
+                                    SELECT
+                                </div>
+                            </div>
+                            <div id="Non-prescription" class="d-flex flex-column justify-content-between ls-type-box ls-border">
+                                <div>
+                                    <div class="ls-title">
+                                        Non-Prescription
+                                    </div>
+                                    <div class="ls-subtitle">
+                                        High'quality, fashion lenses with eye protection.
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-center  ls-select">
@@ -110,7 +146,7 @@
                             <h2>Do You Have Your Prescription Available?</h2>
                         </center>
                         <div class="d-flex">
-                            <div id="ls-type-box" class="d-flex flex-column justify-content-between ls-type-box ls-border">
+                            <div id="ls-type-box-later" class="d-flex flex-column justify-content-between ls-type-box ls-border ls-type-box-focus">
                                 <div>
                                     <div class="ls-title">
                                         I'll send it later
@@ -123,7 +159,7 @@
                                     SELECT
                                 </div>
                             </div>
-                            <div id="ls-type-box" class="d-flex flex-column justify-content-between ls-type-box ls-border">
+                            <div id="ls-type-box-already" class="d-flex flex-column justify-content-between ls-type-box ls-border">
                                 <div>
                                     <div class="ls-title">
                                         You already have it
@@ -136,7 +172,7 @@
                                     SELECT
                                 </div>
                             </div>
-                            <div id="ls-type-box" class="d-flex flex-column justify-content-between ls-type-box ls-border">
+                            <div id="ls-type-box-yes" class="d-flex flex-column justify-content-between ls-type-box ls-border">
                                 <div>
                                     <div class="ls-title">
                                         Yes
@@ -156,7 +192,7 @@
                             <h2>Select Your Lens</h2>
                         </center>
                         <div class="d-flex">
-                            <div id="ls-type-box" class="d-flex flex-column justify-content-between ls-type-box ls-border">
+                            <div id="Plastic CR-39" class="d-flex flex-column justify-content-between ls-type-box ls-border ls-type-box-focus">
 
                                 <div>
                                     <div class="ls-title">
@@ -175,7 +211,7 @@
 
                                 <div class="ls-promo-price">
                                     <div class="ls-starting weight-normal decoration-strike color-gray">Retail Price: $69.00</div>
-                                    <div class="display-inline-block weight-bold">With promo:</div>
+                                    <div class="display-inline-block weight-bold">With promo: <span class="text-success"> $ <span class='lns-price'>16</span> </span></div>
                                     <div class="price-with-promo color-green weight-bold display-inline-block"></div>
                                 </div>
                                 <div class="ls-compare justify-content-center pb-5 pt-2 px-3">
@@ -190,14 +226,14 @@
                                     SELECT
                                 </div>
                             </div>
-                            <div id="ls-type-box" class="d-flex flex-column justify-content-between ls-type-box ls-border">
+                            <div id="Polycarbonte" class="d-flex flex-column justify-content-between ls-type-box ls-border">
 
                                 <div>
                                     <div class="ls-title">
                                         Polycarbonte
                                     </div>
                                     <div class="ls-subtitle">
-                                    High-Impact Resistant
+                                        High-Impact Resistant
                                     </div>
                                 </div>
                                 <!-- IMAGE START ++ -->
@@ -210,7 +246,7 @@
 
                                 <div class="ls-promo-price">
                                     <div class="ls-starting weight-normal decoration-strike color-gray">Retail Price: $115.00</div>
-                                    <div class="display-inline-block weight-bold">With promo:</div>
+                                    <div class="display-inline-block weight-bold">With promo: <span class="text-success">$ <span class='lns-price'>70</span> </span></div>
                                     <div class="price-with-promo color-green weight-bold display-inline-block"></div>
                                 </div>
                                 <div class="ls-compare justify-content-center pb-5 pt-2 px-3">
@@ -225,14 +261,14 @@
                                     SELECT
                                 </div>
                             </div>
-                            <div id="ls-type-box" class="d-flex flex-column justify-content-between ls-type-box ls-border">
+                            <div id="Thinner" class="d-flex flex-column justify-content-between ls-type-box ls-border">
 
                                 <div>
                                     <div class="ls-title">
                                         Thinner
                                     </div>
                                     <div class="ls-subtitle">
-                                    For Strong Prescriptions
+                                        For Strong Prescriptions
                                     </div>
                                 </div>
                                 <!-- IMAGE START ++ -->
@@ -245,7 +281,7 @@
 
                                 <div class="ls-promo-price">
                                     <div class="ls-starting weight-normal decoration-strike color-gray">Retail Price: $159.00</div>
-                                    <div class="display-inline-block weight-bold">With promo:</div>
+                                    <div class="display-inline-block weight-bold">With promo: <span class="text-success">$ <span class='lns-price'>95</span> </span></div>
                                     <div class="price-with-promo color-green weight-bold display-inline-block"></div>
                                 </div>
                                 <div class="ls-compare justify-content-center pb-5 pt-2 px-3">
@@ -260,14 +296,14 @@
                                     SELECT
                                 </div>
                             </div>
-                            <div id="ls-type-box" class="d-flex flex-column justify-content-between ls-type-box ls-border">
+                            <div id="Thinnest" class="d-flex flex-column justify-content-between ls-type-box ls-border">
 
                                 <div>
                                     <div class="ls-title">
                                         Thinnest
                                     </div>
                                     <div class="ls-subtitle">
-                                    For Extra Storng Prescriptions
+                                        For Extra Storng Prescriptions
                                     </div>
                                 </div>
                                 <!-- IMAGE START ++ -->
@@ -280,7 +316,7 @@
 
                                 <div class="ls-promo-price">
                                     <div class="ls-starting weight-normal decoration-strike color-gray">Retail Price: $199.00</div>
-                                    <div class="display-inline-block weight-bold">With promo:</div>
+                                    <div class="display-inline-block weight-bold">With promo: <span class="text-success"> $ <span class='lns-price'>175</span> </span></div>
                                     <div class="price-with-promo color-green weight-bold display-inline-block"></div>
                                 </div>
                                 <div class="ls-compare justify-content-center pb-5 pt-2 px-3">
@@ -296,13 +332,14 @@
                                 </div>
                             </div>
                         </div>
-                    </div><div id="child4" class="lens-prescription ">
+                    </div>
+                    <div id="child4" class="lens-prescription ">
                         <center>
-                            <h2>Choose Options</h2>
+                            <h2>Choose Coating Options</h2>
                         </center>
                         <div class="d-flex">
-                            
-                            <div id="ls-type-box" class="d-flex flex-column justify-content-between ls-type-box ls-border">
+
+                            <div id="Basic" class="d-flex flex-column justify-content-between ls-type-box ls-border ls-type-box-focus">
 
                                 <div>
                                     <div class="ls-title">
@@ -316,6 +353,8 @@
                                     <!-- <div class="ls-starting weight-normal decoration-strike color-gray">Retail Price: $115.00</div> -->
                                     <div class="display-inline-block weight-bold px-3">Included No Additional Charges</div>
                                     <!-- <div class="price-with-promo color-green weight-bold display-inline-block"></div> -->
+                                    <span class="option_price d-none">0</span>
+
                                 </div>
                                 <div class="ls-compare justify-content-center pb-1 pt-2 px-3">
                                     Compare to other retailer's price:
@@ -325,7 +364,7 @@
 
                                 <!-- VISION INFO END xx -->
 
-                                <div class="px-4 pb-4">                                
+                                <div class="px-4 pb-4">
                                     <div class="ls-ul-select">
                                         <i class="fa fa-check"></i>
                                         UV Protection
@@ -346,19 +385,20 @@
                                     SELECT
                                 </div>
                             </div>
-                            <div id="ls-type-box" class="d-flex flex-column justify-content-between ls-type-box ls-border">
+                            <div id="Standard" class="d-flex flex-column justify-content-between ls-type-box ls-border">
 
                                 <div>
                                     <div class="ls-title">
                                         Standard
                                     </div>
                                 </div>
-                                
+
                                 <!-- VISION INFO START ++ -->
                                 <div class="ls-promo-price">
                                     <div class="ls-starting weight-normal decoration-strike color-gray px-3">Retail Price: $99.00</div>
                                     <div class="display-inline-block weight-bold pl-3">With promo:</div>
-                                    <div class="price-with-promo text-success weight-bold display-inline-block pr-3"> $ 49.00</div>
+                                    <div class="price-with-promo text-success weight-bold display-inline-block pr-3"> $ <span class="option_price">49</span>
+                                    </div>
                                 </div>
                                 <div class="ls-compare justify-content-center pb-1 pt-2 px-3">
                                     Compare to other retailer's price:
@@ -367,7 +407,7 @@
                                 </div>
                                 <!-- VISION INFO END xx -->
 
-                                <div class="px-4 pb-4">                                
+                                <div class="px-4 pb-4">
                                     <div class="ls-ul-select">
                                         <i class="fa fa-check"></i>
                                         UV Protection
@@ -392,29 +432,30 @@
                                     SELECT
                                 </div>
                             </div>
-                            <div id="ls-type-box" class="d-flex flex-column justify-content-between ls-type-box ls-border">
+                            <div id="Premium" class="d-flex flex-column justify-content-between ls-type-box ls-border">
 
                                 <div>
                                     <div class="ls-title">
                                         Premium
                                     </div>
-                                   
+
                                 </div>
-                                
-                                <!-- VISION INFO START ++ -->                        
+
+                                <!-- VISION INFO START ++ -->
                                 <div class="ls-promo-price">
                                     <div class="ls-starting weight-normal decoration-strike color-gray px-3">Retail Price: $129.00</div>
                                     <div class="display-inline-block weight-bold pl-3">With promo:</div>
-                                    <div class="price-with-promo text-success weight-bold display-inline-block pr-3"> $ 64.50</div>
+                                    <div class="price-with-promo text-success weight-bold display-inline-block pr-3"> $<span class="option_price">64.5</span>
+                                    </div>
                                 </div>
                                 <div class="ls-compare justify-content-center pb-1 pt-2 px-3">
                                     Compare to other retailer's price:
 
-                                    "$310
+                                    $310
                                 </div>
                                 <!-- VISION INFO END xx -->
-                  
-                                <div class="px-4 pb-4">                                
+
+                                <div class="px-4 pb-4">
                                     <div class="ls-ul-select">
                                         <i class="fa fa-check"></i>
                                         UV Protection
@@ -435,7 +476,7 @@
                                     </div>
                                     <div class="ls-ul-select">
                                         <i class="fa fa-plus"></i>
-                                        Digital light Protection 
+                                        Digital light Protection
                                     </div>
                                 </div>
 
@@ -446,28 +487,360 @@
                         </div>
                     </div>
                 </div>
+                <div id="choose_pd" class="mb-3  justify-content-center" style="display:none ">
+                    <div class="form-rx">
+                        <div class="form-container mt-5 mb-0">
+                            <table id="table-01" class="table-minimal-small marg-topbot-0 stacktable large-only" cellspacing="0" cellpadding="0">
+                                <thead>
+                                    <tr>
+                                        <th>&nbsp;</th>
+                                        <th>Sphere</th>
+                                        <th>Cylinder</th>
+                                        <th>Axis</th>
+                                        <th id="ctl00_ContentPlaceHolderProductDisplay_AddHeader">Add</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td id="right" class="width-10 weight-bold align-right">Right (OD):</td>
+                                        <td>
+                                            <div class="lbl-ui select width-100">
+                                                <select name="sphereR" id="sphereR" class="presc-select">
+                                                    <?php
+                                                    $a = 15.00;
+                                                    while ($a > 0.00) {
+                                                        // $y = 54;
+                                                        // $z = 19.5;
+                                                        // $x1 = $x / 2;
+                                                        // $val2 = $z + $x1;
+                                                    ?><option value=<?php echo "+{$a}" ?>><?php echo "+{$a}" ?></option>
+                                                    <?php
+                                                        $a =  $a - 0.25;
+                                                    } ?>
+
+                                                    <option value="165" disabled="true">------</option>
+                                                    <option value="163"></option>
+                                                    <option value="164">0.00</option>
+                                                    <option value="2">Plano</option>
+                                                    <option value="0">Sphere</option>
+                                                    <option value="1">None</option>
+                                                    <option value="165" disabled="true">------</option>
+                                                    <?php
+                                                    $a = 0.25;
+                                                    while ($a < 15.25) {
+                                                        // $y = 54;
+                                                        // $z = 19.5;
+                                                        // $x1 = $x / 2;
+                                                        // $val2 = $z + $x1;
+                                                    ?><option value=<?php echo "-{$a}" ?>><?php echo "-{$a}" ?></option>
+                                                    <?php
+                                                        $a =  $a + 0.25;
+                                                    } ?>
+
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="lbl-ui select width-100">
+                                                <select name="cylinderR" id="cylinderR" class="presc-select">
+                                                    <?php
+                                                    $a = 8.00;
+                                                    while ($a > 0.00) {
+                                                        // $y = 54;
+                                                        // $z = 19.5;
+                                                        // $x1 = $x / 2;
+                                                        // $val2 = $z + $x1;
+                                                    ?><option value=<?php echo "+{$a}" ?>><?php echo "+{$a}" ?></option>
+                                                    <?php
+                                                        $a =  $a - 0.25;
+                                                    } ?>
+                                                    <option value="166" disabled="true">------</option>
+                                                    <option value="164"></option>
+                                                    <option value="0.00">0.00</option>
+                                                    <option value="plano">Plano</option>
+                                                    <option value="cylinder">Cylinder</option>
+                                                    <option value="sphere">Sphere</option>
+                                                    <option value="none">None</option>
+                                                    <option value="166" disabled="true">------</option>
+                                                    <?php
+                                                    $a = 0.25;
+                                                    while ($a < 8.25) {
+                                                        // $y = 54;
+                                                        // $z = 19.5;
+                                                        // $x1 = $x / 2;
+                                                        // $val2 = $z + $x1;
+                                                    ?><option value=<?php echo "-{$a}" ?>><?php echo "-{$a}" ?></option>
+                                                    <?php
+                                                        $a =  $a + 0.25;
+                                                    } ?>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="lbl-ui select width-100">
+                                                <select name="axisR" id="axisR" class="presc-select">
+                                                    <option value="183"></option>
+                                                    <option value="Axis">Axis</option>
+                                                    <option selected="selected" value="none">None</option>
+                                                    <option value="184" disabled="true">------</option>
+                                                    <?php
+                                                    for ($x = 0; $x <= 180; $x++) {
+                                                        // $y = 54;
+                                                        // $z = 19.5;
+                                                        // $x1 = $x / 2;
+                                                        $val1 =  $x;
+                                                        // $val2 = $z + $x1;
+                                                    ?><option value=<?php echo "{$val1}" ?>><?php echo "{$val1}" ?></option>
+                                                    <?php
+                                                    } ?>
+
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td id="">
+                                            <div class="lbl-ui select width-100">
+                                                <select name="addR" id="addR" class="presc-select">
+                                                    <option value="add">Add</option>
+                                                    <option selected="selected" value="none">None</option>
+                                                    <?php
+                                                    $a = 0.75;
+                                                    while ($a < 4.25) {
+                                                        // $y = 54;
+                                                        // $z = 19.5;
+                                                        // $x1 = $x / 2;
+                                                        // $val2 = $z + $x1;
+                                                    ?><option value=<?php echo "+{$a}" ?>><?php echo "+{$a}" ?></option>
+                                                    <?php
+                                                        $a =  $a + 0.25;
+                                                    } ?>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="weight-bold align-right">Left (OS):</td>
+                                        <td>
+                                            <div class="lbl-ui select width-100">
+                                                <select name="sphereL" id="sphereL" class="presc-select">
+                                                    <?php
+                                                    $a = 15.00;
+                                                    while ($a > 0.00) {
+                                                        // $y = 54;
+                                                        // $z = 19.5;
+                                                        // $x1 = $x / 2;
+                                                        // $val2 = $z + $x1;
+                                                    ?><option value=<?php echo "+{$a}" ?>><?php echo "+{$a}" ?></option>
+                                                    <?php
+                                                        $a =  $a - 0.25;
+                                                    } ?>
+                                                    <option value="165" disabled="true">------</option>
+                                                    <option value="163"></option>
+                                                    <option value="0.00">0.00</option>
+                                                    <option value="plano">Plano</option>
+                                                    <option value="sphere">Sphere</option>
+                                                    <option value="none">None</option>
+                                                    <option value="165" disabled="true">------</option>
+                                                    <?php
+                                                    $a = 0.25;
+                                                    while ($a < 15.25) {
+                                                        // $y = 54;
+                                                        // $z = 19.5;
+                                                        // $x1 = $x / 2;
+                                                        // $val2 = $z + $x1;
+                                                    ?><option value=<?php echo "-{$a}" ?>><?php echo "-{$a}" ?></option>
+                                                    <?php
+                                                        $a =  $a + 0.25;
+                                                    } ?>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="lbl-ui select width-100">
+                                                <select name="cylinderL" id="cylinderL" class="presc-select">
+                                                    <?php
+                                                    $a = 8.00;
+                                                    while ($a > 0.00) {
+                                                        // $y = 54;
+                                                        // $z = 19.5;
+                                                        // $x1 = $x / 2;
+                                                        // $val2 = $z + $x1;
+                                                    ?><option value=<?php echo "+{$a}" ?>><?php echo "+{$a}" ?></option>
+                                                    <?php
+                                                        $a =  $a - 0.25;
+                                                    } ?>
+                                                    <option value="166" disabled="true">------</option>
+                                                    <option value="164"></option>
+                                                    <option value="0.00">0.00</option>
+                                                    <option value="plano">Plano</option>
+                                                    <option value="cylinder">Cylinder</option>
+                                                    <option value="sphere">Sphere</option>
+                                                    <option value="none">None</option>
+                                                    <option value="166" disabled="true">------</option>
+                                                    <?php
+                                                    $a = 0.25;
+                                                    while ($a < 8.25) {
+                                                        // $y = 54;
+                                                        // $z = 19.5;
+                                                        // $x1 = $x / 2;
+                                                        // $val2 = $z + $x1;
+                                                    ?><option value=<?php echo "-{$a}" ?>><?php echo "-{$a}" ?></option>
+                                                    <?php
+                                                        $a =  $a + 0.25;
+                                                    } ?>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="lbl-ui select width-100">
+                                                <select name="axisL" id="axisL" class="presc-select">
+                                                    <option value="183"></option>
+                                                    <option value="axis">Axis</option>
+                                                    <option selected="selected" value="none">None</option>
+                                                    <option value="184" disabled="true">------</option>
+                                                    <?php
+                                                    for ($x = 0; $x <= 180; $x++) {
+                                                        // $y = 54;
+                                                        // $z = 19.5;
+                                                        // $x1 = $x / 2;
+                                                        $val1 =  $x;
+                                                        // $val2 = $z + $x1;
+                                                    ?><option value=<?php echo "{$val1}" ?>><?php echo "{$val1}" ?></option>
+                                                    <?php
+                                                    } ?>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td id="">
+                                            <div class="lbl-ui select width-100">
+                                                <select name="addL" id="addL" class="presc-select">
+                                                    <option value="add">Add</option>
+                                                    <option selected="selected" value="none">None</option>
+                                                    <?php
+                                                    $a = 0.75;
+                                                    while ($a < 4.25) {
+                                                        // $y = 54;
+                                                        // $z = 19.5;
+                                                        // $x1 = $x / 2;
+                                                        // $val2 = $z + $x1;
+                                                    ?><option value=<?php echo "+{$a}" ?>><?php echo "+{$a}" ?></option>
+                                                    <?php
+                                                        $a =  $a + 0.25;
+                                                    } ?>
+
+                                                </select>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div id="ctl00_ContentPlaceHolderProductDisplay_AddRowPD d-flex justify-content-center" class="mt-3 pad-10 align-center">
+                                <p class="size-14 weight-bold">Enter the PD number(s) from your prescription: <span class="weight-normal size-11">(<a href="javascript:shadowboxPop(750,500,'/theme/fd-steel/popup/pd-combined.html');">What is PD?</a>)</span></p>
+
+                                <div class="d-flex justify-content-center">
+                                    <label class="options">
+                                        <input type="radio" name="howManyPDs" id="noPD" value="checked" />
+                                        <span class="radio"></span>
+                                    </label>
+                                    <label for="option2"><span id="no-pd" class="size-15 ml-2">No PD</span></label>
+
+                                    <label class="options">
+                                        <input type="radio" class="ml-3" name="howManyPDs" id="onePD" value="checked" />
+                                        <span class="radio"></span>
+                                    </label>
+                                    <label for="option2"><span class="size-15 ml-2">One</span></label>
+
+                                    <label class="options">
+                                        <input type="radio" class="ml-3" name="howManyPDs" id="twoPDs" value="checked" />
+                                        <span class="radio"></span>
+                                    </label>
+                                    <label for="option2"><span class="size-15 ml-2">Two</span></label>
+                                </div>
+
+                                <div class="spacer-10"></div>
+
+                                <div class="form-group d-flex justify-content-center">
+                                    <div id="pd-r" class="" style="display:none">
+                                        <select name="pd-r" id="select-pd-r" class="width-150 ml-5 p-2 select-pd presc-select">
+                                            <option selected="selected" value="0">PD-R</option>
+                                            <option value="1">None</option>
+
+                                            <?php
+                                            for ($x = 1; $x < 120; $x++) {
+                                                $y = 54;
+                                                $z = 19.5;
+                                                $x1 = $x / 2;
+                                                // $val1 = $y + $x;
+                                                $val2 = $z + $x1;
+                                            ?><option value=<?php echo "{$val2}" ?>><?php echo "{$val2}" ?></option>
+                                            <?php
+                                            } ?>
+
+                                        </select>
+                                        <input type="hidden" name="" id="" />
+                                    </div>
+                                    <div id="pd-l" class="" style="display:none">
+                                        <select name="pd-l" id="select-pd-l" class="width-150 ml-2 p-2 presc-select">
+                                            <option selected="selected" value="0">PD-L</option>
+                                            <option value="1">None</option>
+                                            <?php
+                                            for ($x = 1; $x < 120; $x++) {
+                                                $y = 54;
+                                                $z = 19.5;
+                                                $x1 = $x / 2;
+                                                // $val1 = $x + 1;
+                                                $val2 = $z + $x1;
+                                            ?><option value=<?php echo "{$val2}" ?>><?php echo "{$val2}" ?></option>
+                                            <?php
+                                            } ?>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 
+                        <div id="ctl00_ContentPlaceHolderProductDisplay_dontworry" class="width-75 mobile-100 m-auto" style="display: none;">
+                            <p class="weight-bold">How to find your PD:</p>
+                            <ul>
+                                <li>First, look on your prescription. It may be included there.</li>
+                                <li>If not there, call your eye doctor and ask them for your PD.</li>
+                                <li>One of our trained opticians can even call your eye doctor.</li>
+                            </ul>
+                            <p>Call us for assistance at any time&#151;1-800-248-9427.</p>
+                        </div> -->
+
+                    </div>
+                </div>
             </div>
 
             <div class="col-lg-3">
                 <div class="jsx-761701937 pc-lens-bar-container">
                     <div class="jsx-761701937 pc-lens-bar-title-line"><a class="jsx-761701937 pc-lens-bar-title-container" href="/eyeglasses-p-6415.html?color=15758">
-                            <h3 class="jsx-761701937 pc-lens-bar-title">#S0169(C12)</h3>
+                            <h3 class="jsx-761701937 pc-lens-bar-title">#<?php echo "{$resultSet['product_id']}"; ?></h3>
                         </a>
                         <div style="width:100%" class="jsx-1467848752 pc-extend-button undefined"><span class="icon iconfont icon-empty-heart " style="font-size:20px;margin-left:15px;font-weight:800;color:#333"></span></div>
                     </div>
+                    <?php
+                    $db = new DBController();
+                    $product = new Table($db);
+                    $result = $product->queryData("SELECT c.image, p.avg_star, p.total_review FROM products p, product_colors c WHERE c.product_id = p.product_id and p.product_id = '{$id}' LIMIT 1");
+                    $db = null;
+
+                    ?>
                     <picture class="jsx-2643774471 imgBox ">
-                        <img src="assests/images/562N-black-1.jpg" class="w-100" alt="">
+                        <img src=<?php echo "assests/images/{$result['image']}" ?> class="w-100" alt="">
                     </picture>
-                    <div class="jsx-761701937 pc-lens-change-frame"><a class="jsx-761701937" href="/eyeglasses-p-6415.html?color=15758">&lt; Change Frame</a></div>
-                    <p class="jsx-761701937 pc-lens-bar-price-item">Frame Price: <b class="jsx-761701937">$23.99 </b></p>
-                    <p class="jsx-761701937 pc-lens-bar-price-item pc-lens-price-detail-container">Lens Price: <b class="jsx-761701937">$0.00 </b></p>
-                    <p class="jsx-761701937 pc-lens-bar-price"><span class="jsx-761701937">Total: </span><span class="jsx-761701937 pc-lens-bar-total">$23.99 </span></p><button class="jsx-761701937 pc-lens-bar-add-cart text-center lens-bar-add-cart-disable">ADD TO CART</button>
+                    <div class="pc-lens-change-frame"><a class="jsx-761701937" href=<?php echo "includes/product_desc.php?id={$_GET['id']}" ?>>&lt; Change Frame</a></div>
+                    <p class=" pc-lens-bar-price-item">Frame Price: <b class="jsx-761701937">$ <?php echo "{$resultSet['price']}"; ?></b></p>
+                    <p class=" pc-lens-bar-price-item pc-lens-price-detail-container">Lens Price: <b id="lens-price" class="">$0.00 </b></p>
+                    <p class=" pc-lens-bar-price"><span class="jsx-761701937">Total: </span><span class="jsx-761701937 pc-lens-bar-total">$<?php echo "{$resultSet['price']}"; ?> </span></p>
+                    <button class="pc-lens-bar-add-cart text-center lens-bar-add-cart-disable">ADD TO CART</button>
                     <div class="pres-lens-foot">
                         <p style="margin-bottom:0">Free Standard Shipping:</p>
-                        <p style="margin-bottom:0"><b>Total Price
-                                <!-- -->≥
-                                <!-- -->$69.00
-                                <!-- --> (US only)</b></p>
+                        <!-- <p style="margin-bottom:0"><b>Total Price ≥
+                                $69.00
+                                (US only)</b></p> -->
                     </div>
                 </div>
                 <!-- <div style="color:#333" class="jsx-3236201328 help-tips">
@@ -479,13 +852,6 @@
             </div>
         </div>
     </div>
-
-    <script>
-        $(document).ready(function() {
-
-        });
-    </script>
-
 
     <script src="js/jquery-3.4.1.js"></script>
     <script src="js/jquery_func.js"></script>
