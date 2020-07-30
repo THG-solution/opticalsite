@@ -45,22 +45,22 @@
                             <div style="transform:translateY(0px);transition:all 0.3s">
                                 <div class="pd-product-control-item">
                                     <picture class="imgBox">
-                                        <img src="../assests/images/800-black-1.jpg" class="w-100" alt="">
+                                        <img src="../assests/images/800-black-1.jpg" class="w-100 im" alt="">
                                     </picture>
                                 </div>
                                 <div class="pd-product-control-item">
                                     <picture class="imgBox">
-                                        <img src="../assests/images/562N-black-1.jpg" class="w-100" alt="">
+                                        <img src="../assests/images/562N-black-1.jpg" class="w-100 im" alt="">
                                     </picture>
                                 </div>
                                 <div class="pd-product-control-item">
                                     <picture class="imgBox">
-                                        <img src="../assests/images/683-black-1.jpg" class="w-100" alt="">
+                                        <img src="../assests/images/683-black-1.jpg" class="w-100 im" alt="">
                                     </picture>
                                 </div>
                                 <div class="pd-product-control-item">
                                     <picture class="imgBox">
-                                        <img src="../assests/images/800-black-1.jpg" class="w-100" alt="">
+                                        <img src="../assests/images/800-black-1.jpg" class="w-100 im" alt="">
                                     </picture>
                                 </div>
                             </div>
@@ -68,13 +68,13 @@
                         <?php
                         $db = new DBController();
                         $product = new Table($db);
-                        $result = $product->queryData("SELECT c.image, p.avg_star, p.total_review FROM products p, product_colors c WHERE c.product_id = p.product_id and p.product_id = '{$id}' LIMIT 1");
+                        $result = $product->queryData("SELECT c.img1, p.avg_star, p.total_review FROM products p, product_colors c WHERE c.product_id = p.product_id and p.product_id = '{$id}' LIMIT 1");
                         $db = null;
 
                         ?>
                         <div class='pd-pic-div d-flex flex-row align-items-center justify-content-center w-100 col-lg-11'>
                             <picture class='d-flex  justify-content-center'>
-                                <img class='pd-img' id='main-image' src=<?php echo "'../assests/images/{$result['image']}'" ?> alt=''>
+                                <img class='pd-img' id='main-image' src=<?php echo "'../assests/images/{$result['img1']}'" ?> alt=''>
                             </picture>
                         </div>
                     </div>
@@ -177,7 +177,7 @@
                         <div class="tab-content mt-4" id="myTabContent">
                             <div class="tab-pane fade show active" id="all-reviews" role="tabpanel" aria-labelledby="home-tab">
                                 <?php
-                                if (count($resultSet) == 4) { ?>
+                                if (!empty($resultSet) && count($resultSet) == 4) { ?>
                                     <div class="row my-3">
                                         <div class="col-lg-3">
                                             <div class="pd-review-name">
@@ -252,6 +252,7 @@
                             </div>
                             <?php
                                 } else {
+                                    if (!empty($resultSet))
                                     foreach ($resultSet as $result) {  ?>
                                 <div class="row my-3">
                                     <div class="col-lg-3">

@@ -15,6 +15,7 @@ if ($result) {
     }
     $_SESSION["isLogin"] = "OK";
     $_SESSION['username'] = $result['firstname'];
+    $_SESSION['email'] = $email;
     header("Location: ../index.php");
 }
 else if ($result == false) {

@@ -20,111 +20,10 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title d-flex justify-content-center">Add Product Form</h4>
-                                <form class="cmxform" id="signupForm" method="GET" action="#" class="needs-validation" novalidate >
-                                    <!-- <fieldset> -->
-                                        <div class="form-group">
-                                            <label for="firstname">Product Id</label>
-                                            <input id="firstname" class="form-control" name="firstname" type="text" required patter="[a-zA-Z]{3,}" />
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="lastname">Brand</label>
-                                            <select name="brand" id="brand" class="form-control" required >
-                                                <option value="" selected disabled><i class="fa fa-angle-down"></i></option>
-                                                <option value="Ford">Ford</option>
-                                                <option value="Police">Police</option>
-
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="lastname">Category</label>
-                                            <select name="brand" id="brand" class="form-control">
-                                                <option value="" selected disabled><i class="fa fa-angle-down"></i></option>
-                                                <option value="frames">Frames</option>
-                                                <option value="sunglasses">Sunglasses</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="d-flex align-items-center">Gender: </label>
-                                            <div class="col-sm-2 d-flex align-items-center">
-                                                <div class="form-check">
-                                                    <label class="form-check-label">
-                                                        <input type="radio" class="" name="membershipRadios" id="membershipRadios1" value="" checked /> Unisex</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-2 d-flex align-items-center">
-                                                <div class="form-check">
-                                                    <label class="form-check-label">
-                                                        <input type="radio" class="" name="membershipRadios" id="membershipRadios2" value="option2" /> Men </label>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-2 d-flex align-items-center">
-                                                <div class="form-check">
-                                                    <label class="form-check-label">
-                                                        <input type="radio" class="" name="membershipRadios" id="membershipRadios2" value="option2" /> Women </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="lastname">Material</label>
-                                            <select name="brand" id="brand" class="form-control">
-                                                <option value="" selected disabled><i class="fa fa-angle-down"></i></option>
-                                                <option value="metal">Metal</option>
-                                                <option value="plastic">Plastic</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="lastname">Frame Type</label>
-                                            <select name="brand" id="brand" class="form-control">
-                                                <option value="" selected disabled><i class="fa fa-angle-down"></i></option>
-                                                <option value="frame">Frame</option>
-                                                <option value="full-rim">Full-rim</option>
-                                                <option value="half-rim">Half-rim</option>
-
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="lastname">Frame Shape</label>
-                                            <select name="brand" id="brand" class="form-control">
-                                                <option value="" selected disabled><i class="fa fa-angle-down"></i></option>
-                                                <option value="square">Square</option>
-                                                <option value="round">Round</option>
-                                                <option value="wayfarer">Wayfarer</option>
-
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="email">Lens Size</label>
-                                            <input id="email" class="form-control" name="email" type="email" />
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="email">Bridge Size</label>
-                                            <input id="email" class="form-control" name="email" type="email" />
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="email">Temple Size</label>
-                                            <input id="email" class="form-control" name="email" type="email" />
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="email">Colors: </label>
-                                            <input id="email" class="form-control" name="email" type="email" />
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Image upload</label>
-                                            <input type="file" name="img[]" class="file-upload-default" />
-                                            <div class="input-group col-xs-12">
-                                                <input type="file" class="form-control file-upload-info" placeholder="Upload Image" />
-                                                <span class="input-group-append">
-                                                    <button class="file-upload-browse btn btn-gradient-primary" type="button"> Upload </button>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="email">Price</label>
-                                            <input id="email" class="form-control" name="email" type="email" />
-                                        </div>
-                                        <input class="btn btn-primary" type="submit" value="Submit" />
-                                    <!-- </fieldset> -->
-                                </form>
+                                <div id="adform" >
+                                    
+                                </div>
+                               
                             </div>
                         </div>
                     </div>
@@ -195,8 +94,8 @@
                                             <?php echo "$ {$result['price']}" ?>
                                         </td>
                                         <td>
-                                            <img id="" class="delete-icon table-icon" src="../assests/images/delete.png" alt="">
-                                            <img id="" class="edit-icon table-icon" src="../assests/images/edit.png" alt=<?php echo "{$result['product_id']}" ?>>
+                                        <?php echo "<img id='{$result['product_id']}' class='delete-icon table-icon' src='../assests/images/delete.png' alt=''>" ?>
+                                        <?php echo "<img id='{$result['product_id']}' class='edit-icon table-icon' src='../assests/images/edit.png' alt={$result['product_id']}>" ?>
                                         </td>
                                     </tr>
                                 <?php } ?>
@@ -227,9 +126,6 @@
                                 <th>
                                     Average Rating
                                 </th>
-                                <th>
-                                    Options
-                                </th>
                             </thead>
                             <?php
                             $db = new DBController();
@@ -254,10 +150,7 @@
                                         <td>
                                             <?php echo "{$result['avg_star']}" ?>
                                         </td>
-                                        <td>
-                                            <img class="table-icon" src="../assests/images/delete.png" alt="">
-                                            <img class="table-icon" src="../assests/images/edit.png" alt="">
-                                        </td>
+                                        
                                     </tr>
                                     <?php
                                 } elseif (count($resultSet) > 4) {
@@ -271,10 +164,6 @@
                                             </td>
                                             <td>
                                                 <?php echo "{$result['avg_star']}" ?>
-                                            </td>
-                                            <td>
-                                                <img class="table-icon" src="../assests/images/delete.png" alt="">
-                                                <img class="table-icon" src="../assests/images/edit.png" alt="">
                                             </td>
                                         </tr>
                                 <?php }
@@ -291,6 +180,7 @@
 
     </div>
 </div>
+
 <script>
 // Disable form submissions if there are invalid fields
 (function() {

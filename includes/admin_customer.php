@@ -15,13 +15,10 @@
                         <table class="table">
                             <thead class="text-primary">
                                 <th>
-                                    Customer ID
+                                    Customer Email
                                 </th>
                                 <th>
                                    Customer Name
-                                </th>
-                                <th>
-                                    Customer Email
                                 </th>
                                 <th>
                                     Options
@@ -43,16 +40,13 @@
                                     ?>
                                   <tr>
                                         <td>
-                                            <?php echo "{$result['customer_id']}" ?>
-                                        </td>
-                                        <td>
-                                            <?php echo "{$result['name']}" ?>
-                                        </td>
-                                        <td>
                                             <?php echo "{$result['email']}" ?>
                                         </td>
                                         <td>
-                                            <img class="table-icon" src="../assests/images/delete.png" alt="">
+                                            <?php echo "{$result['firstname']}" ?>
+                                        </td>
+                                        <td>
+                                            <?php echo "<img class='table-icon' id='{$result['email']}' src='../assests/images/delete.png' alt=''>" ?>
                                             <img class="table-icon" src="../assests/images/edit.png" alt="">
                                         </td>
                                     </tr>
