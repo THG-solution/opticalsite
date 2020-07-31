@@ -38,29 +38,30 @@
         <?php include "head.php" ?>
         <div class="container mt-5">
             <div class="row">
-                
+
                 <div class="col-lg-8">
                     <div class="row">
                         <div class="pd-product-banner col-lg-1 px-0">
                             <div style="transform:translateY(0px);transition:all 0.3s">
+                                <?php
+                                $db = new DBController();
+                                $product = new Table($db);
+                                $result = $product->queryData("SELECT img1, img2 , img3  FROM  product_colors  WHERE product_id = {$id}");
+                                $db = null;
+                                ?>
                                 <div class="pd-product-control-item">
                                     <picture class="imgBox">
-                                        <img src="../assests/images/800-black-1.jpg" class="w-100 im" alt="">
+                                        <img src=<?php echo "'../assests/images/{$result['img1']}'" ?> class="w-100 im" alt="">
                                     </picture>
                                 </div>
                                 <div class="pd-product-control-item">
                                     <picture class="imgBox">
-                                        <img src="../assests/images/562N-black-1.jpg" class="w-100 im" alt="">
+                                        <img src=<?php echo "'../assests/images/{$result['img2']}'" ?> class="w-100 im" alt="">
                                     </picture>
                                 </div>
                                 <div class="pd-product-control-item">
                                     <picture class="imgBox">
-                                        <img src="../assests/images/683-black-1.jpg" class="w-100 im" alt="">
-                                    </picture>
-                                </div>
-                                <div class="pd-product-control-item">
-                                    <picture class="imgBox">
-                                        <img src="../assests/images/800-black-1.jpg" class="w-100 im" alt="">
+                                        <img src=<?php echo "'../assests/images/{$result['img3']}'" ?> class="w-100 im" alt="">
                                     </picture>
                                 </div>
                             </div>
@@ -172,8 +173,7 @@
                         $db = new DBController();
                         $product = new Table($db);
                         $resultSet = $product->queryData("SELECT * FROM product_review where product_id = '$id'");
-                        if (!is_array($resultSet))
-                        {
+                        if (!is_array($resultSet)) {
                             $resultSet = array();
                         }
                         ?>
@@ -254,7 +254,7 @@
                                     </div>
                             </div>
                             <?php
-                                } elseif (count($resultSet)>4){
+                                } elseif (count($resultSet) > 4) {
                                     foreach ($resultSet as $result) {  ?>
                                 <div class="row my-3">
                                     <div class="col-lg-3">
@@ -327,10 +327,10 @@
                                     </div>
                                 </div>
                         <?php }
-                                } else{
+                                } else {
                                     echo "No Reviews </div>";
                                 }
-                                 ?>
+                        ?>
                         </div>
                     </div>
                 </div>
@@ -370,10 +370,10 @@
                         <div class='d-flex align-items-center py-2 mt-2'>
                             <ul class='product-variation d-flex justify-content-center'>
                                 <li class='pd-color-list'>
-                                    <span class='product-variation-list-item' style='background-size:100% 100%;background:linear-gradient(#000,#9a7a3f)'></span>
+                                    <span class='product-variation-list-item' style='background-size:100% 100%;background:radial-gradient(red,red,#000)'></span>
                                 </li>
                                 <li class='pd-color-list'>
-                                    <span class='product-variation-list-item' style='background-size:100% 100%;background:linear-gradient(#000,#9a7a3f)'></span>
+                                    <span class='product-variation-list-item' style='background-size:100% 100%;background:radial-gradient(#c9c610,#c9c610,#000)'></span>
                                 </li>
 
                             </ul>
@@ -382,7 +382,7 @@
                     <div class='pd-select-btn-container'>
                         <div class='d-flex align-items-center justify-content-between' style='height:52px;'>
                             <div class='pd-select-btn'>
-                                <a href= <?php echo "../prescription.php?id={$_GET['id']}"; ?> class="text-white"> Select Lenses</a>
+                                <a href=<?php echo "../prescription.php?id={$_GET['id']}"; ?> class="text-white"> Select Lenses</a>
                             </div>
                         </div>
                     </div>
@@ -407,34 +407,48 @@
             </div>
 
             <div class="row">
+
                 <div class="pd-product-list-title ml-5">
                     <h2>Similar Frames</h2>
                 </div>
-                <div class="pd-product-list d-flex justify-content-start w-100">
-                    <div class="pd-product-list-item">
-                        <picture class="imgBox">
-                            <img src="../assests/images/s9913.txt" class="w-100" alt="">
-                        </picture>
-                        <div class="d-flex justify-content-center">
-                            <span> S9913</span>
+                <div class="pd-product-list d-flex justify-content-start w-100 mb-5">
+
+                    <?php
+                    $db = new DBController();
+                    $product = new Table($db);
+                    $resultSet = $product->queryData("SELECT DISTINCT pd.product_id AS product_id, (SELECT c.img1 from product_colors c WHERE c.product_id=pd.product_id LIMIT 1) AS image, (SELECT  p.avg_star from products p where pd.product_id=p.product_id) AS avg_star,(SELECT  p.total_review from products p where pd.product_id=p.product_id) AS total_review, (SELECT  p.price from products p where pd.product_id=p.product_id) AS price  FROM products pd WHERE product_id > {$id} LIMIT 3");
+                    if (!is_array($resultSet)) {
+                        $resultSet = array();
+                    }
+                    if (count($resultSet) > 5)
+                        foreach ($resultSet as $result) { ?>
+                        <div class="pd-product-list-item">
+                            <a <?php echo "href='product_desc.php?id={$result['product_id']}'" ?>>
+                                <picture class="imgBox">
+                                    <img src=<?php echo "../assests/images/{$result['image']}" ?> class="w-100" alt="">
+                                </picture>
+                                <div class="d-flex justify-content-center">
+                                    <span> <?php echo "{$result['product_id']}" ?></span>
+                                </div>
+                            </a>
                         </div>
-                    </div>
-                    <div class="pd-product-list-item">
-                        <picture class="imgBox">
-                            <img src="../assests/images/s9913.txt" class="w-100" alt="">
-                        </picture>
-                        <div class="d-flex justify-content-center">
-                            <span> S9913</span>
+                    <?php }
+                    elseif (count($resultSet) == 5) {
+                        $result = $resultSet;
+                    ?>
+                        <div class="pd-product-list-item">
+                            <a <?php echo "href='product_desc.php?id={$result['product_id']}'" ?>>
+                                <picture class="imgBox">
+                                    <img src=<?php echo "../assests/images/{$result['image']}" ?> class="w-100" alt="">
+                                </picture>
+                                <div class="d-flex justify-content-center">
+                                    <span> <?php echo "{$result['product_id']}" ?></span>
+                                </div>
+                            </a>
                         </div>
-                    </div>
-                    <div class="pd-product-list-item">
-                        <picture class="imgBox">
-                            <img src="../assests/images/s9913.txt" class="w-100" alt="">
-                        </picture>
-                        <div class="d-flex justify-content-center">
-                            <span> S9913</span>
-                        </div>
-                    </div>
+                    <?php } else {
+                    }
+                    ?>
                 </div>
 
             </div>
