@@ -6,7 +6,9 @@ var p_l = { sphere: '', cylinder: '', axis: '', add: '' };
 var p_r = { sphere: '', cylinder: '', axis: '', add: '' };
 var pd_l = '';
 var pd_r = '';
+var prd_price=0,total_price=0;
 
+// prd_price = <?php echo "{$price}"?>;
 
 var productContainerIndex = $('#product-list-item-index')
 let uri = $(location).attr("href")
@@ -208,10 +210,10 @@ $(document).ready(function () {
 
             case "ls-type-box-already":
                 presc = 'already'
-                p_r=null;
-                p_l=null;
-                pd_r=null;
-                pd_l=null;
+                p_l = { sphere: '', cylinder: '', axis: '', add: '' };
+                p_r = { sphere: '', cylinder: '', axis: '', add: '' };
+                pd_r='';
+                pd_l='';
                 // Query to retrive the prescription of the specific customer
 
                 // Code to store retrive prescription in the prescription variables
@@ -245,7 +247,15 @@ $(document).ready(function () {
                 lens = lsId;
                 lens_price = $(this).find('.lns-price').text()
                 alert(lens_price);
+                total_price= +coating_price +prd_price + +lens_price;
+                alert(total_price);
                 // Add price to the above price to check the calculations
+                $.get('includes/update_price_prescription.php?lp='+lens_price, function(response) {
+                    $('#lens-price').html(response)
+                });
+                $.get('includes/update_price_prescription.php?tp='+total_price, function(response) {
+                    $('#total-price').html(response)
+                });
 
                 break;
             case "Basic":
@@ -253,7 +263,15 @@ $(document).ready(function () {
             case "Premium":
                 coating = lsId;
                 coating_price = $(this).find('.option_price').text()
+                total_price= +prd_price + +lens_price + +coating_price;
                 alert(coating_price);
+                alert(total_price);
+                $.get('includes/update_price_prescription.php?cp='+coating_price, function(response) {
+                    $('#coating-price').html(response)
+                });
+                $.get('includes/update_price_prescription.php?tp='+total_price, function(response) {
+                    $('#total-price').html(response)
+                });
                 // Add price to the above price to check the calculations
 
                 break;
@@ -356,9 +374,10 @@ $(document).ready(function () {
     $('#ls-type-box-yes').on('click', function () {
 
         $("#choose_pd").addClass('d-flex');
+        
     });
     $('#ls-type-box-already, #ls-type-box-later').on('click', function () {
-        $("#choose_pd").removeClass('d-flex');
+        // $("#choose_pd").removeClass('d-flex');
     });
 
     $(".img-add").on("click", function (){

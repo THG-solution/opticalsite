@@ -50,6 +50,7 @@ class Table
     public function getProducts($query) {
         $result = $this->db->conn->query($query);        
             $resultArray = array();
+            
             while ($item = mysqli_fetch_array($result, MYSQLI_ASSOC))
             {
                 $resultArray[] = $item;

@@ -13,30 +13,29 @@
 
 <body>
 
-    <?php 
+    <?php
     $id = null;
     $id = $_GET['id'];
-    if($id==null)
-    {   
+    if ($id == null) {
         header('Location: index.php');
     }
-    $db = new DBController();
-    $product = new Table($db);
-    $resultSet = $product->getProductData("$id");
-    
-    include "includes/head.php" ?>
-
-    <?php
     if (!file_exists("database/db_controller.php")) {
         include "../database/db_controller.php";
         include "../database/db_table.php";
     } else {
         include "database/db_controller.php";
         include "database/db_table.php";
-    } 
+    }
 
-    
-    ?>
+    $db = new DBController();
+    $product = new Table($db);
+    $resultSet = $product->getProductData("$id");
+
+
+    $price =  $resultSet['price'];
+
+    include "includes/head.php" ?>
+
 
     <div class="container px-0 mt-5">
         <div class="row">
@@ -67,7 +66,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="group" class="presc-switch">
+                <div id="group" class="presc-switch mb-5">
                     <div id="child1" class="lens-type">
                         <center>
                             <h2>Choose your lens type</h2>
@@ -81,6 +80,14 @@
                                     </div>
                                     <div class="ls-subtitle">
                                         A general use lens for seeing things close up or far away
+                                        <!-- <ul class="mt-2 mr-2 ml-n4">
+                                            <li>
+                                                Used by the majority of glasses wearers
+                                            </li>
+                                            <li>
+                                                Only for nearsighted or farsighted vision
+                                            </li>
+                                        </ul> -->
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-center  ls-select">
@@ -107,6 +114,14 @@
                                     </div>
                                     <div class="ls-subtitle">
                                         Lens for near and far viewing with visible line.
+                                        <!-- <ul class="mt-2 mr-1 ml-n5">
+                                         Bifocals With Visible Line <br>
+                                             Visible line separates near and far distance viewing areas <br>
+                                             Bottom area is used for near vision (like reading) <br>
+                                             Top area is used for distance vision <br>
+                                             Typically prescribed for people over forty 
+
+                                        </ul> -->
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-center  ls-select">
@@ -817,24 +832,25 @@
             <div class="col-lg-3">
                 <div class="jsx-761701937 pc-lens-bar-container">
                     <div class="jsx-761701937 pc-lens-bar-title-line"><a class="jsx-761701937 pc-lens-bar-title-container" href="/eyeglasses-p-6415.html?color=15758">
-                            <h3 class="jsx-761701937 pc-lens-bar-title">#<?php echo "{$resultSet['product_id']}"; ?></h3>
+                            <h3 class="jsx-761701937 text-dark">#<?php echo "{$resultSet['product_id']}"; ?></h3>
                         </a>
                         <div style="width:100%" class="jsx-1467848752 pc-extend-button undefined"><span class="icon iconfont icon-empty-heart " style="font-size:20px;margin-left:15px;font-weight:800;color:#333"></span></div>
                     </div>
                     <?php
                     $db = new DBController();
                     $product = new Table($db);
-                    $result = $product->queryData("SELECT c.image, p.avg_star, p.total_review FROM products p, product_colors c WHERE c.product_id = p.product_id and p.product_id = '{$id}' LIMIT 1");
+                    $result = $product->queryData("SELECT c.img1 as image, p.avg_star, p.total_review FROM products p, product_colors c WHERE c.product_id = p.product_id and p.product_id = '{$id}' LIMIT 1");
                     $db = null;
 
                     ?>
-                    <picture class="jsx-2643774471 imgBox ">
-                        <img src=<?php echo "assests/images/{$result['image']}" ?> class="w-100" alt="">
+                    <picture class="jsx-2643774471 imgBox">
+                        <img src=<?php echo "assests/images/{$result['image']}" ?> class="presc-img" alt="">
                     </picture>
                     <div class="pc-lens-change-frame"><a class="jsx-761701937" href=<?php echo "includes/product_desc.php?id={$_GET['id']}" ?>>&lt; Change Frame</a></div>
                     <p class=" pc-lens-bar-price-item">Frame Price: <b class="jsx-761701937">$ <?php echo "{$resultSet['price']}"; ?></b></p>
-                    <p class=" pc-lens-bar-price-item pc-lens-price-detail-container">Lens Price: <b id="lens-price" class="">$0.00 </b></p>
-                    <p class=" pc-lens-bar-price"><span class="jsx-761701937">Total: </span><span class="jsx-761701937 pc-lens-bar-total">$<?php echo "{$resultSet['price']}"; ?> </span></p>
+                    <p class=" pc-lens-bar-price-item pc-lens-price-detail-container">Lens Price: <b id="lens-price" class="">$ 0.00 </b></p>
+                    <p class=" pc-lens-bar-price-item pc-lens-price-detail-container">Coating Price: <b id="coating-price" class="">$ 0.00 </b></p>
+                    <p class=" pc-lens-bar-price"><span class="jsx-761701937">Total: </span><span id='total-price' class="jsx-761701937 pc-lens-bar-total">$<?php echo "{$resultSet['price']}"; ?> </span></p>
                     <button class="pc-lens-bar-add-cart text-center lens-bar-add-cart-disable">ADD TO CART</button>
                     <div class="pres-lens-foot">
                         <p style="margin-bottom:0">Free Standard Shipping:</p>
@@ -855,6 +871,10 @@
 
     <script src="js/jquery-3.4.1.js"></script>
     <script src="js/jquery_func.js"></script>
+    <script>
+        prd_price = <?php echo "{$price}"?>;
+        
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>

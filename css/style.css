@@ -794,3 +794,21 @@ tr {
     vertical-align: inherit;
     border-color: inherit;
 }
+
+.presc-img{
+    width:100%;
+    /* height: 140px; */
+}
+
+.proceed-box, .cart-box{
+    border: 1px solid lightgrey;
+}
+
+.box-color{
+    background-color: white;
+}
+
+.cart-body {
+    background-color: #f7f7f7 !important;
+
+}
