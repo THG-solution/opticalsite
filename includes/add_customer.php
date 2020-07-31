@@ -12,13 +12,16 @@ echo $firstname . $lastname . $email . $password . $cnfrmpassword;
 $db = new DBController();
 $customer = new Table($db);
 try {
-    $result = $customer->insertCustomer("INSERT INTO customer (email,firstname, lastname, `password`) values ('$email', '$firstname', '$lastname', '$password' )");
-    if ($result == 1) {}
-    else {
-        echo $result;
+    if ($password == $cnfrmpassword) {
+        $result = $customer->insertCustomer("INSERT INTO customer (email,firstname, lastname, `password`) values ('$email', '$firstname', '$lastname', '$password' )");
+        if ($result == 1) {}
+        else {
+            header('Location: ../index.php');
+        }
     }
+    else header('Location: ../index.php?q=pnc');
 }
 catch (Exception $e) {
-    echo $e . $db;
+    header('Location: ../index.php?q=er');
 }
 ?>

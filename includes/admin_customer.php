@@ -34,7 +34,7 @@
                             ?>
                             <tbody>
                                <?php
-                                if(count($resultSet)==4)
+                                if(count($resultSet)==1)
                                 {
                                     $result = $resultSet;
                                     ?>
@@ -52,19 +52,16 @@
                                     </tr>
                                 <?php
                                  }
-                                elseif (count($resultSet)>4)
+                                elseif (count($resultSet)>1)
                                 {
                                     foreach ($resultSet as $result) 
                                     { ?>
                                         <tr>
                                             <td>
-                                                <?php echo "{$result['customer_id']}" ?>
-                                            </td>
-                                            <td>
-                                                <?php echo "{$result['name']}" ?>
-                                            </td>
-                                            <td>
                                                 <?php echo "{$result['email']}" ?>
+                                            </td>
+                                            <td>
+                                                <?php echo "{$result['firstname']}" ?>
                                             </td>
                                             <td>
                                                 <img class="table-icon" src="../assests/images/delete.png" alt="">

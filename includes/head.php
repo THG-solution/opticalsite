@@ -72,8 +72,11 @@
                     <i class="fa fa-user-o"></i>
                 </a>
                 <div class="dropdown-menu" id="dropdown-user">
-                    <button class="btn btn-primary d-block m-2" id="sign-in">Sign In</button>
-                    <button class="btn btn-outline-primary m-2" id="sign-up">Create an Account</button>
+                <?php if(!empty($_SESSION['isLogin']) && $_SESSION['isLogin'] == 'OK')
+                            echo '<button class="btn btn-primary d-block m-2" id="sign-out">Sign Out</button>';
+                        else 
+                            echo '<button class="btn btn-primary d-block m-2" id="sign-in">Sign In</button>
+                            <button class="btn btn-outline-primary m-2" id="sign-up">Create an Account</button>';?>
                 </div>
             </div>
             <div class="dropdown mt-3">
@@ -99,8 +102,6 @@
                 </ul>
             </div>
             <div>
-                <p><?php if(empty($_SESSION['username'])) {} else echo $_SESSION['username'];
-                ?></p>
             </div>
         </div>
     </div>
@@ -155,6 +156,8 @@
                         </div>
                         <div id="create" class="tab-pane fade in">
                             <h3>Create</h3>
+                            <p style="color: red; text-align: center" ><?php if(!empty($_GET['q']) && $_GET['q'] == 'pnc' ) echo "Confirm Password not matched"; else echo "";  ?></p>
+                            <p style="color: red; text-align: center" ><?php if(!empty($_GET['q']) && $_GET['q'] == 'er' ) echo "Something Wrong!"; else echo "";  ?></p>
                             <form action="includes/add_customer.php" method="POST" class="needs-validation" novalidate>
                                 <div class="form-group">
                                     <div class="form-group form-inline col-sm-12 justify-content-sm-start">

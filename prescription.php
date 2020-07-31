@@ -14,19 +14,14 @@
 <body>
 
     <?php 
+    
     $id = null;
     $id = $_GET['id'];
     if($id==null)
     {   
         header('Location: index.php');
     }
-    $db = new DBController();
-    $product = new Table($db);
-    $resultSet = $product->getProductData("$id");
-    
-    include "includes/head.php" ?>
 
-    <?php
     if (!file_exists("database/db_controller.php")) {
         include "../database/db_controller.php";
         include "../database/db_table.php";
@@ -34,9 +29,11 @@
         include "database/db_controller.php";
         include "database/db_table.php";
     } 
-
+    $db = new DBController();
+    $product = new Table($db);
+    $resultSet = $product->getProductData("$id");
     
-    ?>
+    include "includes/head.php" ?>
 
     <div class="container px-0 mt-5">
         <div class="row">

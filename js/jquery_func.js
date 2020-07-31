@@ -18,6 +18,13 @@ $(window).on("load", function () {
         $('#nv-pill .nav-item:first-child .nav-link').addClass('active')
         $('.tab-content #login').addClass('active show')
     }
+    if (uri.includes('?q=pnc')) {
+        $('#loginmodal').modal()
+        $('#nv-pill .nav-item:first-child .nav-link').removeClass('active')
+        $('.tab-content #login').removeClass('active show')
+        $('#nv-pill .nav-item:last-child .nav-link').addClass('active')
+        $('.tab-content #create').addClass('active show')
+    }
     $('#' + $('#currency').text()).addClass('active')
     if (uri.includes('mens_frame'))
         pgdata = 'meneye'
@@ -50,6 +57,9 @@ $(document).ready(function () {
         $('#nv-pill .nav-item:last-child .nav-link').addClass('active')
         $('.tab-content #create').addClass('active show')
     });
+    $('#sign-out').click(function () {
+        window.location.replace('../includes/logout.php')
+    })
     $('#dropdown-currency li').click(function () {
         $('#dropdown-currency li').removeClass('active')
         $('#symbol').text('')
@@ -381,7 +391,6 @@ $(document).ready(function () {
             $.get('../includes/set_update_product.php?pid='+$(this).attr('id'), function(response) {
                 $('#adform').html(response)
             })
-            // window.location.replace('../includes/delete_product.php?id='+$(this).attr('id'))
         }
     })
 });

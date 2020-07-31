@@ -72,7 +72,7 @@ $resultSet = $customer->getProductById($query);
         </div>";
         }
         echo "
-        <form method='POST' action='../includes/update_product.php' enctype='multipart/form-data' class='needs-validation' novalidate >
+        <form method='POST' action='../includes/update_product.php?pid={$result['product_id']}&clr={$result['colour_name']}' enctype='multipart/form-data' class='needs-validation' novalidate >
                 <div class='form-group'>
                     <label >Product Id</label>
                     <input id='id' class='form-control' name='id' type='text' required patter='[a-zA-Z]{3,}' value={$result['product_id']} />
@@ -143,7 +143,7 @@ $resultSet = $customer->getProductById($query);
                     <input id='color' class='form-control' value={$result['colour_name']}  name='color' type='text' required patter='[A-Za-z]{3,}' />
                 </div>
                     <label>Upload Image1</label>
-                    <input type='file' name='img1' required accept='image/*'  /><br>
+                    <input type='file' name='img1'  accept='image/*'  /><br>
                     <label>Upload Image2</label>
                     <input type='file' name='img2' accept='image/*'  /><br>
                     <label>Upload Image3</label>
