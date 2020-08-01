@@ -139,6 +139,33 @@ class Table
         $result=mysqli_fetch_array($result, MYSQLI_ASSOC);
         return $result;
     }
+
+    public function updateProduct($query)
+    {
+        if ($this->db->conn->query($query) === TRUE) {
+            return true;
+        } 
+        else {
+            return false;
+        }
+    }
+
+    public function filterData($query)
+    {
+        $result = $this->db->conn->query($query);
+        if (mysqli_num_rows($result)>1)
+        {
+            $resultArray = array();
+
+            while ($item = mysqli_fetch_array($result, MYSQLI_ASSOC))
+            {
+                $resultArray[] = $item;
+            }
+            return $resultArray;
+        }
+        $result=mysqli_fetch_array($result, MYSQLI_ASSOC);
+        return $result;
+    }
 }
 
 ?>

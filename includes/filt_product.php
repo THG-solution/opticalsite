@@ -67,6 +67,28 @@
                     echo $e;
                 }
             }
+            $resultFilt = $product->filterData("SELECT * FROM `product_colors` AS pc, `color_name` AS cn WHERE pc.colour_name=cn.colour_name AND product_id='{$result['product_id']}'");
+        $filt = '';
+        // print_r($resultFilt);
+        if (!empty(count($resultFilt)))
+        if (count($resultFilt) > 5)
+        {
+            //    print_r($resultFilt);
+                $filt .= "<li class='product-variation-list'>
+                        <span style='background-size:100% 100%;background-color:{$resultFilt['code']}' id='{$resultFilt['colour_name']}' class='product-variation-list-item '></span>
+                        </li>";
+        }
+        else if (count($resultFilt) > 1)
+        foreach ($resultFilt as $rslt)
+           {
+                $filt .= "<li class='product-variation-list'>
+                        <span style='background-size:100% 100%;background-color:{$rslt['code']}' id='{$rslt['colour_name']}' class='product-variation-list-item'></span>
+                        </li>";
+           }
+        else {
+            echo "";
+        }
+        
                 echo "
                 <div class='product-list-item'>
     <picture class='product-img'>
@@ -74,20 +96,11 @@
         <img src='../assests/images/{$result['image']}' alt=''>  
         </a>
     </picture>
+
     <ul class='product-variation d-flex justify-content-center'>
-        <li class='product-variation-list'>
-            <span style='background-size:100% 100%;background:linear-gradient(#000,#9a7a3f)' class='product-variation-list-item '></span>
-        </li>
-        <li class='product-variation-list'>
-            <span style='background-size:100% 100%;background:linear-gradient(#000,#9a7a3f)' class='product-variation-list-item '></span>
-        </li>
-        <li class='product-variation-list'>
-            <span style='background-size:100% 100%;background:linear-gradient(#000,#9a7a3f)' class='product-variation-list-item '></span>
-        </li>
-        <li class='product-variation-list'>
-            <span style='background-size:100% 100%;background:linear-gradient(#000,#9a7a3f)' class='product-variation-list-item '></span>
-        </li>
+        {$filt}
     </ul>
+    
     <div class='product-info d-flex align-items-center justify-content-between'>
         <div class='d-flex align-items-center'>
             <img src='../assests/images/trending.png' class='icon-ht' alt=''>

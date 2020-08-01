@@ -315,7 +315,7 @@
 .dropdown-menu {
     top: 40px !important;
 }
-.dropdown-menu #sign-in, .dropdown-menu #sign-up {
+.dropdown-menu #sign-in, .dropdown-menu #sign-up, .dropdown-menu #sign-out {
     width: 200px;
 }
 #dropdown-user {

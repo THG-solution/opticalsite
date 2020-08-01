@@ -17,9 +17,6 @@
                                 <th>
                                     Category
                                 </th>
-                                <th>
-                                    Options
-                                </th>
                             </thead>
                             <?php
                             $db = new DBController();
@@ -40,10 +37,6 @@
                                             <?php echo "{$result['category']}" ?>
                                         </td>
                                         
-                                        <td>
-                                            <img class="table-icon" src="../assests/images/delete.png" alt="">
-                                            <img class="table-icon" src="../assests/images/edit.png" alt="">
-                                        </td>
                                     </tr>
                                 <?php
                                  }
@@ -54,10 +47,6 @@
                                         <tr>
                                             <td>
                                                 <?php echo "{$result['category']}" ?>
-                                            </td>
-                                            <td>
-                                                <img class="table-icon" src="../assests/images/delete.png" alt="">
-                                                <img class="table-icon" src="../assests/images/edit.png" alt="">
                                             </td>
                                         </tr>
                                     <?php }
