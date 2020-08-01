@@ -377,7 +377,7 @@ $(document).ready(function () {
         
     });
     $('#ls-type-box-already, #ls-type-box-later').on('click', function () {
-        // $("#choose_pd").removeClass('d-flex');
+        $("#choose_pd").removeClass('d-flex');
     });
 
     $(".img-add").on("click", function (){
