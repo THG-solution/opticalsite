@@ -1,4 +1,6 @@
 <?php session_start(); ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +14,6 @@
 </head>
 
 <body>
-
     <?php
     $id = null;
     $id = $_GET['id'];
@@ -207,7 +208,7 @@
                             <h2>Select Your Lens</h2>
                         </center>
                         <div class="d-flex">
-                            <div id="Plastic CR-39" class="d-flex flex-column justify-content-between ls-type-box ls-border ls-type-box-focus">
+                            <div id="Plastic" class="d-flex flex-column justify-content-between ls-type-box ls-border ls-type-box-focus">
 
                                 <div>
                                     <div class="ls-title">
@@ -851,9 +852,10 @@
                     <p class=" pc-lens-bar-price-item pc-lens-price-detail-container">Lens Price: <b id="lens-price" class="">$ 0.00 </b></p>
                     <p class=" pc-lens-bar-price-item pc-lens-price-detail-container">Coating Price: <b id="coating-price" class="">$ 0.00 </b></p>
                     <p class=" pc-lens-bar-price"><span class="jsx-761701937">Total: </span><span id='total-price' class="jsx-761701937 pc-lens-bar-total">$<?php echo "{$resultSet['price']}"; ?> </span></p>
-                    <button class="pc-lens-bar-add-cart text-center lens-bar-add-cart-disable">ADD TO CART</button>
+                    <button id="add-cart-btn" class="pc-lens-bar-add-cart text-center lens-bar-add-cart-disable">ADD TO CART</button>
+
                     <div class="pres-lens-foot">
-                        <p style="margin-bottom:0">Free Standard Shipping:</p>
+                        <p id='rs' style="margin-bottom:0">Free Standard Shipping:</p>
                         <!-- <p style="margin-bottom:0"><b>Total Price ≥
                                 $69.00
                                 (US only)</b></p> -->
@@ -868,12 +870,21 @@
             </div>
         </div>
     </div>
-
+    <script>
+        var session_email = 'empty';
+        <?php
+        if(isset($_SESSION['email']))
+        {
+            $email = "'{$_SESSION['email']}'";?>
+            session_email= <?php echo "$email";?>      
+        <?php 
+        } ?>
+        // 
+    </script>
     <script src="js/jquery-3.4.1.js"></script>
     <script src="js/jquery_func.js"></script>
     <script>
-        prd_price = <?php echo "{$price}"?>;
-        
+        prd_price = <?php echo "{$price}" ?>;
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>

@@ -42,11 +42,14 @@
                 <div class="col-lg-8">
                     <div class="row">
                         <div class="pd-product-banner col-lg-1 px-0">
-                            <div style="transform:translateY(0px);transition:all 0.3s">
+                            <div id="banner" style="transform:translateY(0px);transition:all 0.3s">
                                 <?php
                                 $db = new DBController();
                                 $product = new Table($db);
-                                $result = $product->queryData("SELECT img1, img2 , img3  FROM  product_colors  WHERE product_id = {$id}");
+                                $fcolor = $product->queryData("SELECT colour_name from product_colors where product_id = {$id} LIMIT 1");
+                                $color = $fcolor['colour_name']; 
+                                                           
+                                $result = $product->queryData("SELECT img1, img2 , img3  FROM  product_colors  WHERE product_id = '{$id}' and colour_name = '{$color}'");
                                 $db = null;
                                 ?>
                                 <div class="pd-product-control-item">
@@ -69,12 +72,12 @@
                         <?php
                         $db = new DBController();
                         $product = new Table($db);
-                        $result = $product->queryData("SELECT c.img1, p.avg_star, p.total_review FROM products p, product_colors c WHERE c.product_id = p.product_id and p.product_id = '{$id}' LIMIT 1");
+                        $result = $product->queryData("SELECT c.img1, p.avg_star, p.total_review FROM products p, product_colors c WHERE c.product_id = p.product_id and p.product_id = '{$id}' and c.colour_name = '{$color}' LIMIT 1");
                         $db = null;
 
                         ?>
                         <div class='pd-pic-div d-flex flex-row align-items-center justify-content-center w-100 col-lg-11'>
-                            <picture class='d-flex  justify-content-center'>
+                            <picture id="main_img" class='d-flex  justify-content-center'>
                                 <img class='pd-img' id='main-image' src=<?php echo "'../assests/images/{$result['img1']}'" ?> alt=''>
                             </picture>
                         </div>
@@ -369,13 +372,32 @@
                         </div>
                         <div class='d-flex align-items-center py-2 mt-2'>
                             <ul class='product-variation d-flex justify-content-center'>
-                                <li class='pd-color-list'>
-                                    <span class='product-variation-list-item' style='background-size:100% 100%;background:radial-gradient(red,red,#000)'></span>
-                                </li>
-                                <li class='pd-color-list'>
-                                    <span class='product-variation-list-item' style='background-size:100% 100%;background:radial-gradient(#c9c610,#c9c610,#000)'></span>
-                                </li>
 
+                                <?php
+                                $colourSet = $product->queryData("SELECT * FROM `product_colors` AS pc, `color_name` AS cn WHERE pc.colour_name=cn.colour_name AND product_id='{$id}'");
+                                // print_r($colourSet);
+                                if(!is_array($colourSet)){
+                                    $colourSet = array();
+                                }
+                                // print_r(count($colourSet));
+                                if (count($colourSet) == 6) { 
+                                    $colour = $colourSet;?>
+                                    <li class='pd-color-list'>
+                                        <span id=<?php echo "{$colour['colour_name']}"?> class='c-list product-variation-list-item' style=<?php echo "background-size:100%;background:radial-gradient({$colour['code']},{$colour['code']},#000)" ?>></span>
+                                    </li>
+                                    <?php
+                                } elseif (count($colourSet) < 6) {
+                                    foreach ($colourSet as $colour) { ?>
+                                        
+                                        <li class='pd-color-list'>
+                                            <span id=<?php echo "{$colour['colour_name']}"?>  class='c-list product-variation-list-item' style=<?php echo "background-size:100%;background:radial-gradient({$colour['code']},{$colour['code']},#000)" ?>></span>
+                                        </li>
+                                <?php
+                                    }
+                                }else{
+
+                                }
+                                ?>
                             </ul>
                         </div>
                     </div>
@@ -453,6 +475,10 @@
 
             </div>
         </div>
+        <script>
+           var prd_id = <?php echo $id ?>; 
+           
+        </script>
         <script src="../js/jquery-3.4.1.js"></script>
         <script src="../js/jquery_func.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

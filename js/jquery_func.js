@@ -1,12 +1,14 @@
 var productContainer = $('#product-list-item'), loc = '', pgdata = '', gender = [], gen = [], shape = [], shp = [], material = [], mtrl = [], colour = [], clr = []
 
 // Variable Decalaration for Prescription Section
-var lens_type = 'Single Vision', lens = '', lens_price; presc = 'later', coating = 'Basic', coating_price=0;
-var p_l = { sphere: '', cylinder: '', axis: '', add: '' };
-var p_r = { sphere: '', cylinder: '', axis: '', add: '' };
-var pd_l = '';
-var pd_r = '';
-var prd_price=0,total_price=0;
+var lens_type = 'Single Vision', lens = 'Plastic', lens_price = 16; presc = 'later', coating = 'Basic', coating_price = 0;
+var p_l = { sphere: '+15', cylinder: '+8', axis: 'none', add: 'none' };
+var p_r = { sphere: '+15', cylinder: '+8', axis: 'none', add: 'none' };
+var pd_l = 'none';
+var pd_r = 'none';
+var prd_price = 0, total_price = 0;
+var presc_id = 0;
+var color_name='';
 
 // prd_price = <?php echo "{$price}"?>;
 
@@ -168,12 +170,12 @@ $(document).ready(function () {
                     productContainer.html(response)
                 })
     })
-    $('img').click(function() {
+    $('img').click(function () {
         if ($(this).hasClass('im'))
             $('#main-image').attr('src', $(this).attr('src'))
     })
 
-    $("a").hover(function() {
+    $("a").hover(function () {
         if ($(this).hasClass('dropdown-toggle'))
             $(this).dropdown('toggle');
         $(this).css('color', 'black');
@@ -188,6 +190,25 @@ $(document).ready(function () {
     // $("a").mouseleave(function() {
     //     $(this).dropdown('toggle');
     // });
+
+
+    color_name= $('.c-list').first().attr('id');
+    alert(color_name);
+    $('.c-list').on('click', function () {
+        color_name=$(this).attr('id');
+        alert(color_name);
+        
+        $.get('update_color_image.php?div=banner&color=' + color_name +'&id=' +prd_id, function (response) {
+            alert(response);
+            $('#banner').html(response);
+        });
+        $.get('update_color_image.php?div=main&color=' + color_name +'&id=' +prd_id, function (response) {
+            alert(response);
+            $('#main_img').html(response);
+        });
+        
+        // location.href = 'product_desc.php?'
+    })
 
     // *--------------------------------- SELECTING THE LENS BOXES ---------------------------------*  
     $('.ls-type-box').on('click', function () {
@@ -222,8 +243,8 @@ $(document).ready(function () {
                 presc = 'already'
                 p_l = { sphere: '', cylinder: '', axis: '', add: '' };
                 p_r = { sphere: '', cylinder: '', axis: '', add: '' };
-                pd_r='';
-                pd_l='';
+                pd_r = '';
+                pd_l = '';
                 // Query to retrive the prescription of the specific customer
 
                 // Code to store retrive prescription in the prescription variables
@@ -233,23 +254,23 @@ $(document).ready(function () {
             case "ls-type-box-yes":
                 presc = 'yes'
                 // Code to Store the values of tables in the variable
-                p_r.sphere=$('#sphereR').children('option:selected').val();
-                p_r.cylinder=$('#cylinderR').children('option:selected').val();
-                p_r.axis=$('#axisR').children('option:selected').val();
-                p_r.add=$('#addR').children('option:selected').val();
-                p_l.sphere=$('#sphereL').children('option:selected').val();
-                p_l.cylinder=$('#cylinderL').children('option:selected').val();
-                p_l.axis=$('#axisL').children('option:selected').val();
-                p_l.add=$('#addL').children('option:selected').val();
+                p_r.sphere = $('#sphereR').children('option:selected').val();
+                p_r.cylinder = $('#cylinderR').children('option:selected').val();
+                p_r.axis = $('#axisR').children('option:selected').val();
+                p_r.add = $('#addR').children('option:selected').val();
+                p_l.sphere = $('#sphereL').children('option:selected').val();
+                p_l.cylinder = $('#cylinderL').children('option:selected').val();
+                p_l.axis = $('#axisL').children('option:selected').val();
+                p_l.add = $('#addL').children('option:selected').val();
                 // var pr=Object.values(p_r);
                 // var pl=Object.values(p_l);
                 // // alert(pr);
                 // // alert(pl);
-                
+
                 // Query to Store the prescription data in the database
 
                 break;
-                
+
             case "Plastic CR-39":
             case "Polycarbonte":
             case "Thinner":
@@ -257,13 +278,13 @@ $(document).ready(function () {
                 lens = lsId;
                 lens_price = $(this).find('.lns-price').text()
                 alert(lens_price);
-                total_price= +coating_price +prd_price + +lens_price;
+                total_price = +coating_price + prd_price + +lens_price;
                 alert(total_price);
                 // Add price to the above price to check the calculations
-                $.get('includes/update_price_prescription.php?lp='+lens_price, function(response) {
+                $.get('includes/update_price_prescription.php?lp=' + lens_price, function (response) {
                     $('#lens-price').html(response)
                 });
-                $.get('includes/update_price_prescription.php?tp='+total_price, function(response) {
+                $.get('includes/update_price_prescription.php?tp=' + total_price, function (response) {
                     $('#total-price').html(response)
                 });
 
@@ -273,13 +294,13 @@ $(document).ready(function () {
             case "Premium":
                 coating = lsId;
                 coating_price = $(this).find('.option_price').text()
-                total_price= +prd_price + +lens_price + +coating_price;
+                total_price = +prd_price + +lens_price + +coating_price;
                 alert(coating_price);
                 alert(total_price);
-                $.get('includes/update_price_prescription.php?cp='+coating_price, function(response) {
+                $.get('includes/update_price_prescription.php?cp=' + coating_price, function (response) {
                     $('#coating-price').html(response)
                 });
-                $.get('includes/update_price_prescription.php?tp='+total_price, function(response) {
+                $.get('includes/update_price_prescription.php?tp=' + total_price, function (response) {
                     $('#total-price').html(response)
                 });
                 // Add price to the above price to check the calculations
@@ -294,13 +315,12 @@ $(document).ready(function () {
     });
     // *--------------------------------- END OF SELECTING THE LENS BOXES ---------------------------------* 
 
-    
+
     // *--------------------------------- SELECTING PR, PL AND PD-R, PD-L VALUES ---------------------------------* 
-    $("select.presc-select").change(function(){
+    $("select.presc-select").change(function () {
         var selectedPresc = $(this).children("option:selected").val();
         prescId = $(this).attr('id');
-        switch (prescId)
-        {
+        switch (prescId) {
             case 'sphereR':
                 p_r.sphere = selectedPresc;
                 break;
@@ -328,13 +348,13 @@ $(document).ready(function () {
             case 'select-pd-r':
                 pd_r = selectedPresc;
                 break;
-            
+
         }
-       var pr=Object.values(p_r);
-       var pl=Object.values(p_l);
-       alert(pd_r);
-       alert(pd_l);
-               
+        var pr = Object.values(p_r);
+        var pl = Object.values(p_l);
+        alert(p_r.sphere);
+        alert(p_l.sphere);
+
     });
     // *--------------------------------- END OF SELECTING PR, PL AND PD-R, PD-L VALUES ---------------------------------* 
 
@@ -379,35 +399,83 @@ $(document).ready(function () {
     });
     // *--------------------------------- END OF REMOVING AND SHOWING PDs WHEN PDs RADIO BUTTON SELECTED ---------------------------------* 
 
+    // *--------------------------------- ADD TO CART FUNCTIONALITY ---------------------------------* 
+    $('#add-cart-btn').on('click', function () {
+
+
+        if (session_email == 'empty') {
+            alert('PLEASE LOGIN TO CONTINUE')
+
+        }
+        else {
+
+            // Code for adding prescription
+            switch (presc) {
+                case 'later':
+                case 'already':
+                    break;
+                case 'yes':
+                    alert('done');
+                    $.get('includes/insert_prescription.php?email=' + session_email +
+                        '&pr_s=' + p_r.sphere + '&pr_c=' + p_r.cylinder + '&pr_ax=' + p_r.axis + '&pr_ad=' + p_r.add + '&pd_r=' + pd_r +
+                        '&pl_s=' + p_l.sphere + '&pl_c=' + p_l.cylinder + '&pl_ax=' + p_l.axis + '&pl_ad=' + p_l.add + '&pd_l=' + pd_l, function (response) {
+
+                            alert('done3');
+                            $('#rs').html(response)
+                        });
+                    break;
+            }
+
+            // Add to cart code 
+            switch (presc) {
+                case 'later':
+                    presc_id = 0;
+                case 'already':
+                case 'yes':
+                    $.get('includes/get_prescription.php?email=' + session_email, function (response) {
+                        presc_id = response;
+                        alert(presc_id);
+                    });
+                    break;
+            }
+            $.get('includes/add_to_cart.php?email=' + session_email + '&pl_ax=' + p_l.axis + '&pl_ad=' + p_l.add + '&pd_l=' + pd_l, function (response) {
+
+                    alert('done3');
+                    $('#rs').html(response)
+                });
+        }
+    });
+    // *--------------------------------- END OF ADD TO CART FUNCTIONALITY ---------------------------------* 
 
 
     $('#ls-type-box-yes').on('click', function () {
 
         $("#choose_pd").addClass('d-flex');
-        
+
     });
     $('#ls-type-box-already, #ls-type-box-later').on('click', function () {
         $("#choose_pd").removeClass('d-flex');
     });
 
-    $(".img-add").on("click", function (){
+    $(".img-add").on("click", function () {
         $('#add-form').addClass('current');
-        $.get('../includes/addform.php', function(response) {
+        $.get('../includes/addform.php', function (response) {
             $('#adform').html(response)
         })
     })
 
-    $("img").on("click", function() {
-        if ($(this).hasClass("delete-icon")){
+    $("img").on("click", function () {
+        if ($(this).hasClass("delete-icon")) {
             // alert($(this).attr('id'))
-            window.location.replace('../includes/delete_product.php?id='+$(this).attr('id'))
+            window.location.replace('../includes/delete_product.php?id=' + $(this).attr('id'))
         }
     })
 
-    $("img").on("click", function() {
-        if ($(this).hasClass("edit-icon")){
+
+    $("img").on("click", function () {
+        if ($(this).hasClass("edit-icon")) {
             $('#add-form').addClass('current');
-            $.get('../includes/set_update_product.php?pid='+$(this).attr('id'), function(response) {
+            $.get('../includes/set_update_product.php?pid=' + $(this).attr('id'), function (response) {
                 $('#adform').html(response)
             })
         }

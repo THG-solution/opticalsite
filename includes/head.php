@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light m-xl-0 mr-xl-5 ml-xl-5 p-xl-0 d-lg-inline-flex flex-wrap">
-    <img class="navbar-brand mr-xl-5" 
-      src="https://df5apg8r0m634.cloudfront.net/images/89b305e76ab988a2ac8e9c7d704df0cd.png" />
+    <a href="../index.php"><img class="navbar-brand mr-xl-5" 
+      src="https://df5apg8r0m634.cloudfront.net/images/89b305e76ab988a2ac8e9c7d704df0cd.png" /> </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
