@@ -812,3 +812,8 @@ tr {
     background-color: #f7f7f7 !important;
 
 }
+
+.cart-text{
+    text-transform: capitalize;
+
+}

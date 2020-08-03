@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,8 +49,8 @@
                                 $db = new DBController();
                                 $product = new Table($db);
                                 $fcolor = $product->queryData("SELECT colour_name from product_colors where product_id = {$id} LIMIT 1");
-                                $color = $fcolor['colour_name']; 
-                                                           
+                                $color = $fcolor['colour_name'];
+
                                 $result = $product->queryData("SELECT img1, img2 , img3  FROM  product_colors  WHERE product_id = '{$id}' and colour_name = '{$color}'");
                                 $db = null;
                                 ?>
@@ -376,26 +378,25 @@
                                 <?php
                                 $colourSet = $product->queryData("SELECT * FROM `product_colors` AS pc, `color_name` AS cn WHERE pc.colour_name=cn.colour_name AND product_id='{$id}'");
                                 // print_r($colourSet);
-                                if(!is_array($colourSet)){
+                                if (!is_array($colourSet)) {
                                     $colourSet = array();
                                 }
                                 // print_r(count($colourSet));
-                                if (count($colourSet) == 6) { 
-                                    $colour = $colourSet;?>
+                                if (count($colourSet) == 6) {
+                                    $colour = $colourSet; ?>
                                     <li class='pd-color-list'>
-                                        <span id=<?php echo "{$colour['colour_name']}"?> class='c-list product-variation-list-item' style=<?php echo "background-size:100%;background:radial-gradient({$colour['code']},{$colour['code']},#000)" ?>></span>
+                                        <span id=<?php echo "{$colour['colour_name']}" ?> class='c-list product-variation-list-item' style=<?php echo "background-size:100%;background:radial-gradient({$colour['code']},{$colour['code']},#000)" ?>></span>
                                     </li>
                                     <?php
                                 } elseif (count($colourSet) < 6) {
                                     foreach ($colourSet as $colour) { ?>
-                                        
+
                                         <li class='pd-color-list'>
-                                            <span id=<?php echo "{$colour['colour_name']}"?>  class='c-list product-variation-list-item' style=<?php echo "background-size:100%;background:radial-gradient({$colour['code']},{$colour['code']},#000)" ?>></span>
+                                            <span id=<?php echo "{$colour['colour_name']}" ?> class='c-list product-variation-list-item' style=<?php echo "background-size:100%;background:radial-gradient({$colour['code']},{$colour['code']},#000)" ?>></span>
                                         </li>
                                 <?php
                                     }
-                                }else{
-
+                                } else {
                                 }
                                 ?>
                             </ul>
@@ -404,7 +405,7 @@
                     <div class='pd-select-btn-container'>
                         <div class='d-flex align-items-center justify-content-between' style='height:52px;'>
                             <div class='pd-select-btn'>
-                                <a href=<?php echo "../prescription.php?id={$_GET['id']}"; ?> class="text-white"> Select Lenses</a>
+                                <a id='select_lenses' class="text-white"> Select Lenses</a>
                             </div>
                         </div>
                     </div>
@@ -476,8 +477,8 @@
             </div>
         </div>
         <script>
-           var prd_id = <?php echo $id ?>; 
-           
+            var prd_id = <?php echo "'{$id}'" ?>;
+            alert(prd_id);
         </script>
         <script src="../js/jquery-3.4.1.js"></script>
         <script src="../js/jquery_func.js"></script>

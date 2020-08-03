@@ -6,10 +6,12 @@ var p_l = { sphere: '+15', cylinder: '+8', axis: 'none', add: 'none' };
 var p_r = { sphere: '+15', cylinder: '+8', axis: 'none', add: 'none' };
 var pd_l = 'none';
 var pd_r = 'none';
-var prd_price = 0, total_price = 0;
+var total_price = 0;
 var presc_id = 0;
-var color_name='';
-
+if (typeof variable === 'undefined') {
+    var p_color_name;
+}
+alert(p_color_name)
 // prd_price = <?php echo "{$price}"?>;
 
 var productContainerIndex = $('#product-list-item-index')
@@ -191,24 +193,28 @@ $(document).ready(function () {
     //     $(this).dropdown('toggle');
     // });
 
+    // *--------------------------------- COLORS JQUERY IN PROD_DESC ---------------------------------*  
+    color_name = $('.c-list').first().attr('id');
 
-    color_name= $('.c-list').first().attr('id');
-    alert(color_name);
     $('.c-list').on('click', function () {
-        color_name=$(this).attr('id');
+        color_name = $(this).attr('id');
         alert(color_name);
-        
-        $.get('update_color_image.php?div=banner&color=' + color_name +'&id=' +prd_id, function (response) {
+
+        $.get('update_color_image.php?div=banner&color=' + color_name + '&id=' + prd_id, function (response) {
             alert(response);
             $('#banner').html(response);
         });
-        $.get('update_color_image.php?div=main&color=' + color_name +'&id=' +prd_id, function (response) {
+        $.get('update_color_image.php?div=main&color=' + color_name + '&id=' + prd_id, function (response) {
             alert(response);
             $('#main_img').html(response);
         });
-        
-        // location.href = 'product_desc.php?'
+
     })
+    $('#select_lenses').on('click', function () {
+        location.href = '../prescription.php?id=' + prd_id + '&color=' + color_name;
+    });
+    // *--------------------------------- END OF COLORS JQUERY IN PROD_DESC ---------------------------------*  
+
 
     // *--------------------------------- SELECTING THE LENS BOXES ---------------------------------*  
     $('.ls-type-box').on('click', function () {
@@ -400,53 +406,80 @@ $(document).ready(function () {
     // *--------------------------------- END OF REMOVING AND SHOWING PDs WHEN PDs RADIO BUTTON SELECTED ---------------------------------* 
 
     // *--------------------------------- ADD TO CART FUNCTIONALITY ---------------------------------* 
-    $('#add-cart-btn').on('click', function () {
-
-
+    $('#add-cart-btn').mousedown(function () {
         if (session_email == 'empty') {
             alert('PLEASE LOGIN TO CONTINUE')
 
         }
         else {
-
             // Code for adding prescription
             switch (presc) {
                 case 'later':
+                    presc_id = 0;
                 case 'already':
+                    $.get({
+                        url: 'includes/get_prescription.php?email=' + session_email,
+                        success: function (response) {
+                            presc_id = response;
+                            $('#rs2').html('presc_id :' + presc_id)
+                            // alert(presc_id + 'first');
+                        },
+                        async: false
+                    });
                     break;
                 case 'yes':
                     alert('done');
                     $.get('includes/insert_prescription.php?email=' + session_email +
                         '&pr_s=' + p_r.sphere + '&pr_c=' + p_r.cylinder + '&pr_ax=' + p_r.axis + '&pr_ad=' + p_r.add + '&pd_r=' + pd_r +
                         '&pl_s=' + p_l.sphere + '&pl_c=' + p_l.cylinder + '&pl_ax=' + p_l.axis + '&pl_ad=' + p_l.add + '&pd_l=' + pd_l, function (response) {
-
                             alert('done3');
                             $('#rs').html(response)
                         });
-                    break;
-            }
-
-            // Add to cart code 
-            switch (presc) {
-                case 'later':
-                    presc_id = 0;
-                case 'already':
-                case 'yes':
-                    $.get('includes/get_prescription.php?email=' + session_email, function (response) {
-                        presc_id = response;
-                        alert(presc_id);
+                    $.get({
+                        url: 'includes/get_prescription.php?email=' + session_email,
+                        success: function (response) {
+                            presc_id = response;
+                            $('#rs2').html('presc_id :' + presc_id)
+                            // alert(presc_id + 'first');
+                        },
+                        async: false
                     });
                     break;
             }
-            $.get('includes/add_to_cart.php?email=' + session_email + '&pl_ax=' + p_l.axis + '&pl_ad=' + p_l.add + '&pd_l=' + pd_l, function (response) {
-
-                    alert('done3');
-                    $('#rs').html(response)
+        }
+    });
+    $('#add-cart-btn').mouseup(function () {
+        if (session_email == 'empty') {
+            alert('PLEASE LOGIN TO CONTINUE')
+        }
+        else {
+            alert(presc_id + 'Second');
+            $.get('includes/add_to_cart.php?email=' + session_email + '&id=' + prd_id + '&colour=' + p_color_name + '&lens_type=' + lens_type
+                + '&lens=' + lens + '&coating=' + coating + '&prescription=' + presc + '&presc_id=' + presc_id + '&coating_price=' + coating_price + '&lens_price=' + lens_price, function (response) {
+                    alert('done5');
+                    $('#rs2').html(response)
                 });
+            location.href= 'cart.php';        
         }
     });
     // *--------------------------------- END OF ADD TO CART FUNCTIONALITY ---------------------------------* 
 
+    // *--------------------------------- CHANGE TOTAL PRICE ON QTY CHANGE ---------------------------------* 
+    
+    $('.quantity').change(function(){
+        var qty = $(this).val();
+        
+        if(typeof gtp !== undefined)
+        {
+            gtpqty =  +gtp * +qty;
+        }
+        // alert(+gtpqty)
+        $(this).closest('.cart-text').find('.gtp').html(gtpqty)
+        //  . nextAll('.qtp').html(gtpqty);
+    })
+
+    // *--------------------------------- END OF CHANGE TOTAL PRICE ON QTY CHANGE ---------------------------------* 
+    
 
     $('#ls-type-box-yes').on('click', function () {
 

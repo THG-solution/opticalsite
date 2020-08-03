@@ -1,6 +1,5 @@
 <?php session_start(); ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +16,8 @@
     <?php
     $id = null;
     $id = $_GET['id'];
-    if ($id == null) {
+    $colour = $_GET['color'];
+    if ($id == null || $colour == null) {
         header('Location: index.php');
     }
     if (!file_exists("database/db_controller.php")) {
@@ -834,13 +834,13 @@
                 <div class="jsx-761701937 pc-lens-bar-container">
                     <div class="jsx-761701937 pc-lens-bar-title-line"><a class="jsx-761701937 pc-lens-bar-title-container" href="/eyeglasses-p-6415.html?color=15758">
                             <h3 class="jsx-761701937 text-dark">#<?php echo "{$resultSet['product_id']}"; ?></h3>
+                            <p class='text-dark'>Color : <span style='text-transform: capitalize;'> <?php echo $colour ?> </span></p>
                         </a>
-                        <div style="width:100%" class="jsx-1467848752 pc-extend-button undefined"><span class="icon iconfont icon-empty-heart " style="font-size:20px;margin-left:15px;font-weight:800;color:#333"></span></div>
                     </div>
                     <?php
                     $db = new DBController();
                     $product = new Table($db);
-                    $result = $product->queryData("SELECT c.img1 as image, p.avg_star, p.total_review FROM products p, product_colors c WHERE c.product_id = p.product_id and p.product_id = '{$id}' LIMIT 1");
+                    $result = $product->queryData("SELECT c.img1 as image, p.avg_star, p.total_review FROM products p, product_colors c WHERE c.product_id = p.product_id and p.product_id = '{$id}' and c.colour_name = '{$colour}'LIMIT 1");
                     $db = null;
 
                     ?>
@@ -855,7 +855,8 @@
                     <button id="add-cart-btn" class="pc-lens-bar-add-cart text-center lens-bar-add-cart-disable">ADD TO CART</button>
 
                     <div class="pres-lens-foot">
-                        <p id='rs' style="margin-bottom:0">Free Standard Shipping:</p>
+                    <p id='rs' style="margin-bottom:0">Free Standard Shipping:</p>
+                    <p id='rs2' style="margin-bottom:0">Free Standard Shipping: 2</p>
                         <!-- <p style="margin-bottom:0"><b>Total Price ≥
                                 $69.00
                                 (US only)</b></p> -->
@@ -871,6 +872,14 @@
         </div>
     </div>
     <script>
+        var prd_price = <?php echo "{$price}" ?>;
+        var p_color_name = <?php echo "'{$colour}'" ?>;
+        var prd_id = <?php echo "'{$id}'" ?>;
+
+        // alert(color_name);
+        // // alert(prd_id);
+    </script>
+    <script>
         var session_email = 'empty';
         <?php
         if(isset($_SESSION['email']))
@@ -884,7 +893,7 @@
     <script src="js/jquery-3.4.1.js"></script>
     <script src="js/jquery_func.js"></script>
     <script>
-        prd_price = <?php echo "{$price}" ?>;
+       
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
