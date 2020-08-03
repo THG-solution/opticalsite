@@ -16,11 +16,7 @@
     }
     $db = new DBController();
     $product = new Table($db);
-    $pgdata = '';
-    $gender = '';
-    $shape = '';
-    $material = '';
-    $colour = '';
+    $pgdata = ''; $gender = ''; $shape = ''; $material = ''; $colour = ''; $rim = ''; $brand = '';
     if (!empty($_GET['pgdata']) && $_GET['pgdata'] == 'meneye') $pgdata = " and gender IN ('men','unisex') and category = 'frames' ";
     if (!empty($_GET['pgdata']) && $_GET['pgdata'] == 'mensunglass') $pgdata = " and gender IN ('men','unisex') and category = 'sunglasses' ";
     if (!empty($_GET['pgdata']) && $_GET['pgdata'] == 'menall') $pgdata = " and gender IN ('men','unisex')";
@@ -36,8 +32,10 @@
     if (!empty($_GET['shape'])) $shape = " and frame_shape IN ({$_GET['shape']}) ";
     if (!empty($_GET['material'])) $material = " and material IN ({$_GET['material']}) ";
     if (!empty($_GET['colour'])) $colour = " and colour_name IN ({$_GET['colour']}) ";
+    if (!empty($_GET['rim'])) $rim = " and frame_type IN ({$_GET['rim']}) ";
+    if (!empty($_GET['brand'])) $brand = " and brand IN ({$_GET['brand']}) ";
     $resultSet = $product->queryData("SELECT DISTINCT pd.product_id AS product_id, (SELECT c.img1 from product_colors c WHERE c.product_id=pd.product_id LIMIT 1) AS image, (SELECT  p.avg_star from products p where pd.product_id=p.product_id) AS avg_star,(SELECT  p.total_review from products p where pd.product_id=p.product_id) AS total_review, (SELECT  p.price from products p where pd.product_id=p.product_id) AS price FROM products pd, product_colors pc where pc.product_id=pd.product_id 
-        {$pgdata}{$gender}{$shape}{$material}{$colour}");
+        {$pgdata}{$gender}{$shape}{$material}{$colour}{$rim}{$brand}");
     foreach ($resultSet as $result) {
         $con_price = '';
         $symbol = '';
@@ -51,7 +49,7 @@
                         // $ip = '39.40.27.157';
                         // $details = json_decode(file_get_contents("https://api.ipdata.co/{$ip}?api-key=test"));
                         // $v = $details->currency->code;
-                        if ($con) $con_price = round(($base_price * $response->conversion_rates->$val), 2);
+                        if ($con) $con_price = round(($base_price * $response->conversion_rates->USD), 2);
                         else $con_price = $result['price'];
                         $symbol = '$';
                     } else {
@@ -60,9 +58,12 @@
                         else if ($val == 'EUR') $symbol = '&euro;';
                         else if ($val == 'PKR') $symbol = 'Rs';
                         else if ($val == 'INR') $symbol = '&#x20B9;';
-                        if ($con) $con_price = round(($base_price * $response->conversion_rates->$val), 2);
-                        else $con_price = $result['price'];
+                        $con_price = round(($base_price * $response->conversion_rates->$val), 2);
                     }
+                }
+                else {
+                    $con_price = $result['price'];
+                    $symbol = '$';
                 }
             } catch (Exception $e) {
                 echo $e;

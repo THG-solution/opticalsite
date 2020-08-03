@@ -21,7 +21,7 @@
     <div class="col col-12 col-md-12 col-lg-10 offset-lg-1 d-inline-flex flex-wrap my-5">
       <div class="col-6 col-md-4 col-lg-3 col-xl-2 p-0 m-0">
         <div class="p-0">
-          <img class="rounded-circle ml-4" style="height: 150px; width: 75%;" src="https://df5apg8r0m634.cloudfront.net/images/152eedf5f567d1cc8ec9edea5176e25d.webp" alt="">
+          <a href="./womens_allglass.php"><img class="rounded-circle ml-4" style="height: 150px; width: 75%;" src="https://df5apg8r0m634.cloudfront.net/images/152eedf5f567d1cc8ec9edea5176e25d.webp" alt=""></a>
           <h5 class="text-center my-3">Women's Glasses</h5>
         </div>
       </div>
@@ -57,8 +57,9 @@
       </div>
     </div>
     <div id="product-list-item">
-      <?php include "includes/product.php" ?>
+      <?php include "includes/filt_product.php" ?>
     </div>
+  </div>
     <script src="js/jquery-3.4.1.js"></script>
     <script src="js/jquery_func.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
