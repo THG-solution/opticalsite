@@ -67,5 +67,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="js/ajax_calls.js"></script>
     <script src="./js/chatbot.js"></script>
+    <?php include "./footer.html" ?>
   </body>
 </html>

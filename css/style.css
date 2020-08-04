@@ -373,6 +373,15 @@
 #filter_nav {
     background-color: #eef !important;
 }
+#dm.show {
+    width: 1350px !important;
+    height: 300px !important;
+    margin-top: 12px;
+    position: fixed !important;
+}
+#dm.show a {
+    margin: 20px 10px;
+}
 .dropdown-toggle:hover  {
     border-bottom: 2px solid black !important ;
 }

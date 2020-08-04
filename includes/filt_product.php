@@ -25,10 +25,13 @@
     if (!empty($_GET['pgdata']) && $_GET['pgdata'] == 'womensunglass') $pgdata = " and gender IN ('women','unisex') and category = 'sunglasses' ";
     if (!empty($_GET['pgdata']) && $_GET['pgdata'] == 'womenall') $pgdata = " and gender IN ('women','unisex')";
 
-    if (!empty($_GET['gender'])) $gender = " and gender IN ({$_GET['gender']}) ";
-    if (!empty($_GET['gender']) && $_GET['gender'] == "'men'") $gender = " and gender IN ('unisex','men') ";
-    if (!empty($_GET['gender']) && $_GET['gender'] == "'women'") $gender = " and gender IN ('unisex','women') ";
-    if (!empty($_GET['gender']) && ($_GET['gender'] == "'men','women'" || $_GET['gender'] == "'women','men'")) $gender = " and gender IN ('unisex','men','women') ";
+    if (!empty($_GET['pgdata']) && $_GET['pgdata'] == 'kid' ) $pgdata = " and gender IN ('kid') ";
+
+    if (!empty($_GET['pgdata']) && !empty($_GET['gender'])) $gender = " OR gender IN ({$_GET['gender']}) ";
+    else if (!empty($_GET['gender'])) $gender = " and gender IN ({$_GET['gender']}) ";
+    else if (!empty($_GET['gender']) && $_GET['gender'] == "'men'") $gender = " and gender IN ('unisex','men') ";
+    else if (!empty($_GET['gender']) && $_GET['gender'] == "'women'") $gender = " and gender IN ('unisex','women') ";
+    else if (!empty($_GET['gender']) && ($_GET['gender'] == "'men','women'" || $_GET['gender'] == "'women','men'")) $gender = " and gender IN ('unisex','men','women') ";
     if (!empty($_GET['shape'])) $shape = " and frame_shape IN ({$_GET['shape']}) ";
     if (!empty($_GET['material'])) $material = " and material IN ({$_GET['material']}) ";
     if (!empty($_GET['colour'])) $colour = " and colour_name IN ({$_GET['colour']}) ";

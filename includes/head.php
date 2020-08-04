@@ -12,11 +12,11 @@
                     data-hover="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     DISCOVER
                 </a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" id="dd-item" href="#">Video Guides</a>
-                    <a class="dropdown-item" id="dd-item" href="#">What's PD</a>
-                    <a class="dropdown-item" id="dd-item" href="#">After Sale-Guarantee</a>
-                    <a class="dropdown-item" id="dd-item" href="#">About Us</a>
+                <div class="dropdown-menu" id="dm">
+                    <a class="dropdown-item" id="dd-item" href="../videoguides.php">Video Guides</a>
+                    <a class="dropdown-item" id="dd-item" href="../links.php#section3">What's PD</a>
+                    <a class="dropdown-item" id="dd-item" href="../links.php#section4">After Sale-Guarantee</a>
+                    <a class="dropdown-item" id="dd-item" href="../aboutus.php">About Us</a>
                 </div>
             </li>
             <li class="nav-item dropdown mr-lg-2">
@@ -24,13 +24,12 @@
                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     MEN
                 </a>
-                <div class="dropdown-menu">
+                <div class="dropdown-menu" id="dm">
                     <a class="dropdown-item" id="dd-item" href="mens_frame.php">Men's Eyeglasses</a>
                     <a class="dropdown-item" id="dd-item" href="mens_sunglass.php">Men's Sunglasses</a>
                     <a class="dropdown-item" id="dd-item" href="mens_allglass.php">All Men's Glasses</a>
-                    <a class="dropdown-item" id="dd-item" href="#">New Arrivals</a>
-                    <a class="dropdown-item" id="dd-item" href="#">Quick Frame Finder</a>
-                    <a class="dropdown-item" id="dd-item" href="#">Shop By Face Shape</a>
+                    <a class="dropdown-item" id="dd-item" href="../shopbybrand.php">Shop By Brand</a>
+                    <a class="dropdown-item" id="dd-item" href="../shopbyface.php">Shop By Face Shape</a>
                 </div>
             </li>
             <li class="nav-item dropdown mr-lg-2">
@@ -38,17 +37,16 @@
                     data-toggle="dropdown" >
                     WOMEN
                 </a>
-                <div class="dropdown-menu">
+                <div class="dropdown-menu" id="dm">
                     <a class="dropdown-item" id="dd-item" href="womens_frame.php">Women's Eyeglasses</a>
                     <a class="dropdown-item" id="dd-item" href="womens_sunglass.php">Women's Sunglasses</a>
                     <a class="dropdown-item" id="dd-item" href="womens_allglass.php">All Women's Glasses</a>
-                    <a class="dropdown-item" id="dd-item" href="#">New Arrivals</a>
-                    <a class="dropdown-item" id="dd-item" href="#">Quick Frame Finder</a>
-                    <a class="dropdown-item" id="dd-item" href="#">Shop By Face Shape</a>
+                    <a class="dropdown-item" id="dd-item" href="../shopbybrand.php">Shop By Brand</a>
+                    <a class="dropdown-item" id="dd-item" href="../shopbyface.php">Shop By Face Shape</a>
                 </div>
             </li>   
             <li class="nav-item mr-lg-2">
-                <a class="nav-link" id="nv-link" href="#">KIDS</a>
+                <a class="nav-link" id="nv-link" href="../kid_glass.php">KIDS</a>
             </li>
             <li class="nav-item mr-lg-2">
                 <a class="nav-link" id="nv-link" href="#">CLEARANCE SALE</a>
@@ -101,7 +99,8 @@
                     <li class="dropdown-item currency_val" id="INR" >&#x20B9; IND</li>
                 </ul>
             </div>
-            <div>
+            <div class="mx-2 mt-2">
+                <a class="nav-link" id="nv-link" href="" id="nv-link"><i class="fa fa-shopping-bag"></i></a>
             </div>
         </div>
     </div>

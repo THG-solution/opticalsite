@@ -69,7 +69,7 @@
           <div class="dropdown-item"><input type="checkbox" id="gender" value="unisex" > <span class="pl-2"> Unisex</span></input></div>
           <div class="dropdown-item"><input type="checkbox" id="gender" href="#" value="men" > <span class="pl-2"> Men</span></input></div>
           <div class="dropdown-item"><input type="checkbox" id="gender" href="#" value="women"> <span class="pl-2"> Women</span></input></div>
-          <div class="dropdown-item"><input type="checkbox" id="gender" href="#" value="kids" > <span class="pl-2"> Kids</span></input></div>
+          <div class="dropdown-item"><input type="checkbox" id="gender" href="#" value="kid" > <span class="pl-2"> Kids</span></input></div>
         </div>
       </li>
       <li class="nav-item dropdown mx-2">

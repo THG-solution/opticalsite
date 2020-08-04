@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/searchbar.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Document</title>
 </head>
-
+<body>
+  <?php include "./includes/head.php" ?>
 <div class="container-fluid">
     <div class="row">
       <nav class="col-sm-3 col-4" id="myScrollspy">
         <ul class="nav nav-pills flex-column">
           <li class="nav-item">
-            <a class="nav-link active" href="#section1">Shipping and tracking</a>
+            <a class="nav-link" href="#section1">Shipping and tracking</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#section2">Order</a>
@@ -25,28 +24,25 @@
             <a class="nav-link" href="#section3">Prescription</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#section3">Returns</a>
+            <a class="nav-link" href="#section4">Returns</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#section3">Lenses</a>
+            <a class="nav-link" href="#section5">Lenses</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#section3">Frames</a>
+            <a class="nav-link" href="#section6">Frames</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#section2">Payment</a>
+            <a class="nav-link" href="#section7">Payment</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="#section8">Sunglasses</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#section3">Coupon</a>
+            <a class="nav-link" href="#section9">Account</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#section3">Account</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#section3">Sunglasses</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#section3">Terms and Conditions</a>
+            <a class="nav-link" href="#section10">Terms and Conditions</a>
           </li>
         </ul>
       </nav>
@@ -590,6 +586,99 @@
                   </div>
                 </div>
               </div>
+              <div class="card">
+                <div class="card-header">
+                  <a class="collapsed card-link" data-toggle="collapse" href="#s27">
+                    How to place an order at Firmoo?
+                  </a>
+                </div>
+                <div id="s27" class="collapse" data-parent="#accordion">
+                  <div class="card-body">
+                    <div class="jsx-3909094115 pc_faq_content_box" style="padding-left: 5px; color: rgb(0, 0, 0);"><p><strong>Purchasing eyeglasses at Firmoo.com is easy.<br>
+                      <br>
+                      Step 1: Filter the size and click the frame you are going to order.</strong></p>
+                      
+                      <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/email/2020/0308/rFoEDn9LKPflN3ee.jpg"></p>
+                      
+                      <p><br>
+                      <strong>Step 2: Choose your&nbsp;color and then click "Select Lenses."</strong></p>
+                      
+                      <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/email/2020/0308/35C3SY05tqBQ15hn.jpg"></p>
+                      
+                      <p><br>
+                      <strong>Step 3: Choose the glasses type you need.</strong></p>
+                      
+                      <p><strong><img alt="" src="https://df5apg8r0m634.cloudfront.net/email/2020/0308/FMsuHyUBmnwW6AXZ.jpg"></strong><br>
+                      &nbsp;</p>
+                      
+                      <p><strong>Step 4: Fill in your prescription and PD or upload your prescription.</strong></p>
+                      
+                      <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/email/2020/0308/JF8CsjxBDChwvzRr.jpg"></p>
+                      
+                      <p>&nbsp;</p>
+                      
+                      <p><strong>Step 5: Select the usage of your glasses.</strong></p>
+                      
+                      <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/email/2020/0308/bEfrFZLUicAD7rZn.jpg"></p>
+                      
+                      <p>&nbsp;</p>
+                      
+                      <p><strong>Step 6: Select lens type, thickness, coating and add to cart.&nbsp;</strong></p>
+                      
+                      <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/email/2020/0308/i5DZlnjKNmLOUsZZ.jpg"></p>
+                      
+                      <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/email/2020/0308/8De90Sj7yaYk9TId.jpg"></p>
+                      
+                      <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/email/2020/0308/3ecotBaNCwirZcfY.jpg"><br>
+                      &nbsp;</p>
+                      
+                      <p><strong>Step 7: Go to your shopping cart to confirm your order, and then proceed to checkout.</strong></p>
+                      
+                      <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/email/2020/0308/2z1rlGIelj4u1kM5.jpg"></p>
+                      
+                      <p><br>
+                      <strong>Step 8: Checkout</strong><br>
+                      &nbsp;</p>
+                      
+                      <p><strong>Enter your shipping address</strong></p>
+                      
+                      <p><strong>Notice: We cannot ship to a PO Box&nbsp;via Express&nbsp;Shipping.&nbsp;Please enter a physical shipping address or choose&nbsp;standard shipping.</strong><img alt="" src="https://df5apg8r0m634.cloudfront.net/email/2020/0308/Vz9P636Yb1JUDzgY.jpg"></p>
+                      
+                      <p><br>
+                      <strong>Choose the shipping and payment method</strong></p>
+                      
+                      <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/email/2020/0308/Q1PvkunFZdfCfsPS.jpg"></p>
+                      
+                      <p><strong>&nbsp;<img alt="" src="https://df5apg8r0m634.cloudfront.net/email/2020/0308/iQpX7UK4HVztEqOl.jpg"></strong></p>
+                      
+                      <p><br>
+                      <strong>Leave a message if you have special requirements for your&nbsp;order.</strong></p>
+                      
+                      <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/email/2020/0308/cniockZ0QpGAhhXb.jpg"><br>
+                      &nbsp;</p>
+                      
+                      <p><strong>Redeem your coupon code</strong></p>
+                      
+                      <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/email/2020/0308/mrrZMLlQQUub4G76.jpg"><br>
+                      &nbsp;</p>
+                      
+                      <p><strong>Step 9: Choose your payment option:</strong><br>
+                      &nbsp;</p>
+                      <strong>Pay through your&nbsp;PayPal&nbsp;account</strong><br>
+                      &nbsp;
+                      <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/images/2019/1223/u1EofdaIq1.png"></p>
+                      
+                      <p><strong>Pay with credit/debit card directly</strong></p>
+                      
+                      <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/images/2019/1016/3nh0kzpEcL.png"></p>
+                      
+                      <p><br>
+                      <strong>Step 10: Wait&nbsp;for the package&nbsp;containing your fabulous new eyeglasses to arrive! &nbsp;</strong></p>
+                      
+                      <p><strong>If you have any questions&nbsp;about&nbsp;the ordering&nbsp;process, please don't hesitate&nbsp;to contact us.</strong></p></div>
+                  </div>
+                </div>
+              </div>
               <div id="section3" class="">         
                 <h1>Prescription</h1>
                 <div id="accordion">
@@ -1050,33 +1139,1052 @@
                     </div>
                   </div>
               </div>
-              <div id="section5" class="bg-secondary">         
+              <div id="section5" class="">         
                   <h1>Lenses</h1>
-                  <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+                  <div id="accordion">
+                    <div class="card">
+                      <div class="card-header">
+                        <a class="card-link" data-toggle="collapse" href="#s51">
+                          How to choose lenses?
+                        </a>
+                      </div>
+                      <div id="s51" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                          <div class="jsx-3909094115 pc_faq_content_box" style="padding-left: 5px; color: rgb(0, 0, 0);"><p>This mainly depends on the strength of your prescription. The higher the prescription, the higher index is required for the lenses. Selecting a higher index will ensure your lenses are as light and thin as possible.&nbsp;</p>
+
+                            <p>&nbsp;</p>
+                            
+                            <p>Here is a picture for reference:&nbsp;</p>
+                            
+                            <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/images/2018/0301/IFQzyzZ17w.jpg"></p>
+                            
+                            <p>See the example below for how the thickness of a -4.00 prescription lens changes with each of our available indexes.</p>
+                            
+                            <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/images/2018/0301/ynVX5zeRsD.jpg"></p>
+                            
+                            <p>Why?&nbsp;Each lens type is made from different materials. The higher index materials allow for flatter curved lenses that are still able to maintain an aspheric design. Both of these features help produce thinner and lighter lenses.</p>
+                            
+                            <p><strong>Notice</strong>: The ultimate thickness of the lenses is determined by the frame size (including lens height, lens width), frame material and your PD. If you choose a big frame the lens edge will undoubtedly be thick. Frames with thin metal rim will also make the lens look thicker. If the frame is not the best for your PD, the lens may not be beautiful and thin as you expect.&nbsp;</p></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header">
+                        <a class="collapsed card-link" data-toggle="collapse" href="#s52">
+                          Do you offer bifocal or progressive lenses?
+                      </a>
+                      </div>
+                      <div id="s52" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                          <div>
+                            <p>Yes, we do process bifocal lenses and progressive lenses. You may start by selecting the proper frame with height over 30mm for making&nbsp;bifocal or progressive&nbsp;lenses and then input your prescription as requested.</p>
+                            
+                            <p>Please note bifocal/progressive lens are needed when there is ADD in your prescription.&nbsp;</p>
+                            
+                            <p>Check <a href="/bifocal-glasses.html">here </a>for frames available with bifocal/progressive lenses.</p>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header">
+                        <a class="collapsed card-link" data-toggle="collapse" href="#s53">
+                          What is the difference between single-vision and bifocal/progressive lenses?
+                        </a>
+                      </div>
+                      <div id="s53" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                          <p>Single vision lenses refer to lenses that have only one use, to see objects in the distance, &nbsp;to see intermediate like computer or phone, or to see near for reading (reading glasses), while bifocals/progressives is&nbsp;a type of prescription eyeglasses that can be used to correct both near and farsightedness.&nbsp;This means you can see your whole field of vision without switching between multiple pairs of glasses.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header">
+                        <a class="collapsed card-link" data-toggle="collapse" href="#s54">
+                          Lens Thickness/ Lens Index
+                        </a>
+                      </div>
+                      <div id="s54" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                          <div class="jsx-3909094115 pc_faq_content_box" style="padding-left: 5px; color: rgb(0, 0, 0);"><p><strong>a.&nbsp;&nbsp;&nbsp;&nbsp;</strong><strong>Standard Spheric 1.50 Lens</strong></p>
+
+                            <p>Standard index 1.50 lenses are&nbsp;spheric lenses, come&nbsp;with anti-scratch hard coating&nbsp;and 85-90% UV protection&nbsp;coating (Please choose higher index lenses to get 100% UV protection), and are shatter-resistant, suitable for spherical power +/-1.00 or below, and cylindrical power +/-1.00 or below.</p>
+                            
+                            <p><strong>b.&nbsp;&nbsp;&nbsp;&nbsp;</strong><strong>Super Flex Aspheric 1.56 Lens</strong></p>
+                            
+                            <p style="margin-left:0pt; margin-right:0pt; text-align:justify">Super flex 1.56 lenses are super light and highly impact-resistant&nbsp;with 100% UV protection&nbsp;coating. These lenses are recommended for rimless and sports eyeglasses. The lenses are suitable for spherical power of +2.00~+4.00/-2.00~-3.00 or below with cylindrical power +/-2.00 or below.</p>
+                            
+                            <p><strong>c.&nbsp;&nbsp;&nbsp;</strong><strong>Thin </strong><strong>Spheric</strong><strong>&nbsp;</strong><strong>1.56 Lens</strong></p>
+                            
+                            <p style="margin-left:0pt; margin-right:0pt; text-align:justify">Thin Spheric (1.56) lenses are with anti-scratch hard coating&nbsp;and 85-90% UV protection&nbsp;coating (Please choose higher index lenses to get 100% UV protection). The higher index lens greatly reduces the thickness of the lens edge, and are suitable for spherical power of +2.00~+4.00/-2.00~-3.00 or below, and cylindrical power of +/-2.00 or below.</p>
+                            
+                            <p><strong>d.&nbsp; &nbsp;</strong><strong>Super Flex Aspheric&nbsp;</strong><strong>1.60 Lens</strong></p>
+                            
+                            <p>Super flex 1.60 lenses are super light and highly impact-resistant&nbsp;with anti-scratch hard coating and 100% UV protection&nbsp;coating. These lenses are recommended for rimless and sports eyeglasses. High index is suitable for spherical power of +4.00~+6.00/-3.00~-6.00 or below with cylindrical power +/-2.00 or to +/-3.00.</p>
+                            
+                            <p><strong>e.&nbsp;&nbsp;&nbsp;</strong><strong>Advanced-Thin&nbsp;</strong><strong>Aspheric</strong><strong>&nbsp;1.60 Lens</strong></p>
+                            
+                            <p>Advanced-Thin Aspheric (1.60) lenses are high index lenses with anti-scratch hard coating&nbsp;and 100% UV protection coating which are suitable for wearers with spherical power from +4.00~+6.00/-3.00~-6.00, and with cylindrical power from +/-2.00 to +/-3.00.</p>
+                            
+                            <p><strong>f.&nbsp; &nbsp; Super Thin 1.67&nbsp;Aspheric</strong><strong>&nbsp;Lens</strong></p>
+                            
+                            <p>Super Thin Aspheric (1.67) lenses are light, thin and scratch-resistant&nbsp;with 100% UV protection&nbsp;coating. Also, they are more impact-resistant than CR-39 resin lenses. They provide optical performance similar to glass lenses, as MR-7 lenses have a high index and Abbe number. The lenses are suitable for strong prescription, with spherical power from +/-6.00~+/-9.00 and cylindrical power from +/-3.00 to +/- 4.00.</p>
+                            
+                            <p><strong>g.&nbsp; &nbsp;Ultra Thin 1.74 Aspheric&nbsp;Lens</strong></p>
+                            
+                            <p style="margin-left:0pt; margin-right:0pt; text-align:justify">Ultra Thin Aspheric(1.74) lenses are with 100% UV protection&nbsp;coating&nbsp;and suitable for strong prescription, with spherical power from +/-9.00~+/-22.00 and cylindrical power from +/-3.00 to +/- 4.50.</p>
+                            
+                            <p>&nbsp;</p>
+                            
+                            <p>See the example below for how the thickness of a -4.00 prescription lens changes with each of our available indexes.</p>
+                            
+                            <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/images/2018/0228/U18vB0MMZD.jpg"></p>
+                            
+                            <p>The higher index materials allow for flatter curved lenses that are still able to maintain an aspheric design. Both of these features help produce thinner and lighter lenses.</p>
+                            
+                            <p><strong>Notice</strong>:</p>
+                            
+                            <p>1. <strong>The ultimate thickness of the lenses is determined by the frame size (including lens height, lens width), frame material and your PD. </strong>If you choose a big frame the lens edge will undoubtedly be thick. Frames with thin metal rim will also make the lens look thicker. If the frame is not the best for your PD, the lens may not be beautiful and thin as you expect.&nbsp;</p>
+                            
+                            <p>2. It is important to choose suitable lens index according to your prescription, which will not only impacts&nbsp;aesthetics/thickness of lens, but also with more comfort. When you try to order and fill in prescription, our website will recommend the suitable lens index for you automatically. If you are not sure, simply email your original prescription picture to service@firmoo.com. Our CSR will try best to help you.</p></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header">
+                        <a class="collapsed card-link" data-toggle="collapse" href="#s55">
+                          Lens Functions
+                        </a>
+                      </div>
+                      <div id="s55" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                          <div style="margin-bottom:0px; margin-left:0px; margin-right:0px; margin-top:0px; padding:0">
+                            <p>1.&nbsp;&nbsp; Single vision lens</p>
+                            
+                            <p style="margin-left:0px; margin-right:0px">Single-vision prescription lenses are for people who need to correct one field of vision, either for distance, intermediate (computer), or near vision (reading). They contain the same amount of vision correction throughout the entire lens.&nbsp;There is no ADD in the prescription in the single vision prescription and there are no lens height requirements for single vision prescription.</p>
+                            
+                            <p>2.&nbsp;&nbsp; <!--[endif]-->Bifocals</p>
+                            
+                            <p>Bifocals (sometimes called “lined bifocals”) contain two prescriptions within the same lens and can correct both nearsightedness and farsightedness.&nbsp;&nbsp;The top portion of the lens is used for distance, while the bottom portion of the lens is used for closer vision.&nbsp;The zones are separated by a noticeable line.</p>
+                            
+                            <p>Flat-top bifocal lens</p>
+                            
+                            <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/email/2020/0101/MdWD2rZNsqNSHapB.jpg"></p>
+                            
+                            <p>3.&nbsp;&nbsp; Progressives</p>
+                            
+                            <p style="margin-left:0px; margin-right:0px">Progressives are multifocal lenses that contain at least three prescriptions. They have three main fields of vision, including near, intermediate, and distance. However, progressives&nbsp;do not&nbsp;have a visible line between prescriptions. This gives the wearer a seamless and uninterrupted transition when looking from up-close objects to far-away distance.</p>
+                            
+                            <p style="margin-left:0px; margin-right:0px"><img alt="" src="https://df5apg8r0m634.cloudfront.net/email/2020/0101/awKMK2kBhquXbNM3.jpg"></p>
+                            
+                            <p style="margin-left:0px; margin-right:0px">&nbsp;</p>
+                            
+                            <p style="margin-left:0px; margin-right:0px">Advanced Progressive lens</p>
+                            
+                            <p style="margin-left:0px; margin-right:0px">Advanced Progressive lenses are the most popular type of high definition lenses and are made by free form technology that can allow you to achieve better optics. The progressives are added on the backside of the lens to enlarge visual fields and minimize the uncomfortable effects. Comparing with the standard progressive lens, Advanced Progressive lenses are easier to be adapted to.</p>
+                            
+                            <p style="margin-left:0px; margin-right:0px"><img alt="" src="https://df5apg8r0m634.cloudfront.net/email/2020/0101/dO0jldNgm8cSmUEO.jpg"></p>
+                            
+                            <p><!--[if !supportLists]-->4.&nbsp;&nbsp; <!--[endif]-->Computer lens</p>
+                            
+                            <p style="margin-left:0px; margin-right:0px">The lenses of computer glasses are designed to deal with eyestrain caused by computer screens. Computer glasses help with an intermediate distance of around 20 to 26 inches, which is the distance most people sit from their monitor. Many computer glasses have light yellow/brown tinted lenses to block out blue light radiating from your electronic devices.</p>
+                            
+                            <p style="margin-left:0px; margin-right:0px">&nbsp;</p>
+                            
+                            <p>5.&nbsp;&nbsp; <!--[endif]-->Reading glasses</p>
+                            
+                            <p style="margin-left:0px; margin-right:0px">Reading glasses are made primarily for presbyopia which is an age-related eye disease most people experience around 35 to 45 years of age. Presbyopia is caused by a decreased elasticity in the eye's lens, making it more difficult to focus on objects in a close range.</p>
+                            
+                            <p style="margin-left:0px; margin-right:0px">&nbsp;</p>
+                            
+                            <p style="margin-left:0px; margin-right:0px">Check our "How to choose lens function video" at:&nbsp;</p>
+                            
+                            <p><iframe frameborder="0" height="315" src="https://www.youtube.com/embed/bHlKfIWJuDk" width="560"></iframe></p>
+                            
+                            <p>&nbsp;</p>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header">
+                        <a class="collapsed card-link" data-toggle="collapse" href="#s56">
+                          Lens Color
+                        </a>
+                      </div>
+                      <div id="s56" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                          <div class="jsx-3909094115 pc_faq_content_box" style="padding-left: 5px; color: rgb(0, 0, 0);"><p>1.&nbsp;&nbsp; Tint</p>
+
+                            <p>Tint is the permanent colors added to the lens. The effect of tint lens is thoroughly and only one tint color no matter indoor or outside.</p>
+                            
+                            <p>Now we have light color tint and dark color tint.<strong> Light is about 20% tint and dark 80%</strong>. Dark tint lens are more suitable for working as sunglasses.</p>
+                            
+                            <div style="display:inline-block; vertical-align:top">
+                            <p><strong>Light Grey</strong></p>
+                            
+                            <p><strong><img alt="" src="https://df5apg8r0m634.cloudfront.net/images/2018/0827/PtHf011fa9.jpg" style="height:216px; width:300px"></strong></p>
+                            </div>
+                            
+                            <div style="display:inline-block; vertical-align:top">
+                            <p><strong>Dark Grey</strong></p>
+                            
+                            <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/images/2018/0827/s2TNZLjYNT.jpg" style="height:216px; width:300px"></p>
+                            </div>
+                            
+                            <div style="display:inline-block; vertical-align:top">
+                            <p><strong>Light Brown</strong></p>
+                            
+                            <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/images/2018/0827/unTGf57stx.jpg" style="height:205px; width:300px"></p>
+                            </div>
+                            
+                            <div style="display:inline-block; vertical-align:top">
+                            <p><strong>Dark Brown</strong></p>
+                            
+                            <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/images/2018/0827/M5ngd8sHYK.jpg" style="height:205px; width:300px"></p>
+                            </div>
+                            
+                            <div style="display:inline-block; vertical-align:top">
+                            <p><strong>Light Blue</strong></p>
+                            
+                            <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/images/2018/0827/5xAK5dWYzQ.jpg" style="height:200px; width:300px"></p>
+                            </div>
+                            
+                            <div style="display:inline-block; vertical-align:top">
+                            <p><strong>Dark Blue</strong></p>
+                            
+                            <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/images/2018/0827/ejdi37Vyt3.jpg" style="height:200px; width:300px"></p>
+                            </div>
+                            
+                            <div style="display:inline-block; vertical-align:top">
+                            <p><strong>Light Purple</strong></p>
+                            
+                            <p><strong><img alt="" src="https://df5apg8r0m634.cloudfront.net/images/2018/0827/prHmKMorBJ.jpg" style="height:214px; width:300px"></strong></p>
+                            </div>
+                            
+                            <div style="display:inline-block; vertical-align:top">
+                            <p><strong>Dark Purple</strong></p>
+                            
+                            <p><strong><img alt="" src="https://df5apg8r0m634.cloudfront.net/images/2018/0827/neiqITWNOU.jpg" style="height:214px; width:300px"></strong></p>
+                            </div>
+                            
+                            <div style="display:inline-block; vertical-align:top">
+                            <p><strong>Light Green</strong></p>
+                            
+                            <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/images/2018/0827/vwy56wrsTu.jpg" style="height:200px; width:300px"></p>
+                            </div>
+                            
+                            <div style="display:inline-block; vertical-align:top">
+                            <p><strong>Dark Green</strong></p>
+                            
+                            <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/images/2018/0829/KGT8OkGyJy.jpg" style="height:214px; width:300px"></p>
+                            </div>
+                            
+                            <p>2. Gradient Tint</p>
+                            
+                            <p>Gradient tint color darkens by regular degrees (where the tint deepens gradually throughout the lens). Gradient lenses are tinted from the top down, with the darkest portion of the lens protecting you most when you look up.&nbsp;This design is&nbsp;ideal for reading outdoors or leaving the sunglasses on for days that are not as bright. It is also very fashionable!</p>
+                            
+                            <div style="display:inline-block; vertical-align:top">
+                            <p><strong>Gradient Grey</strong></p>
+                            <img alt="" src="https://df5apg8r0m634.cloudfront.net/images/2018/0827/owhMnx22qe.jpg" style="height:204px; width:300px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div>
+                            
+                            <div style="display:inline-block; vertical-align:top">
+                            <p><strong>Gradient Brown</strong></p>
+                            <img alt="" src="https://df5apg8r0m634.cloudfront.net/images/2018/0827/ZlW2QToEwl.jpg" style="height:206px; width:300px"></div>
+                            
+                            <div style="display:inline-block; vertical-align:top">
+                            <p><strong>Gradient Purple</strong></p>
+                            <img alt="" src="https://df5apg8r0m634.cloudfront.net/images/2018/0827/IgjIlwj1EJ.jpg" style="height:200px; width:300px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</div>
+                            
+                            <div style="display:inline-block; vertical-align:top">
+                            <p><strong>Gradient Burgundy</strong></p>
+                            <img alt="" src="https://df5apg8r0m634.cloudfront.net/images/2018/0827/4pKh4oE2mH.jpg" style="height:205px; width:300px"></div>
+                            
+                            <p>&nbsp;</p>
+                            
+                            <p>3. Photochromic Lenses/Photochromic Transitions® Signature VII Lens</p>
+                            
+                            <p>Photochromic lenses are eyeglass lenses that are clear (or nearly clear) indoors and darken automatically when exposed to sunlight. They become sunglasses outdoors and regular glasses indoors.&nbsp;Photochromic lenses come with 100% UV protection coating and anti-reflective coating.&nbsp;</p>
+                            
+                            <p>Please note the lenses may turn out to be colored after exposed to sunlight for about 20 minutes.&nbsp;</p>
+                            
+                            <p>Notice: The windshield of the car will block UV, so the&nbsp;photochromic lenses may not change color when you drive.</p>
+                            
+                            <p><strong>We also have&nbsp;Photochromic Transitions® Signature VII Lens, which is available if you choose Super Thin Aspheric 1.60 lens.</strong></p>
+                            
+                            <p>Fully clear indoors and darker outdoors. Using exclusive<em>Chromea7<sup>™</sup></em>&nbsp;photochromic technology, they are more reactive to bright sun, partial sun and indirect light – such as light reflected from buildings, cars, and many other surfaces.&nbsp;</p>
+                            
+                            <table>
+                              <tbody>
+                                <tr>
+                                  <td>
+                                  <ul>
+                                    <li>Clearest indoors</li>
+                                    <li>Fast fade back speed</li>
+                                    <li>Block 100% of UVA &amp; UVB rays</li>
+                                  </ul>
+                                  </td>
+                                  <td>
+                                  <ul>
+                                    <li>Fit any prescription and frame</li>
+                                    <li>Suitable for any age including children</li>
+                                  </ul>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            
+                            <p>4. Polarized lens</p>
+                            
+                            <p>Polarized lenses,&nbsp;coming with anti-reflective coating, are coated with a special chemical film that helps reduce glare. Glare is caused when light from the sun is reflected off of water or a solid surface. By neutralizing glare, polarized lenses help you see objects more clearly, and also help reduce the harmful effects of UV light.</p>
+                            
+                            <p>Polarized lenses definitely are your best company when enjoying your life outdoors, enhancing experiences of boating, skating, biking, and driving.</p>
+                            
+                            <p><img src="https://df5apg8r0m634.cloudfront.net/images/2017/0426/mozlPytOUZ.png" style="display:inline-block; height:233px; margin:0px; width:505px"></p>
+                            
+                            <p>Tinted Lenses vs. Polarized Lenses</p>
+                            
+                            <p>While tinted lens are great for reducing brightness, they don't eliminate harsh glare like polarized lens. Don't let darker lenses fool you into thinking they offer more protection from UV rays, either. The darkness of the lens does not accurately represent the lenses’ ability to block UV rays.</p>
+                            
+                            <div style="display:inline-block; vertical-align:top">
+                            <p><strong>Polarized Grey</strong></p>
+                            <img alt="" src="https://df5apg8r0m634.cloudfront.net/images/2018/0827/zKL8hIF54I.jpg" style="height:202px; width:300px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div>
+                            
+                            <div style="display:inline-block; vertical-align:top">
+                            <p><strong>Polarized Brown</strong></p>
+                            <img alt="" src="https://df5apg8r0m634.cloudfront.net/images/2018/0827/BZkc7qEGtZ.jpg" style="height:200px; width:300px"></div>
+                            
+                            <p><strong>Polarized Green</strong></p>
+                            
+                            <p>&nbsp;<img alt="" src="https://df5apg8r0m634.cloudfront.net/images/2018/0827/9vGJ5HBePK.jpg" style="height:207px; width:300px"></p>
+                            
+                            <p>5. Mirror Lens</p>
+                            
+                            <p>A mirror coating is added on the outside surface of the mirror coated lenses to decrease the amount of the light passing through the lens and make the appearance like small mirrors reflecting views/objects in front of wearers. They are the best choice to satisfy both fashion and protection needs.&nbsp;</p>
+                            
+                            <div style="display:inline-block; vertical-align:top">
+                            <p><strong>Mirror Blue</strong></p>
+                            
+                            <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/images/2018/0827/bKNtCQoJoY.jpg" style="height:183px; width:300px"></p>
+                            </div>
+                            
+                            <div style="display:inline-block; vertical-align:top">
+                            <p>&nbsp;</p>
+                            </div>
+                            
+                            <div style="display:inline-block; vertical-align:top">
+                            <p>&nbsp;</p>
+                            </div>
+                            
+                            <div style="display:inline-block; vertical-align:top">
+                            <p>&nbsp;</p>
+                            
+                            <p>&nbsp;</p>
+                            </div>
+                            
+                            <div style="display:inline-block; vertical-align:top">
+                            <p>&nbsp;</p>
+                            
+                            <p>&nbsp;</p>
+                            </div>
+                            
+                            <div style="display:inline-block; vertical-align:top">
+                            <p><strong>&nbsp; &nbsp; &nbsp; &nbsp; Mirror Silver</strong></p>
+                            
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<img alt="" src="https://df5apg8r0m634.cloudfront.net/images/2018/0827/XmT9H1FTHU.jpg" style="height:200px; width:300px"></p>
+                            </div>
+                            
+                            <div style="display:inline-block; vertical-align:top">
+                            <p>&nbsp;</p>
+                            </div></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header">
+                        <a class="collapsed card-link" data-toggle="collapse" href="#s57">
+                          Difference between Spherical Lens and Aspherical Lens
+                        </a>
+                      </div>
+                      <div id="s57" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                          <div class="jsx-3909094115 pc_faq_content_box" style="padding-left: 5px; color: rgb(0, 0, 0);"><p>Generally speaking, spherical lenses are thick and the images through the lenses will be distorted. While, with the same prescription and index, aspherical lenses are thinner, lighter and more comfortable for wearers. Aspherical lenses have wider vision and the images&nbsp;through the lenses are&nbsp;more real and natural. Wearers will not feel tired after wearing aspherical lenses for a long time.</p>
+
+                            <div><span style="font-family:Calibri,sans-serif"><img src="https://df5apg8r0m634.cloudfront.net/images/2017/0611/pOwOjB4JeE.jpg" style="display:block; height:350px; left:0px; margin:0px; position:relative; resize:none; top:0px; width:660px; zoom:1"></span></div>
+                            
+                            <div><span style="font-family:Calibri,sans-serif"><img src="https://df5apg8r0m634.cloudfront.net/images/2017/0611/XTQsurQyJx.png"></span></div></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header">
+                        <a class="collapsed card-link" data-toggle="collapse" href="#s58">
+                          Can I buy lenses only to fit into my old glasses frame?
+                        </a>
+                      </div>
+                      <div id="s58" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                          <div>
+                            <p>No, we offer our lenses with our frames as a whole package. We strongly suggest not to do it as the lenses may not be suitable for your old eyeglasses frame if you buy them only.</p>
+                            
+                            <p>What's more, the best service life of&nbsp;a frame is about one year. The frame may be deformed and faded after being used for one year. So, changing frame when necessary is good for your vision and looking.&nbsp;</p>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header">
+                        <a class="collapsed card-link" data-toggle="collapse" href="#s59">
+                          What is the material of your lens?
+                        </a>
+                      </div>
+                      <div id="s59" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                          <p>Our lenses are made of resin, which are&nbsp;lightweight and highly impact-resistant. Resin lenses also have a strong ability to block ultraviolet radiation to protect your eyes.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header">
+                        <a class="collapsed card-link" data-toggle="collapse" href="#s510">
+                          Spherical VS Aspherical Lens (video)
+                        </a>
+                      </div>
+                      <div id="s510" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                          <iframe frameborder="0" height="360" src="https://www.youtube.com/embed/dih2eisgI6o?feature=player_embedded" width="640"></iframe>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header">
+                        <a class="collapsed card-link" data-toggle="collapse" href="#s511">
+                          How to change the lens of safety/sport glasses?
+                        </a>
+                      </div>
+                      <div id="s511" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                          <div class="jsx-3909094115 pc_faq_content_box" style="padding-left: 5px; color: rgb(0, 0, 0);"><p>Step 1: Hold the goggles on the nose bridge; cover the shade with a cloth in case it is scratched.&nbsp;</p>
+
+                            <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/email/2020/0508/3oorn7AlgJO7eG1A.png" style="height:300px; width:500px"></p>
+                            
+                            <p>Step 2: Pull out the shade from the inner side; then the whole shade will be taken off.</p>
+                            
+                            <p><img src="http://img.firmoo.com/help/QzVWC6vUz5.png"><br>
+                            &nbsp;</p></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header">
+                        <a class="collapsed card-link" data-toggle="collapse" href="#s512">
+                          What're the difference between Tint lens, Photochromic lens and polarized lens?
+                        </a>
+                      </div>
+                      <div id="s512" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                          <p>The effect of tint lens is thoroughly and only one tint color no matter indoor or outside. Photochromic&nbsp;lens are transparent indoor while color darkens outside. Polarized&nbsp;lens have the same color indoor and outdoor, and their effect is better than tint lens and can filter harmful UV.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header">
+                        <a class="collapsed card-link" data-toggle="collapse" href="#s513">
+                          What type of bifocal lens do you use?
+                        </a>
+                      </div>
+                      <div id="s513" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                          <div class="_help_font_site selected-art-author">
+                            <p style="margin-left:18pt; margin-right:0cm"><span style="font-family:Tahoma; font-size:medium">We use Flattop for&nbsp;our bifocal lenses.</span><br>
+                            &nbsp;</p>
+                            
+                            <p style="margin-left:18pt; margin-right:0cm"><span style="font-family:Tahoma; font-size:medium">Flat-top bifocals</span></p>
+                            
+                            <p style="margin-left:18pt; margin-right:0cm"><a href="https://df5apg8r0m634.cloudfront.net/email/2020/0424/Au4FaZBXM8fdVOTn.jpg"><img alt="" src="https://df5apg8r0m634.cloudfront.net/email/2020/0424/Au4FaZBXM8fdVOTn.jpg" style="height:400px; width:600px"></a></p>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
               </div>
-              <div id="section4" class="bg-secondary">         
-                <h1>Returns</h1>
-                <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+              <div id="section6" class="">         
+                <h1>Frames</h1>
+                <div id="accordion">
+                  <div class="card">
+                    <div class="card-header">
+                      <a class="card-link" data-toggle="collapse" href="#s61">
+                        How do I find the perfect size frame?
+                      </a>
+                    </div>
+                    <div id="s61" class="collapse" data-parent="#accordion">
+                      <div class="card-body">
+                        <div class="jsx-3909094115 pc_faq_content_box" style="padding-left: 5px; color: rgb(0, 0, 0);"><p>1. Measure your old pair of glasses to get the dimensions that&nbsp;fit&nbsp;you the best.&nbsp;With these measurements, you can easily compare them to the&nbsp;frames on our website. Please see the photos below for guidance on frame measurements (a 2-3mm difference is acceptable).</p>
+
+                          <p><br>
+                          <br>
+                          <img alt="" src="https://df5apg8r0m634.cloudfront.net/email/2019/1225/ttomel2W9229g0ks.jpg"><img alt="" src="https://df5apg8r0m634.cloudfront.net/email/2019/1225/F2rKzgUQaU8pg17s.jpg"> &nbsp; &nbsp;&nbsp;</p>
+                          
+                          <p>&nbsp; Diagonal length refers to the&nbsp;diagonal measurement of each lens, corner to corner.&nbsp;</p>
+                          
+                          <p>&nbsp;</p>
+                          
+                          <p>2. You may also find the dimensions printed on the temple arm of your old glasses.</p>
+                          
+                          <ul>
+                            <li>54 stands for Lens Width, which is the horizontal width (in millimeters) of each lens.</li>
+                            <li>18 stands for&nbsp;Bridge Distance, which is the distance (in millimeters) between your two lenses.</li>
+                            <li>140 stands for&nbsp;Temple Length, which is the length (in millimeters) from each screw to its temple tip.</li>
+                          </ul>
+                          &nbsp;
+                          
+                          <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/email/2019/1225/kGOO4K83HLFJJ41i.jpg"></p>
+                          
+                          <p>3. Try on some glasses at a local optical store, note the size that fits you and then find a similar size on our website.<br>
+                          &nbsp;</p>
+                          
+                          <p>4. We divide our frames into 3 categories: Narrow, Medium and Wide.&nbsp;&nbsp;The size represents the total width of the frame:</p>
+                          
+                          <p><strong>Narrow:</strong>&nbsp;Total Width&nbsp;&lt;129mm</p>
+                          
+                          <p><strong>Medium:&nbsp;</strong>&nbsp;Total Width 129mm to 135mm</p>
+                          
+                          <p><strong>Wide: </strong>Total Width&nbsp;&gt; 135mm<br>
+                          &nbsp;</p>
+                          
+                          <p>You can use these sizes to filter results when searching for frames on our website.<br>
+                          <br>
+                          <img alt="" src="https://df5apg8r0m634.cloudfront.net/email/2020/0223/LQL53JMEEpxStT9Z.png"></p></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header">
+                      <a class="collapsed card-link" data-toggle="collapse" href="#s62">
+                        Face shape and frame style
+                    </a>
+                    </div>
+                    <div id="s62" class="collapse" data-parent="#accordion">
+                      <div class="card-body">
+                        <div style="border-bottom:1px solid #dddddd; padding-bottom:30px">
+                          <div style="text-align:center; width:100%">
+                          <h3 style="margin-left:0px; margin-right:0px">ROUND</h3>
+                          </div>
+                          
+                          <div style="display:flex; justify-content:space-between">
+                          <div style="text-align:center; width:50%">
+                          <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/images/2018/1115/SkRkDlWNpW.png" style="width:100%"></p>
+                          
+                          <p>A round face has softer angles with slightly wider cheekbones and an equally wide forehead and jaw.</p>
+                          </div>
+                          
+                          <div style="position:relative; text-align:center; width:50%">
+                          <div style="margin-bottom:14px"><img alt="" src="https://df5apg8r0m634.cloudfront.net/images/2018/1115/iPL2uyCPEo.png" style="width:100%">
+                          <p><a href="/z/glasses-for-round-faces.html">Shop Frames For Round Face &gt;&gt;</a></p>
+                          </div>
+                          
+                          <p>An&nbsp;angular frame shape with angular edges and corners&nbsp;can help give round faces a more defined appearance</p>
+                          </div>
+                          </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header">
+                      <a class="collapsed card-link" data-toggle="collapse" href="#s63">
+                        How to measure the size of eyeglasses?
+                      </a>
+                    </div>
+                    <div id="s63" class="collapse" data-parent="#accordion">
+                      <div class="card-body">
+                        <div class="jsx-3909094115 pc_faq_content_box" style="padding-left: 5px; color: rgb(0, 0, 0);"><p><iframe height="315" src="https://www.youtube.com/embed/kFORMJkUrko" width="500"></iframe></p>
+
+                          <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/images/2018/0715/eLetU9wtHJ.png"></p>
+                          
+                          <p><strong>Step 1: Use a metric ruler.</strong></p>
+                          
+                          <p>Use a metric ruler with millimeters&nbsp;markings, the universal unit of measurement set by worldwide frame manufacturers and opticians.</p>
+                          
+                          <p><strong>Step 2: Place the frame properly.&nbsp;</strong></p>
+                          
+                          <p>Place the frame on a table or level surface. The arms can be closed or open.</p>
+                          
+                          <p><strong>Step 3: Align the ruler and make measurements.</strong></p>
+                          
+                          <p>Align the starting end of the ruler with the one side of the&nbsp;frame at the outer edge of the lens,&nbsp;then measure the distance to the&nbsp;outer edge at the other side of the frame. The bridge length can be measured in a similar way.</p>
+                          
+                          <p><strong>Step 4: Measure arm(temple).</strong></p>
+                          
+                          <p>It is necessary to measure the total length of the arm. First measure to the bend and then add the&nbsp;length of the drop for the total temple length.<br>
+                          &nbsp;</p>
+                          
+                          <p>Providing the correct measurements for the frame will ensure your new eyeglasses fit comfortably.</p></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header">
+                      <a class="collapsed card-link" data-toggle="collapse" href="#s64">
+                        Frame Materials
+                      </a>
+                    </div>
+                    <div id="s64" class="collapse" data-parent="#accordion">
+                      <div class="card-body">
+                        <div class="jsx-3909094115 pc_faq_content_box" style="padding-left: 5px; color: rgb(0, 0, 0);"><p><strong>Metal</strong> is the most widely used material to make eyeglass frames. Many people opt for metal frames because they are attractive and for their malleability and resistance to corrosion.<br>
+                          <br>
+                          <strong>Shop <a href="/metal-glasses.html">Metal Glasses</a></strong><br>
+                          &nbsp;</p>
+                          
+                          <p><img src="https://df5apg8r0m634.cloudfront.net/p/4429/1-g1VUpU4QWX.jpg" style="margin:0px; width:100%"></p>
+                          
+                          <p><br>
+                          <strong>Titanium frames&nbsp;</strong>are very popular because they are lightweight, durable, strong, and corrosion-resistant. Titanium frames&nbsp;can be made in&nbsp;a range of different styles, from modern to classic. They are also hypoallergenic, and they retain their shape better than other metals&nbsp;as they flex when a force is applied.<br>
+                          &nbsp;</p>
+                          
+                          <p><strong>Shop</strong>&nbsp;<strong><a href="/titanium-glasses.html">Titanium frames</a></strong><br>
+                          &nbsp;</p>
+                          
+                          <p><img src="https://df5apg8r0m634.cloudfront.net/p/4457/1-B4bErrzWTf.jpg" style="margin:0px; width:100%"></p>
+                          
+                          <p><strong>Stainless Steel frames</strong>&nbsp;are lightweight, high strength, and hypoallergenic. It is hard to make eyeglasses frames with stainless steel due to welding difficulties;&nbsp;however, stainless steel temples are extremely springy.<br>
+                          &nbsp;</p>
+                          
+                          <p><strong>Plastic&nbsp;</strong></p>
+                          
+                          <p>&nbsp;</p>
+                          
+                          <p><strong>TR&nbsp;</strong>is referred to as plastic titanium.&nbsp;TR frames&nbsp;are lightweight and&nbsp;resistant to impacts and high temperature. It comes in a range of colors and&nbsp;won't release any&nbsp;chemical residues. However,&nbsp;it is a little less durable than metal and may fade, and lose strength over time.&nbsp;<br>
+                          &nbsp;</p>
+                          
+                          <p><strong>Shop <a href="/z/tr-glasses.html">TR Frames</a></strong><br>
+                          &nbsp;</p>
+                          
+                          <p><img src="https://df5apg8r0m634.cloudfront.net/p/4309/1-PEo3YYCJpS.jpg" style="width:100%"></p>
+                          
+                          <p><strong>Acetate&nbsp;</strong>is a nylon-based plastic, which means it's very strong and lightweight. Acetate comes in many different&nbsp;colors, with a high, rich luster&nbsp;and is produced in high quality, sandwiched sheets. The frame is stamped out from these sheets and requires handcrafting to attain its final shape and appearance.&nbsp;With their wide range of colors and glossy finish, acetate frames combine hard wearing durability with stylish good looks.<br>
+                          &nbsp;</p>
+                          
+                          <p><strong>Shop <a href="/acetate-glasses.html">Acetate Frames</a></strong><br>
+                          &nbsp;</p>
+                          
+                          <p><img src="https://df5apg8r0m634.cloudfront.net/p/4248/1-FObBKe6vdh.jpg" style="width:100%"><br>
+                          <strong>Ultem&nbsp;</strong>is a&nbsp;polyetherimide resin.&nbsp;Ultem glasses are strong, stiff and resistant to a broad range of chemicals. Their lightweight and flexibility makes them very comfortable to wear.<br>
+                          <br>
+                          <strong>Shop <a href="/ultem-eyeglasses.html">Ultem</a></strong><a href="/ultem-eyeglasses.html">&nbsp;</a><strong><a href="/ultem-eyeglasses.html">Frames</a></strong><br>
+                          <br>
+                          <a href="https://www.firmoo.com/ultem-eyeglasses.html"><img alt="" src="https://df5apg8r0m634.cloudfront.net/email/2020/0315/fCGFemGioWONeR0f.png"></a></p></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header">
+                      <a class="collapsed card-link" data-toggle="collapse" href="#s65">
+                        Frame Size and Strong Rx
+                      </a>
+                    </div>
+                    <div id="s65" class="collapse" data-parent="#accordion">
+                      <div class="card-body">
+                        <div class="jsx-3909094115 pc_faq_content_box" style="padding-left: 5px; color: rgb(0, 0, 0);"><p>When purchasing single vision eyeglasses, wearers with higher prescription strength should be aware that large frame with a wider lens is not recommended, instead a smaller and narrower lens width will contribute to a thinner edge, lighter weight and greater comfort.<br>
+                          &nbsp;</p>
+                          
+                          <p>a.&nbsp;Lens index:&nbsp;Applying higher index lenses (1.60 index and above) can solve the problem of having a thick edge on a Negative lens,&nbsp;or a thick center&nbsp;on a Positive lens.&nbsp;</p>
+                          
+                          <p>Combining a higher index lens with an aspheric shape results in a lens which is noticeably thinner and lighter, bringing better vision, and a more comfortable wearing experience.<br>
+                          &nbsp;</p>
+                          
+                          <p>b.&nbsp;Farsighted lenses:&nbsp;For farsighted wearers&nbsp;(there is "+" in front of SPH value) who want to select a higher index lens above 1.60,&nbsp;please note, the maximum size of a high index positive lens is relatively small (just 55mm), so we recommend that customers choose a frame no wider than 50mm.<br>
+                          <br>
+                          c.&nbsp;Small PD:&nbsp;For wearers that have a comparatively&nbsp;small PD (the distance between your pupils is less than 58mm), please pay more attention to the total width of the frame as a larger frame may not match your PD. A&nbsp;smaller frame with a lens width of 50mm or lower should be considered as the first choice in order to ensure the accuracy of your prescription.</p></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header">
+                      <a class="collapsed card-link" data-toggle="collapse" href="#s66">
+                        How to check if the frames can be made into bifocal/multifocal glasses?
+                      </a>
+                    </div>
+                    <div id="s66" class="collapse" data-parent="#accordion">
+                      <div class="card-body">
+                        <div class="jsx-3909094115 pc_faq_content_box" style="padding-left: 5px; color: rgb(0, 0, 0);"><p>Generally speaking, the frame height of bifocal/progressive lens must be at least 30 mm.&nbsp;</p>
+
+                          <p>a.&nbsp;&nbsp;&nbsp;Choose frames via this <a href="/bifocal-glasses.html">link</a> for bifocal/progressive glasses.</p>
+                          
+                          <p>b.&nbsp;&nbsp;&nbsp;Check the right side of product details, which states clearly if the frame can be made into bifocal/progressive glasses or not.</p>
+                          
+                          <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/email/2020/0428/ChkClMKOFWYY7sPr.png"></p></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header">
+                      <a class="collapsed card-link" data-toggle="collapse" href="#s67">
+                        How to read the eyeglasses frame size?
+                      </a>
+                    </div>
+                    <div id="s67" class="collapse" data-parent="#accordion">
+                      <div class="card-body">
+                        <div class="jsx-3909094115 pc_faq_content_box" style="padding-left: 5px; color: rgb(0, 0, 0);"><p><strong>Standard numbers of eyeglass frame size</strong><br>
+                          &nbsp;</p>
+                          
+                          <p style="text-align:justify">Typically, there will be two or three numbers imprinted on either the bridge (nose area) or one of the temples (arm of the frame) indicating the frames size. All sizes are measured in millimeters.</p>
+                          
+                          <p>An example would be either 54-18&nbsp;or 54-18-140.<br>
+                          <br>
+                          <img alt="" src="https://df5apg8r0m634.cloudfront.net/email/2019/1225/iwlcB7uaEgpXi7pd.jpg"><br>
+                          &nbsp;</p>
+                          
+                          <p>a.&nbsp;<strong>Lens Width:</strong> The first number 54&nbsp;represents the&nbsp;lens width. It is important to differentiate it from lens height. A large lens for a big guy usually has big sizes at both dimensions. Lens size typically ranges from 44 to 58.&nbsp;<br>
+                          &nbsp;</p>
+                          
+                          <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/email/2019/1225/GWuvCaPAEsTQyj9c.jpg"><br>
+                          &nbsp;</p>
+                          
+                          <p>b.&nbsp;<strong>Bridge Distance:</strong>&nbsp;The second number 18&nbsp;represents the bridge distance. It is the minimum horizontal distance between&nbsp;the lenses. It's the size of the 'bridge'&nbsp;of the frame, the part that rests on the nose.&nbsp;This size varies only slightly because an adult's nose will hardly alter in size as they age.&nbsp;The size ranges from 14mm to 24mm.<br>
+                          &nbsp;</p>
+                          
+                          <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/email/2019/1225/sdUfVmchYbLDl6pN.jpg"><br>
+                          &nbsp;</p>
+                          
+                          <p>c.&nbsp;<strong>Temple Length:</strong> The third number 140&nbsp;describes the length of&nbsp;the arm or temple. This is the whole length from the screw to its ear tip, consisting of the length of the bend and the length of the drop. The average size for most people is around 140, however some may need either a shorter or a longer temple length.<br>
+                          &nbsp;</p>
+                          
+                          <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/email/2019/1225/RVgHwYnKY5C8LKt6.jpg"></p></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </div>
-            <div id="section5" class="bg-secondary">         
-                <h1>Lenses</h1>
-                <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+            <!-- <div id="section7" class="">         
+              <h1>Coupon</h1>
+              <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+            </div> -->
+            <div id="section7" class="">         
+                <h1>Payments</h1>
+                <div id="accordion">
+                  <div class="card">
+                    <div class="card-header">
+                      <a class="card-link" data-toggle="collapse" href="#s71">
+                        Can I use my Flex Spending (FSA) or Health Savings (HSA) Account card?
+                      </a>
+                    </div>
+                    <div id="s71" class="collapse" data-parent="#accordion">
+                      <div class="card-body">
+                        <div class="jsx-3909094115 pc_faq_content_box" style="padding-left: 5px; color: rgb(0, 0, 0);"><p><strong>1. What is FSA/HSA?</strong><br>
+                          FSAs and HSAs are pre-tax medical expense accounts&nbsp;offered by employers&nbsp;which can be used for eligible health care expenses, including prescription eyewear.<br>
+                          FSA&nbsp;is a "use it or lose it" program which runs January 1-December 31. The funds must be used by the end of the year or else you lose your money. Buying glasses at Firmoo is a great way to use up lingering FSA money.<br>
+                          HSA&nbsp;funds roll over and accumulate year to year if they are not spent.&nbsp;<br>
+                          &nbsp;</p>
+                          <strong>2. What Vision Expenses Can You Spend FSA/HSA&nbsp;Dollars On?</strong><br>
+                          Vision care is a great way to maximize FSA/HSA pre-tax dollars. Nearly all basic optical care expenses are FSA and HSA eligible. These expenses include eye exams, prescription glasses (including prescription sunglasses), reading glasses, cleaning and repairing accessories.&nbsp;<br>
+                          <br>
+                          <strong>3. How to order with FSA/HSA?</strong><br>
+                          If you have an FSA/HSA card, you can use it at checkout as you would a credit card.<br>
+                          If you don't have an&nbsp;FSA/HSA card, simply make your purchase as you normally would, and submit your receipt to your FSA/HSA plan for reimbursement.<br>
+                          <br>
+                          <strong>The following are the steps about how to submit FSA claims:</strong><br>
+                          What if you don’t have a card? You can submit these expenses at any time within the term of your FSA coverage or grace period. And, you can do so right on your FSA provider’s website.<br>
+                          If you don’t know how to access your FSA website, check with your employer or third-party FSA provider. If this is your first-time logging into an FSA website, you may need to set up an account.<br>
+                          Once you’ve accessed your FSA site, look for the option to submit a claim. From there, follow the steps outlined on the FSA claim page. These will vary according to your provider.<br>
+                          Typically, you will be asked to upload a digital copy of your receipt and answer a series of questions. For example, you’ll likely be asked to fill out some personal information along with the service or product type, your date of service or purchase, your provider’s name, and the cost not reimbursed by your health insurance provider. Once completed, your provider will evaluate your claim and send you a reimbursement check toward all qualifying purchases.</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header">
+                      <a class="collapsed card-link" data-toggle="collapse" href="#s72">
+                        Do you accept insurance as payment for my eyeglasses?
+                    </a>
+                    </div>
+                    <div id="s72" class="collapse" data-parent="#accordion">
+                      <div class="card-body">
+                        <p>Sorry, we do not accept insurance. However, some insurance companies will accept an invoice copy for reimbursement. Check with your insurance company, and if they do, you can send them the invoice copy.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header">
+                      <a class="collapsed card-link" data-toggle="collapse" href="#s73">
+                        What payment method do you accept?
+                      </a>
+                    </div>
+                    <div id="s73" class="collapse" data-parent="#accordion">
+                      <div class="card-body">
+                        <p>We accept PayPal and Credit/Debit Card(including Master, Visa, Express, Discover) for our customers to effect payment. Currently, we do not accept check or money order.&nbsp;</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header">
+                      <a class="collapsed card-link" data-toggle="collapse" href="#s74">
+                        Is the payment environment safe?
+                      </a>
+                    </div>
+                    <div id="s74" class="collapse" data-parent="#accordion">
+                      <div class="card-body">
+                        <p>Yes, it is secure. You only need to enter your information on the secure webpage. We use the renowned payment gateway service in US and your private information will never be leaked or revealed.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </div>
-            <div id="section4" class="bg-secondary">         
-                <h1>Returns</h1>
-                <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+            <div id="section8" class="">         
+              <h1>Sunglasses</h1>
+              <div id="accordion">
+                <div class="card">
+                  <div class="card-header">
+                    <a class="card-link" data-toggle="collapse" href="#s81">
+                      Do you offer prescription sunglasses?
+                    </a>
+                  </div>
+                  <div id="s81" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                      <div class="_help_font_site selected-art-author">
+                        <p>Yes, there are two ways to buy prescription sunglasses:</p>
+                        
+                        <p>A. Sunglasses with prescription lenses. We have prescription and non-prescription sunglasses. Please visit <a href="/sunglasses.html">here </a>for details;</p>
+                        
+                        <p>B. Regular frames with lens color. You can also order photochromic lens, tint lens or polarized lens for regular glasses, they will work as sunglasses:</p>
+                        <img alt="" src="https://df5apg8r0m634.cloudfront.net/images/2019/1127/6FZm2ZXhyP.png"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#s82">
+                      How to choose sunglasses?
+                  </a>
+                  </div>
+                  <div id="s82" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                      <p style="margin-left:0pt; margin-right:0pt; text-align:left"><span style="font-size:10.5pt"><span style="font-family:Calibri"><span style="font-size:12.0000pt"><span style="font-family:Arial">a.The UV protection level is the most important factor. The sunglasses we offered at Firmoo are 100% protection or UV400, which means the lens can effectively block all harmful UV.</span></span><br>
+                        <span style="font-size:12.0000pt"><span style="font-family:Arial">b.Lens color: With darker lens color, it can block light more effectively. But it doesn't mean the UV protection level is higher.&nbsp;</span></span><br>
+                        <strong><span style="font-size:12.0000pt"><span style="font-family:Arial"><strong>Grey</strong></span></span></strong><span style="font-size:12.0000pt"><span style="font-family:Arial">: No chromatic aberration when the light darkens.&nbsp;</span></span><br>
+                        <strong><span style="font-size:12.0000pt"><span style="font-family:Arial"><strong>Brown</strong></span></span></strong><span style="font-size:12.0000pt"><span style="font-family:Arial">: It can filter out blue light, and improve vision comparison and clarity. It's best to use under air pollution and foggy weather. &nbsp;</span></span><br>
+                        <strong><span style="font-size:12.0000pt"><span style="font-family:Arial"><strong>Green</strong></span></span></strong><span style="font-size:12.0000pt"><span style="font-family:Arial">: The light transmittance of&nbsp;green lens are low, which reduces your clarity. Green lens are not suitable when you are driving.&nbsp;</span></span><br>
+                        <strong><span style="font-size:12.0000pt"><span style="font-family:Arial"><strong>Blue/Purple</strong></span></span></strong><span style="font-size:12.0000pt"><span style="font-family:Arial">: More UV will penetrate through blue/purple lens.&nbsp;</span></span><br>
+                        <strong><span style="font-size:12.0000pt"><span style="font-family:Arial"><strong>Sunglass with anti-reflective coating</strong></span></span></strong><span style="font-size:12.0000pt"><span style="font-family:Arial">: Improve the quality of imaging and light transmittance, and reduce glare.Anti-reflective coating is recommended for all glasses.&nbsp;</span></span><br>
+                        <strong><span style="font-size:12.0000pt"><span style="font-family:Arial"><strong>Polarized lens</strong></span></span></strong><span style="font-size:12.0000pt"><span style="font-family:Arial">: Suitable for various outdoor activities.&nbsp;</span></span></span></span></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#s83">
+                      Can you make sunglasses with common frames?
+                    </a>
+                  </div>
+                  <div id="s83" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                      <p>Yes,&nbsp;common frames with photochromic lens, tint lens or polarized lens can be used as sunglasses.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#s84">
+                      Do you offer multifocal/progressive sunglasses?
+                    </a>
+                  </div>
+                  <div id="s84" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                      <div class="jsx-3909094115 pc_faq_content_box" style="padding-left: 5px; color: rgb(0, 0, 0);"><p>Yes, you can select progressive prescription glasses with photochromic lens or tint lens, which works as sunglasses.</p>
+
+                        <p>Step 1: Choose a regular frame and then choose the Bifocal/Progressive option.</p>
+                        
+                        <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/images/2019/1127/9I2yEahUb3.png"></p>
+                        
+                        <p>Step 2: choose the lens color.</p>
+                        
+                        <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/images/2019/1127/ltuokPheOY.png"><br>
+                        <br>
+                        <strong>Notice</strong>:&nbsp;</p>
+                        
+                        <p>Sunglasses frame glasses can only be used for distance, not for reading, bifocal or progressive.</p></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#s85">
+                      What index lens do you offer for sunglasses?
+                    </a>
+                  </div>
+                  <div id="s85" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                      <div class="_help_font_site selected-art-author">
+                        <p style="margin-left:18pt; margin-right:0cm">We offer <strong>1.56 index</strong> lens for sunglasses. If you want to upgrade lens, please contact service@firmoo.com.&nbsp;</p>
+                        
+                        <p style="margin-left:18pt; margin-right:0cm"><strong>Notice</strong>: The lens may not be as thin as you expect if you decide to upgrade them because the frame of sunglasses is generally large. So, if your prescription is strong, you are suggested to choose a small regular eyeglasses frame and select colored lens. Here are the detailed <a href="/help-p-107.shtml">instructions</a>.</p>
+                        
+                        <div>&nbsp;</div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div id="section5" class="bg-secondary">         
-                <h1>Lenses</h1>
-                <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+            <div id="section9" class="">         
+                <h1>Account</h1>
+                <div id="accordion">
+                  <div class="card">
+                    <div class="card-header">
+                      <a class="card-link" data-toggle="collapse" href="#s91">
+                        Contact us
+                      </a>
+                    </div>
+                    <div id="s91" class="collapse" data-parent="#accordion">
+                      <div class="card-body">
+                        <div class="jsx-3909094115 pc_faq_content_box" style="padding-left: 5px; color: rgb(0, 0, 0);"><p style="margin-left:0cm; margin-right:0cm; text-align:justify"><strong>Live Chat:&nbsp;</strong><a href="#" onclick="LC_API.open_chat_window();return false;">Start a live chat&nbsp;</a>&nbsp;（24/7）<br>
+                          <strong>Toll Free:</strong> 1-855-487-6006&nbsp;(Everyday, 7&nbsp;a.m.-4&nbsp;p.m. PDT.)<br>
+                          <strong>Email:&nbsp;</strong>service@firmoo.com (Reply within 24 hours on weekdays and 48 hours on weekends)</p>
+                          
+                          <p>&nbsp;</p>
+                          
+                          <p><strong>Before you email us</strong></p>
+                          
+                          <ul>
+                            <li>If you have already registered and ordered, please contact us using your&nbsp;<strong>registered email address</strong>.&nbsp;Be sure to reference your <strong>order number</strong>, especially if you have ordered from us more than once.<br>
+                            &nbsp;</li>
+                            <li>If you have questions about reading and filling out your prescription form online, please attach&nbsp;<strong>a copy of your original prescription</strong>. Just use a photo or scanned script.</li>
+                          </ul>
+                          
+                          <p><strong>Please check your spam folder&nbsp;if you do not hear from us within 48 hours.&nbsp; Please move our email to your Inbox to ensure&nbsp;you'll receive important system emails from us.</strong><br>
+                          &nbsp;</p>
+                          
+                          <p>Note: Please send your return and order changing request from your <a href="/index.php?main_page=account">account center</a> or via email so we can expedite processing&nbsp;without delays caused by a missed call. Please always contact us first before returning your package.</p>
+                          
+                          <p>&nbsp;</p></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header">
+                      <a class="collapsed card-link" data-toggle="collapse" href="#s92">
+                        How can I change my password?
+                    </a>
+                    </div>
+                    <div id="s92" class="collapse" data-parent="#accordion">
+                      <div class="card-body">
+                        <div class="jsx-3909094115 pc_faq_content_box" style="padding-left: 5px; color: rgb(0, 0, 0);"><p>1. Log in and click "My Account"</p>
+                          <p>2. Click on "Change Password"</p>
+                          <p>3. Reset your password and click "Update" and then your password will be updated.&nbsp;</p>
+                          <p>&nbsp;</p>
+                          <p>&nbsp;</p></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header">
+                      <a class="collapsed card-link" data-toggle="collapse" href="#s93">
+                        What can I do if I forget my password?
+                      </a>
+                    </div>
+                    <div id="s93" class="collapse" data-parent="#accordion">
+                      <div class="card-body">
+                        <div class="jsx-3909094115 pc_faq_content_box" style="padding-left: 5px; color: rgb(0, 0, 0);"><p>Step 1: get to our login page and click "Forget Password":</p>
+
+                          <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/images/2019/0715/0ATKZeBJr5.png"></p>
+                          
+                          <p>&nbsp;</p>
+                          
+                          <p>Step 2: enter your registered email and submit it:</p>
+                          
+                          <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/images/2019/0715/4GxmyVfYXV.png"></p>
+                          
+                          <p>&nbsp;</p>
+                          
+                          <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/images/2019/0715/7Z3wdru02O.png"></p>
+                          
+                          <p>&nbsp;</p>
+                          
+                          <p>Step 3: go to your email box to reset the password via the link. If you do not receive the email, please check your spam folders.</p>
+                          
+                          <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/images/2019/0715/ImrPn0B7Dg.png"></p>
+                          
+                          <p>&nbsp;</p>
+                          
+                          <p><img alt="" src="https://df5apg8r0m634.cloudfront.net/images/2019/0715/1vneLkg4on.png"></p></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </div>
-            <div id="section4" class="bg-secondary">         
-                <h1>Returns</h1>
-                <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-            </div>
-            <div id="section5" class="bg-secondary">         
-                <h1>Lenses</h1>
-                <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+            <div id="section10" class="">         
+                <h1>Terms and Conditions</h1>
+                <div id="accordion">
+                  <div class="card">
+                    <div class="card-header">
+                      <a class="card-link" data-toggle="collapse" href="#s101">
+                        What is your policy of privacy and security?
+                      </a>
+                    </div>
+                    <div id="s101" class="collapse" data-parent="#accordion">
+                      <div class="card-body">
+                        <div class="_help_font_site selected-art-author">
+                          <p style="margin-left:18.0pt"><span style="font-size:medium">In order for us to offer our services and products to you, we need to collect your personal data. We ensure you that we will use these data only for the purpose of fulfilling this contract, and will not use these data for any other purpose or by any third party. We will strictly comply with the provisions of the Data Protection Act 1998 in relations to the date we receive from you under this contract.</span></p>
+                          
+                          <p style="margin-left:18.0pt"><span style="font-size:medium">Cookies are the pieces of information that a website transfers to your computer's hard disk for record-keeping purpose. These cookies will not and cannot be used to identify you in any way. Firmoo.com is committed to protecting our customer's privacy and offering the customers with secure online purchase.</span></p>
+                          
+                          <p style="margin-left:18.0pt"><span style="font-size:medium">We only use secure payment gateway offered by renowned US companies to process your payment via major credit cards and other cards. We will not collect any information concerning the payment methods.</span></p>
+                          
+                          <p style="margin-left:18.0pt">&nbsp;</p>
+                          
+                          <p style="margin-left:18.0pt"><span style="font-size:medium">Governing Law<br>
+                          These Terms of Service and any separate agreements whereby we provide you service shall be governed by and construed in accordance with the laws of UK.</span></p>
+                          
+                          <p style="margin-left:18.0pt"><img alt="" src="https://www.9-bill.com/?v=YlMxDS2yC83AK4Q1TRNt"></p>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header">
+                      <a class="collapsed card-link" data-toggle="collapse" href="#s102">
+                        Price and payment
+                    </a>
+                    </div>
+                    <div id="s102" class="collapse" data-parent="#accordion">
+                      <div class="card-body">
+                        <div class="_help_font_site selected-art-author">
+                          <p>1. The prices shown on firmoo.com are the price that you, our customer, will pay.</p>
+                          
+                          <p>2. We accept the major credit cards. Payments will be effected by debiting your account. No production of eyeglasses will be processed before we receive your payment.</p>
+                          
+                          <p>3. In case of our failure to provide you the products you order from firmoo.com, we will inform you by&nbsp;email and&nbsp;we will refund the full payment to the original payment card, with no further&nbsp;responsibility on&nbsp;our side.</p>
+                          
+                          <p>4.&nbsp;Customers will only be charged once for shipping costs (this includes returns for warranty issues). No restocking fee will&nbsp;be charged to the consumers for the returned&nbsp;product.</p>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header">
+                      <a class="collapsed card-link" data-toggle="collapse" href="#s103">
+                        Customers' inspection of eyeglasses
+                      </a>
+                    </div>
+                    <div id="s103" class="collapse" data-parent="#accordion">
+                      <div class="card-body">
+                        <div class="jsx-3909094115 pc_faq_content_box" style="padding-left: 5px; color: rgb(0, 0, 0);"><p>1. Once the package is delivered and received by you, our customer, you must conduct inspection immediately and carefully. Failure in doing so will be your own responsibility.</p>
+
+                          <p>2. If you, our customer, find the eyeglasses and accessories are damaged or lost, or not in accordance with what you have ordered, please contact us immediately. Failure in doing so will be your own responsibility.</p>
+                          
+                          <p>3. In case you decide to return the package to us, please do not use the eyeglasses and enclosed accessories, and keep its original status. Failure in doing so will be your own responsibility.<br>
+                          &nbsp;</p>
+                          
+                          <p><strong>Cancel&nbsp;order</strong></p>
+                          
+                          <p>Eyeglasses are custom-made products, so if you want to cancel&nbsp;the order, you can submit cancel request&nbsp;in your account center.&nbsp;</p>
+                          
+                          <p>​​​​​However, once your order status becomes 'Processing' and it has been over 24 hours after placing an order, which means it is already in the stage of production, the lens cannot be recycled and you will be requested to pay processing fee&nbsp;$4.95 USD for any change/cancellation.</p>
+                          
+                          <p>For cancellation concerning your order, we will send acknowledgment emails to you. Please check your spam folder if you don't find our emails.&nbsp;</p></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </div>
             </div>
 
@@ -1087,11 +2195,14 @@
       </div>
     </div>
   </div>
-  
-  </body>
-
-          
-        
+                        </div>
+  <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/jquery_func.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script> -->
+    <!-- <script src="js/ajax_calls.js"></script> -->
+    <!-- <script src="./js/chatbot.js"></script> -->
+  <?php include "./footer.html" ?>
 </body>
-
-</htmlnav-link
+</html>

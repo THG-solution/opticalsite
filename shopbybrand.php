@@ -14,7 +14,7 @@
         <?php include "includes/head.php" ?>
         <div class="row col-12">
             <!-- <div class="col-8 offset-2"> -->
-                <img class="col-10 offset-1" src="assests/images/men_all.png" alt="">
+                <img class="col-10 offset-1" src="assests/images/slide4.png" alt="">
             <!-- </div> -->
         </div>
         <?php include "includes/filter_bar.php" ?>
