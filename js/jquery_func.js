@@ -1,4 +1,4 @@
-var productContainer = $('#product-list-item'), loc = '', pgdata = '', gender = [], gen = [], shape = [], shp = [], material = [], mtrl = [], colour = [], clr = []
+var productContainer = $('#product-list-item'), loc = '', pgdata = '', gender = [], gen = [], shape = [], shp = [], material = [], mtrl = [], colour = [], clr = [], rim = [], rm = [], brand = [], brnd = []
 
 // Variable Decalaration for Prescription Section
 var lens_type = 'Single Vision', lens = 'Plastic', lens_price = 16; presc = 'later', coating = 'Basic', coating_price = 0;
@@ -45,7 +45,9 @@ $(window).on("load", function () {
         pgdata = 'womensunglass'
     else if (uri.includes('womens_allglass'))
         pgdata = 'womenall'
-    $.get('includes/filt_product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr, function (response) {
+    if (uri.includes('kid_glass'))
+        pgdata = 'kid'
+    $.get('includes/filt_product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr + '&rim=' + rm + '&brand=' + brnd, function (response) {
         productContainer.html(response)
     })
 });
@@ -81,7 +83,7 @@ $(document).ready(function () {
                 for (let elements of gender.values()) {
                     gen.push("'" + elements + "'");
                 }
-                $.get('includes/filt_product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr, function (response) {
+                $.get('includes/filt_product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr + '&rim=' + rm + '&brand=' + brnd, function (response) {
                     productContainer.html(response)
                 })
             }
@@ -90,7 +92,7 @@ $(document).ready(function () {
                 for (let elements of gender.values()) {
                     gen.push("'" + elements + "'");
                 }
-                $.get('includes/filt_product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr, function (response) {
+                $.get('includes/filt_product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr + '&rim=' + rm + '&brand=' + brnd, function (response) {
                     productContainer.html(response)
                 })
             }
@@ -102,7 +104,7 @@ $(document).ready(function () {
                 for (let elements of shape.values()) {
                     shp.push("'" + elements + "'");
                 }
-                $.get('includes/filt_product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr, function (response) {
+                $.get('includes/filt_product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr + '&rim=' + rm + '&brand=' + brnd, function (response) {
                     productContainer.html(response)
                 })
             }
@@ -111,7 +113,7 @@ $(document).ready(function () {
                 for (let elements of shape.values()) {
                     shp.push("'" + elements + "'");
                 }
-                $.get('includes/filt_product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr, function (response) {
+                $.get('includes/filt_product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr + '&rim=' + rm + '&brand=' + brnd, function (response) {
                     productContainer.html(response)
                 })
             }
@@ -123,7 +125,7 @@ $(document).ready(function () {
                 for (let elements of material.values()) {
                     mtrl.push("'" + elements + "'");
                 }
-                $.get('includes/filt_product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr, function (response) {
+                $.get('includes/filt_product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr + '&rim=' + rm + '&brand=' + brnd, function (response) {
                     productContainer.html(response)
                 })
             }
@@ -132,7 +134,7 @@ $(document).ready(function () {
                 for (let elements of material.values()) {
                     mtrl.push("'" + elements + "'");
                 }
-                $.get('includes/filt_product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr, function (response) {
+                $.get('includes/filt_product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr + '&rim=' + rm + '&brand=' + brnd, function (response) {
                     productContainer.html(response)
                 })
             }
@@ -145,7 +147,7 @@ $(document).ready(function () {
                 for (let elements of colour.values()) {
                     clr.push("'" + elements + "'");
                 }
-                $.get('includes/filt_product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr, function (response) {
+                $.get('includes/filt_product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr + '&rim=' + rm + '&brand=' + brnd, function (response) {
                     productContainer.html(response)
                 })
             }
@@ -155,7 +157,51 @@ $(document).ready(function () {
                 for (let elements of colour.values()) {
                     clr.push("'" + elements + "'");
                 }
-                $.get('includes/filt_product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr, function (response) {
+                $.get('includes/filt_product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr + '&rim=' + rm + '&brand=' + brnd, function (response) {
+                    productContainer.html(response)
+                })
+            }
+        }
+
+        else if ($(this).attr('id') === 'rim') {
+            rm = []
+            if (this.checked) {
+                rim.push($(this).val())
+                for (let elements of rim.values()) {
+                    rm.push("'" + elements + "'");
+                }
+                $.get('includes/filt_product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr + '&rim=' + rm, function (response) {
+                    productContainer.html(response)
+                })
+            }
+            else if (!this.checked) {
+                rim = rim.filter(el => el != $(this).val())
+                for (let elements of rim.values()) {
+                    rm.push("'" + elements + "'");
+                }
+                $.get('includes/filt_product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr + '&rim=' + rm, function (response) {
+                    productContainer.html(response)
+                })
+            }
+        }
+
+        else if ($(this).attr('id') === 'brand') {
+            brnd = []
+            if (this.checked) {
+                brand.push($(this).val())
+                for (let elements of brand.values()) {
+                    brnd.push("'" + elements + "'");
+                }
+                $.get('includes/filt_product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr + '&rim=' + rm + '&brand=' + brnd, function (response) {
+                    productContainer.html(response)
+                })
+            }
+            else if (!this.checked) {
+                brand = brand.filter(el => el != $(this).val())
+                for (let elements of brand.values()) {
+                    brnd.push("'" + elements + "'");
+                }
+                $.get('includes/filt_product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr + '&rim=' + rm + '&brand=' + brnd, function (response) {
                     productContainer.html(response)
                 })
             }
@@ -165,11 +211,11 @@ $(document).ready(function () {
         loc = $(this).attr('id')
         if ($(this).hasClass('currency_val'))
             if (uri.includes('index'))
-                $.get('includes/product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr, function (response) {
+                $.get('includes/filt_product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr, function (response) {
                     productContainer.html(response)
                 })
             else
-                $.get('includes/filt_product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr, function (response) {
+                $.get('includes/filt_product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr + '&rim=' + rm + '&brand=' + brnd, function (response) {
                     productContainer.html(response)
                 })
     })

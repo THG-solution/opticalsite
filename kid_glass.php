@@ -14,13 +14,13 @@
         <?php include "includes/head.php" ?>
         <div class="row col-12">
             <!-- <div class="col-8 offset-2"> -->
-                <img class="col-10 offset-1" src="assests/images/men_all.png" alt="">
+                <img class="col-10 offset-1" src="assests/images/kid_glass.png" alt="">
             <!-- </div> -->
         </div>
         <?php include "includes/filter_bar.php" ?>
         <div id="product-list-item">
-      <?php include "includes/filt_product.php" ?>
-    </div>
+        <?php include "includes/filt_product.php" ?>
+        </div>
     </div>
     <?php include "./footer.html" ?>
     <script src="js/jquery-3.4.1.js"></script>

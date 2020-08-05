@@ -50,16 +50,14 @@
       <li class="nav-item dropdown mx-2">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
-          Size
+          Brand
         </a>
         <div class="dropdown-menu " aria-labelledby="navbarDropdown">
-          <div class="d-flex flex-row">
-            <div class="dropdown-item "><input type="checkbox" href="#"><span class="pl-2"> Small ( < 129 mm ) </span></input></div>
-            <div class="dropdown-item "><input type="checkbox" href="#"><span class="pl-2"> Medium ( 129mm to 135mm )</span></input></div>
-            <div class="dropdown-item "><input type="checkbox" href="#"><span class="pl-2"> Large ( > 135 mm )</span></input></div>
-           
-          </div>
-          
+          <!-- <div class="d-flex flex-row"> -->
+            <div class="dropdown-item "><input type="checkbox" id="brand" value="police" href="#"><span class="pl-2"> Police </span></input></div>
+            <div class="dropdown-item "><input type="checkbox" id="brand" value="ford" href="#"><span class="pl-2"> Ford </span></input></div>
+            <!-- <div class="dropdown-item "><input type="checkbox" href="#"><span class="pl-2"> Large ( > 135 mm )</span></input></div> -->
+          <!-- </div> --> 
         </div>
       </li>
       <li class="nav-item dropdown mx-2">
@@ -71,7 +69,7 @@
           <div class="dropdown-item"><input type="checkbox" id="gender" value="unisex" > <span class="pl-2"> Unisex</span></input></div>
           <div class="dropdown-item"><input type="checkbox" id="gender" href="#" value="men" > <span class="pl-2"> Men</span></input></div>
           <div class="dropdown-item"><input type="checkbox" id="gender" href="#" value="women"> <span class="pl-2"> Women</span></input></div>
-          <div class="dropdown-item"><input type="checkbox" id="gender" href="#" value="kids" > <span class="pl-2"> Kids</span></input></div>
+          <div class="dropdown-item"><input type="checkbox" id="gender" href="#" value="kid" > <span class="pl-2"> Kids</span></input></div>
         </div>
       </li>
       <li class="nav-item dropdown mx-2">
@@ -101,9 +99,9 @@
           Rim
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <div class="dropdown-item "><input type="checkbox" href="#"><span class="pl-2"> Full-Rim</span></input></div>
-          <div class="dropdown-item "><input type="checkbox" href="#"><span class="pl-2"> Semi-Rimless</span></input></div>
-          <div class="dropdown-item "><input type="checkbox" href="#"><span class="pl-2"> Rimless</span></input></div>        
+          <div class="dropdown-item "><input type="checkbox" id="rim" value="full-rim"  href="#"><span class="pl-2"> Full-Rim</span></input></div>
+          <div class="dropdown-item "><input type="checkbox" id="rim" value="half-rim" href="#"><span class="pl-2"> Half-Rim</span></input></div>
+          <div class="dropdown-item "><input type="checkbox" id="rim" value="rim-less" href="#"><span class="pl-2"> Rimless</span></input></div>        
         </div>
       </li>
       <li class="nav-item dropdown mx-2">
