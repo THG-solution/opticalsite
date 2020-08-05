@@ -172,7 +172,7 @@
                     <div class="tab-content mt-4" id="myTabContent">
                         <div class="tab-pane fade show active" id="all-reviews" role="tabpanel" aria-labelledby="home-tab">
                             <?php
-                            if (!empty($resultSet) && count($resultSet) == 4) { ?>
+                            if (!empty($resultSet) && count($resultSet,1) == 4) { ?>
                                 <div class="row my-3">
                                     <div class="col-lg-3">
                                         <div class="pd-review-name">
@@ -247,7 +247,7 @@
                                 </div>
 
                                 <?php
-                            } elseif (count($resultSet) > 4) {
+                            } elseif (count($resultSet,1) > 4) {
                                 foreach ($resultSet as $result) {  ?>
                                     <div class="row my-3">
                                         <div class="col-lg-3">
@@ -346,6 +346,7 @@
                                             <div class="pd-review-name">
                                                 <?php
                                                 $personSet = $product->queryData("SELECT firstname, lastname FROM product_review pr, customer c where product_id = '$id' and c.email = pr.review_person and c.email = '{$_SESSION['email']}'");
+                                                $resultSet = $product->queryData("SELECT * FROM product_review where product_id = '$id' AND review_person = '{$_SESSION['email']}'");
                                                 ?>
                                                 <h5 style="text-transform: capitalize"> <?php echo "{$personSet['firstname']} {$personSet['lastname']} " ?> </h5>
                                             </div>
@@ -727,12 +728,12 @@
                 if (!is_array($resultSet)) {
                     $resultSet = array();
                 }
-                if (count($resultSet) > 5)
+                if (count($resultSet,1) > 5)
                     foreach ($resultSet as $result) { ?>
                     <div class="pd-product-list-item">
                         <a <?php echo "href='product_desc.php?id={$result['product_id']}'" ?>>
                             <picture class="imgBox">
-                                <img src=<?php echo "../assests/images/{$result['image']}" ?> class="w-100" alt="">
+                                <img src=<?php echo "../assests/images/{$result['image']}" ?> class="w-100" height="180px" alt="">
                             </picture>
                             <div class="d-flex justify-content-center">
                                 <span> <?php echo "{$result['product_id']}" ?></span>
@@ -740,13 +741,13 @@
                         </a>
                     </div>
                 <?php }
-                elseif (count($resultSet) == 5) {
+                elseif (count($resultSet,1) == 5) {
                     $result = $resultSet;
                 ?>
                     <div class="pd-product-list-item">
                         <a <?php echo "href='product_desc.php?id={$result['product_id']}'" ?>>
                             <picture class="imgBox">
-                                <img src=<?php echo "../assests/images/{$result['image']}" ?> class="w-100" alt="">
+                                <img src=<?php echo "../assests/images/{$result['image']}" ?> class="w-100" height="180px" alt="">
                             </picture>
                             <div class="d-flex justify-content-center">
                                 <span> <?php echo "{$result['product_id']}" ?></span>
@@ -765,7 +766,7 @@
         <?php
         if (isset($_SESSION['email'])) {
             $email = "'{$_SESSION['email']}'"; ?>
-            session_email = <?php echo "$email"; ?>
+            session_email = <?php echo "$email"; ?>;
         <?php
         } ?>
         var prd_id = <?php echo "'{$id}'" ?>;

@@ -20,9 +20,6 @@
                                 <th>
                                    Customer Name
                                 </th>
-                                <th>
-                                    Options
-                                </th>
                             </thead>
                             <?php
                             $db = new DBController();
@@ -45,10 +42,6 @@
                                         <td>
                                             <?php echo "{$result['firstname']}" ?>
                                         </td>
-                                        <td>
-                                            <?php echo "<img class='table-icon' id='{$result['email']}' src='../assests/images/delete.png' alt=''>" ?>
-                                            <img class="table-icon" src="../assests/images/edit.png" alt="">
-                                        </td>
                                     </tr>
                                 <?php
                                  }
@@ -62,10 +55,6 @@
                                             </td>
                                             <td>
                                                 <?php echo "{$result['firstname']}" ?>
-                                            </td>
-                                            <td>
-                                                <img class="table-icon" src="../assests/images/delete.png" alt="">
-                                                <img class="table-icon" src="../assests/images/edit.png" alt="">
                                             </td>
                                         </tr>
                                     <?php }
