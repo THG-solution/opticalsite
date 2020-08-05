@@ -74,6 +74,27 @@ class Table
         return $result;
     }
 
+    public function fetchReview($email,$id)
+    {
+        $result = $this->db->conn->query("SELECT * FROM product_review where review_person = '{$email}' and product_id = {$id}");
+        if (mysqli_num_rows($result) > 1) {
+            $resultArray = array();
+
+            while ($item = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+                $resultArray[] = $item;
+            }
+            return $resultArray;
+        }
+        else if (mysqli_num_rows($result) == 1)
+        {
+            $result = mysqli_fetch_array($result, MYSQLI_ASSOC);
+            return $result;    
+        }
+        else{
+            return false;
+        }
+       }
+
     public function insertCustomer($query)
     {
         $result = $this->db->conn->query($query);

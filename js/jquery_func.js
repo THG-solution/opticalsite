@@ -8,10 +8,11 @@ var pd_l = 'none';
 var pd_r = 'none';
 var total_price = 0;
 var presc_id = 0;
+var rate = 0, rateTA = '';
 if (typeof variable === 'undefined') {
     var p_color_name;
 }
-alert(p_color_name)
+// alert(p_color_name)
 // prd_price = <?php echo "{$price}"?>;
 
 var productContainerIndex = $('#product-list-item-index')
@@ -509,19 +510,18 @@ $(document).ready(function () {
                     alert('done5');
                     $('#rs2').html(response)
                 });
-            location.href= 'cart.php';        
+            location.href = 'cart.php';
         }
     });
     // *--------------------------------- END OF ADD TO CART FUNCTIONALITY ---------------------------------* 
 
     // *--------------------------------- CHANGE TOTAL PRICE ON QTY CHANGE ---------------------------------* 
-    
-    $('.quantity').change(function(){
+
+    $('.quantity').change(function () {
         var qty = $(this).val();
-        
-        if(typeof gtp !== undefined)
-        {
-            gtpqty =  +gtp * +qty;
+
+        if (typeof gtp !== undefined) {
+            gtpqty = +gtp * +qty;
         }
         // alert(+gtpqty)
         $(this).closest('.cart-text').find('.gtp').html(gtpqty)
@@ -529,7 +529,27 @@ $(document).ready(function () {
     })
 
     // *--------------------------------- END OF CHANGE TOTAL PRICE ON QTY CHANGE ---------------------------------* 
-    
+
+    // *--------------------------------- PRODUCT RATING FUCTIONALITY ---------------------------------*   
+    $('#rateRadio').change(function () {
+        rate = $("input[name='rate']:checked").val();
+        alert(rate);
+    });
+
+    $('#submitRate').on('click', function () {
+        rateTA = $('#rateTA').val();
+        alert(rateTA)
+        $.get({
+            url: 'insert_rating.php?email=' + session_email+'&id='+prd_id+'&rate='+rate+'&rateTA='+rateTA,
+            success: function (response) {
+                alert(rateTA);
+                alert(response);
+            },
+            async: false
+        });
+        location.href = 'product_desc.php?id='+prd_id;  
+    })
+    // *--------------------------------- END OF PRODUCT RATING FUCTIONALITY ---------------------------------* 
 
     $('#ls-type-box-yes').on('click', function () {
 
