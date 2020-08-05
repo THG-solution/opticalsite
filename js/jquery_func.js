@@ -46,6 +46,10 @@ $(window).on("load", function () {
         pgdata = 'womenall'
     if (uri.includes('kid_glass'))
         pgdata = 'kid'
+    if (uri.includes('sunglass'))
+        pgdata = 'sunglass'
+    if (uri.includes('clearglass'))
+        pgdata = 'clearglass'
     $.get('includes/filt_product.php?to=' + loc + '&pgdata=' + pgdata + '&gender=' + gen + '&shape=' + shp + '&material=' + mtrl + '&colour=' + clr + '&rim=' + rm + '&brand=' + brnd, function (response) {
         productContainer.html(response)
     })

@@ -27,7 +27,7 @@
       </div>
       <div class="col-6 col-md-4 col-lg-3 col-xl-2 p-0 m-0">
         <div class="p-0">
-          <img class="rounded-circle ml-4" style="height: 150px; width: 75%;" src="https://df5apg8r0m634.cloudfront.net/images/bcb812b91cd0879368b3bb88e1f26ffc.webp" alt="">
+        <a href="./mens_allglass.php"><img class="rounded-circle ml-4" style="height: 150px; width: 75%;" src="https://df5apg8r0m634.cloudfront.net/images/bcb812b91cd0879368b3bb88e1f26ffc.webp" alt=""></a>
           <h5 class="text-center my-3">Men's Glasses</h5>
         </div>
       </div>
@@ -39,13 +39,13 @@
       </div>
       <div class="col-6 col-md-4 col-lg-3 col-xl-2 p-0 m-0">
         <div class="p-0">
-          <img class="rounded-circle ml-4" style="height: 150px; width: 75%;" src="https://df5apg8r0m634.cloudfront.net/images/8d4839878f123665f2f1115d2f34e367.webp" alt="">
+        <a href="./allglass.php?sunglass"><img class="rounded-circle ml-4" style="height: 150px; width: 75%;" src="https://df5apg8r0m634.cloudfront.net/images/8d4839878f123665f2f1115d2f34e367.webp" alt=""></a>
           <h5 class="text-center my-3">Sunglasses</h5>
         </div>
       </div>
       <div class="col-6 col-md-4 col-lg-3 col-xl-2 p-0 m-0">
         <div class="p-0">
-          <img class="rounded-circle ml-4" style="height: 150px; width: 75%;" src="https://df5apg8r0m634.cloudfront.net/images/670fd76bb27e963109a4a9fce8a12a93.webp" alt="">
+        <a href="./allglass.php?clearglass"><img class="rounded-circle ml-4" style="height: 150px; width: 75%;" src="https://df5apg8r0m634.cloudfront.net/images/670fd76bb27e963109a4a9fce8a12a93.webp" alt=""></a>
           <h5 class="text-center my-3">Clear Frames</h5>
         </div>
       </div>

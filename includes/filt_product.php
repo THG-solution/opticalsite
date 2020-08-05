@@ -26,6 +26,8 @@
     if (!empty($_GET['pgdata']) && $_GET['pgdata'] == 'womenall') $pgdata = " and gender IN ('women','unisex')";
 
     if (!empty($_GET['pgdata']) && $_GET['pgdata'] == 'kid' ) $pgdata = " and gender IN ('kid') ";
+    if (!empty($_GET['pgdata']) && $_GET['pgdata'] == 'sunglass' ) $pgdata = " and category IN ('sunglasses') ";
+    if (!empty($_GET['pgdata']) && $_GET['pgdata'] == 'clearglass' ) $pgdata = " and category IN ('frames') ";
 
     if (!empty($_GET['pgdata']) && !empty($_GET['gender'])) $gender = " OR gender IN ({$_GET['gender']}) ";
     else if (!empty($_GET['gender'])) $gender = " and gender IN ({$_GET['gender']}) ";
