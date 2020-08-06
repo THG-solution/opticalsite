@@ -9,8 +9,7 @@ echo "<form method='POST' action='../includes/add_product.php' enctype='multipar
     <label >Brand</label>
     <select name='brand' id='brand' class='form-control' required >
         <option value='' selected disabled><i class='fa fa-angle-down'></i></option>
-        <option value='Ford'>Ford</option>
-        <option value='Police'>Police</option>
+        <option value='Baveria Optics'>Baveria Optics</option>
 
     </select>
 </div>
@@ -49,6 +48,8 @@ echo "<form method='POST' action='../includes/add_product.php' enctype='multipar
         <option value='' selected disabled><i class='fa fa-angle-down'></i></option>
         <option value='metal'>Metal</option>
         <option value='plastic'>Plastic</option>
+        <option value='acetate'>Acetate</option>
+        
     </select>
 </div>
 <div class='form-group'>
@@ -68,7 +69,7 @@ echo "<form method='POST' action='../includes/add_product.php' enctype='multipar
         <option value='square'>Square</option>
         <option value='round'>Round</option>
         <option value='wayfarer'>Wayfarer</option>
-
+        <option value='rectangle'>Rectangle</option>
     </select>
 </div>
 <div class='form-group'>

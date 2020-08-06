@@ -620,7 +620,7 @@ $(document).ready(function () {
 
     $("img").on("click", function () {
         if ($(this).hasClass("delete-icon")) {
-            // alert($(this).attr('id'))
+            // alert($(this).attr('id'));
             window.location.replace('../includes/delete_product.php?id=' + $(this).attr('id'))
         }
     })

@@ -91,7 +91,7 @@
                                             <?php echo "{$result['frame_shape']}" ?>
                                         </td>
                                         <td>
-                                            <?php echo "$ {$result['price']}" ?>
+                                            <?php echo "AED {$result['price']}" ?>
                                         </td>
                                         <td>
                                         <?php echo "<img id='{$result['product_id']}' class='delete-icon table-icon' src='../assests/images/delete.png' alt=''>" ?>

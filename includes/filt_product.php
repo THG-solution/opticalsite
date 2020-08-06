@@ -41,6 +41,7 @@
     if (!empty($_GET['brand'])) $brand = " and brand IN ({$_GET['brand']}) ";
     $resultSet = $product->queryData("SELECT DISTINCT pd.product_id AS product_id, (SELECT c.img1 from product_colors c WHERE c.product_id=pd.product_id LIMIT 1) AS image, (SELECT  p.avg_star from products p where pd.product_id=p.product_id) AS avg_star,(SELECT  p.total_review from products p where pd.product_id=p.product_id) AS total_review, (SELECT  p.price from products p where pd.product_id=p.product_id) AS price FROM products pd, product_colors pc where pc.product_id=pd.product_id 
         {$pgdata}{$gender}{$shape}{$material}{$colour}{$rim}{$brand}");
+    // print_r($resultSet);
     foreach ($resultSet as $result) {
         $con_price = '';
         $symbol = '';

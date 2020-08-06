@@ -7,16 +7,12 @@
                         <h3 class="card-title">Admin Table</h3>
                         <span> <img class="img-add" src="../assests/images/add.png" alt=""></span>
                     </div>
-
                     <!-- <p class="card-category">Here is a subtitle for this table</p> -->
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table">
                             <thead class="text-primary">
-                                <th>
-                                    Admin ID
-                                </th>
                                 <th>
                                    Admin Name
                                 </th>
@@ -34,19 +30,17 @@
                             $db = new DBController();
                             $product = new Table($db);
                             $resultSet = $product->getData("admin");
+                            // print_r($resultSet);
                             if(!is_array($resultSet))
                                 $resultSet = array();                        
                             ?>
                             <tbody>
                                <?php
-                                if(count($resultSet)==4)
+                                if(count($resultSet,1)==3)
                                 {
                                     $result = $resultSet;
                                     ?>
                                   <tr>
-                                        <td>
-                                            <?php echo "{$result['admin_id']}" ?>
-                                        </td>
                                         <td>
                                             <?php echo "{$result['name']}" ?>
                                         </td>
@@ -63,7 +57,7 @@
                                     </tr>
                                 <?php
                                  }
-                                elseif (count($resultSet)>4)
+                                elseif (count($resultSet,1)>4)
                                 {
                                     foreach ($resultSet as $result) 
                                     { ?>
