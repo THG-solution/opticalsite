@@ -866,3 +866,10 @@ tr {
 .rate > label:hover ~ input:checked ~ label {
     color: #c59b08;
 }
+
+.crt-table-icon{
+    width: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  

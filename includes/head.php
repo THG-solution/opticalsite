@@ -100,7 +100,7 @@
                 </ul>
             </div>
             <div class="mx-2 mt-2">
-                <a class="nav-link" id="nv-link" href="../cart.php" id="nv-link"><i class="fa fa-shopping-bag"></i></a>
+                <a class="nav-link cart-icon" id="nv-link" href="" id="nv-link"><i class="fa fa-shopping-bag"></i></a>
             </div>
         </div>
     </div>
@@ -202,6 +202,16 @@
         </div>
     </div>
 </nav>
+<script>
+    var session_email = 'empty';
+    <?php
+    if (isset($_SESSION['email'])) {
+      $email = "'{$_SESSION['email']}'"; ?>
+      session_email = <?php echo "$email"; ?>;
+    <?php
+    } ?>
+    alert(session_email);
+  </script>
 <script>
 // Disable form submissions if there are invalid fields
 (function() {

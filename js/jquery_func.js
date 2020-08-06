@@ -8,6 +8,7 @@ var pd_l = 'none';
 var pd_r = 'none';
 var total_price = 0;
 var presc_id = 0;
+var subTotal = 0;
 var rate = 0, rateTA = '';
 if (typeof variable === 'undefined') {
     var p_color_name;
@@ -249,14 +250,14 @@ $(document).ready(function () {
 
     $('.c-list').on('click', function () {
         color_name = $(this).attr('id');
-        alert(color_name);
+        // alert(color_name);
 
         $.get('update_color_image.php?div=banner&color=' + color_name + '&id=' + prd_id, function (response) {
-            alert(response);
+            // alert(response);
             $('#banner').html(response);
         });
         $.get('update_color_image.php?div=main&color=' + color_name + '&id=' + prd_id, function (response) {
-            alert(response);
+            // alert(response);
             $('#main_img').html(response);
         });
 
@@ -334,9 +335,9 @@ $(document).ready(function () {
             case "Thinnest":
                 lens = lsId;
                 lens_price = $(this).find('.lns-price').text()
-                alert(lens_price);
+                // alert(lens_price);
                 total_price = +coating_price + prd_price + +lens_price;
-                alert(total_price);
+                // alert(total_price);
                 // Add price to the above price to check the calculations
                 $.get('includes/update_price_prescription.php?lp=' + lens_price, function (response) {
                     $('#lens-price').html(response)
@@ -352,8 +353,8 @@ $(document).ready(function () {
                 coating = lsId;
                 coating_price = $(this).find('.option_price').text()
                 total_price = +prd_price + +lens_price + +coating_price;
-                alert(coating_price);
-                alert(total_price);
+                // alert(coating_price);
+                // alert(total_price);
                 $.get('includes/update_price_prescription.php?cp=' + coating_price, function (response) {
                     $('#coating-price').html(response)
                 });
@@ -409,8 +410,8 @@ $(document).ready(function () {
         }
         var pr = Object.values(p_r);
         var pl = Object.values(p_l);
-        alert(p_r.sphere);
-        alert(p_l.sphere);
+        // alert(p_r.sphere);
+        // alert(p_l.sphere);
 
     });
     // *--------------------------------- END OF SELECTING PR, PL AND PD-R, PD-L VALUES ---------------------------------* 
@@ -479,13 +480,17 @@ $(document).ready(function () {
                     });
                     break;
                 case 'yes':
-                    alert('done');
-                    $.get('includes/insert_prescription.php?email=' + session_email +
-                        '&pr_s=' + p_r.sphere + '&pr_c=' + p_r.cylinder + '&pr_ax=' + p_r.axis + '&pr_ad=' + p_r.add + '&pd_r=' + pd_r +
-                        '&pl_s=' + p_l.sphere + '&pl_c=' + p_l.cylinder + '&pl_ax=' + p_l.axis + '&pl_ad=' + p_l.add + '&pd_l=' + pd_l, function (response) {
-                            alert('done3');
+                    // alert('done');
+                    $.get({
+                        url: 'includes/insert_prescription.php?email=' + session_email +
+                            '&pr_s=' + p_r.sphere + '&pr_c=' + p_r.cylinder + '&pr_ax=' + p_r.axis + '&pr_ad=' + p_r.add + '&pd_r=' + pd_r +
+                            '&pl_s=' + p_l.sphere + '&pl_c=' + p_l.cylinder + '&pl_ax=' + p_l.axis + '&pl_ad=' + p_l.add + '&pd_l=' + pd_l,
+                        success: function (response) {
+                            alert('Prescription Inserted');
                             $('#rs').html(response)
-                        });
+                        },
+                        async: false
+                    });
                     $.get({
                         url: 'includes/get_prescription.php?email=' + session_email,
                         success: function (response) {
@@ -504,7 +509,7 @@ $(document).ready(function () {
             alert('PLEASE LOGIN TO CONTINUE')
         }
         else {
-            alert(presc_id + 'Second');
+            // alert(presc_id + 'Second');
             $.get('includes/add_to_cart.php?email=' + session_email + '&id=' + prd_id + '&colour=' + p_color_name + '&lens_type=' + lens_type
                 + '&lens=' + lens + '&coating=' + coating + '&prescription=' + presc + '&presc_id=' + presc_id + '&coating_price=' + coating_price + '&lens_price=' + lens_price, function (response) {
                     alert('done5');
@@ -515,21 +520,67 @@ $(document).ready(function () {
     });
     // *--------------------------------- END OF ADD TO CART FUNCTIONALITY ---------------------------------* 
 
+    
+    // *--------------------------------- DELETING PRODUCT FROM CART ---------------------------------* 
+    $('.crt-table-icon').on('click',function(){
+        var cd = confirm("Are you sure you want to delete this product?");
+        if(cd)
+        { 
+            var crt_id = $(this).attr('id');
+            $.get({
+                url: 'includes/delete_product_cart.php?email=' + session_email + '&id=' + crt_id,
+                success: function (response) {
+                    location.href='cart.php';
+                    // alert('Done !'+crt_id+session_email+response);
+                },
+                async: false
+            });
+           
+        }
+        else{
+        }
+    });
+    // *--------------------------------- END OF DELETING PRODUCT FROM CART ---------------------------------* 
+    
+
     // *--------------------------------- CHANGE TOTAL PRICE ON QTY CHANGE ---------------------------------* 
-
+    var oldQty, qty;
     $('.quantity').change(function () {
-        var qty = $(this).val();
-
+        qty = $(this).val();
+        // alert(qty);
+        // alert(oldQty);
+        if(qty ==1 && oldQty != 2)
+        {
+            // alert('taken')
+            gtp = $(this).closest('.cart-text').find('.gtp').html();   
+        }
+        
         if (typeof gtp !== undefined) {
             gtpqty = +gtp * +qty;
         }
         // alert(+gtpqty)
-        $(this).closest('.cart-text').find('.gtp').html(gtpqty)
+        $(this).closest('.cart-text').find('.gtp').html(gtpqty);
         //  . nextAll('.qtp').html(gtpqty);
+        subTotal = 0;
+        $('.gtp').each(function(){
+            var sectTotal= $(this).html();
+            subTotal += +sectTotal;
+            $('#sub_total_price').html(subTotal);
+        });
+        oldQty = $(this).val();
+        
     })
 
     // *--------------------------------- END OF CHANGE TOTAL PRICE ON QTY CHANGE ---------------------------------* 
 
+    // *--------------------------------- CALCULATING SUB TOTAL IN CART ---------------------------------*   
+    $('.gtp').each(function(){
+        var sectTotal= $(this).html();
+        subTotal += +sectTotal;
+        $('#sub_total_price').html(subTotal);
+    })
+    // *--------------------------------- END OF CALCULATING SUB TOTAL IN CART ---------------------------------*   
+    
     // *--------------------------------- PRODUCT RATING FUCTIONALITY ---------------------------------*   
     $('#rateRadio').change(function () {
         rate = $("input[name='rate']:checked").val();
@@ -540,14 +591,14 @@ $(document).ready(function () {
         rateTA = $('#rateTA').val();
         alert(rateTA)
         $.get({
-            url: 'insert_rating.php?email=' + session_email+'&id='+prd_id+'&rate='+rate+'&rateTA='+rateTA,
+            url: 'insert_rating.php?email=' + session_email + '&id=' + prd_id + '&rate=' + rate + '&rateTA=' + rateTA,
             success: function (response) {
                 alert(rateTA);
                 alert(response);
             },
             async: false
         });
-        location.href = 'product_desc.php?id='+prd_id;  
+        location.href = 'product_desc.php?id=' + prd_id;
     })
     // *--------------------------------- END OF PRODUCT RATING FUCTIONALITY ---------------------------------* 
 
@@ -583,4 +634,25 @@ $(document).ready(function () {
             })
         }
     })
+    if (typeof session_email !== 'undefined')
+        alert(session_email);
+    $(".cart-icon").on('click', function () {
+        if (session_email != 'empty') {
+            $.ajax({
+                url: 'cart.php',
+                type: 'HEAD',
+                error: function () {
+                    //file not exists
+                    location.href = '../cart.php';
+                },
+                success: function () {
+                    //file exists
+                    location.href = 'cart.php';
+                }
+            });
+        }
+        else {
+            alert('Please Login To See Your Cart');
+        }
+    });
 });

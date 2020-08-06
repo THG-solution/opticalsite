@@ -40,6 +40,16 @@
 
                     <div class='cart-box box-color'>
                         <div class='row'>
+                            <div class="col-lg-12 d-flex justify-content-between ">
+                            <div class="col-lg-12 d-flex justify-content-between px-5 py-1">
+                                    <div>
+                                        <h4> 1</h4>
+                                    </div>
+                                    <div>
+                                        <?php echo "<img id='{$result['cart_id']}' class='crt-table-icon' src='assests/images/delete.png' alt=''>" ?>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="col-lg-4">
                                 <div class='imgBox' '>
                                     <?php
@@ -111,7 +121,6 @@
                                             $ <span> <?php echo "{$result['coating_price']}" ?></span>
                                         </div>
                                     </div>
-
                                 </div>
                                 <div class='d-flex justify-content-between mt-4'>
                                     <div>
@@ -137,10 +146,20 @@
 
                     <?php
                 } elseif (count($resultSet, 1) > 11) {
+                    $ct = 0;
                     foreach ($resultSet as $result) {
+                        $ct++;
                     ?>
                         <div class='cart-box box-color my-2'>
                             <div class='row'>
+                                <div class="col-lg-12 d-flex justify-content-between px-5 py-1">
+                                    <div>
+                                        <h4> <?php echo $ct ?></h4>
+                                    </div>
+                                    <div>
+                                        <?php echo "<img id='{$result['cart_id']}' class='crt-table-icon' src='assests/images/delete.png' alt=''>" ?>
+                                    </div>
+                                </div>
                                 <div class="col-lg-4">
                                     <div class='imgBox' '>
                                     <?php
@@ -240,14 +259,13 @@
                 };
                 ?>
             </div>
-
             <div class="col-lg-4">
                 <div class='proceed-box d-flex flex-column align-items-center box-color'>
                     <div class="my-3">
-                        Total Items: 1
+                        Total Items: <?php echo $ct ?>
                     </div>
                     <div class="my-3">
-                        Total Price: $ 450
+                        Total Price: <span id="sub_total_price"> $ 450</span>
                     </div>
                     <div class="my-4">
                         <button class="btn btn-primary">
@@ -259,7 +277,7 @@
         </div>
     </div>
     <script>
-        var gtp = <?php echo $gtp ?>
+        var gtp ;
     </script>
     <script src="js/jquery-3.4.1.js"></script>
     <script src="js/jquery_func.js"></script>

@@ -39,7 +39,7 @@
                             <?php
                             $db = new DBController();
                             $product = new Table($db);
-                            $fcolor = $product->queryData("SELECT colour_name from product_colors where product_id = {$id} LIMIT 1");
+                            $fcolor = $product->queryData("SELECT colour_name from product_colors where product_id = '{$id}' LIMIT 1");
                             $color = $fcolor['colour_name'];
 
                             $result = $product->queryData("SELECT img1, img2 , img3  FROM  product_colors  WHERE product_id = '{$id}' and colour_name = '{$color}'");
@@ -455,165 +455,6 @@
                                     </div>
                                 <?php
                                 }
-
-                                /*
-                                if (!empty($resultSet) && count($resultSet) == 4) { ?>
-                                    <div class="row my-3">
-                                        <?php
-
-
-
-                                        ?>
-                                        <div class="col-lg-3">
-                                            <div class="pd-review-name">
-                                                <h5 style="text-transform: capitalize"> <?php echo "{$resultSet['review_person']}" ?> </h5>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-9">
-                                            <div class="pd-review-comment">
-
-                                                <div class="d-flex align-items-center mb-1 mr-2">
-                                                    <?php $stars = $resultSet['review_star'];
-
-                                                    switch ($stars) {
-                                                        case (1):
-                                                            echo "
-                                                                            <span class='fa fa-star checked'></span>
-                                                                            <span class='fa fa-star empty'></span>
-                                                                            <span class='fa fa-star empty'></span>
-                                                                            <span class='fa fa-star empty'></span>
-                                                                            <span class='fa fa-star empty'></span>
-                                                                        </div>";
-                                                            break;
-                                                        case (2):
-                                                            echo "
-                                                                            <span class='fa fa-star checked'></span>
-                                                                            <span class='fa fa-star checked'></span>
-                                                                            <span class='fa fa-star empty'></span>
-                                                                            <span class='fa fa-star empty'></span>
-                                                                            <span class='fa fa-star empty'></span>
-                                                                        </div>";
-                                                            break;
-                                                        case (3):
-                                                            echo "
-                                                                            <span class='fa fa-star checked'></span>
-                                                                            <span class='fa fa-star checked'></span>
-                                                                            <span class='fa fa-star checked'></span>
-                                                                            <span class='fa fa-star empty'></span>
-                                                                            <span class='fa fa-star empty'></span>
-                                                                        </div>";
-                                                            break;
-                                                        case (4):
-                                                            echo "
-                                                                            <span class='fa fa-star checked'></span>
-                                                                            <span class='fa fa-star checked'></span>
-                                                                            <span class='fa fa-star checked'></span>
-                                                                            <span class='fa fa-star checked'></span>
-                                                                            <span class='fa fa-star empty'></span>
-                                                                        </div>";
-                                                            break;
-                                                        case (5):
-                                                            echo "
-                                                                           <span class='fa fa-star checked'></span>
-                                                                            <span class='fa fa-star checked'></span>
-                                                                            <span class='fa fa-star checked'></span>
-                                                                            <span class='fa fa-star checked'></span>
-                                                                            <span class='fa fa-star checked'></span>
-                                                                        </div>";
-                                                            break;
-
-                                                        default: ?>
-                                                            <span class='fa fa-star empty'></span>
-                                                            <span class='fa fa-star empty'></span>
-                                                            <span class='fa fa-star empty'></span>
-                                                            <span class='fa fa-star empty'></span>
-                                                            <span class='fa fa-star empty'></span>
-                                                </div>
-                                        <?php }
-                                                    echo "{$resultSet['review_comment']}" ?>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <?php
-                                } elseif (count($resultSet) > 4) {
-                                    foreach ($resultSet as $result) {  ?>
-                                        <div class="row my-3">
-                                            <div class="col-lg-3">
-                                                <div class="pd-review-name">
-                                                    <h5 style="text-transform: capitalize"> <?php echo "{$result['review_person']}" ?> </h5>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-9">
-                                                <div class="pd-review-comment">
-                                                    <div class="d-flex align-items-center mb-1 mr-2">
-                                                        <?php $stars = $result['review_star'];
-                                                        switch ($stars) {
-                                                            case (1):
-                                                                echo "
-                                                                <span class='fa fa-star checked'></span>
-                                                                <span class='fa fa-star empty'></span>
-                                                                <span class='fa fa-star empty'></span>
-                                                                <span class='fa fa-star empty'></span>
-                                                                <span class='fa fa-star empty'></span>
-                                                            </div>";
-                                                                break;
-                                                            case (2):
-                                                                echo "
-                                                                <span class='fa fa-star checked'></span>
-                                                                <span class='fa fa-star checked'></span>
-                                                                <span class='fa fa-star empty'></span>
-                                                                <span class='fa fa-star empty'></span>
-                                                                <span class='fa fa-star empty'></span>
-                                                            </div>";
-                                                                break;
-                                                            case (3):
-                                                                echo "
-                                                                <span class='fa fa-star checked'></span>
-                                                                <span class='fa fa-star checked'></span>
-                                                                <span class='fa fa-star checked'></span>
-                                                                <span class='fa fa-star empty'></span>
-                                                                <span class='fa fa-star empty'></span>
-                                                            </div>";
-                                                                break;
-                                                            case (4):
-                                                                echo "
-                                                                <span class='fa fa-star checked'></span>
-                                                                <span class='fa fa-star checked'></span>
-                                                                <span class='fa fa-star checked'></span>
-                                                                <span class='fa fa-star checked'></span>
-                                                                <span class='fa fa-star empty'></span>
-                                                            </div>";
-                                                                break;
-                                                            case (5):
-                                                                echo "
-                                                                    <span class='fa fa-star checked'></span>
-                                                                    <span class='fa fa-star checked'></span>
-                                                                    <span class='fa fa-star checked'></span>
-                                                                    <span class='fa fa-star checked'></span>
-                                                                    <span class='fa fa-star checked'></span>
-                                                            </div>";
-                                                                break;
-
-                                                            default:
-                                                        ?>
-                                                                <span class='fa fa-star empty'></span>
-                                                                <span class='fa fa-star empty'></span>
-                                                                <span class='fa fa-star empty'></span>
-                                                                <span class='fa fa-star empty'></span>
-                                                                <span class='fa fa-star empty'></span>
-                                                    </div>
-                                            <?php
-                                                        }
-                                                        echo "{$result['review_comment']}" ?>
-                                                </div>
-                                            </div>
-                                        </div>
-                                <?php }
-                                } else {
-                                    echo "<div class='row my-3'> No Reviews </div>";
-                                }
-                                */
                             } else { ?>
                                 <div class="d-flex justify-content-center">
                                     <h4 class='text-secondary'>Please Login to Rate the Product</h4>
@@ -724,7 +565,7 @@
                 <?php
                 $db = new DBController();
                 $product = new Table($db);
-                $resultSet = $product->queryData("SELECT DISTINCT pd.product_id AS product_id, (SELECT c.img1 from product_colors c WHERE c.product_id=pd.product_id LIMIT 1) AS image, (SELECT  p.avg_star from products p where pd.product_id=p.product_id) AS avg_star,(SELECT  p.total_review from products p where pd.product_id=p.product_id) AS total_review, (SELECT  p.price from products p where pd.product_id=p.product_id) AS price  FROM products pd WHERE product_id > {$id} LIMIT 3");
+                $resultSet = $product->queryData("SELECT DISTINCT pd.product_id AS product_id, (SELECT c.img1 from product_colors c WHERE c.product_id=pd.product_id LIMIT 1) AS image, (SELECT  p.avg_star from products p where pd.product_id=p.product_id) AS avg_star,(SELECT  p.total_review from products p where pd.product_id=p.product_id) AS total_review, (SELECT  p.price from products p where pd.product_id=p.product_id) AS price  FROM products pd WHERE product_id > '{$id}' LIMIT 3");
                 if (!is_array($resultSet)) {
                     $resultSet = array();
                 }
@@ -762,16 +603,7 @@
         </div>
     </div>
     <script>
-        var session_email = 'empty';
-        <?php
-        if (isset($_SESSION['email'])) {
-            $email = "'{$_SESSION['email']}'"; ?>
-            session_email = <?php echo "$email"; ?>;
-        <?php
-        } ?>
         var prd_id = <?php echo "'{$id}'" ?>;
-        alert(prd_id);
-        alert(session_email);
     </script>
     <script src="../js/jquery-3.4.1.js"></script>
     <script src="../js/jquery_func.js"></script>
